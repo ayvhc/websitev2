@@ -60,28 +60,31 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
             ? "team"
             : activeScene === 5
               ? "pain"
-              : "network";
+              : "empty";
 
   return (
     <aside className={`visual-stage visual-${phase}`} aria-hidden="true">
       <div className="visual-canvas">
-        <div className="pressure-rings">
-          <span />
-          <span />
-          <span />
-        </div>
-
-        <div className="team-orbit">
-          <div className="network-lines">
-            {Array.from({ length: 5 }, (_, index) => (
-              <span className={`network-line network-line-${index + 1}`} key={index} />
-            ))}
-          </div>
-          {Array.from({ length: 5 }, (_, index) => (
+        <div className="team-formation">
+          {Array.from({ length: 2 }, (_, index) => (
             <div className={`team-member team-member-${index + 1}`} key={index}>
               <UserRound strokeWidth={1.35} />
             </div>
           ))}
+        </div>
+
+        <div className="wheel-scene">
+          <span className="floor-line" />
+          <div className="circle-wheel">
+            <span className="morph-segment morph-segment-1" />
+            <span className="morph-segment morph-segment-2" />
+            <span className="morph-segment morph-segment-3" />
+          </div>
+          <div className="square-wheel">
+            <span className="square-axis square-axis-horizontal" />
+            <span className="square-axis square-axis-vertical" />
+            <span className="square-hub" />
+          </div>
         </div>
 
         <div className="main-human">
