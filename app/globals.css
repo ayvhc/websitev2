@@ -422,7 +422,7 @@ button {
 .radar-value {
   position: absolute;
   inset: 8%;
-  clip-path: polygon(50% 0, 97% 35%, 79% 91%, 21% 91%, 3% 35%);
+  clip-path: polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
 }
 
 .radar-ring::after {
@@ -447,32 +447,18 @@ button {
 }
 
 .radar-axis-1 { transform: rotate(-90deg); }
-.radar-axis-2 { transform: rotate(-18deg); }
-.radar-axis-3 { transform: rotate(54deg); }
-.radar-axis-4 { transform: rotate(126deg); }
-.radar-axis-5 { transform: rotate(198deg); }
+.radar-axis-2 { transform: rotate(-30deg); }
+.radar-axis-3 { transform: rotate(30deg); }
+.radar-axis-4 { transform: rotate(90deg); }
+.radar-axis-5 { transform: rotate(150deg); }
+.radar-axis-6 { transform: rotate(210deg); }
 
 .radar-value {
   inset: 0;
   background: rgba(55, 55, 55, 0.14);
-  clip-path: polygon(50% 20%, 78% 40%, 67% 74%, 33% 74%, 22% 40%);
+  clip-path: polygon(50% 15%, 85.5% 29.5%, 77.3% 65.8%, 50% 88%, 20.6% 67%, 12.3% 28%);
   filter: drop-shadow(0 0 0.7px rgba(45, 45, 45, 0.5));
 }
-
-.radar-label {
-  position: absolute;
-  color: rgba(50, 50, 50, 0.58);
-  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
-  font-weight: 500;
-  letter-spacing: 0.015em;
-  white-space: nowrap;
-}
-
-.radar-label-sales { top: -8%; left: 50%; transform: translateX(-50%); }
-.radar-label-customers { top: 31%; left: 91%; }
-.radar-label-adaptability { top: 88%; left: 66%; }
-.radar-label-leadership { top: 88%; right: 66%; }
-.radar-label-capital { top: 31%; right: 91%; }
 
 .wheel-scene {
   position: absolute;
@@ -634,10 +620,6 @@ button {
     width: 10.5rem;
     transform: none;
     opacity: 0.34;
-  }
-
-  .radar-label {
-    display: none;
   }
 
   .intro-name,

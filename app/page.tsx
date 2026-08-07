@@ -86,11 +86,6 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
         <div className="main-human">
           <UserRound strokeWidth={1.25} />
           <div className="radar-chart">
-            <span className="radar-label radar-label-sales">Sales</span>
-            <span className="radar-label radar-label-customers">Customers</span>
-            <span className="radar-label radar-label-adaptability">Adaptability</span>
-            <span className="radar-label radar-label-leadership">Leadership</span>
-            <span className="radar-label radar-label-capital">Capital</span>
             <span className="radar-ring radar-ring-outer" />
             <span className="radar-ring radar-ring-inner" />
             <span className="radar-axis radar-axis-1" />
@@ -98,6 +93,7 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
             <span className="radar-axis radar-axis-3" />
             <span className="radar-axis radar-axis-4" />
             <span className="radar-axis radar-axis-5" />
+            <span className="radar-axis radar-axis-6" />
             <span className="radar-value" />
           </div>
         </div>
