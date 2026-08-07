@@ -506,6 +506,12 @@ button {
   animation: puzzle-piece-breathe 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
+.puzzle-loop-shape {
+  transform: rotate(45deg);
+  transform-box: view-box;
+  transform-origin: center;
+}
+
 .puzzle-loop-piece-1 { --puzzle-x: -10px; --puzzle-y: -10px; }
 .puzzle-loop-piece-2 { --puzzle-x: 10px; --puzzle-y: -10px; }
 .puzzle-loop-piece-3 { --puzzle-x: -10px; --puzzle-y: 10px; }
