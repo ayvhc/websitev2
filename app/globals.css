@@ -515,37 +515,21 @@ button {
 .puzzle-loop-piece-1 {
   --puzzle-x: -13px;
   --puzzle-y: -13px;
-  --puzzle-click-x: 1.5px;
-  --puzzle-click-y: 1.5px;
-  --puzzle-rebound-x: -0.5px;
-  --puzzle-rebound-y: -0.5px;
 }
 
 .puzzle-loop-piece-2 {
   --puzzle-x: 13px;
   --puzzle-y: -13px;
-  --puzzle-click-x: -1.5px;
-  --puzzle-click-y: 1.5px;
-  --puzzle-rebound-x: 0.5px;
-  --puzzle-rebound-y: -0.5px;
 }
 
 .puzzle-loop-piece-3 {
   --puzzle-x: -13px;
   --puzzle-y: 13px;
-  --puzzle-click-x: 1.5px;
-  --puzzle-click-y: -1.5px;
-  --puzzle-rebound-x: -0.5px;
-  --puzzle-rebound-y: 0.5px;
 }
 
 .puzzle-loop-piece-4 {
   --puzzle-x: 13px;
   --puzzle-y: 13px;
-  --puzzle-click-x: -1.5px;
-  --puzzle-click-y: -1.5px;
-  --puzzle-rebound-x: 0.5px;
-  --puzzle-rebound-y: 0.5px;
 }
 
 @keyframes puzzle-piece-breathe {
@@ -559,15 +543,34 @@ button {
   56% {
     animation-timing-function: cubic-bezier(0.1, 0.8, 0.2, 1);
   }
-  69% {
-    transform: translate(var(--puzzle-click-x), var(--puzzle-click-y));
-    animation-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1);
-  }
-  73% {
-    transform: translate(var(--puzzle-rebound-x), var(--puzzle-rebound-y));
-  }
-  78%, 100% {
+  69%, 100% {
     transform: translate(0, 0);
+  }
+}
+
+.puzzle-click-lines {
+  fill: none;
+  stroke: #1a1a1a;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-box: view-box;
+  transform-origin: center;
+  animation: puzzle-click-burst 4.8s linear infinite;
+}
+
+@keyframes puzzle-click-burst {
+  0%, 66%, 78%, 100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  69% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 0;
+    transform: scale(1.12);
   }
 }
 
@@ -902,7 +905,8 @@ button {
   .circle-wheel,
   .morph-segment,
   .square-wheel,
-  .puzzle-loop-piece {
+  .puzzle-loop-piece,
+  .puzzle-click-lines {
     transition-duration: 1ms !important;
     animation-duration: 1ms !important;
   }

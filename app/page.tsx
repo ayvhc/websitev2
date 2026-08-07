@@ -97,6 +97,16 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
               <path className="puzzle-loop-piece puzzle-loop-piece-3" d="M170 250v52q0 18 18 18h52v-42c-12 0-12-18 0-18v-10h-17c0-12-18-12-18 0Z" />
               <path className="puzzle-loop-piece puzzle-loop-piece-4" d="M240 250h17c0 12 18 12 18 0h35v52q0 18-18 18h-52v-42c-12 0-12-18 0-18Z" />
             </g>
+            <g className="puzzle-click-lines">
+              <line x1="178" y1="188" x2="166" y2="176" />
+              <line x1="240" y1="174" x2="240" y2="160" />
+              <line x1="302" y1="188" x2="314" y2="176" />
+              <line x1="316" y1="250" x2="330" y2="250" />
+              <line x1="302" y1="312" x2="314" y2="324" />
+              <line x1="240" y1="326" x2="240" y2="340" />
+              <line x1="178" y1="312" x2="166" y2="324" />
+              <line x1="164" y1="250" x2="150" y2="250" />
+            </g>
           </svg>
         </div>
 
