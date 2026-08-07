@@ -47,7 +47,7 @@ const scenes: Scene[] = [
   },
   {
     title: "The Founder",
-    body: "Can you sell fast, win customers, pivot quickly, thrive under pressure, lead a team, engineer creatively, and manage capital—or attract the people who can?",
+    body: "Can you sell fast, win customers, pivot quickly, thrive under pressure, lead a team, engineer creatively, and manage capital—or at least attract the people who can?",
   },
   {
     title: "The Team",
