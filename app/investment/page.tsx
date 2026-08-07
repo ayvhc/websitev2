@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { DockNav } from "../components/DockNav";
 
 const investmentSections = [
@@ -50,96 +50,62 @@ const investmentSections = [
 
 export default function InvestmentPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const activeSectionRef = useRef(0);
-  const wheelLockedRef = useRef(false);
-  const wheelReleaseRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
     const root = scrollRef.current;
     if (!root) return;
 
-    const sections = Array.from(
+    const sentinels = Array.from(
       root.querySelectorAll<HTMLElement>("[data-investment-section]"),
     );
-
-    const selectSection = (index: number) => {
-      const nextIndex = Math.max(0, Math.min(sections.length - 1, index));
-      const target = sections[nextIndex];
-      const targetTop =
-        target.offsetTop - (root.clientHeight - target.offsetHeight) / 2;
-
-      activeSectionRef.current = nextIndex;
-      setActiveSection(nextIndex);
-      root.scrollTo({ top: targetTop, behavior: "smooth" });
-    };
-
-    const handleWheel = (event: WheelEvent) => {
-      if (event.ctrlKey || Math.abs(event.deltaY) < 4) return;
-      event.preventDefault();
-
-      if (wheelReleaseRef.current) clearTimeout(wheelReleaseRef.current);
-
-      if (!wheelLockedRef.current) {
-        wheelLockedRef.current = true;
-        selectSection(activeSectionRef.current + (event.deltaY > 0 ? 1 : -1));
-      }
-
-      wheelReleaseRef.current = setTimeout(() => {
-        wheelLockedRef.current = false;
-      }, 260);
-    };
-
     const observer = new IntersectionObserver(
       (entries) => {
-        if (wheelLockedRef.current) return;
-
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
         if (visible) {
-          const nextIndex = Number(
-            (visible.target as HTMLElement).dataset.investmentSection,
+          setActiveSection(
+            Number((visible.target as HTMLElement).dataset.investmentSection),
           );
-          activeSectionRef.current = nextIndex;
-          setActiveSection(nextIndex);
         }
       },
-      {
-        root,
-        rootMargin: "-30% 0px -30% 0px",
-        threshold: [0.1, 0.35, 0.65],
-      },
+      { root, threshold: [0.45, 0.6, 0.75] },
     );
 
-    sections.forEach((section) => observer.observe(section));
-    root.addEventListener("wheel", handleWheel, { passive: false });
-
-    return () => {
-      observer.disconnect();
-      root.removeEventListener("wheel", handleWheel);
-      if (wheelReleaseRef.current) clearTimeout(wheelReleaseRef.current);
-    };
+    sentinels.forEach((sentinel) => observer.observe(sentinel));
+    return () => observer.disconnect();
   }, []);
 
   return (
     <main className="investment-shell">
-      <div className="investment-scroll" ref={scrollRef}>
-        <div className="investment-lyrics">
-          {investmentSections.map((section, index) => (
-            <section
-              className={`investment-section ${index === activeSection ? "investment-section-active" : ""}`}
-              data-investment-section={index}
-              key={section.title ?? "N1AC"}
-            >
-              <div className="investment-copy">
-                {section.title ? <h1>{section.title}</h1> : null}
-                {section.content}
-              </div>
-            </section>
-          ))}
-        </div>
+      <div className="investment-scene-stage" aria-live="polite">
+        {investmentSections.map((section, index) => (
+          <section
+            className={`investment-scene ${index === activeSection ? "investment-scene-active" : ""}`}
+            style={{
+              "--investment-shift": `${(index - activeSection) * 18}rem`,
+            } as CSSProperties}
+            aria-hidden={index !== activeSection}
+            key={section.title ?? "N1AC"}
+          >
+            <div className="investment-copy">
+              {section.title ? <h1>{section.title}</h1> : null}
+              {section.content}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <div className="scroll-driver" ref={scrollRef} aria-label="Investment">
+        {investmentSections.map((section, index) => (
+          <div
+            className="scroll-sentinel"
+            data-investment-section={index}
+            key={section.title ?? "N1AC"}
+          />
+        ))}
       </div>
 
       <DockNav current="Investment" />

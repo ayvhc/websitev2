@@ -90,7 +90,7 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
         </div>
 
         <div className="puzzle-loop">
-          <svg className="puzzle-loop-svg" viewBox="150 150 180 190" role="presentation">
+          <svg className="puzzle-loop-svg" viewBox="150 155 180 190" role="presentation">
             <g className="puzzle-loop-shape">
               <path className="puzzle-loop-piece puzzle-loop-piece-1" d="M240 162C207 162 180 195 180 250h27c0-12 18-12 18 0h15v-28c12 0 12-18 0-18Z" />
               <path className="puzzle-loop-piece puzzle-loop-piece-2" d="M240 162c33 0 60 33 60 88h-27c0 12-18 12-18 0h-15v-28c12 0 12-18 0-18Z" />
