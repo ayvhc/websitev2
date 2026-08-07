@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import {
+  createContext,
+  type ReactNode,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   BriefcaseBusiness,
   Compass,
@@ -9,9 +16,15 @@ import {
   Mail,
   type LucideIcon,
 } from "lucide-react";
+import {
+  motion,
+  type MotionValue,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "motion/react";
 
 type Scene = {
-  eyebrow?: string;
   title?: string;
   body?: string;
   intro?: string[];
@@ -22,31 +35,26 @@ const scenes: Scene[] = [
     intro: [
       "Hi, I'm Yihung Chen.",
       "I'm an engineer, early-stage investor, and entrepreneur.",
-      "tbd",
+      "Creative robotics. Fewer barriers. More possibilities.",
     ],
   },
   {
-    eyebrow: "01",
     title: "Without Being Asked",
     body: "At the earliest stage, I pay close attention to what someone chooses to do when nobody is pushing them. The problems they pursue, the direction they take, and how consistently they keep moving reveal far more than any pitch ever could.",
   },
   {
-    eyebrow: "02",
     title: "The Founder",
     body: "Before investing in a company, I'm investing in a person. I try to understand their strengths, blind spots, and how they naturally approach difficult problems.",
   },
   {
-    eyebrow: "03",
     title: "The Team",
     body: "A great founder can start a company, but a great team is what gives it the best chance to succeed. I look for teams whose strengths complement one another instead of overlapping.",
   },
   {
-    eyebrow: "04",
     title: "Pain Intensity",
     body: "A great solution isn't enough if the problem isn't painful enough. I spend just as much time understanding how deeply customers need a solution as I do evaluating the people building it.",
   },
   {
-    eyebrow: "05",
     title: "The Rest of the Puzzle",
     body: "Traction, product-market fit, market size, timing, distribution, business model, and everything else still matter—they're the fundamentals of investing. My philosophy simply begins with people, because I believe great companies are ultimately built by great founders solving meaningful problems.",
   },
@@ -66,6 +74,67 @@ const navItems: NavItem[] = [
   { label: "Contact", icon: Mail },
 ];
 
+type DockContextValue = {
+  mouseX: MotionValue<number>;
+};
+
+const DockContext = createContext<DockContextValue | null>(null);
+const dockSpring = { mass: 0.1, stiffness: 150, damping: 12 };
+
+function Dock({ children }: { children: ReactNode }) {
+  const mouseX = useMotionValue(Infinity);
+
+  return (
+    <DockContext.Provider value={{ mouseX }}>
+      <motion.nav
+        className="dock"
+        aria-label="Primary navigation"
+        onMouseMove={(event) => mouseX.set(event.pageX)}
+        onMouseLeave={() => mouseX.set(Infinity)}
+      >
+        {children}
+      </motion.nav>
+    </DockContext.Provider>
+  );
+}
+
+function DockItem({ item }: { item: NavItem }) {
+  const ref = useRef<HTMLButtonElement>(null);
+  const context = useContext(DockContext);
+
+  if (!context) throw new Error("DockItem must be used inside Dock");
+
+  const distance = useTransform(context.mouseX, (value) => {
+    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+    return value - bounds.x - bounds.width / 2;
+  });
+  const size = useSpring(
+    useTransform(distance, [-100, 0, 100], [40, 60, 40]),
+    dockSpring,
+  );
+  const iconSize = useSpring(
+    useTransform(distance, [-100, 0, 100], [20, 30, 20]),
+    dockSpring,
+  );
+  const Icon = item.icon;
+
+  return (
+    <motion.button
+      ref={ref}
+      style={{ width: size, height: size }}
+      className={`dock-item ${item.current ? "dock-item-current" : ""}`}
+      type="button"
+      aria-label={item.label}
+      aria-current={item.current ? "page" : undefined}
+    >
+      <motion.span className="dock-icon" style={{ width: iconSize, height: iconSize }}>
+        <Icon aria-hidden="true" strokeWidth={1.8} />
+      </motion.span>
+      <span className="dock-tooltip">{item.label}</span>
+    </motion.button>
+  );
+}
+
 export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeScene, setActiveScene] = useState(0);
@@ -77,7 +146,6 @@ export default function HomePage() {
     const sentinels = Array.from(
       root.querySelectorAll<HTMLElement>("[data-scene]"),
     );
-
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -97,13 +165,6 @@ export default function HomePage() {
 
   return (
     <main className="portfolio-shell">
-      <div className="ambient ambient-one" aria-hidden="true" />
-      <div className="ambient ambient-two" aria-hidden="true" />
-
-      <div className="brand-mark" aria-label="Yihung Chen">
-        YC
-      </div>
-
       <div className="scene-stage" aria-live="polite">
         {scenes.map((scene, index) => {
           const state =
@@ -132,7 +193,6 @@ export default function HomePage() {
                 </div>
               ) : (
                 <div className="principle-copy">
-                  <p className="scene-number">{scene.eyebrow}</p>
                   <h1>{scene.title}</h1>
                   <p className="scene-body">{scene.body}</p>
                 </div>
@@ -141,16 +201,6 @@ export default function HomePage() {
           );
         })}
       </div>
-
-      <div className="scene-counter" aria-hidden="true">
-        <span>{String(activeScene + 1).padStart(2, "0")}</span>
-        <span className="counter-line" />
-        <span>{String(scenes.length).padStart(2, "0")}</span>
-      </div>
-
-      <p className={`scroll-hint ${activeScene > 0 ? "scroll-hint-hidden" : ""}`}>
-        Scroll to explore
-      </p>
 
       <div className="scroll-driver" ref={scrollRef} aria-label="About Yihung Chen">
         {scenes.map((scene, index) => (
@@ -162,23 +212,13 @@ export default function HomePage() {
         ))}
       </div>
 
-      <nav className="dock" aria-label="Primary navigation">
-        {navItems.map((item) => {
-          const Icon = item.icon;
-          return (
-            <button
-              className={`dock-item ${item.current ? "dock-item-current" : ""}`}
-              key={item.label}
-              type="button"
-              aria-label={item.label}
-              aria-current={item.current ? "page" : undefined}
-            >
-              <Icon aria-hidden="true" strokeWidth={1.7} />
-              <span className="dock-tooltip">{item.label}</span>
-            </button>
-          );
-        })}
-      </nav>
+      <div className="dock-wrap">
+        <Dock>
+          {navItems.map((item) => (
+            <DockItem item={item} key={item.label} />
+          ))}
+        </Dock>
+      </div>
     </main>
   );
 }
