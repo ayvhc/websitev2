@@ -456,7 +456,7 @@ button {
 .radar-value {
   inset: 0;
   background: rgba(55, 55, 55, 0.14);
-  clip-path: polygon(50% 15%, 85.5% 29.5%, 77.3% 65.8%, 50% 88%, 20.6% 67%, 12.3% 28%);
+  clip-path: polygon(50% 9%, 57.8% 45.5%, 81.2% 68%, 50% 56%, 26.2% 63.8%, 11% 27.5%);
   filter: drop-shadow(0 0 0.7px rgba(45, 45, 45, 0.5));
 }
 
@@ -568,7 +568,7 @@ button {
 .visual-pain .square-wheel {
   opacity: 1;
   transition: opacity 420ms ease 850ms;
-  animation: square-wheel-turn 3.1s cubic-bezier(0.72, 0, 1, 0.45) 1.15s infinite;
+  animation: square-wheel-turn 3.1s cubic-bezier(0.64, 0, 0.9, 0.72) 1.15s infinite;
 }
 
 @keyframes square-wheel-turn {
