@@ -39,24 +39,27 @@ const scenes: Scene[] = [
     ],
   },
   {
+    title: "How I invest:",
+  },
+  {
     title: "Without Being Asked",
-    body: "At the earliest stage, I pay close attention to what someone chooses to do when nobody is pushing them. The problems they pursue, the direction they take, and how consistently they keep moving reveal far more than any pitch ever could.",
+    body: "What do you choose to build when nobody is pushing you—and how far will you take it?",
   },
   {
     title: "The Founder",
-    body: "Before investing in a company, I'm investing in a person. I try to understand their strengths, blind spots, and how they naturally approach difficult problems.",
+    body: "Can you sell fast, win customers, pivot quickly, thrive under pressure, lead a team, engineer creatively, and manage capital—or attract the people who can?",
   },
   {
     title: "The Team",
-    body: "A great founder can start a company, but a great team is what gives it the best chance to succeed. I look for teams whose strengths complement one another instead of overlapping.",
+    body: "Great teams are built through complementary strengths, not duplicated talent.",
   },
   {
     title: "Pain Intensity",
-    body: "A great solution isn't enough if the problem isn't painful enough. I spend just as much time understanding how deeply customers need a solution as I do evaluating the people building it.",
+    body: "The best solutions are pulled by pain, not pushed by novelty.",
   },
   {
     title: "The Rest of the Puzzle",
-    body: "Traction, product-market fit, market size, timing, distribution, business model, and everything else still matter—they're the fundamentals of investing. My philosophy simply begins with people, because I believe great companies are ultimately built by great founders solving meaningful problems.",
+    body: "Traction, market, timing, and business model still matter. But I begin with people, because great companies start with great founders solving meaningful problems.",
   },
   {
     title: "Let’s Talk",
@@ -207,9 +210,9 @@ export default function HomePage() {
                         {paragraph}
                       </p>
                     ))
-                  ) : (
+                  ) : scene.body ? (
                     <p className="scene-body">{scene.body}</p>
-                  )}
+                  ) : null}
                 </div>
               )}
             </section>
