@@ -116,6 +116,10 @@ button {
   max-width: 50rem;
 }
 
+.scene-body + .scene-body {
+  margin-top: 0.65rem;
+}
+
 .scroll-driver {
   position: fixed;
   inset: 0;

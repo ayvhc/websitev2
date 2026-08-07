@@ -26,7 +26,7 @@ import {
 
 type Scene = {
   title?: string;
-  body?: string;
+  body?: string | string[];
   intro?: string[];
 };
 
@@ -57,6 +57,13 @@ const scenes: Scene[] = [
   {
     title: "The Rest of the Puzzle",
     body: "Traction, product-market fit, market size, timing, distribution, business model, and everything else still matter—they're the fundamentals of investing. My philosophy simply begins with people, because I believe great companies are ultimately built by great founders solving meaningful problems.",
+  },
+  {
+    title: "Let’s Talk",
+    body: [
+      "Building something ambitious or unconventional? I’d love to hear about it.",
+      "Reach out to exchange ideas, collaborate, challenge my thinking, or suggest what I should explore next.",
+    ],
   },
 ];
 
@@ -194,7 +201,15 @@ export default function HomePage() {
               ) : (
                 <div className="principle-copy">
                   <h1>{scene.title}</h1>
-                  <p className="scene-body">{scene.body}</p>
+                  {Array.isArray(scene.body) ? (
+                    scene.body.map((paragraph) => (
+                      <p className="scene-body" key={paragraph}>
+                        {paragraph}
+                      </p>
+                    ))
+                  ) : (
+                    <p className="scene-body">{scene.body}</p>
+                  )}
                 </div>
               )}
             </section>
