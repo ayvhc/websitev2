@@ -80,11 +80,7 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
             <span className="morph-segment morph-segment-2" />
             <span className="morph-segment morph-segment-3" />
           </div>
-          <div className="square-wheel">
-            <span className="square-axis square-axis-horizontal" />
-            <span className="square-axis square-axis-vertical" />
-            <span className="square-hub" />
-          </div>
+          <div className="square-wheel" />
         </div>
 
         <div className="main-human">
