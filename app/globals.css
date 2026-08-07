@@ -503,7 +503,7 @@ button {
   stroke-linejoin: round;
   transform-box: fill-box;
   transform-origin: center;
-  animation: puzzle-piece-breathe 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  animation: puzzle-piece-breathe 5.28s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
 .puzzle-loop-shape {
@@ -559,7 +559,7 @@ button {
   --ray-x: 0px;
   --ray-y: 0px;
   opacity: 0;
-  animation: puzzle-click-burst 4.8s ease-out infinite;
+  animation: puzzle-click-burst 5.28s ease-out infinite;
 }
 
 .puzzle-click-lines line:nth-child(1) { --ray-x: -7px; --ray-y: -7px; }
