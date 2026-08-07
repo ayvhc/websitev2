@@ -507,7 +507,7 @@ button {
 }
 
 .puzzle-loop-shape {
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   transform-box: view-box;
   transform-origin: center;
 }
