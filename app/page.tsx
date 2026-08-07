@@ -1,28 +1,8 @@
 "use client";
 
-import {
-  createContext,
-  type ReactNode,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import {
-  BriefcaseBusiness,
-  Compass,
-  Home,
-  Lightbulb,
-  Mail,
-  type LucideIcon,
-} from "lucide-react";
-import {
-  motion,
-  type MotionValue,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { UserRound } from "lucide-react";
+import { DockNav } from "./components/DockNav";
 
 type Scene = {
   title?: string;
@@ -38,9 +18,7 @@ const scenes: Scene[] = [
       "Creative robotics. Fewer barriers. More possibilities.",
     ],
   },
-  {
-    title: "How I invest:",
-  },
+  { title: "How I invest:" },
   {
     title: "Without Being Asked",
     body: "What do you choose to build when nobody is pushing you—and how far will you take it?",
@@ -70,78 +48,62 @@ const scenes: Scene[] = [
   },
 ];
 
-type NavItem = {
-  label: string;
-  icon: LucideIcon;
-  current?: boolean;
-};
-
-const navItems: NavItem[] = [
-  { label: "About", icon: Home, current: true },
-  { label: "Investment Philosophy", icon: Lightbulb },
-  { label: "Experience", icon: BriefcaseBusiness },
-  { label: "Journey", icon: Compass },
-  { label: "Contact", icon: Mail },
-];
-
-type DockContextValue = {
-  mouseX: MotionValue<number>;
-};
-
-const DockContext = createContext<DockContextValue | null>(null);
-const dockSpring = { mass: 0.1, stiffness: 150, damping: 12 };
-
-function Dock({ children }: { children: ReactNode }) {
-  const mouseX = useMotionValue(Infinity);
+function FounderVisual({ activeScene }: { activeScene: number }) {
+  const phase =
+    activeScene < 2
+      ? "quiet"
+      : activeScene === 2
+        ? "individual"
+        : activeScene === 3
+          ? "founder"
+          : activeScene === 4
+            ? "team"
+            : activeScene === 5
+              ? "pain"
+              : "network";
 
   return (
-    <DockContext.Provider value={{ mouseX }}>
-      <motion.nav
-        className="dock"
-        aria-label="Primary navigation"
-        onMouseMove={(event) => mouseX.set(event.pageX)}
-        onMouseLeave={() => mouseX.set(Infinity)}
-      >
-        {children}
-      </motion.nav>
-    </DockContext.Provider>
-  );
-}
+    <aside className={`visual-stage visual-${phase}`} aria-hidden="true">
+      <div className="visual-canvas">
+        <div className="pressure-rings">
+          <span />
+          <span />
+          <span />
+        </div>
 
-function DockItem({ item }: { item: NavItem }) {
-  const ref = useRef<HTMLButtonElement>(null);
-  const context = useContext(DockContext);
+        <div className="team-orbit">
+          <div className="network-lines">
+            {Array.from({ length: 5 }, (_, index) => (
+              <span className={`network-line network-line-${index + 1}`} key={index} />
+            ))}
+          </div>
+          {Array.from({ length: 5 }, (_, index) => (
+            <div className={`team-member team-member-${index + 1}`} key={index}>
+              <UserRound strokeWidth={1.35} />
+            </div>
+          ))}
+        </div>
 
-  if (!context) throw new Error("DockItem must be used inside Dock");
-
-  const distance = useTransform(context.mouseX, (value) => {
-    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-    return value - bounds.x - bounds.width / 2;
-  });
-  const size = useSpring(
-    useTransform(distance, [-100, 0, 100], [40, 60, 40]),
-    dockSpring,
-  );
-  const iconSize = useSpring(
-    useTransform(distance, [-100, 0, 100], [20, 30, 20]),
-    dockSpring,
-  );
-  const Icon = item.icon;
-
-  return (
-    <motion.button
-      ref={ref}
-      style={{ width: size, height: size }}
-      className={`dock-item ${item.current ? "dock-item-current" : ""}`}
-      type="button"
-      aria-label={item.label}
-      aria-current={item.current ? "page" : undefined}
-    >
-      <motion.span className="dock-icon" style={{ width: iconSize, height: iconSize }}>
-        <Icon aria-hidden="true" strokeWidth={1.8} />
-      </motion.span>
-      <span className="dock-tooltip">{item.label}</span>
-    </motion.button>
+        <div className="main-human">
+          <UserRound strokeWidth={1.25} />
+          <div className="radar-chart">
+            <span className="radar-label radar-label-sales">Sales</span>
+            <span className="radar-label radar-label-customers">Customers</span>
+            <span className="radar-label radar-label-adaptability">Adaptability</span>
+            <span className="radar-label radar-label-leadership">Leadership</span>
+            <span className="radar-label radar-label-capital">Capital</span>
+            <span className="radar-ring radar-ring-outer" />
+            <span className="radar-ring radar-ring-inner" />
+            <span className="radar-axis radar-axis-1" />
+            <span className="radar-axis radar-axis-2" />
+            <span className="radar-axis radar-axis-3" />
+            <span className="radar-axis radar-axis-4" />
+            <span className="radar-axis radar-axis-5" />
+            <span className="radar-value" />
+          </div>
+        </div>
+      </div>
+    </aside>
   );
 }
 
@@ -152,23 +114,16 @@ export default function HomePage() {
   useEffect(() => {
     const root = scrollRef.current;
     if (!root) return;
-
-    const sentinels = Array.from(
-      root.querySelectorAll<HTMLElement>("[data-scene]"),
-    );
+    const sentinels = Array.from(root.querySelectorAll<HTMLElement>("[data-scene]"));
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible) {
-          setActiveScene(Number((visible.target as HTMLElement).dataset.scene));
-        }
+        if (visible) setActiveScene(Number((visible.target as HTMLElement).dataset.scene));
       },
       { root, threshold: [0.45, 0.6, 0.75] },
     );
-
     sentinels.forEach((sentinel) => observer.observe(sentinel));
     return () => observer.disconnect();
   }, []);
@@ -178,12 +133,7 @@ export default function HomePage() {
       <div className="scene-stage" aria-live="polite">
         {scenes.map((scene, index) => {
           const state =
-            index === activeScene
-              ? "active"
-              : index < activeScene
-                ? "past"
-                : "future";
-
+            index === activeScene ? "active" : index < activeScene ? "past" : "future";
           return (
             <section
               className={`scene scene-${state}`}
@@ -193,10 +143,7 @@ export default function HomePage() {
               {scene.intro ? (
                 <div className="intro-copy">
                   {scene.intro.map((line, lineIndex) => (
-                    <p
-                      className={lineIndex === 0 ? "intro-name" : "intro-line"}
-                      key={line}
-                    >
+                    <p className={lineIndex === 0 ? "intro-name" : "intro-line"} key={line}>
                       {line}
                     </p>
                   ))}
@@ -206,9 +153,7 @@ export default function HomePage() {
                   <h1>{scene.title}</h1>
                   {Array.isArray(scene.body) ? (
                     scene.body.map((paragraph) => (
-                      <p className="scene-body" key={paragraph}>
-                        {paragraph}
-                      </p>
+                      <p className="scene-body" key={paragraph}>{paragraph}</p>
                     ))
                   ) : scene.body ? (
                     <p className="scene-body">{scene.body}</p>
@@ -220,23 +165,15 @@ export default function HomePage() {
         })}
       </div>
 
-      <div className="scroll-driver" ref={scrollRef} aria-label="About Yihung Chen">
+      <FounderVisual activeScene={activeScene} />
+
+      <div className="scroll-driver" ref={scrollRef} aria-label="Home">
         {scenes.map((scene, index) => (
-          <div
-            className="scroll-sentinel"
-            data-scene={index}
-            key={scene.title ?? "introduction"}
-          />
+          <div className="scroll-sentinel" data-scene={index} key={scene.title ?? "introduction"} />
         ))}
       </div>
 
-      <div className="dock-wrap">
-        <Dock>
-          {navItems.map((item) => (
-            <DockItem item={item} key={item.label} />
-          ))}
-        </Dock>
-      </div>
+      <DockNav current="Home" />
     </main>
   );
 }
