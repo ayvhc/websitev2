@@ -50,6 +50,9 @@ const investmentSections = [
 
 export default function InvestmentPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const activeSectionRef = useRef(0);
+  const wheelLockedRef = useRef(false);
+  const wheelReleaseRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
@@ -59,16 +62,48 @@ export default function InvestmentPage() {
     const sections = Array.from(
       root.querySelectorAll<HTMLElement>("[data-investment-section]"),
     );
+
+    const selectSection = (index: number) => {
+      const nextIndex = Math.max(0, Math.min(sections.length - 1, index));
+      const target = sections[nextIndex];
+      const targetTop =
+        target.offsetTop - (root.clientHeight - target.offsetHeight) / 2;
+
+      activeSectionRef.current = nextIndex;
+      setActiveSection(nextIndex);
+      root.scrollTo({ top: targetTop, behavior: "smooth" });
+    };
+
+    const handleWheel = (event: WheelEvent) => {
+      if (event.ctrlKey || Math.abs(event.deltaY) < 4) return;
+      event.preventDefault();
+
+      if (wheelReleaseRef.current) clearTimeout(wheelReleaseRef.current);
+
+      if (!wheelLockedRef.current) {
+        wheelLockedRef.current = true;
+        selectSection(activeSectionRef.current + (event.deltaY > 0 ? 1 : -1));
+      }
+
+      wheelReleaseRef.current = setTimeout(() => {
+        wheelLockedRef.current = false;
+      }, 260);
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
+        if (wheelLockedRef.current) return;
+
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
         if (visible) {
-          setActiveSection(
-            Number((visible.target as HTMLElement).dataset.investmentSection),
+          const nextIndex = Number(
+            (visible.target as HTMLElement).dataset.investmentSection,
           );
+          activeSectionRef.current = nextIndex;
+          setActiveSection(nextIndex);
         }
       },
       {
@@ -79,7 +114,13 @@ export default function InvestmentPage() {
     );
 
     sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    root.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      observer.disconnect();
+      root.removeEventListener("wheel", handleWheel);
+      if (wheelReleaseRef.current) clearTimeout(wheelReleaseRef.current);
+    };
   }, []);
 
   return (
