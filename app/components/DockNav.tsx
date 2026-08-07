@@ -32,7 +32,7 @@ type NavItem = {
 const navItems: NavItem[] = [
   { label: "Home", icon: Home, href: "/" },
   { label: "About", icon: UserRound, href: "/about" },
-  { label: "Investment Philosophy", icon: Lightbulb },
+  { label: "Investment", icon: Lightbulb, href: "/investment" },
   { label: "Experience", icon: BriefcaseBusiness },
   { label: "Journey", icon: Compass },
   { label: "Contact", icon: Mail },
@@ -110,7 +110,7 @@ function DockItem({ item, current }: { item: NavItem; current: boolean }) {
   );
 }
 
-export function DockNav({ current }: { current: "Home" | "About" }) {
+export function DockNav({ current }: { current: "Home" | "About" | "Investment" }) {
   return (
     <div className="dock-wrap">
       <Dock>
