@@ -568,15 +568,15 @@ button {
 .visual-pain .square-wheel {
   opacity: 1;
   transition: opacity 420ms ease 850ms;
-  animation: square-wheel-turn 2.9s cubic-bezier(0.65, 0, 0.35, 1) 1.15s infinite;
+  animation: square-wheel-turn 3.1s cubic-bezier(0.72, 0, 1, 0.45) 1.15s infinite;
 }
 
 @keyframes square-wheel-turn {
-  0%, 12% {
+  0%, 16% {
     transform: translate(-50%, -50%) rotate(0deg);
     opacity: 1;
   }
-  82%, 100% {
+  84%, 100% {
     transform: translate(-150%, -50%) rotate(90deg);
     opacity: 1;
   }
