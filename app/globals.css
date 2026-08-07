@@ -312,17 +312,18 @@ button {
 }
 
 .visual-founder .main-human {
-  transform: translate(-50%, -50%) scale(1.22);
+  transform: translate(-50%, -50%) scale(0.66);
+  color: rgba(74, 74, 74, 0.62);
 }
 
 .visual-team .main-human {
-  top: 21%;
+  top: 31%;
   transform: translate(-50%, -50%) scale(0.39);
   color: #666666;
 }
 
 .visual-pain .main-human {
-  top: 21%;
+  top: 31%;
   transform: translate(-50%, -50%) scale(0.39);
   opacity: 0;
   filter: blur(5px);
@@ -351,7 +352,7 @@ button {
 
 .team-member {
   position: absolute;
-  bottom: 17%;
+  bottom: 27%;
   width: 16.5%;
   aspect-ratio: 1;
   color: #666666;
@@ -374,12 +375,12 @@ button {
 }
 
 .team-member-1 {
-  left: 23%;
+  left: 31%;
   transform: translate(-50%, 1.5rem);
 }
 
 .team-member-2 {
-  right: 23%;
+  right: 31%;
   transform: translate(50%, 1.5rem);
 }
 
@@ -395,9 +396,9 @@ button {
 
 .radar-chart {
   position: absolute;
-  top: 64%;
+  top: 50%;
   left: 50%;
-  width: 42%;
+  width: 172%;
   aspect-ratio: 1;
   transform: translate(-50%, -50%) scale(0.55);
   opacity: 0;
@@ -448,7 +449,7 @@ button {
 .radar-value {
   inset: 0;
   background: rgba(55, 55, 55, 0.14);
-  clip-path: polygon(50% 7%, 83% 39%, 65% 71%, 45% 57%, 33% 44%);
+  clip-path: polygon(50% 5%, 90% 38%, 73% 82%, 34% 73%, 18% 40%);
   filter: drop-shadow(0 0 0.7px rgba(45, 45, 45, 0.5));
 }
 
@@ -533,9 +534,9 @@ button {
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
 }
 
-.morph-segment-1 { --sx: 68%; --sy: -114%; --segment-angle: 0deg; }
-.morph-segment-2 { --sx: -4%; --sy: 57%; --segment-angle: 120deg; }
-.morph-segment-3 { --sx: 139%; --sy: 57%; --segment-angle: 240deg; }
+.morph-segment-1 { --sx: 64%; --sy: -75%; --segment-angle: 0deg; }
+.morph-segment-2 { --sx: -4%; --sy: 36%; --segment-angle: 120deg; }
+.morph-segment-3 { --sx: 132%; --sy: 36%; --segment-angle: 240deg; }
 
 .visual-pain .morph-segment {
   animation: segment-assemble 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
