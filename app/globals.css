@@ -507,19 +507,68 @@ button {
 }
 
 .puzzle-loop-shape {
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
   transform-box: view-box;
   transform-origin: center;
 }
 
-.puzzle-loop-piece-1 { --puzzle-x: -10px; --puzzle-y: -10px; }
-.puzzle-loop-piece-2 { --puzzle-x: 10px; --puzzle-y: -10px; }
-.puzzle-loop-piece-3 { --puzzle-x: -10px; --puzzle-y: 10px; }
-.puzzle-loop-piece-4 { --puzzle-x: 10px; --puzzle-y: 10px; }
+.puzzle-loop-piece-1 {
+  --puzzle-x: -13px;
+  --puzzle-y: -13px;
+  --puzzle-click-x: 1.5px;
+  --puzzle-click-y: 1.5px;
+  --puzzle-rebound-x: -0.5px;
+  --puzzle-rebound-y: -0.5px;
+}
+
+.puzzle-loop-piece-2 {
+  --puzzle-x: 13px;
+  --puzzle-y: -13px;
+  --puzzle-click-x: -1.5px;
+  --puzzle-click-y: 1.5px;
+  --puzzle-rebound-x: 0.5px;
+  --puzzle-rebound-y: -0.5px;
+}
+
+.puzzle-loop-piece-3 {
+  --puzzle-x: -13px;
+  --puzzle-y: 13px;
+  --puzzle-click-x: 1.5px;
+  --puzzle-click-y: -1.5px;
+  --puzzle-rebound-x: -0.5px;
+  --puzzle-rebound-y: 0.5px;
+}
+
+.puzzle-loop-piece-4 {
+  --puzzle-x: 13px;
+  --puzzle-y: 13px;
+  --puzzle-click-x: -1.5px;
+  --puzzle-click-y: -1.5px;
+  --puzzle-rebound-x: 0.5px;
+  --puzzle-rebound-y: 0.5px;
+}
 
 @keyframes puzzle-piece-breathe {
-  0%, 16%, 84%, 100% { transform: translate(0, 0); }
-  44%, 60% { transform: translate(var(--puzzle-x), var(--puzzle-y)); }
+  0%, 18% {
+    transform: translate(0, 0);
+    animation-timing-function: cubic-bezier(0.45, 0, 0.3, 1);
+  }
+  40%, 56% {
+    transform: translate(var(--puzzle-x), var(--puzzle-y));
+  }
+  56% {
+    animation-timing-function: cubic-bezier(0.1, 0.8, 0.2, 1);
+  }
+  69% {
+    transform: translate(var(--puzzle-click-x), var(--puzzle-click-y));
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+  73% {
+    transform: translate(var(--puzzle-rebound-x), var(--puzzle-rebound-y));
+  }
+  78%, 100% {
+    transform: translate(0, 0);
+  }
 }
 
 .wheel-scene {
@@ -677,7 +726,7 @@ button {
   overflow-y: auto;
   overscroll-behavior-y: contain;
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   scrollbar-width: none;
 }
 
@@ -697,6 +746,7 @@ button {
   align-items: center;
   opacity: 0.24;
   scroll-snap-align: center;
+  scroll-snap-stop: always;
   transition:
     opacity 480ms ease,
     transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -772,6 +822,12 @@ button {
     width: 10.5rem;
     transform: none;
     opacity: 0.34;
+  }
+
+  .visual-stage.visual-puzzle {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
   }
 
   .intro-name,
