@@ -23,14 +23,24 @@ const investmentSections = [
     title: "Personal Investments",
     content: (
       <div className="investment-list">
-        <div>
+        <a
+          className="investment-link"
+          href="https://semivalley.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <h2>SemiValley</h2>
           <p>AI infrastructure cooling</p>
-        </div>
-        <div>
+        </a>
+        <a
+          className="investment-link"
+          href="https://www.heytenda.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <h2>Tenda</h2>
           <p>AI for construction</p>
-        </div>
+        </a>
       </div>
     ),
   },

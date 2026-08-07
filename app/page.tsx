@@ -90,12 +90,12 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
         </div>
 
         <div className="puzzle-loop">
-          <svg className="puzzle-loop-svg" viewBox="150 155 180 190" role="presentation">
+          <svg className="puzzle-loop-svg" viewBox="150 160 180 180" role="presentation">
             <g className="puzzle-loop-shape">
-              <path className="puzzle-loop-piece puzzle-loop-piece-1" d="M240 162C207 162 180 195 180 250h27c0-12 18-12 18 0h15v-28c12 0 12-18 0-18Z" />
-              <path className="puzzle-loop-piece puzzle-loop-piece-2" d="M240 162c33 0 60 33 60 88h-27c0 12-18 12-18 0h-15v-28c12 0 12-18 0-18Z" />
-              <path className="puzzle-loop-piece puzzle-loop-piece-3" d="M180 250c0 49 27 88 60 88v-60c-12 0-12-18 0-18v-10h-15c0-12-18-12-18 0Z" />
-              <path className="puzzle-loop-piece puzzle-loop-piece-4" d="M240 250h15c0 12 18 12 18 0h27c0 49-27 88-60 88v-60c-12 0-12-18 0-18Z" />
+              <path className="puzzle-loop-piece puzzle-loop-piece-1" d="M240 180h-52q-18 0-18 18v52h35c0-12 18-12 18 0h17v-28c12 0 12-18 0-18Z" />
+              <path className="puzzle-loop-piece puzzle-loop-piece-2" d="M240 180h52q18 0 18 18v52h-35c0 12-18 12-18 0h-17v-28c12 0 12-18 0-18Z" />
+              <path className="puzzle-loop-piece puzzle-loop-piece-3" d="M170 250v52q0 18 18 18h52v-42c-12 0-12-18 0-18v-10h-17c0-12-18-12-18 0Z" />
+              <path className="puzzle-loop-piece puzzle-loop-piece-4" d="M240 250h17c0 12 18 12 18 0h35v52q0 18-18 18h-52v-42c-12 0-12-18 0-18Z" />
             </g>
           </svg>
         </div>
