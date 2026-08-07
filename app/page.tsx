@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { UserRound } from "lucide-react";
 import { DockNav } from "./components/DockNav";
+import { PostTeamVisual } from "./components/PostTeamVisual";
 
 type Scene = {
   title?: string;
@@ -39,13 +40,6 @@ const scenes: Scene[] = [
     title: "The Rest of the Puzzle",
     body: "Traction, market, timing, and business model still matter. But I begin with people, because great companies start with great founders solving meaningful problems.",
   },
-  {
-    title: "Let’s Talk",
-    body: [
-      "Building something ambitious or unconventional? I’d love to hear about it.",
-      "Reach out to exchange ideas, collaborate, challenge my thinking, or suggest what I should explore next.",
-    ],
-  },
 ];
 
 function FounderVisual({ activeScene }: { activeScene: number }) {
@@ -58,9 +52,7 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
           ? "founder"
           : activeScene === 4
             ? "team"
-            : activeScene === 5
-              ? "pain"
-              : "empty";
+            : "empty";
 
   return (
     <aside className={`visual-stage visual-${phase}`} aria-hidden="true">
@@ -71,16 +63,6 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
               <UserRound strokeWidth={1.35} />
             </div>
           ))}
-        </div>
-
-        <div className="wheel-scene">
-          <span className="floor-line" />
-          <div className="circle-wheel">
-            <span className="morph-segment morph-segment-1" />
-            <span className="morph-segment morph-segment-2" />
-            <span className="morph-segment morph-segment-3" />
-          </div>
-          <div className="square-wheel" />
         </div>
 
         <div className="main-human">
@@ -161,11 +143,20 @@ export default function HomePage() {
       </div>
 
       <FounderVisual activeScene={activeScene} />
+      <PostTeamVisual scrollRef={scrollRef} />
 
       <div className="scroll-driver" ref={scrollRef} aria-label="Home">
-        {scenes.map((scene, index) => (
-          <div className="scroll-sentinel" data-scene={index} key={scene.title ?? "introduction"} />
-        ))}
+        {scenes.flatMap((scene, index) => {
+          const steps = index === 5 ? 4 : index === 6 ? 5 : 1;
+          return Array.from({ length: steps }, (_, step) => (
+            <div
+              className="scroll-sentinel"
+              data-post={index === 5 && step === 0 ? "pain-start" : index === 6 && step === steps - 1 ? "puzzle-end" : undefined}
+              data-scene={index}
+              key={`${scene.title ?? "introduction"}-${step}`}
+            />
+          ));
+        })}
       </div>
 
       <DockNav current="Home" />

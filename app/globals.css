@@ -327,13 +327,6 @@ button {
   color: #666666;
 }
 
-.visual-pain .main-human {
-  top: 31%;
-  transform: translate(-50%, -50%) scale(0.39);
-  opacity: 0;
-  filter: blur(5px);
-}
-
 .visual-empty .main-human {
   opacity: 0;
 }
@@ -349,8 +342,7 @@ button {
     opacity 450ms ease;
 }
 
-.visual-team .team-formation,
-.visual-pain .team-formation {
+.visual-team .team-formation {
   transform: scale(1);
   opacity: 1;
 }
@@ -373,12 +365,6 @@ button {
   opacity: 1;
 }
 
-.visual-pain .team-member {
-  opacity: 0;
-  filter: blur(5px);
-  transition-delay: 0ms;
-}
-
 .team-member-1 {
   left: 31%;
   transform: translate(-50%, 1.5rem);
@@ -389,13 +375,11 @@ button {
   transform: translate(50%, 1.5rem);
 }
 
-.visual-team .team-member-1,
-.visual-pain .team-member-1 {
+.visual-team .team-member-1 {
   transform: translate(-50%, 0);
 }
 
-.visual-team .team-member-2,
-.visual-pain .team-member-2 {
+.visual-team .team-member-2 {
   transform: translate(50%, 0);
 }
 
@@ -460,126 +444,49 @@ button {
   filter: drop-shadow(0 0 0.7px rgba(45, 45, 45, 0.5));
 }
 
-.wheel-scene {
-  position: absolute;
-  inset: 0;
-  z-index: 7;
-  opacity: 0;
-  transition: opacity 260ms ease;
-}
-
-.visual-pain .wheel-scene {
-  opacity: 1;
-}
-
-.floor-line {
-  position: absolute;
-  top: 68%;
-  right: 8%;
-  left: 11%;
-  height: 1px;
-  transform: scaleX(0);
-  transform-origin: center;
-  background: rgba(28, 28, 28, 0.42);
-}
-
-.visual-pain .floor-line {
-  animation: floor-draw 700ms cubic-bezier(0.22, 1, 0.36, 1) 700ms forwards;
-}
-
-@keyframes floor-draw {
-  to { transform: scaleX(1); }
-}
-
-.circle-wheel {
-  position: absolute;
-  top: 53%;
-  left: 32%;
-  width: 28%;
+.post-team-visual {
+  position: fixed;
+  top: 50%;
+  right: clamp(2rem, 7vw, 8rem);
+  z-index: 8;
+  width: min(38vw, 29rem);
   aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-}
-
-.visual-pain .circle-wheel {
-  animation: circle-wheel-spin 2.15s linear 1.25s infinite;
-}
-
-@keyframes circle-wheel-spin {
-  from { transform: translate(-50%, -50%) rotate(0); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-.morph-segment {
-  --sx: 0%;
-  --sy: 0%;
-  --segment-angle: 0deg;
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    rgba(25, 25, 25, 0.92) 0deg 105deg,
-    transparent 105deg 360deg
-  );
+  transform: translateY(-50%);
+  visibility: hidden;
   opacity: 0;
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
+  pointer-events: none;
 }
 
-.morph-segment-1 { --sx: 64%; --sy: -75%; --segment-angle: 0deg; }
-.morph-segment-2 { --sx: -4%; --sy: 36%; --segment-angle: 120deg; }
-.morph-segment-3 { --sx: 132%; --sy: 36%; --segment-angle: 240deg; }
-
-.visual-pain .morph-segment {
-  animation: segment-assemble 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.post-team-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-.visual-pain .morph-segment-2 { animation-delay: 80ms; }
-.visual-pain .morph-segment-3 { animation-delay: 160ms; }
-
-@keyframes segment-assemble {
-  0% {
-    transform: translate(var(--sx), var(--sy)) scale(0.16) rotate(var(--segment-angle));
-    opacity: 0;
-  }
-  18% { opacity: 1; }
-  62% {
-    transform: translate(0, 0) scale(0.72) rotate(var(--segment-angle));
-    opacity: 1;
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(var(--segment-angle));
-    opacity: 1;
-  }
+.post-person-stroke,
+.post-shape-stroke,
+.post-ground-line,
+.puzzle-piece path {
+  fill: none;
+  stroke: #1a1a1a;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
 }
 
-.square-wheel {
-  position: absolute;
-  top: 56%;
-  left: 70%;
-  width: 24%;
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  transform-origin: 100% 100%;
-  border: 1.5px solid rgba(25, 25, 25, 0.9);
-  opacity: 0;
+.post-person-stroke {
+  stroke: #666666;
+  stroke-width: 1.35;
 }
 
-.visual-pain .square-wheel {
-  opacity: 1;
-  transition: opacity 420ms ease 850ms;
-  animation: square-wheel-turn 3.1s cubic-bezier(0.64, 0, 0.9, 0.72) 1.15s infinite;
-}
-
-@keyframes square-wheel-turn {
-  0%, 16% {
-    transform: translate(-50%, -50%) rotate(0deg);
-    opacity: 1;
-  }
-  84%, 100% {
-    transform: translate(-150%, -50%) rotate(90deg);
-    opacity: 1;
-  }
+.puzzle-label {
+  fill: #6b6b6b;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 450;
+  letter-spacing: 0.01em;
 }
 
 .about-shell {
@@ -622,6 +529,14 @@ button {
     opacity: 0.34;
   }
 
+  .post-team-visual {
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 10.5rem;
+    transform: none;
+    opacity: 0.5;
+  }
+
   .intro-name,
   .principle-copy h1 {
     font-size: 1.28rem;
@@ -645,11 +560,7 @@ button {
   .team-formation,
   .team-member,
   .radar-chart,
-  .wheel-scene,
-  .floor-line,
-  .circle-wheel,
-  .morph-segment,
-  .square-wheel {
+  .post-team-visual {
     transition-duration: 1ms !important;
     animation-duration: 1ms !important;
   }
