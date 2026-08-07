@@ -15,7 +15,7 @@ const scenes: Scene[] = [
     intro: [
       "Hi, I'm Yihung Chen.",
       "I'm an engineer, early-stage investor, and entrepreneur.",
-      "Creative robotics. Fewer barriers. More possibilities.",
+      "Creative robotics. Less friction. More possibilities.",
     ],
   },
   { title: "How I invest:" },
@@ -60,7 +60,9 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
             ? "team"
             : activeScene === 5
               ? "pain"
-              : "empty";
+              : activeScene === 6
+                ? "puzzle"
+                : "empty";
 
   return (
     <aside className={`visual-stage visual-${phase}`} aria-hidden="true">
@@ -81,6 +83,15 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
             <span className="morph-segment morph-segment-3" />
           </div>
           <div className="square-wheel" />
+        </div>
+
+        <div className="puzzle-loop">
+          <svg className="puzzle-loop-svg" viewBox="150 150 180 190" role="presentation">
+            <path className="puzzle-loop-piece puzzle-loop-piece-1" d="M168 178H240V205c12 0 12 18 0 18v27h-27c0-12-18-12-18 0h-27Z" />
+            <path className="puzzle-loop-piece puzzle-loop-piece-2" d="M240 178H312V250h-27c0 12-18 12-18 0h-27v-27c12 0 12-18 0-18Z" />
+            <path className="puzzle-loop-piece puzzle-loop-piece-3" d="M168 250h27c0-12 18-12 18 0h27v27c-12 0-12 18 0 18v27h-72Z" />
+            <path className="puzzle-loop-piece puzzle-loop-piece-4" d="M240 250h27c0 12 18 12 18 0h27v72h-72v-27c-12 0-12-18 0-18Z" />
+          </svg>
         </div>
 
         <div className="main-human">
