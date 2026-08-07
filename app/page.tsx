@@ -14,7 +14,7 @@ const scenes: Scene[] = [
   {
     intro: [
       "Hi, I'm Yihung Chen.",
-      "I'm an engineer, early-stage investor, and entrepreneur.",
+      "I'm an Engineer, Early-stage Investor, and Entrepreneur.",
       "Creative robotics. Less friction. More possibilities.",
     ],
   },
@@ -25,7 +25,10 @@ const scenes: Scene[] = [
   },
   {
     title: "The Founder",
-    body: "Can you sell fast, win customers, pivot quickly, thrive under pressure, lead a team, engineer creatively, and manage capital — or at least attract the people who can?",
+    body: [
+      "Can you sell fast, win customers, pivot quickly, thrive under pressure, lead a team, engineer creatively, and manage capital?",
+      "Or at least attract the people who can?",
+    ],
   },
   {
     title: "The Team",
@@ -87,10 +90,10 @@ function FounderVisual({ activeScene }: { activeScene: number }) {
 
         <div className="puzzle-loop">
           <svg className="puzzle-loop-svg" viewBox="150 150 180 190" role="presentation">
-            <path className="puzzle-loop-piece puzzle-loop-piece-1" d="M168 178H240V205c12 0 12 18 0 18v27h-27c0-12-18-12-18 0h-27Z" />
-            <path className="puzzle-loop-piece puzzle-loop-piece-2" d="M240 178H312V250h-27c0 12-18 12-18 0h-27v-27c12 0 12-18 0-18Z" />
-            <path className="puzzle-loop-piece puzzle-loop-piece-3" d="M168 250h27c0-12 18-12 18 0h27v27c-12 0-12 18 0 18v27h-72Z" />
-            <path className="puzzle-loop-piece puzzle-loop-piece-4" d="M240 250h27c0 12 18 12 18 0h27v72h-72v-27c-12 0-12-18 0-18Z" />
+            <path className="puzzle-loop-piece puzzle-loop-piece-1" d="M184 178H240V205c12 0 12 18 0 18v27h-27c0-12-18-12-18 0h-45v-56q0-16 16-16Z" />
+            <path className="puzzle-loop-piece puzzle-loop-piece-2" d="M240 178H296q16 0 16 16v56h-27c0 12-18 12-18 0h-27v-27c12 0 12-18 0-18Z" />
+            <path className="puzzle-loop-piece puzzle-loop-piece-3" d="M168 250h27c0-12 18-12 18 0h27v27c-12 0-12 18 0 18v27h-56q-16 0-16-16Z" />
+            <path className="puzzle-loop-piece puzzle-loop-piece-4" d="M240 250h27c0 12 18 12 18 0h27v56q0 16-16 16h-56v-27c-12 0-12-18 0-18Z" />
           </svg>
         </div>
 
