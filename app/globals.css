@@ -553,24 +553,36 @@ button {
   stroke: #1a1a1a;
   stroke-width: 1.4;
   stroke-linecap: round;
-  opacity: 0;
-  transform-box: view-box;
-  transform-origin: center;
-  animation: puzzle-click-burst 4.8s linear infinite;
 }
+
+.puzzle-click-lines line {
+  --ray-x: 0px;
+  --ray-y: 0px;
+  opacity: 0;
+  animation: puzzle-click-burst 4.8s ease-out infinite;
+}
+
+.puzzle-click-lines line:nth-child(1) { --ray-x: -7px; --ray-y: -7px; }
+.puzzle-click-lines line:nth-child(2) { --ray-x: 0px; --ray-y: -9px; }
+.puzzle-click-lines line:nth-child(3) { --ray-x: 7px; --ray-y: -7px; }
+.puzzle-click-lines line:nth-child(4) { --ray-x: 9px; --ray-y: 0px; }
+.puzzle-click-lines line:nth-child(5) { --ray-x: 7px; --ray-y: 7px; }
+.puzzle-click-lines line:nth-child(6) { --ray-x: 0px; --ray-y: 9px; }
+.puzzle-click-lines line:nth-child(7) { --ray-x: -7px; --ray-y: 7px; }
+.puzzle-click-lines line:nth-child(8) { --ray-x: -9px; --ray-y: 0px; }
 
 @keyframes puzzle-click-burst {
   0%, 66%, 78%, 100% {
     opacity: 0;
-    transform: scale(0.9);
+    transform: translate(0, 0);
   }
   69% {
     opacity: 0.9;
-    transform: scale(1);
+    transform: translate(0, 0);
   }
   75% {
     opacity: 0;
-    transform: scale(1.12);
+    transform: translate(var(--ray-x), var(--ray-y));
   }
 }
 
@@ -911,7 +923,7 @@ button {
   .morph-segment,
   .square-wheel,
   .puzzle-loop-piece,
-  .puzzle-click-lines {
+  .puzzle-click-lines line {
     transition-duration: 1ms !important;
     animation-duration: 1ms !important;
   }
