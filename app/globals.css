@@ -317,8 +317,8 @@ button {
 }
 
 .visual-founder .main-human {
-  transform: translate(-50%, -50%) scale(0.44);
-  color: rgba(74, 74, 74, 0.62);
+  transform: translate(-50%, -50%) scale(0.3);
+  color: #1a1a1a;
 }
 
 .visual-team .main-human {
@@ -404,7 +404,7 @@ button {
   top: 50%;
   left: 50%;
   z-index: 1;
-  width: 258%;
+  width: 378%;
   aspect-ratio: 1;
   transform: translate(-50%, -50%) scale(0.55);
   opacity: 0;
@@ -455,14 +455,14 @@ button {
 .radar-value {
   inset: 0;
   background: rgba(55, 55, 55, 0.14);
-  clip-path: polygon(50% 5%, 90% 38%, 73% 82%, 34% 73%, 18% 40%);
+  clip-path: polygon(50% 20%, 78% 40%, 67% 74%, 33% 74%, 22% 40%);
   filter: drop-shadow(0 0 0.7px rgba(45, 45, 45, 0.5));
 }
 
 .radar-label {
   position: absolute;
   color: rgba(50, 50, 50, 0.58);
-  font-size: clamp(0.46rem, 0.72vw, 0.6rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
   font-weight: 500;
   letter-spacing: 0.015em;
   white-space: nowrap;
@@ -569,9 +569,9 @@ button {
 
 .square-wheel {
   position: absolute;
-  top: 54%;
+  top: 56%;
   left: 70%;
-  width: 28%;
+  width: 24%;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
   transform-origin: 100% 100%;
