@@ -881,6 +881,10 @@ button {
   object-fit: contain;
 }
 
+.experience-mark img[src$="azura.png"] {
+  border-radius: 50%;
+}
+
 .experience-entry {
   min-width: 0;
   padding-top: 0.15rem;

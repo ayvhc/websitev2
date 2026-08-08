@@ -50,7 +50,7 @@ const professionalExperience: ExperienceItem[] = [
     location: "Illinois, U.S.",
     dates: "Sep 2025 — Present",
     logo: "/experience-logos/azura.png",
-    logoSize: "100%",
+    logoSize: "72%",
   },
   {
     mark: "H",
