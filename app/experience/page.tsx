@@ -6,6 +6,7 @@ type ExperienceItem = {
   role: string;
   location: string;
   dates: string;
+  website?: string;
   description?: string;
 };
 
@@ -16,6 +17,7 @@ const professionalExperience: ExperienceItem[] = [
     role: "Angel Investor · Partner",
     location: "Hybrid, U.S.",
     dates: "Feb 2026 — Present",
+    website: "https://n1-ac.com/",
   },
   {
     mark: "IVY",
@@ -23,6 +25,7 @@ const professionalExperience: ExperienceItem[] = [
     role: "VC Analyst Intern",
     location: "Shanghai, China",
     dates: "Jun 2026 — Jul 2026",
+    website: "https://www.ivycapital.com/",
   },
   {
     mark: "PwC",
@@ -30,6 +33,7 @@ const professionalExperience: ExperienceItem[] = [
     role: "Business Consulting Intern",
     location: "Hybrid, China",
     dates: "Jun 2026 — Jul 2026",
+    website: "https://www.pwccn.com/en",
   },
   {
     mark: "AZ",
@@ -44,13 +48,15 @@ const professionalExperience: ExperienceItem[] = [
     role: "Rotational Intern",
     location: "Sankt Augustin, Germany",
     dates: "Jul 2025 — Aug 2025",
+    website: "https://www.hennecke.com/en",
   },
   {
     mark: "UBS",
     organization: "UBS LEADS",
-    role: "Event Host",
+    role: "Event Host and Participant",
     location: "Hong Kong, China",
     dates: "Jun 2024",
+    website: "https://www.ubs.com/hk/tc.html",
   },
 ];
 
@@ -70,6 +76,7 @@ const researchExperience: ExperienceItem[] = [
     role: "Research Intern · Computer Network Information Center",
     location: "Beijing, China",
     dates: "Jun 2025 — Jul 2025",
+    website: "https://english.cas.cn/",
     description:
       "Built a relational SQL database linking professors, papers, and institutions. Automated annual reporting for 107 institutes and developed a Python PDF comparison tool for contract auditing.",
   },
@@ -79,6 +86,7 @@ const researchExperience: ExperienceItem[] = [
     role: "Researcher · Advanced Molds for Soft Robotic Structures",
     location: "Illinois, U.S.",
     dates: "Sep 2024 — May 2025",
+    website: "https://mattia-lab.com/",
     description:
       "Designed and fabricated molds for air-pressure-driven soft robotic actuators, improving the functionality and control of robotic fingers while exploring more flexible, dexterous actuator geometries.",
   },
@@ -123,7 +131,18 @@ function ExperienceRow({ item }: { item: ExperienceItem }) {
       <div className="experience-entry">
         <div className="experience-heading">
           <div>
-            <h2>{item.organization}</h2>
+            {item.website ? (
+              <a
+                className="experience-organization-link"
+                href={item.website}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <h2>{item.organization}</h2>
+              </a>
+            ) : (
+              <h2>{item.organization}</h2>
+            )}
             <p className="experience-role">{item.role}</p>
           </div>
           <div className="experience-meta">
