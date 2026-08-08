@@ -99,6 +99,7 @@ const education = [
     program: "B.S. Systems Engineering · Minor in Business · GPA 3.83",
     location: "Illinois, U.S.",
     dates: "Sep 2024 — Expected May 2028",
+    website: "https://illinois.edu/",
   },
   {
     mark: "SAS",
@@ -106,6 +107,7 @@ const education = [
     program: "High School Diploma",
     location: "Singapore",
     dates: "Sep 2020 — Jun 2024",
+    website: "https://www.sas.edu.sg/",
   },
 ];
 
@@ -207,7 +209,14 @@ export default function ExperiencePage() {
                   <div className="experience-entry">
                     <div className="experience-heading">
                       <div>
-                        <h2>{item.school}</h2>
+                        <a
+                          className="experience-organization-link"
+                          href={item.website}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <h2>{item.school}</h2>
+                        </a>
                         <p className="experience-role">{item.program}</p>
                       </div>
                       <div className="experience-meta">
