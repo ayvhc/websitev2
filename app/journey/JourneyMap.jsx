@@ -756,14 +756,6 @@ function Legend() {
         <span className="legend-line legend-hidden" />
         <span>Hidden unlock</span>
       </div>
-      <div className="legend-item">
-        <span className="legend-node legend-future" />
-        <span>Future node</span>
-      </div>
-      <div className="legend-item">
-        <span className="legend-node legend-bridge" />
-        <span>Key person</span>
-      </div>
     </aside>
   );
 }

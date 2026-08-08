@@ -541,7 +541,7 @@
   bottom: 16px;
   z-index: 4;
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(3, auto);
   gap: 9px;
   align-items: center;
   padding: 10px;
