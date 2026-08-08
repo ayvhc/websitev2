@@ -151,14 +151,14 @@ export default function ExperiencePage() {
               I’ve evaluated founders, built businesses, shaped market strategies,
               and worked on technical systems in research labs and industry.
             </p>
-            <a
+            <button
+              type="button"
               className="experience-download"
-              href="/Yihung-Chen-CV.pdf"
-              download="Yihung-Chen-CV.pdf"
+              aria-label="Full CV download coming soon"
             >
               Download full CV
               <span aria-hidden="true">↓</span>
-            </a>
+            </button>
           </header>
 
           <section className="experience-section">
