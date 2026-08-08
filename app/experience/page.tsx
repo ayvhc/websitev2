@@ -6,7 +6,7 @@ type ExperienceItem = {
   role: string;
   location: string;
   dates: string;
-  description: string;
+  description?: string;
 };
 
 const professionalExperience: ExperienceItem[] = [
@@ -16,8 +16,6 @@ const professionalExperience: ExperienceItem[] = [
     role: "Angel Investor · Partner",
     location: "Hybrid, U.S.",
     dates: "Feb 2026 — Present",
-    description:
-      "Source and evaluate early-stage startups alongside former YC China founding-team member Kehan Dong. Reviewed 200+ pitches across founder quality, differentiation, market, traction, competition, and risk; support selected founders with diligence, positioning, fundraising strategy, and introductions.",
   },
   {
     mark: "IVY",
@@ -25,8 +23,6 @@ const professionalExperience: ExperienceItem[] = [
     role: "VC Analyst Intern",
     location: "Shanghai, China",
     dates: "Jun 2026 — Jul 2026",
-    description:
-      "Led a four-person investment study on space data centers and presented the findings at the firm’s quarterly meeting. Evaluated 30+ startups, advanced three to senior-investor meetings, and received the firm’s Most Practical AI Award for an investor-relationship tracking agent.",
   },
   {
     mark: "PwC",
@@ -34,8 +30,6 @@ const professionalExperience: ExperienceItem[] = [
     role: "Business Consulting Intern",
     location: "Hybrid, China",
     dates: "Jun 2026 — Jul 2026",
-    description:
-      "Analyzed a Chinese OTC pharmaceutical company’s business model, portfolio, financial performance, competition, and risks. Developed a nationwide expansion strategy spanning distribution, pharmacies, e-commerce, O2O delivery, positioning, compliance, and CRM digitalization.",
   },
   {
     mark: "AZ",
@@ -43,8 +37,6 @@ const professionalExperience: ExperienceItem[] = [
     role: "Co-founder",
     location: "Illinois, U.S.",
     dates: "Sep 2025 — Present",
-    description:
-      "Launched UIUC’s first premium online bouquet brand. Generated approximately $2.7K in revenue and $1K+ in profit during a 30-hour Valentine’s Day campaign, with a 71% inquiry-to-purchase conversion rate.",
   },
   {
     mark: "H",
@@ -52,8 +44,6 @@ const professionalExperience: ExperienceItem[] = [
     role: "Rotational Intern",
     location: "Sankt Augustin, Germany",
     dates: "Jul 2025 — Aug 2025",
-    description:
-      "Rotated through engineering, production, R&D, sales, and ESG. Supported precision testing, machining, CNC operations, circuit assembly, predictive maintenance, and modular production-line projects.",
   },
   {
     mark: "UBS",
@@ -61,8 +51,6 @@ const professionalExperience: ExperienceItem[] = [
     role: "Event Host",
     location: "Hong Kong, China",
     dates: "Jun 2024",
-    description:
-      "Emceed and coordinated the 2024 UBS LEADS Graduation Ceremony for 300+ executives, regional directors, and students, facilitating conversations on entrepreneurship, strategy, and business management.",
   },
 ];
 
@@ -143,7 +131,9 @@ function ExperienceRow({ item }: { item: ExperienceItem }) {
             <span>{item.location}</span>
           </div>
         </div>
-        <p className="experience-description">{item.description}</p>
+        {item.description ? (
+          <p className="experience-description">{item.description}</p>
+        ) : null}
       </div>
     </article>
   );
@@ -156,11 +146,19 @@ export default function ExperiencePage() {
         <div className="experience-page">
           <header className="experience-intro">
             <p className="experience-eyebrow">Experience</p>
-            <h1>Investing, building, and engineering across disciplines.</h1>
-            <p>
-              My work sits at the intersection of early-stage investing, business
-              strategy, technical research, and hands-on engineering.
+            <h1>From early-stage investing to hands-on engineering.</h1>
+            <p className="experience-intro-copy">
+              I’ve evaluated founders, built businesses, shaped market strategies,
+              and worked on technical systems in research labs and industry.
             </p>
+            <a
+              className="experience-download"
+              href="/Yihung-Chen-CV.pdf"
+              download="Yihung-Chen-CV.pdf"
+            >
+              Download full CV
+              <span aria-hidden="true">↓</span>
+            </a>
           </header>
 
           <section className="experience-section">
