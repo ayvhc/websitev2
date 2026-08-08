@@ -77,8 +77,8 @@ const professionalExperience: ExperienceItem[] = [
 const researchExperience: ExperienceItem[] = [
   {
     mark: "AI",
-    organization: "University of Illinois Urbana-Champaign",
-    role: "Paid Data Analyst · AI Data for Autism Research",
+    organization: "AI Data for Autism Spectrum Disorder Research and UIUC",
+    role: "Paid Data Analyst",
     location: "Illinois, U.S.",
     dates: "Oct 2024 — May 2025",
     logo: "/experience-logos/uiuc.png",
