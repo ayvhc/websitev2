@@ -9,10 +9,6 @@ type ExperienceItem = {
   logo?: string;
   logoSize?: string;
   website?: string;
-  organizationSuffix?: {
-    label: string;
-    url: string;
-  };
   description?: string;
 };
 
@@ -81,11 +77,7 @@ const professionalExperience: ExperienceItem[] = [
 const researchExperience: ExperienceItem[] = [
   {
     mark: "AI",
-    organization: "AI Data for Autism Spectrum Disorder Research",
-    organizationSuffix: {
-      label: "· UIUC",
-      url: "https://mattia-lab.com/",
-    },
+    organization: "AI Data for Autism Spectrum Disorder Research · UIUC",
     role: "Paid Data Analyst",
     location: "Illinois, U.S.",
     dates: "Oct 2024 — May 2025",
@@ -183,22 +175,7 @@ function ExperienceRow({ item }: { item: ExperienceItem }) {
                 <h2>{item.organization}</h2>
               </a>
             ) : (
-              <h2>
-                {item.organization}
-                {item.organizationSuffix ? (
-                  <>
-                    {" "}
-                    <a
-                      className="experience-inline-link"
-                      href={item.organizationSuffix.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {item.organizationSuffix.label}
-                    </a>
-                  </>
-                ) : null}
-              </h2>
+              <h2>{item.organization}</h2>
             )}
             <p className="experience-role">{item.role}</p>
           </div>
