@@ -1234,7 +1234,7 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(36rem, calc(100% - 3rem));
+  width: min(40rem, calc(100% - 3rem));
   transform: translate(-50%, -52%);
 }
 
@@ -1264,87 +1264,105 @@ button {
   line-height: 1.7;
 }
 
-.contact-primary {
-  display: flex;
-  align-items: baseline;
-  gap: clamp(1.25rem, 4vw, 2.5rem);
-  margin-top: clamp(2rem, 5vh, 3rem);
-  padding: 1rem 0;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+.contact-links {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: clamp(1.8rem, 4.5vh, 2.6rem);
 }
 
-.contact-primary > span {
-  color: #777777;
-  font-size: 0.78rem;
-  font-weight: 600;
+.contact-link-row {
+  display: grid;
+  grid-template-columns: 3.35rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.1rem;
+  width: 100%;
+  min-height: 5.8rem;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 1.35rem;
+  background: transparent;
+  color: #444444;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-link-row:hover,
+.contact-link-row:focus-visible {
+  background: #fafafa;
+  transform: translateY(-1px);
+}
+
+.contact-link-row:active {
+  transform: translateY(0) scale(0.995);
+}
+
+.contact-link-row:focus-visible {
+  outline: 1px solid #d2d2d2;
+  outline-offset: 2px;
+}
+
+.contact-link-icon {
+  display: flex;
+  width: 3.35rem;
+  height: 3.35rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eeeeee;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.contact-link-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  stroke-width: 1.8;
+}
+
+.contact-link-monogram {
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.contact-link-copy {
+  display: grid;
+  gap: 0.32rem;
+  min-width: 0;
+}
+
+.contact-link-copy > span {
+  color: #a0a0a0;
+  font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.contact-primary a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  border-radius: 0.25rem;
-  color: #111111;
-  font-size: clamp(0.94rem, 1.5vw, 1.04rem);
-  font-weight: 520;
-  text-decoration: none;
-  transform: translateY(0);
-  transition: color 160ms ease, transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+.contact-link-copy strong {
+  overflow: hidden;
+  font-size: clamp(0.95rem, 1.6vw, 1.06rem);
+  font-weight: 450;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.contact-primary a:hover,
-.contact-primary a:focus-visible {
-  color: #1d4ed8;
-  transform: translateY(-1px) scale(1.01);
+.contact-link-arrow {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: #999999;
+  stroke-width: 1.7;
+  transition: color 180ms ease, transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.contact-primary a:active {
-  transform: translateY(0) scale(0.99);
-}
-
-.contact-primary a:focus-visible {
-  outline: 1px solid #111111;
-  outline-offset: 5px;
-}
-
-.contact-socials {
-  display: flex;
-  gap: 0.65rem;
-  margin-top: 1.25rem;
-}
-
-.contact-socials button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.72rem 0.95rem;
-  border: 1px solid #dedede;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #444444;
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.86rem;
-  transition: border-color 160ms ease, color 160ms ease, transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.contact-socials button:hover,
-.contact-socials button:focus-visible {
-  border-color: #bcbcbc;
-  color: #1d4ed8;
-  transform: translateY(-2px) scale(1.01);
-}
-
-.contact-socials button:active {
-  transform: translateY(0) scale(0.98);
-}
-
-.contact-socials button:focus-visible {
-  outline: 1px solid #111111;
-  outline-offset: 3px;
+.contact-link-row:hover .contact-link-arrow,
+.contact-link-row:focus-visible .contact-link-arrow {
+  color: #555555;
+  transform: translate(2px, -2px);
 }
 
 @media (max-width: 640px) {
@@ -1356,13 +1374,16 @@ button {
     font-size: 1.42rem;
   }
 
-  .contact-primary {
-    display: block;
+  .contact-link-row {
+    grid-template-columns: 2.9rem minmax(0, 1fr) auto;
+    gap: 0.85rem;
+    min-height: 5.2rem;
+    padding-inline: 0.55rem;
   }
 
-  .contact-primary a {
-    margin-top: 0.65rem;
-    overflow-wrap: anywhere;
+  .contact-link-icon {
+    width: 2.9rem;
+    height: 2.9rem;
   }
 }
 
