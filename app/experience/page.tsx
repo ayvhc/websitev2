@@ -49,6 +49,8 @@ const professionalExperience: ExperienceItem[] = [
     role: "Co-founder",
     location: "Illinois, U.S.",
     dates: "Sep 2025 — Present",
+    logo: "/experience-logos/azura.png",
+    logoSize: "100%",
   },
   {
     mark: "H",
