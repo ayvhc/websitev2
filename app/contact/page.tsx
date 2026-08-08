@@ -23,20 +23,22 @@ export default function ContactPage() {
             </span>
             <ArrowUpRight className="contact-link-arrow" aria-hidden="true" />
           </a>
-          <button
+          <a
             className="contact-link-row"
-            type="button"
-            aria-label="LinkedIn profile coming soon"
+            href="https://www.linkedin.com/in/ayvhc"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open LinkedIn profile"
           >
             <span className="contact-link-icon" aria-hidden="true">
               <span className="contact-link-monogram">in</span>
             </span>
             <span className="contact-link-copy">
               <span>LinkedIn</span>
-              <strong>Connect on LinkedIn</strong>
+              <strong>www.linkedin.com/in/ayvhc</strong>
             </span>
             <ArrowUpRight className="contact-link-arrow" aria-hidden="true" />
-          </button>
+          </a>
         </div>
       </section>
 
