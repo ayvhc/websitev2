@@ -873,6 +873,13 @@ button {
   letter-spacing: -0.02em;
 }
 
+.experience-mark img {
+  display: block;
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+}
+
 .experience-entry {
   min-width: 0;
   padding-top: 0.15rem;
