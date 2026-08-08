@@ -871,6 +871,7 @@ button {
   font-size: 0.68rem;
   font-weight: 650;
   letter-spacing: -0.02em;
+  overflow: hidden;
 }
 
 .experience-mark img {

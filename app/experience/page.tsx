@@ -7,6 +7,7 @@ type ExperienceItem = {
   location: string;
   dates: string;
   logo?: string;
+  logoSize?: string;
   website?: string;
   description?: string;
 };
@@ -19,6 +20,7 @@ const professionalExperience: ExperienceItem[] = [
     location: "Hybrid, U.S.",
     dates: "Feb 2026 — Present",
     logo: "/experience-logos/n1ac.png",
+    logoSize: "102%",
     website: "https://n1-ac.com/",
   },
   {
@@ -28,6 +30,7 @@ const professionalExperience: ExperienceItem[] = [
     location: "Shanghai, China",
     dates: "Jun 2026 — Jul 2026",
     logo: "/experience-logos/ivy.png",
+    logoSize: "64%",
     website: "https://www.ivycapital.com/",
   },
   {
@@ -37,6 +40,7 @@ const professionalExperience: ExperienceItem[] = [
     location: "Hybrid, China",
     dates: "Jun 2026 — Jul 2026",
     logo: "/experience-logos/pwc.png",
+    logoSize: "76%",
     website: "https://www.pwccn.com/en",
   },
   {
@@ -53,6 +57,7 @@ const professionalExperience: ExperienceItem[] = [
     location: "Sankt Augustin, Germany",
     dates: "Jul 2025 — Aug 2025",
     logo: "/experience-logos/hennecke.png",
+    logoSize: "76%",
     website: "https://www.hennecke.com/en",
   },
   {
@@ -62,6 +67,7 @@ const professionalExperience: ExperienceItem[] = [
     location: "Hong Kong, China",
     dates: "Jun 2024",
     logo: "/experience-logos/ubs.png",
+    logoSize: "78%",
     website: "https://www.ubs.com/hk/tc.html",
   },
 ];
@@ -74,6 +80,7 @@ const researchExperience: ExperienceItem[] = [
     location: "Illinois, U.S.",
     dates: "Oct 2024 — May 2025",
     logo: "/experience-logos/uiuc.png",
+    logoSize: "104%",
     description:
       "Analyzed 10,000+ video frames of children’s gaze patterns, processed datasets in CVAT, and supported AI model training for autism-severity classification and early-detection research.",
   },
@@ -84,6 +91,7 @@ const researchExperience: ExperienceItem[] = [
     location: "Beijing, China",
     dates: "Jun 2025 — Jul 2025",
     logo: "/experience-logos/cas.ico",
+    logoSize: "64%",
     website: "https://english.cas.cn/",
     description:
       "Built a relational SQL database linking professors, papers, and institutions. Automated annual reporting for 107 institutes and developed a Python PDF comparison tool for contract auditing.",
@@ -94,7 +102,8 @@ const researchExperience: ExperienceItem[] = [
     role: "Researcher · Advanced Molds for Soft Robotic Structures",
     location: "Illinois, U.S.",
     dates: "Sep 2024 — May 2025",
-    logo: "/experience-logos/gazzola.png",
+    logo: "/experience-logos/uiuc.png",
+    logoSize: "104%",
     website: "https://mattia-lab.com/",
     description:
       "Designed and fabricated molds for air-pressure-driven soft robotic actuators, improving the functionality and control of robotic fingers while exploring more flexible, dexterous actuator geometries.",
@@ -109,6 +118,7 @@ const education = [
     location: "Illinois, U.S.",
     dates: "Sep 2024 — Expected May 2028",
     logo: "/experience-logos/uiuc.png",
+    logoSize: "104%",
     website: "https://illinois.edu/",
   },
   {
@@ -118,6 +128,7 @@ const education = [
     location: "Singapore",
     dates: "Sep 2020 — Jun 2024",
     logo: "/experience-logos/sas.png",
+    logoSize: "62%",
     website: "https://www.sas.edu.sg/",
   },
 ];
@@ -141,7 +152,13 @@ function ExperienceRow({ item }: { item: ExperienceItem }) {
   return (
     <article className="experience-row">
       <div className="experience-mark" aria-hidden="true">
-        {item.logo ? <img src={item.logo} alt="" /> : item.mark}
+        {item.logo ? (
+          <img
+            src={item.logo}
+            alt=""
+            style={{ width: item.logoSize, height: item.logoSize }}
+          />
+        ) : item.mark}
       </div>
       <div className="experience-entry">
         <div className="experience-heading">
@@ -219,7 +236,11 @@ export default function ExperiencePage() {
               {education.map((item) => (
                 <article className="experience-row education-row" key={item.school}>
                   <div className="experience-mark" aria-hidden="true">
-                    <img src={item.logo} alt="" />
+                    <img
+                      src={item.logo}
+                      alt=""
+                      style={{ width: item.logoSize, height: item.logoSize }}
+                    />
                   </div>
                   <div className="experience-entry">
                     <div className="experience-heading">
