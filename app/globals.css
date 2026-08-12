@@ -1663,9 +1663,9 @@ html[data-theme="dark"] .experience-timeline::before {
 }
 
 html[data-theme="dark"] .experience-mark {
-  border-color: var(--dark-border);
-  background: var(--dark-surface);
-  color: var(--dark-muted);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: #ffffff;
+  color: #555555;
 }
 
 html[data-theme="dark"] .experience-skills span {
