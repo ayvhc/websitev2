@@ -15,12 +15,14 @@ export function ThemeToggle() {
 
     setTheme(nextTheme);
     document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
   }, []);
 
   function toggleTheme() {
     const nextTheme = theme === "dark" ? "light" : "dark";
     setTheme(nextTheme);
     document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
     window.localStorage.setItem(STORAGE_KEY, nextTheme);
   }
 

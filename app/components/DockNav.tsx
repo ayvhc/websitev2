@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   createContext,
   type ReactNode,
@@ -93,14 +94,14 @@ function DockItem({ item, current }: { item: NavItem; current: boolean }) {
       className={`dock-item ${current ? "dock-item-current" : ""}`}
     >
       {item.href ? (
-        <a
+        <Link
           className="dock-control"
           href={item.href}
           aria-label={item.label}
           aria-current={current ? "page" : undefined}
         >
           {content}
-        </a>
+        </Link>
       ) : (
         <button className="dock-control" type="button" aria-label={item.label}>
           {content}

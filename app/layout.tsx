@@ -39,7 +39,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var isJourney = window.location.pathname.indexOf('/journey') === 0;
+                  if (isJourney) {
+                    document.documentElement.dataset.theme = 'light';
+                    document.documentElement.style.colorScheme = 'light';
+                    return;
+                  }
+                  var saved = window.localStorage.getItem('yihung-theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var theme = saved === 'dark' || (!saved && prefersDark) ? 'dark' : 'light';
+                  document.documentElement.dataset.theme = theme;
+                  document.documentElement.style.colorScheme = theme;
+                } catch (_) {
+                  document.documentElement.dataset.theme = 'light';
+                  document.documentElement.style.colorScheme = 'light';
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>

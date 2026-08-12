@@ -26,6 +26,16 @@ body {
   overflow: hidden;
 }
 
+html[data-theme="dark"] {
+  background: var(--dark-bg);
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  background: #ffffff;
+  color-scheme: light;
+}
+
 body {
   background: #ffffff;
   color: var(--black);
