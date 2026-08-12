@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { UserRound } from "lucide-react";
 import { DockNav } from "./components/DockNav";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 type Scene = {
   title?: string;
@@ -152,6 +153,7 @@ export default function HomePage() {
 
   return (
     <main className="portfolio-shell">
+      <ThemeToggle />
       <div className="scene-stage" aria-live="polite">
         {scenes.map((scene, index) => {
           const state =

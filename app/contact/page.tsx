@@ -1,9 +1,11 @@
 import { ArrowUpRight, Mail } from "lucide-react";
 import { DockNav } from "../components/DockNav";
+import { ThemeToggle } from "../components/ThemeToggle";
 
 export default function ContactPage() {
   return (
     <main className="contact-shell">
+      <ThemeToggle />
       <section className="contact-stage" aria-labelledby="contact-title">
         <p className="contact-eyebrow">Contact</p>
         <h1 id="contact-title">Get in Touch</h1>
