@@ -1,5 +1,4 @@
 import { DockNav } from "../components/DockNav";
-import { ThemeToggle } from "../components/ThemeToggle";
 
 type ExperienceItem = {
   mark: string;
@@ -196,7 +195,6 @@ function ExperienceRow({ item }: { item: ExperienceItem }) {
 export default function ExperiencePage() {
   return (
     <main className="experience-shell">
-      <ThemeToggle />
       <div className="experience-scroll">
         <div className="experience-page">
           <header className="experience-intro">

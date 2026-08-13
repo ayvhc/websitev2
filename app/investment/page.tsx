@@ -2,7 +2,6 @@
 
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { DockNav } from "../components/DockNav";
-import { ThemeToggle } from "../components/ThemeToggle";
 
 const investmentSections = [
   {
@@ -95,7 +94,6 @@ export default function InvestmentPage() {
 
   return (
     <main className="investment-shell">
-      <ThemeToggle />
       <div className="investment-scene-stage" aria-live="polite">
         {investmentSections.map((section, index) => (
           <section
