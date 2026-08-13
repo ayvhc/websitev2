@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "reactflow/dist/style.css";
-import "./journey/journey.css";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -46,12 +44,6 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var isJourney = window.location.pathname.indexOf('/journey') === 0;
-                  if (isJourney) {
-                    document.documentElement.dataset.theme = 'light';
-                    document.documentElement.style.colorScheme = 'light';
-                    return;
-                  }
                   var saved = window.localStorage.getItem('yihung-theme');
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                   var theme = saved === 'dark' || (!saved && prefersDark) ? 'dark' : 'light';

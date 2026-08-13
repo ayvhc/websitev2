@@ -9,7 +9,6 @@ import {
 } from "react";
 import {
   BriefcaseBusiness,
-  Compass,
   Home,
   Lightbulb,
   Mail,
@@ -35,7 +34,6 @@ const navItems: NavItem[] = [
   { label: "About", icon: UserRound, href: "/about" },
   { label: "Investment", icon: Lightbulb, href: "/investment" },
   { label: "Experience", icon: BriefcaseBusiness, href: "/experience" },
-  { label: "Journey", icon: Compass, href: "/journey" },
   { label: "Contact", icon: Mail, href: "/contact" },
 ];
 
@@ -111,7 +109,7 @@ function DockItem({ item, current }: { item: NavItem; current: boolean }) {
   );
 }
 
-export function DockNav({ current }: { current: "Home" | "About" | "Investment" | "Experience" | "Journey" | "Contact" }) {
+export function DockNav({ current }: { current: "Home" | "About" | "Investment" | "Experience" | "Contact" }) {
   return (
     <div className="dock-wrap">
       <Dock>
