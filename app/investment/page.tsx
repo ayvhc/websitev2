@@ -7,7 +7,11 @@ const investmentSections = [
   {
     title: "Investment",
     content: (
-      <p>I started with short-dated options. Now, I invest in early-stage startups.</p>
+      <p>
+        I started with short-dated options.
+        <br />
+        Now, I invest in early-stage startups.
+      </p>
     ),
   },
   {
@@ -21,9 +25,12 @@ const investmentSections = [
           rel="noopener noreferrer"
         >
           N1AC
-        </a>, an angel collective that hosts six highly selective live pitches each
-        month, most featuring founders from Stanford, UC Berkeley,
-        MIT, Harvard, Peking University, and Tsinghua University.
+        </a>,
+        <br />
+        an angel collective that hosts six highly selective live pitches each month,
+        <br />
+        mostly featuring founders from Stanford, UC Berkeley, MIT, Harvard, Peking
+        University, and Tsinghua University.
       </p>
     ),
   },
@@ -61,8 +68,11 @@ const investmentSections = [
     content: (
       <>
         <p>
-          Building something others do not believe in yet? Starting earlier than
-          people expect? Seeing a problem most have overlooked?
+          Building something others do not believe in yet?
+          <br />
+          Starting earlier than people expect?
+          <br />
+          Seeing a problem most have overlooked?
         </p>
         <p>I’d love to hear what you’re working on.</p>
       </>
