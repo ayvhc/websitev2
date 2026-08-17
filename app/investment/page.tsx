@@ -25,7 +25,7 @@ const investmentSections = [
         <br />
         an angel collective that hosts{" "}
         <strong className="investment-emphasis">
-          6 highly selective live pitches each month,
+          6 live pitches each month,
         </strong>
         <br />
         mostly featuring founders from Stanford, UC Berkeley, MIT, Harvard, Peking
