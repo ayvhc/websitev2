@@ -13,8 +13,16 @@ const investmentSections = [
   {
     content: (
       <p>
-        I’m part of N1AC, an angel collective that hosts six highly selective live
-        pitches each month, often featuring founders from Stanford, UC Berkeley,
+        I’m part of{" "}
+        <a
+          className="investment-inline-link"
+          href="https://n1-ac.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          N1AC
+        </a>, an angel collective that hosts six highly selective live pitches each
+        month, most featuring founders from Stanford, UC Berkeley,
         MIT, Harvard, Peking University, and Tsinghua University.
       </p>
     ),

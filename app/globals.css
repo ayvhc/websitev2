@@ -1108,18 +1108,21 @@ button {
 }
 
 .investment-copy h1 {
-  margin-bottom: 1rem;
-  font-size: clamp(1.32rem, 2.1vw, 1.5rem);
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.4;
+  margin-bottom: 1.05rem;
+  color: #9a9a9a;
+  font-size: clamp(0.82rem, 1.05vw, 0.96rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: uppercase;
 }
 
 .investment-copy > p {
   max-width: 50rem;
-  font-size: clamp(1.12rem, 1.7vw, 1.32rem);
-  font-weight: 400;
-  line-height: 1.62;
+  color: #111111;
+  font-size: clamp(1.32rem, 2.25vw, 1.82rem);
+  font-weight: 500;
+  line-height: 1.48;
 }
 
 .investment-copy > p + p {
@@ -1174,16 +1177,44 @@ button {
   outline-offset: 5px;
 }
 
+.investment-inline-link {
+  display: inline-block;
+  border-radius: 0.3rem;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    color 160ms ease,
+    transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.investment-inline-link:hover,
+.investment-inline-link:focus-visible {
+  color: #1d4ed8;
+  transform: translateY(-1px) scale(1.01);
+}
+
+.investment-inline-link:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.investment-inline-link:focus-visible {
+  outline: 1px solid #111111;
+  outline-offset: 4px;
+}
+
 .investment-list h2 {
   margin-bottom: 0.2rem;
-  font-size: clamp(1.12rem, 1.7vw, 1.32rem);
+  font-size: clamp(1.32rem, 2.25vw, 1.82rem);
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.25;
 }
 
 .investment-list p {
-  color: #111111;
-  font-size: clamp(1.12rem, 1.7vw, 1.32rem);
+  color: #555555;
+  font-size: clamp(1rem, 1.35vw, 1.16rem);
   font-weight: 400;
   line-height: 1.55;
 }
@@ -1268,17 +1299,20 @@ button {
   }
 
   .investment-copy > p {
-    font-size: 1.08rem;
-    line-height: 1.55;
+    font-size: 1.2rem;
+    line-height: 1.48;
   }
 
   .investment-copy h1 {
-    font-size: 1.28rem;
+    font-size: 0.78rem;
   }
 
-  .investment-list h2,
+  .investment-list h2 {
+    font-size: 1.2rem;
+  }
+
   .investment-list p {
-    font-size: 1.08rem;
+    font-size: 0.98rem;
   }
 }
 
@@ -1492,7 +1526,6 @@ html[data-theme="dark"] .contact-shell {
 html[data-theme="dark"] .intro-copy p,
 html[data-theme="dark"] .principle-copy h1,
 html[data-theme="dark"] .principle-copy p,
-html[data-theme="dark"] .investment-copy h1,
 html[data-theme="dark"] .investment-copy h2,
 html[data-theme="dark"] .investment-copy p,
 html[data-theme="dark"] .experience-intro h1,
@@ -1505,12 +1538,22 @@ html[data-theme="dark"] .contact-link-copy strong {
 
 html[data-theme="dark"] .intro-line,
 html[data-theme="dark"] .scene-body,
-html[data-theme="dark"] .investment-copy > p,
-html[data-theme="dark"] .investment-list p,
 html[data-theme="dark"] .experience-intro-copy,
 html[data-theme="dark"] .experience-role,
 html[data-theme="dark"] .experience-description,
 html[data-theme="dark"] .contact-intro {
+  color: var(--dark-muted);
+}
+
+html[data-theme="dark"] .investment-copy h1 {
+  color: var(--dark-dim);
+}
+
+html[data-theme="dark"] .investment-copy > p {
+  color: var(--dark-text);
+}
+
+html[data-theme="dark"] .investment-list p {
   color: var(--dark-muted);
 }
 
@@ -1665,7 +1708,9 @@ html[data-theme="dark"] .investment-link {
 html[data-theme="dark"] .experience-organization-link:hover h2,
 html[data-theme="dark"] .experience-organization-link:focus-visible h2,
 html[data-theme="dark"] .investment-link:hover h2,
-html[data-theme="dark"] .investment-link:focus-visible h2 {
+html[data-theme="dark"] .investment-link:focus-visible h2,
+html[data-theme="dark"] .investment-inline-link:hover,
+html[data-theme="dark"] .investment-inline-link:focus-visible {
   color: #7aa7ff;
 }
 
