@@ -1120,9 +1120,9 @@ button {
 .investment-copy > p {
   max-width: 50rem;
   color: #111111;
-  font-size: clamp(1.32rem, 2.25vw, 1.82rem);
-  font-weight: 500;
-  line-height: 1.48;
+  font-size: clamp(1.2rem, 1.85vw, 1.52rem);
+  font-weight: 430;
+  line-height: 1.56;
 }
 
 .investment-copy > p + p {
@@ -1181,7 +1181,7 @@ button {
   display: inline-block;
   border-radius: 0.3rem;
   color: inherit;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   pointer-events: auto;
   transform: translateY(0);
@@ -1207,9 +1207,9 @@ button {
 
 .investment-list h2 {
   margin-bottom: 0.2rem;
-  font-size: clamp(1.32rem, 2.25vw, 1.82rem);
+  font-size: clamp(1.2rem, 1.85vw, 1.52rem);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.35;
 }
 
 .investment-list p {
@@ -1299,8 +1299,8 @@ button {
   }
 
   .investment-copy > p {
-    font-size: 1.2rem;
-    line-height: 1.48;
+    font-size: 1.12rem;
+    line-height: 1.55;
   }
 
   .investment-copy h1 {
@@ -1308,7 +1308,7 @@ button {
   }
 
   .investment-list h2 {
-    font-size: 1.2rem;
+    font-size: 1.12rem;
   }
 
   .investment-list p {
