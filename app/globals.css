@@ -738,7 +738,7 @@ button {
   position: relative;
   width: min(76rem, 78vw);
   height: min(40rem, 62svh);
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid rgba(17, 17, 17, 0.11);
   border-radius: 2rem;
   background:
@@ -772,12 +772,12 @@ button {
 
 .about-portrait-frame {
   position: absolute;
-  top: 50%;
-  right: clamp(2rem, 5vw, 4rem);
+  top: 42%;
+  right: -1.1rem;
   z-index: 2;
-  width: min(15rem, 20vw);
-  height: min(27rem, 48svh);
-  transform: translateY(-50%) rotate(1.5deg);
+  width: min(13.5rem, 18vw);
+  height: min(24.2rem, 43svh);
+  transform: translateY(-50%) rotate(16.5deg);
   border: 1px solid rgba(17, 17, 17, 0.13);
   border-radius: 1.1rem;
   background:
@@ -794,7 +794,7 @@ button {
 }
 
 .about-portrait-frame:hover {
-  transform: translateY(-50%) rotate(0.5deg) scale(1.035);
+  transform: translateY(-50%) rotate(15deg) scale(1.035);
   border-color: rgba(17, 17, 17, 0.2);
   box-shadow:
     0 22px 48px rgba(0, 0, 0, 0.11),
@@ -819,10 +819,16 @@ button {
   }
 
   .about-portrait-frame {
-    right: 1.6rem;
-    width: min(11rem, 38vw);
-    height: min(19rem, 42svh);
+    top: 43%;
+    right: -0.4rem;
+    width: min(9.8rem, 36vw);
+    height: min(17.2rem, 39svh);
+    transform: translateY(-50%) rotate(13deg);
     border-radius: 0.9rem;
+  }
+
+  .about-portrait-frame:hover {
+    transform: translateY(-50%) rotate(12deg) scale(1.03);
   }
 }
 
