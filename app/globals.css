@@ -1129,6 +1129,10 @@ button {
   margin-top: 0.65rem;
 }
 
+.investment-connect-followup {
+  margin-top: 1.15rem !important;
+}
+
 .investment-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -1203,6 +1207,10 @@ button {
 .investment-inline-link:focus-visible {
   outline: 1px solid #111111;
   outline-offset: 4px;
+}
+
+.investment-emphasis {
+  font-weight: 620;
 }
 
 .investment-list h2 {

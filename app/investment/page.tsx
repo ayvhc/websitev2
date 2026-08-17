@@ -7,11 +7,7 @@ const investmentSections = [
   {
     title: "Investment",
     content: (
-      <p>
-        I started with short-dated options.
-        <br />
-        Now, I invest in early-stage startups.
-      </p>
+      <p>I started with short-dated options. Now, I invest in early-stage startups.</p>
     ),
   },
   {
@@ -27,7 +23,10 @@ const investmentSections = [
           N1AC
         </a>,
         <br />
-        an angel collective that hosts six highly selective live pitches each month,
+        an angel collective that hosts{" "}
+        <strong className="investment-emphasis">
+          6 highly selective live pitches each month,
+        </strong>
         <br />
         mostly featuring founders from Stanford, UC Berkeley, MIT, Harvard, Peking
         University, and Tsinghua University.
@@ -74,7 +73,9 @@ const investmentSections = [
           <br />
           Seeing a problem most have overlooked?
         </p>
-        <p>I’d love to hear what you’re working on.</p>
+        <p className="investment-connect-followup">
+          I’d love to hear what you’re working on.
+        </p>
       </>
     ),
   },
