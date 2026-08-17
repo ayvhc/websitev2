@@ -770,14 +770,10 @@ button {
   pointer-events: none;
 }
 
-.about-portrait-frame {
+.about-portrait-frame,
+.about-wide-frame {
   position: absolute;
-  top: 42%;
-  right: -1.1rem;
   z-index: 2;
-  width: min(13.5rem, 18vw);
-  height: min(24.2rem, 43svh);
-  transform: translateY(-50%) rotate(16.5deg);
   border: 1px solid rgba(17, 17, 17, 0.13);
   border-radius: 1.1rem;
   background:
@@ -793,13 +789,37 @@ button {
     border-color 220ms ease;
 }
 
-.about-portrait-frame:hover {
-  transform: translateY(-50%) rotate(15deg) scale(1.035);
+.about-portrait-frame {
+  top: 42%;
+  right: -1.1rem;
+  width: min(13.5rem, 18vw);
+  height: min(24.2rem, 43svh);
+  transform: translateY(-50%) rotate(16.5deg);
+}
+
+.about-wide-frame {
+  top: -1.85rem;
+  left: 2.4rem;
+  width: min(20rem, 28vw);
+  height: min(11.5rem, 22svh);
+  transform: rotate(-12deg);
+}
+
+.about-portrait-frame:hover,
+.about-wide-frame:hover {
   border-color: rgba(17, 17, 17, 0.2);
   box-shadow:
     0 22px 48px rgba(0, 0, 0, 0.11),
     inset 0 0 0 0.72rem #ffffff,
     inset 0 0 0 0.78rem rgba(17, 17, 17, 0.065);
+}
+
+.about-portrait-frame:hover {
+  transform: translateY(-50%) rotate(15deg) scale(1.035);
+}
+
+.about-wide-frame:hover {
+  transform: rotate(-10.5deg) scale(1.035);
 }
 
 @media (max-width: 760px) {
@@ -829,6 +849,19 @@ button {
 
   .about-portrait-frame:hover {
     transform: translateY(-50%) rotate(12deg) scale(1.03);
+  }
+
+  .about-wide-frame {
+    top: -0.9rem;
+    left: 1.1rem;
+    width: min(14rem, 54vw);
+    height: min(8.2rem, 20svh);
+    transform: rotate(-10deg);
+    border-radius: 0.9rem;
+  }
+
+  .about-wide-frame:hover {
+    transform: rotate(-9deg) scale(1.03);
   }
 }
 
@@ -1633,7 +1666,8 @@ html[data-theme="dark"] .about-empty-board::before {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-html[data-theme="dark"] .about-portrait-frame {
+html[data-theme="dark"] .about-portrait-frame,
+html[data-theme="dark"] .about-wide-frame {
   border-color: rgba(255, 255, 255, 0.18);
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
@@ -1644,7 +1678,8 @@ html[data-theme="dark"] .about-portrait-frame {
     inset 0 0 0 0.78rem rgba(17, 17, 17, 0.07);
 }
 
-html[data-theme="dark"] .about-portrait-frame:hover {
+html[data-theme="dark"] .about-portrait-frame:hover,
+html[data-theme="dark"] .about-wide-frame:hover {
   border-color: rgba(255, 255, 255, 0.28);
   box-shadow:
     0 24px 56px rgba(0, 0, 0, 0.42),
