@@ -726,544 +726,64 @@ button {
   background: #ffffff;
 }
 
-.about-board {
-  position: relative;
-  width: min(1180px, calc(100vw - 4rem));
-  height: min(720px, calc(100svh - 7.5rem));
-  margin: 0 auto;
-  top: 50%;
-  transform: translateY(-53%);
-}
-
-.mood-card {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid rgba(17, 17, 17, 0.1);
-  border-radius: 1.6rem;
-  background: rgba(255, 255, 255, 0.74);
-  color: var(--black);
-  box-shadow:
-    0 18px 44px rgba(0, 0, 0, 0.055),
-    inset 0 1px 0 rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(18px) saturate(145%);
-  -webkit-backdrop-filter: blur(18px) saturate(145%);
-  transition:
-    transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 220ms ease,
-    box-shadow 220ms ease,
-    background-color 220ms ease;
-  will-change: transform;
-}
-
-.mood-card:hover,
-.mood-card:focus-visible {
-  z-index: 8;
-  border-color: rgba(17, 17, 17, 0.18);
-  box-shadow:
-    0 24px 58px rgba(0, 0, 0, 0.09),
-    inset 0 1px 0 rgba(255, 255, 255, 0.82);
-}
-
-.mood-eyebrow {
-  margin: 0 0 0.7rem;
-  color: #8a8a8a;
-  font-size: 0.74rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.mood-card h1,
-.mood-card h2,
-.mood-card p,
-.mood-card blockquote {
-  margin-left: 0;
-}
-
-.mood-card h1,
-.mood-card h2 {
-  margin-top: 0;
-  color: var(--black);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-}
-
-.mood-card h1 {
-  margin-bottom: 0.85rem;
-  font-size: clamp(1.7rem, 3vw, 2.65rem);
-  line-height: 1.04;
-}
-
-.mood-card h2 {
-  margin-bottom: 0.45rem;
-  font-size: clamp(1.2rem, 1.8vw, 1.62rem);
-  line-height: 1.1;
-}
-
-.mood-card p,
-.mood-card blockquote {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #545454;
-  font-size: 0.98rem;
-  letter-spacing: -0.02em;
-  line-height: 1.55;
-}
-
-.about-title-card {
-  top: 8%;
-  left: 3%;
-  width: min(31rem, 45vw);
-  min-height: 13rem;
-  padding: 2.1rem;
-  transform: rotate(-2.2deg);
-}
-
-.about-title-card:hover {
-  transform: rotate(-1deg) translateY(-0.35rem) scale(1.02);
-}
-
-.about-photo-card {
-  top: 8%;
-  right: 8%;
-  width: 14.6rem;
-  min-height: 18rem;
-  align-items: center;
-  gap: 0.95rem;
-  padding: 1rem 1rem 1.25rem;
-  transform: rotate(4.5deg);
-}
-
-.about-photo-card:hover {
-  transform: rotate(2.4deg) translateY(-0.45rem) scale(1.035);
-}
-
-.photo-placeholder {
-  display: grid;
-  width: 100%;
-  min-height: 14.1rem;
-  place-items: center;
-  overflow: hidden;
-  border-radius: 1.15rem;
-  background:
-    radial-gradient(circle at 35% 26%, rgba(0, 31, 84, 0.13), transparent 38%),
-    linear-gradient(140deg, #f4f4f4 0%, #e9edf3 48%, #ffffff 100%);
-  color: rgba(17, 17, 17, 0.75);
-  font-size: 2.15rem;
-  font-weight: 600;
-  letter-spacing: -0.08em;
-}
-
-.about-photo-card p {
-  color: #8a8a8a;
-  font-size: 0.9rem;
-}
-
-.mood-flip-card {
-  padding: 0;
-  border: 0;
-  appearance: none;
-  cursor: pointer;
-  perspective: 900px;
-  transform-style: preserve-3d;
-}
-
-.mood-flip-card:focus-visible {
-  outline: 2px solid var(--black);
-  outline-offset: 4px;
-}
-
-.mood-card-inner,
-.mood-card-face {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  min-height: inherit;
-  flex-direction: column;
-}
-
-.mood-card-inner {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.mood-card-face {
+.about-board-shell {
   position: absolute;
   inset: 0;
-  justify-content: center;
-  overflow: hidden;
-  padding: 1.35rem;
-  border: 1px solid rgba(17, 17, 17, 0.1);
-  border-radius: inherit;
-  background: rgba(255, 255, 255, 0.78);
-  backface-visibility: hidden;
-}
-
-.mood-card-back {
-  transform: rotateY(180deg);
-}
-
-.mood-flip-card.is-flipped .mood-card-inner {
-  transform: rotateY(180deg);
-}
-
-.about-ticket-card {
-  top: 37%;
-  left: 11%;
-  width: 19rem;
-  min-height: 12.6rem;
-  transform: rotate(7.5deg);
-}
-
-.about-ticket-card:hover {
-  transform: rotate(5deg) translateY(-0.45rem) scale(1.035);
-}
-
-.ticket-face {
-  position: relative;
-  min-height: 8.7rem;
-  padding: 1.2rem 1.1rem 1.05rem;
-  border: 1px solid rgba(17, 17, 17, 0.15);
-  border-radius: 1.1rem;
-}
-
-.ticket-face::before,
-.ticket-face::after {
-  position: absolute;
-  top: 50%;
-  width: 1.1rem;
-  height: 1.1rem;
-  content: "";
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid rgba(17, 17, 17, 0.11);
-}
-
-.ticket-face::before {
-  left: -0.6rem;
-  transform: translateY(-50%);
-}
-
-.ticket-face::after {
-  right: -0.6rem;
-  transform: translateY(-50%);
-}
-
-.ticket-stub {
-  display: block;
-  margin-bottom: 1rem;
-  color: #9a9a9a;
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-}
-
-.about-ticket-card blockquote {
-  color: #282828;
-  font-size: 1rem;
-}
-
-.about-wine-card {
-  right: 4%;
-  bottom: 22%;
-  width: 13.2rem;
-  min-height: 12.3rem;
-  transform: rotate(-8deg);
-}
-
-.about-wine-card:hover {
-  transform: rotate(-5.6deg) translateY(-0.45rem) scale(1.045);
-}
-
-.about-wine-card svg {
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: 1.15rem;
-  color: #111111;
-  stroke-width: 1.35;
-}
-
-.about-places-card {
-  top: 27%;
-  right: 28%;
-  width: 17.4rem;
-  min-height: 11.8rem;
-  transform: rotate(-5.5deg);
-}
-
-.about-places-card:hover {
-  transform: rotate(-3.2deg) translateY(-0.45rem) scale(1.035);
-}
-
-.about-places-card svg {
-  width: 2rem;
-  height: 2rem;
-  margin-bottom: 1rem;
-  color: #0b2d5c;
-  stroke-width: 1.45;
-}
-
-.about-spider-card {
-  left: 43%;
-  top: 9%;
-  width: 13rem;
-  min-height: 11rem;
-  align-items: center;
-  padding: 1.35rem;
-  text-align: center;
-  transform: rotate(8deg);
-}
-
-.about-spider-card:hover {
-  transform: rotate(5.5deg) translateY(-0.45rem) scale(1.04);
-}
-
-.spider-mark {
-  position: relative;
-  width: 5rem;
-  height: 5.5rem;
-  margin: 0.2rem auto 1rem;
-}
-
-.spider-body {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 1.15rem;
-  height: 2.55rem;
-  transform: translate(-50%, -50%);
-  border: 2px solid #111111;
-  border-radius: 999px;
-}
-
-.spider-leg {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 2.2rem;
-  height: 2px;
-  background: #111111;
-  transform-origin: left center;
-}
-
-.spider-leg-1 { transform: rotate(-150deg) translateX(0.35rem); }
-.spider-leg-2 { transform: rotate(-116deg) translateX(0.28rem); }
-.spider-leg-3 { transform: rotate(-35deg) translateX(0.28rem); }
-.spider-leg-4 { transform: rotate(35deg) translateX(0.28rem); }
-.spider-leg-5 { transform: rotate(116deg) translateX(0.28rem); }
-.spider-leg-6 { transform: rotate(150deg) translateX(0.35rem); }
-
-.about-sports-card {
-  bottom: 8%;
-  left: 34%;
-  width: 16.5rem;
-  min-height: 16.5rem;
-  align-items: center;
-  padding: 1.2rem;
-  transform: rotate(-3deg);
-}
-
-.about-sports-card:hover {
-  transform: rotate(-1.2deg) translateY(-0.45rem) scale(1.035);
-}
-
-.sports-orbit {
-  position: relative;
-  width: 11.7rem;
-  height: 11.7rem;
-  margin-top: 0.35rem;
-  border: 1px solid rgba(17, 17, 17, 0.12);
-  border-radius: 999px;
-}
-
-.sport-node {
-  --sport-angle: calc(var(--sport-index) * 72deg - 90deg);
-  position: absolute;
-  left: 50%;
-  top: 50%;
   display: grid;
-  width: 2.35rem;
-  height: 2.35rem;
   place-items: center;
-  transform:
-    rotate(var(--sport-angle))
-    translate(5.85rem)
-    rotate(calc(var(--sport-angle) * -1))
-    translate(-50%, -50%);
+  padding: 3rem 2rem 6.5rem;
+}
+
+.about-empty-board {
+  position: relative;
+  width: min(76rem, 78vw);
+  height: min(40rem, 62svh);
+  overflow: hidden;
   border: 1px solid rgba(17, 17, 17, 0.11);
-  border-radius: 999px;
-  background: #ffffff;
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(17, 17, 17, 0.035) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 68%, rgba(0, 31, 84, 0.035) 0 1px, transparent 1.5px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(247, 248, 250, 0.88));
+  background-size: 34px 34px, 42px 42px, auto;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.sport-node svg {
-  width: 1.16rem;
-  height: 1.16rem;
-  color: #111111;
-  stroke-width: 1.45;
-}
-
-.sports-center {
+.about-empty-board::before {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 4.4rem;
-  transform: translate(-50%, -50%);
-  color: #777777;
-  font-size: 0.78rem;
-  line-height: 1.2;
-  text-align: center;
+  inset: 1rem;
+  content: "";
+  border: 1px dashed rgba(17, 17, 17, 0.08);
+  border-radius: 1.35rem;
+  pointer-events: none;
 }
 
-.about-robotics-card {
-  right: 26%;
-  bottom: 8%;
-  width: 17rem;
-  min-height: 11.8rem;
-  padding: 1.45rem;
-  transform: rotate(4.5deg);
+.about-empty-board::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.42), transparent 28%),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.7), transparent 48%);
+  pointer-events: none;
 }
 
-.about-robotics-card:hover {
-  transform: rotate(2.5deg) translateY(-0.45rem) scale(1.035);
-}
-
-.robot-sketch {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.55rem;
-  height: 2.8rem;
-  margin-top: 1.1rem;
-}
-
-.robot-sketch span {
-  display: block;
-  width: 3.15rem;
-  border: 1.5px solid #111111;
-  border-radius: 999px;
-}
-
-.robot-sketch span:nth-child(1) {
-  height: 1.4rem;
-}
-
-.robot-sketch span:nth-child(2) {
-  height: 2.35rem;
-}
-
-.robot-sketch span:nth-child(3) {
-  height: 0.9rem;
-}
-
-.about-note-card {
-  left: 8%;
-  bottom: 6%;
-  width: 15.5rem;
-  min-height: 10rem;
-  padding: 1.35rem;
-  transform: rotate(-7deg);
-}
-
-.about-note-card:hover {
-  transform: rotate(-4.5deg) translateY(-0.45rem) scale(1.04);
-}
-
-.about-route-card {
-  right: 10%;
-  top: 51%;
-  width: 15.2rem;
-  min-height: 8.7rem;
-  padding: 1.25rem;
-  transform: rotate(5.8deg);
-}
-
-.about-route-card:hover {
-  transform: rotate(3.4deg) translateY(-0.45rem) scale(1.035);
-}
-
-.about-route-card svg {
-  width: 1.55rem;
-  height: 1.55rem;
-  margin-right: 0.45rem;
-  color: #111111;
-  stroke-width: 1.45;
-}
-
-@media (max-width: 980px) {
-  .about-shell {
-    height: 100svh;
-    min-height: 100svh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 2rem 1.15rem 6.75rem;
+@media (max-width: 760px) {
+  .about-board-shell {
+    padding: 2rem 1rem 6.5rem;
   }
 
-  .about-board {
-    display: grid;
-    width: min(34rem, 100%);
-    height: auto;
-    min-height: 0;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin: 0 auto;
-    top: auto;
-    transform: none;
+  .about-empty-board {
+    width: min(100%, 34rem);
+    height: min(32rem, 58svh);
+    border-radius: 1.35rem;
   }
 
-  .mood-card,
-  .about-title-card,
-  .about-photo-card,
-  .about-ticket-card,
-  .about-wine-card,
-  .about-places-card,
-  .about-spider-card,
-  .about-sports-card,
-  .about-robotics-card,
-  .about-note-card,
-  .about-route-card {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    width: 100%;
-    min-height: 11rem;
-    transform: rotate(0deg);
-  }
-
-  .mood-card:hover,
-  .mood-card:focus-visible,
-  .about-title-card:hover,
-  .about-photo-card:hover,
-  .about-ticket-card:hover,
-  .about-wine-card:hover,
-  .about-places-card:hover,
-  .about-spider-card:hover,
-  .about-sports-card:hover,
-  .about-robotics-card:hover,
-  .about-note-card:hover,
-  .about-route-card:hover {
-    transform: translateY(-0.25rem) scale(1.01);
-  }
-
-  .about-title-card {
-    min-height: 15rem;
-  }
-
-  .about-photo-card {
-    min-height: 20rem;
-  }
-
-  .about-ticket-card,
-  .about-wine-card,
-  .about-places-card {
-    min-height: 12.5rem;
-  }
-
-  .about-sports-card {
-    min-height: 17rem;
+  .about-empty-board::before {
+    inset: 0.75rem;
+    border-radius: 0.9rem;
   }
 }
 
@@ -1979,9 +1499,7 @@ html[data-theme="dark"] .experience-intro h1,
 html[data-theme="dark"] .experience-section-title,
 html[data-theme="dark"] .experience-heading h2,
 html[data-theme="dark"] .contact-stage h1,
-html[data-theme="dark"] .contact-link-copy strong,
-html[data-theme="dark"] .mood-card h1,
-html[data-theme="dark"] .mood-card h2 {
+html[data-theme="dark"] .contact-link-copy strong {
   color: var(--dark-text);
 }
 
@@ -1992,9 +1510,7 @@ html[data-theme="dark"] .investment-list p,
 html[data-theme="dark"] .experience-intro-copy,
 html[data-theme="dark"] .experience-role,
 html[data-theme="dark"] .experience-description,
-html[data-theme="dark"] .contact-intro,
-html[data-theme="dark"] .mood-card p,
-html[data-theme="dark"] .mood-card blockquote {
+html[data-theme="dark"] .contact-intro {
   color: var(--dark-muted);
 }
 
@@ -2002,67 +1518,23 @@ html[data-theme="dark"] .experience-eyebrow,
 html[data-theme="dark"] .experience-meta,
 html[data-theme="dark"] .experience-skill-group h3,
 html[data-theme="dark"] .contact-eyebrow,
-html[data-theme="dark"] .contact-link-copy > span,
-html[data-theme="dark"] .mood-eyebrow,
-html[data-theme="dark"] .sports-center {
+html[data-theme="dark"] .contact-link-copy > span {
   color: var(--dark-dim);
 }
 
-html[data-theme="dark"] .mood-card,
-html[data-theme="dark"] .mood-card-face {
+html[data-theme="dark"] .about-empty-board {
   border-color: var(--dark-border);
-  background: rgba(17, 19, 23, 0.74);
+  background:
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.045) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 68%, rgba(122, 167, 255, 0.055) 0 1px, transparent 1.5px),
+    linear-gradient(135deg, rgba(17, 19, 23, 0.96), rgba(11, 13, 17, 0.88));
   box-shadow:
-    0 24px 58px rgba(0, 0, 0, 0.24),
+    0 28px 78px rgba(0, 0, 0, 0.34),
     inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
-html[data-theme="dark"] .mood-card:hover,
-html[data-theme="dark"] .mood-card:focus-visible {
-  border-color: rgba(255, 255, 255, 0.23);
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.09);
-}
-
-html[data-theme="dark"] .mood-flip-card:focus-visible {
-  outline-color: var(--dark-text);
-}
-
-html[data-theme="dark"] .photo-placeholder {
-  background:
-    radial-gradient(circle at 35% 26%, rgba(106, 146, 214, 0.14), transparent 38%),
-    linear-gradient(140deg, #171a20 0%, #101217 52%, #1a1f2a 100%);
-  color: rgba(255, 255, 255, 0.78);
-}
-
-html[data-theme="dark"] .ticket-face,
-html[data-theme="dark"] .sports-orbit,
-html[data-theme="dark"] .sport-node {
-  border-color: var(--dark-line);
-}
-
-html[data-theme="dark"] .ticket-face::before,
-html[data-theme="dark"] .ticket-face::after,
-html[data-theme="dark"] .sport-node {
-  background: var(--dark-surface);
-}
-
-html[data-theme="dark"] .about-wine-card svg,
-html[data-theme="dark"] .sport-node svg,
-html[data-theme="dark"] .about-route-card svg,
-html[data-theme="dark"] .spider-body,
-html[data-theme="dark"] .robot-sketch span {
-  color: var(--dark-text);
-  border-color: var(--dark-text);
-}
-
-html[data-theme="dark"] .spider-leg {
-  background: var(--dark-text);
-}
-
-html[data-theme="dark"] .about-places-card svg {
-  color: #9bbcff;
+html[data-theme="dark"] .about-empty-board::before {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 html[data-theme="dark"] .dock {
