@@ -1,4 +1,5 @@
 import { DockNav } from "../components/DockNav";
+import { MovieTicketFlip } from "./MovieTicketFlip";
 
 export default function AboutPage() {
   return (
@@ -6,10 +7,7 @@ export default function AboutPage() {
       <section className="about-board-shell" aria-label="About mood board">
         <div className="about-empty-board">
           <div className="about-wide-frame">
-            <img
-              src="/images/tasm2-ticket.png"
-              alt="A movie ticket for The Amazing Spider-Man 2, Yihung's favorite film"
-            />
+            <MovieTicketFlip />
           </div>
           <div className="about-portrait-frame">
             <img src="/images/yihung-chen-portrait.jpg" alt="Yihung Chen portrait" />
