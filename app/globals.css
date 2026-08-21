@@ -898,6 +898,7 @@ button {
   justify-content: center;
   flex-direction: column;
   color: #152338;
+  font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   text-align: center;
   transform: translateZ(1px);
   pointer-events: none;
@@ -906,10 +907,11 @@ button {
 .about-ticket-quote q {
   display: block;
   max-width: 30ch;
-  font-size: clamp(0.66rem, 1.15vw, 1.03rem);
-  font-weight: 520;
-  line-height: 1.46;
-  letter-spacing: -0.012em;
+  font-size: clamp(0.68rem, 1.18vw, 1.06rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.006em;
+  text-wrap: balance;
   quotes: none;
 }
 
@@ -918,7 +920,8 @@ button {
   font-size: clamp(0.56rem, 0.75vw, 0.72rem);
   font-style: normal;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.09em;
 }
 
 .about-portrait-frame:hover,
