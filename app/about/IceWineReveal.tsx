@@ -28,7 +28,7 @@ export function IceWineReveal() {
       >
         <span>Favorite drink</span>
         <strong>Ice Wine</strong>
-        <p>Canada · Golden, concentrated, and made from grapes naturally frozen on the vine.</p>
+        <p>Canadian winter-frozen grapes pressed into liquid gold — elegant and naturally sweet.</p>
       </div>
     </div>
   );
