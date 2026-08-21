@@ -764,6 +764,7 @@ button {
   position: absolute;
   inset: 0;
   content: "";
+  border-radius: inherit;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.42), transparent 28%),
     radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.7), transparent 48%);
@@ -1689,9 +1690,9 @@ html[data-theme="dark"] .contact-link-copy > span {
 html[data-theme="dark"] .about-empty-board {
   border-color: var(--dark-border);
   background:
-    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.045) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 72% 68%, rgba(122, 167, 255, 0.055) 0 1px, transparent 1.5px),
-    linear-gradient(135deg, rgba(17, 19, 23, 0.96), rgba(11, 13, 17, 0.88));
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.035) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 68%, rgba(255, 255, 255, 0.025) 0 1px, transparent 1.5px),
+    linear-gradient(145deg, #17191e 0%, #0f1115 100%);
   box-shadow:
     0 28px 78px rgba(0, 0, 0, 0.34),
     inset 0 1px 0 rgba(255, 255, 255, 0.07);
@@ -1699,6 +1700,10 @@ html[data-theme="dark"] .about-empty-board {
 
 html[data-theme="dark"] .about-empty-board::before {
   border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .about-empty-board::after {
+  background: none;
 }
 
 html[data-theme="dark"] .about-portrait-frame,
