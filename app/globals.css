@@ -810,23 +810,30 @@ button {
 }
 
 .about-wide-frame {
-  top: -1.85rem;
-  left: 2.4rem;
-  width: min(20rem, 28vw);
-  height: min(11.5rem, 22svh);
-  overflow: hidden;
+  top: -2.45rem;
+  left: 1.7rem;
+  width: min(24rem, 34vw);
+  height: auto;
+  aspect-ratio: 1717 / 916;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   transform: rotate(-12deg);
 }
 
 .about-wide-frame img {
   position: absolute;
-  inset: 0.55rem;
-  width: calc(100% - 1.1rem);
-  height: calc(100% - 1.1rem);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   display: block;
-  border-radius: 0.58rem;
-  object-fit: cover;
+  border-radius: 0;
+  object-fit: contain;
   object-position: center;
+  filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.16));
+  transition: filter 220ms ease;
 }
 
 .about-portrait-frame:hover,
@@ -844,6 +851,11 @@ button {
 
 .about-wide-frame:hover {
   transform: rotate(-10.5deg) scale(1.035);
+  box-shadow: none;
+}
+
+.about-wide-frame:hover img {
+  filter: drop-shadow(0 22px 28px rgba(0, 0, 0, 0.2));
 }
 
 @media (max-width: 760px) {
@@ -876,12 +888,11 @@ button {
   }
 
   .about-wide-frame {
-    top: -0.9rem;
-    left: 1.1rem;
-    width: min(14rem, 54vw);
-    height: min(8.2rem, 20svh);
+    top: -1.25rem;
+    left: 0.35rem;
+    width: min(17rem, 66vw);
+    height: auto;
     transform: rotate(-10deg);
-    border-radius: 0.9rem;
   }
 
   .about-wide-frame:hover {
@@ -1709,6 +1720,21 @@ html[data-theme="dark"] .about-wide-frame:hover {
     0 24px 56px rgba(0, 0, 0, 0.42),
     inset 0 0 0 0.72rem #ffffff,
     inset 0 0 0 0.78rem rgba(17, 17, 17, 0.08);
+}
+
+html[data-theme="dark"] .about-wide-frame,
+html[data-theme="dark"] .about-wide-frame:hover {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .about-wide-frame img {
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.46));
+}
+
+html[data-theme="dark"] .about-wide-frame:hover img {
+  filter: drop-shadow(0 22px 32px rgba(0, 0, 0, 0.56));
 }
 
 html[data-theme="dark"] .dock {
