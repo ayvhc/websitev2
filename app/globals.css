@@ -897,7 +897,7 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #152338;
+  color: #171717;
   font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   text-align: center;
   transform: translateZ(1px);
@@ -908,6 +908,7 @@ button {
   display: block;
   max-width: 30ch;
   font-size: clamp(0.68rem, 1.18vw, 1.06rem);
+  font-family: inherit;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.006em;
@@ -919,7 +920,9 @@ button {
   margin-top: 0.78rem;
   font-size: clamp(0.56rem, 0.75vw, 0.72rem);
   font-style: normal;
-  font-weight: 600;
+  color: #171717;
+  font-family: inherit;
+  font-weight: 500;
   font-variant-caps: small-caps;
   letter-spacing: 0.09em;
 }
