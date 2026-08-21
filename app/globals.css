@@ -814,7 +814,19 @@ button {
   left: 2.4rem;
   width: min(20rem, 28vw);
   height: min(11.5rem, 22svh);
+  overflow: hidden;
   transform: rotate(-12deg);
+}
+
+.about-wide-frame img {
+  position: absolute;
+  inset: 0.55rem;
+  width: calc(100% - 1.1rem);
+  height: calc(100% - 1.1rem);
+  display: block;
+  border-radius: 0.58rem;
+  object-fit: cover;
+  object-position: center;
 }
 
 .about-portrait-frame:hover,
