@@ -794,7 +794,19 @@ button {
   right: -1.1rem;
   width: min(13.5rem, 18vw);
   height: min(24.2rem, 43svh);
+  overflow: hidden;
   transform: translateY(-50%) rotate(16.5deg);
+}
+
+.about-portrait-frame img {
+  position: absolute;
+  inset: 0.72rem;
+  width: calc(100% - 1.44rem);
+  height: calc(100% - 1.44rem);
+  display: block;
+  border-radius: 0.62rem;
+  object-fit: cover;
+  object-position: center;
 }
 
 .about-wide-frame {
