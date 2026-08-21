@@ -1,4 +1,5 @@
 import { DockNav } from "../components/DockNav";
+import { IceWineReveal } from "./IceWineReveal";
 import { MovieTicketFlip } from "./MovieTicketFlip";
 
 export default function AboutPage() {
@@ -9,6 +10,7 @@ export default function AboutPage() {
           <div className="about-wide-frame">
             <MovieTicketFlip />
           </div>
+          <IceWineReveal />
           <div className="about-portrait-frame">
             <img src="/images/yihung-chen-portrait.jpg" alt="Yihung Chen portrait" />
           </div>

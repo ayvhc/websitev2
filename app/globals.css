@@ -946,6 +946,114 @@ button {
   filter: drop-shadow(0 22px 28px rgba(0, 0, 0, 0.2));
 }
 
+.about-ice-wine {
+  position: absolute;
+  z-index: 3;
+  left: 8.5%;
+  bottom: -1.2rem;
+  width: min(29rem, 42vw);
+  height: min(19rem, 34svh);
+}
+
+.about-ice-wine-button {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  width: min(10.5rem, 15vw);
+  height: 100%;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  transform: rotate(4deg);
+  transform-origin: 50% 82%;
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.about-ice-wine-button img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 11px 13px rgba(17, 17, 17, 0.12));
+  transition: filter 300ms ease;
+}
+
+.about-ice-wine-button:hover,
+.about-ice-wine.is-open .about-ice-wine-button {
+  transform: rotate(2deg) scale(1.045);
+}
+
+.about-ice-wine-button:hover img,
+.about-ice-wine.is-open .about-ice-wine-button img {
+  filter: drop-shadow(0 15px 17px rgba(17, 17, 17, 0.17));
+}
+
+.about-ice-wine-button:focus-visible {
+  outline: none;
+}
+
+.about-ice-wine-button:focus-visible img {
+  filter:
+    drop-shadow(0 0 1px rgba(0, 31, 84, 0.95))
+    drop-shadow(0 15px 17px rgba(17, 17, 17, 0.17));
+}
+
+.about-ice-wine-note {
+  position: absolute;
+  z-index: 1;
+  left: 7.4rem;
+  top: 51%;
+  width: min(18.5rem, 27vw);
+  padding: 1.25rem 1.3rem 1.2rem 2.1rem;
+  border: 1px solid rgba(17, 17, 17, 0.11);
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 34px rgba(17, 17, 17, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-27%, -50%) scale(0.96);
+  transform-origin: left center;
+  transition:
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 300ms ease;
+}
+
+.about-ice-wine.is-open .about-ice-wine-note {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, -50%) scale(1);
+}
+
+.about-ice-wine-note span {
+  display: block;
+  margin-bottom: 0.28rem;
+  color: #8b8172;
+  font-size: 0.67rem;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.about-ice-wine-note strong {
+  display: block;
+  color: #171717;
+  font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.about-ice-wine-note p {
+  margin: 0.42rem 0 0;
+  color: #67625a;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 760px) {
   .about-board-shell {
     padding: 2rem 1rem 6.5rem;
@@ -987,6 +1095,31 @@ button {
     transform: rotate(-9deg) scale(1.03);
   }
 
+  .about-ice-wine {
+    left: 3.5%;
+    bottom: -0.7rem;
+    width: min(22rem, 88vw);
+    height: min(15rem, 29svh);
+  }
+
+  .about-ice-wine-button {
+    width: min(8.2rem, 30vw);
+  }
+
+  .about-ice-wine-note {
+    left: 5.6rem;
+    width: min(13.5rem, 54vw);
+    padding: 0.95rem 0.95rem 0.9rem 1.65rem;
+  }
+
+  .about-ice-wine-note strong {
+    font-size: 1.12rem;
+  }
+
+  .about-ice-wine-note p {
+    font-size: 0.67rem;
+  }
+
   .about-ticket-quote {
     inset: 13% 12%;
   }
@@ -1003,6 +1136,11 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .about-ice-wine-button,
+  .about-ice-wine-note {
+    transition-duration: 160ms;
+  }
+
   .about-ticket-inner {
     transform: none !important;
     transition: none;
@@ -1865,6 +2003,33 @@ html[data-theme="dark"] .about-wide-frame img {
 
 html[data-theme="dark"] .about-wide-frame:hover img {
   filter: drop-shadow(0 22px 32px rgba(0, 0, 0, 0.56));
+}
+
+html[data-theme="dark"] .about-ice-wine-button img {
+  filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.42));
+}
+
+html[data-theme="dark"] .about-ice-wine-button:hover img,
+html[data-theme="dark"] .about-ice-wine.is-open .about-ice-wine-button img {
+  filter: drop-shadow(0 16px 19px rgba(0, 0, 0, 0.55));
+}
+
+html[data-theme="dark"] .about-ice-wine-note {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(25, 27, 32, 0.96);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.34);
+}
+
+html[data-theme="dark"] .about-ice-wine-note span {
+  color: #b8a990;
+}
+
+html[data-theme="dark"] .about-ice-wine-note strong {
+  color: #f5f5f5;
+}
+
+html[data-theme="dark"] .about-ice-wine-note p {
+  color: #aaaeb8;
 }
 
 html[data-theme="dark"] .dock {
