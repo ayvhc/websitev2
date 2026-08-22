@@ -26,7 +26,6 @@ export default function AboutPage() {
           <div className="about-hero-photo">
             <img src="/images/yihung-chen-portrait.jpg" alt="Yihung Chen" />
           </div>
-          <span className="about-hero-photo-label">Yihung Chen</span>
         </div>
       </section>
 

@@ -35,9 +35,9 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "Home", icon: Home, href: "/" },
-  { label: "About", icon: UserRound, href: "/about" },
   { label: "Investment", icon: Lightbulb, href: "/investment" },
   { label: "Experience", icon: BriefcaseBusiness, href: "/experience" },
+  { label: "About", icon: UserRound, href: "/about" },
   { label: "Contact", icon: Mail, href: "/contact" },
 ];
 
