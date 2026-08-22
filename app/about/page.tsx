@@ -18,11 +18,6 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="about-hero-visual" aria-label="Portrait of Yihung Chen">
-          <div className="about-hero-photo">
-            <img src="/images/yihung-chen-portrait.jpg" alt="Yihung Chen" />
-          </div>
-        </div>
       </section>
 
       <section id="about-board" className="about-board-shell" aria-label="About mood board">

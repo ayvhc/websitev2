@@ -735,10 +735,8 @@ button {
   min-height: 78svh;
   margin: 0 auto;
   padding: 5.5rem 2rem 8rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.68fr);
+  display: flex;
   align-items: center;
-  gap: clamp(4rem, 9vw, 9rem);
   scroll-snap-align: start;
 }
 
@@ -783,31 +781,6 @@ button {
   color: #777777;
   font-size: 0.9rem;
   line-height: 1.65;
-}
-
-.about-hero-visual {
-  position: relative;
-  justify-self: end;
-  width: min(24rem, 30vw);
-  height: min(29rem, 52svh);
-}
-
-.about-hero-photo {
-  position: absolute;
-  inset: 0;
-  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.about-hero-photo img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-  object-position: center;
-}
-
-.about-hero-visual:hover .about-hero-photo {
-  transform: scale(1.012);
 }
 
 .about-board-shell {
@@ -1161,12 +1134,6 @@ button {
     font-size: 1.12rem;
   }
 
-  .about-hero-visual {
-    justify-self: center;
-    width: min(20rem, 78vw);
-    height: min(25rem, 48svh);
-  }
-
   .about-hero::after {
     bottom: 3.2rem;
   }
@@ -1254,10 +1221,6 @@ button {
 @media (prefers-reduced-motion: reduce) {
   .about-shell {
     scroll-behavior: auto;
-  }
-
-  .about-hero-photo {
-    transition: none;
   }
 
   .about-ice-wine-button,
@@ -2085,10 +2048,6 @@ html[data-theme="dark"] .about-hero-intro {
 
 html[data-theme="dark"] .about-hero-detail {
   color: var(--dark-muted);
-}
-
-html[data-theme="dark"] .about-hero-photo {
-  filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.22));
 }
 
 html[data-theme="dark"] .about-empty-board {
