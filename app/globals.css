@@ -725,19 +725,20 @@ button {
   overflow-x: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   background: #ffffff;
 }
 
 .about-hero {
   position: relative;
   width: min(76rem, 82vw);
-  min-height: 78svh;
+  min-height: 100svh;
   margin: 0 auto;
   padding: 5.5rem 2rem 8rem;
   display: flex;
   align-items: center;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .about-hero::after {
@@ -752,6 +753,7 @@ button {
 
 .about-hero-copy {
   max-width: 42rem;
+  transform: translateY(4svh);
 }
 
 .about-hero h1 {
@@ -1119,10 +1121,12 @@ button {
 @media (max-width: 760px) {
   .about-hero {
     width: min(100%, 36rem);
-    min-height: auto;
-    padding: 5rem 1.5rem 8rem;
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    min-height: 100svh;
+    padding: 6.5rem 1.5rem 7.5rem;
+  }
+
+  .about-hero-copy {
+    transform: translateY(2svh);
   }
 
   .about-hero h1 {
