@@ -756,14 +756,6 @@ button {
   max-width: 42rem;
 }
 
-.about-hero-eyebrow {
-  margin: 0 0 1rem;
-  color: #8b8b8b;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-}
-
 .about-hero h1 {
   margin: 0;
   color: #111111;
@@ -793,68 +785,29 @@ button {
   line-height: 1.65;
 }
 
-.about-hero-link {
-  width: fit-content;
-  margin-top: 2rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.58rem;
-  border-bottom: 1px solid rgba(17, 17, 17, 0.35);
-  color: #111111;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  line-height: 2;
-  text-decoration: none;
-  transition: gap 220ms ease, border-color 220ms ease;
-}
-
-.about-hero-link:hover,
-.about-hero-link:focus-visible {
-  gap: 0.82rem;
-  border-color: #111111;
-}
-
 .about-hero-visual {
   position: relative;
   justify-self: end;
-  width: min(18.5rem, 24vw);
-  aspect-ratio: 4 / 5;
-  transform: rotate(1.25deg);
-}
-
-.about-hero-visual::before {
-  position: absolute;
-  inset: 0.85rem -0.85rem -0.85rem 0.85rem;
-  content: "";
-  border: 1px solid rgba(17, 17, 17, 0.13);
-  border-radius: 0.2rem;
-  transform: rotate(-3deg);
+  width: min(24rem, 30vw);
+  height: min(29rem, 52svh);
 }
 
 .about-hero-photo {
   position: absolute;
   inset: 0;
-  overflow: hidden;
-  border: 0.55rem solid #ffffff;
-  border-radius: 0.35rem;
-  background: #f5f5f5;
-  box-shadow: 0 24px 60px rgba(17, 17, 17, 0.13);
-  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms ease;
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .about-hero-photo img {
   width: 100%;
   height: 100%;
   display: block;
-  border-radius: 0.08rem;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
 .about-hero-visual:hover .about-hero-photo {
-  transform: translateY(-0.35rem) rotate(-1deg) scale(1.018);
-  box-shadow: 0 30px 72px rgba(17, 17, 17, 0.17);
+  transform: scale(1.012);
 }
 
 .about-board-shell {
@@ -1210,7 +1163,8 @@ button {
 
   .about-hero-visual {
     justify-self: center;
-    width: min(15.5rem, 60vw);
+    width: min(20rem, 78vw);
+    height: min(25rem, 48svh);
   }
 
   .about-hero::after {
@@ -1302,8 +1256,7 @@ button {
     scroll-behavior: auto;
   }
 
-  .about-hero-photo,
-  .about-hero-link {
+  .about-hero-photo {
     transition: none;
   }
 
@@ -2125,13 +2078,8 @@ html[data-theme="dark"] .about-hero::after {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12) 18%, rgba(255, 255, 255, 0.12) 82%, transparent);
 }
 
-html[data-theme="dark"] .about-hero-eyebrow {
-  color: var(--dark-dim);
-}
-
 html[data-theme="dark"] .about-hero h1,
-html[data-theme="dark"] .about-hero-intro,
-html[data-theme="dark"] .about-hero-link {
+html[data-theme="dark"] .about-hero-intro {
   color: var(--dark-text);
 }
 
@@ -2139,23 +2087,8 @@ html[data-theme="dark"] .about-hero-detail {
   color: var(--dark-muted);
 }
 
-html[data-theme="dark"] .about-hero-link {
-  border-color: rgba(255, 255, 255, 0.34);
-}
-
-html[data-theme="dark"] .about-hero-link:hover,
-html[data-theme="dark"] .about-hero-link:focus-visible {
-  border-color: var(--dark-text);
-}
-
-html[data-theme="dark"] .about-hero-visual::before {
-  border-color: rgba(255, 255, 255, 0.18);
-}
-
 html[data-theme="dark"] .about-hero-photo {
-  border-color: #f4f4f4;
-  background: #f4f4f4;
-  box-shadow: 0 26px 66px rgba(0, 0, 0, 0.42);
+  filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.22));
 }
 
 html[data-theme="dark"] .about-empty-board {
