@@ -800,8 +800,8 @@ button {
 
 .about-empty-board {
   position: relative;
-  width: min(76rem, 78vw);
-  height: min(40rem, 62svh);
+  width: min(72rem, 72vw);
+  height: min(36rem, 56svh);
   overflow: visible;
   border: 1px solid rgba(17, 17, 17, 0.11);
   border-radius: 2rem;
@@ -813,6 +813,7 @@ button {
   box-shadow:
     0 28px 70px rgba(0, 0, 0, 0.07),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(2.75rem);
 }
 
 .about-empty-board::before {
@@ -1163,9 +1164,10 @@ button {
   }
 
   .about-empty-board {
-    width: min(100%, 34rem);
-    height: min(32rem, 58svh);
+    width: min(94%, 32rem);
+    height: min(30rem, 54svh);
     border-radius: 1.35rem;
+    transform: translateY(1.6rem);
   }
 
   .about-empty-board::before {
