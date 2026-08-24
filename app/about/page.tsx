@@ -9,12 +9,14 @@ export default function AboutPage() {
         <div className="about-hero-copy">
           <h1 id="about-hero-title">About Me.</h1>
           <p className="about-hero-intro">
-            I&apos;m Yihung — an engineer, early-stage investor, and entrepreneur
-            shaped by the people, places, and ideas I&apos;ve encountered along the way.
-          </p>
-          <p className="about-hero-detail">
-            Beyond building and investing, I&apos;m drawn to stories, movement, and the
-            small details that make a life feel distinctly your own.
+            <span>Everyone calls me Adam.</span>
+            <span>I like robotics. I like helping people.</span>
+            <span>My favorite color is blue.</span>
+            <span>I’m not fond of cucumbers.</span>
+            <span>
+              I’m scared of butterflies, but that won’t stop me from someday building
+              robots that help people do things they never thought possible.
+            </span>
           </p>
         </div>
 

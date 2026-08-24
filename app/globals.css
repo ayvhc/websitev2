@@ -752,7 +752,7 @@ button {
 }
 
 .about-hero-copy {
-  max-width: 42rem;
+  max-width: 52rem;
   transform: translateY(4svh);
 }
 
@@ -767,7 +767,7 @@ button {
 }
 
 .about-hero-intro {
-  max-width: 35rem;
+  max-width: 50rem;
   margin: 1rem 0 0;
   color: #222222;
   font-size: clamp(1.22rem, 1.85vw, 1.42rem);
@@ -777,12 +777,15 @@ button {
   text-wrap: balance;
 }
 
-.about-hero-detail {
-  max-width: 34rem;
-  margin: 1.1rem 0 0;
-  color: #777777;
-  font-size: 0.9rem;
-  line-height: 1.65;
+.about-hero-intro span {
+  display: block;
+  margin-bottom: 0.42rem;
+}
+
+.about-hero-intro span:last-child {
+  max-width: 48rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .about-board-shell {
@@ -2060,10 +2063,6 @@ html[data-theme="dark"] .about-hero::after {
 html[data-theme="dark"] .about-hero h1,
 html[data-theme="dark"] .about-hero-intro {
   color: var(--dark-text);
-}
-
-html[data-theme="dark"] .about-hero-detail {
-  color: var(--dark-muted);
 }
 
 html[data-theme="dark"] .about-empty-board {
