@@ -871,8 +871,8 @@ button {
 .about-portrait-frame {
   top: 42%;
   right: -1.1rem;
-  width: min(13.5rem, 18vw);
-  height: min(24.2rem, 43svh);
+  width: min(13rem, 17.4vw);
+  height: min(23.3rem, 41.5svh);
   overflow: hidden;
   transform: translateY(-50%) rotate(16.5deg);
 }
@@ -1184,8 +1184,8 @@ button {
   .about-portrait-frame {
     top: 43%;
     right: -0.4rem;
-    width: min(9.8rem, 36vw);
-    height: min(17.2rem, 39svh);
+    width: min(9.4rem, 34.5vw);
+    height: min(16.5rem, 37.5svh);
     transform: translateY(-50%) rotate(13deg);
     border-radius: 0.9rem;
   }
