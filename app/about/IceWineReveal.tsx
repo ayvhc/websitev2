@@ -28,7 +28,7 @@ export function IceWineReveal() {
       >
         <span>Favorite drink</span>
         <strong>Ice Wine</strong>
-        <p>Canadian winter-frozen grapes pressed into liquid gold — elegant and naturally sweet.</p>
+        <p>Canadian winter-frozen grapes pressed into liquid gold, naturally sweet and warm. I absolutely LOVE it.</p>
       </div>
     </div>
   );
