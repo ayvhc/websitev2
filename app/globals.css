@@ -835,6 +835,19 @@ button {
   pointer-events: none;
 }
 
+.about-dachshund {
+  position: absolute;
+  z-index: 4;
+  top: -14.1rem;
+  right: 7.5%;
+  width: min(25rem, 33vw);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 10px rgba(17, 17, 17, 0.11));
+  pointer-events: none;
+  user-select: none;
+}
+
 .about-portrait-frame,
 .about-wide-frame {
   position: absolute;
@@ -1158,6 +1171,12 @@ button {
   .about-empty-board::before {
     inset: 0.75rem;
     border-radius: 0.9rem;
+  }
+
+  .about-dachshund {
+    top: -8.55rem;
+    right: 4%;
+    width: min(15.5rem, 58vw);
   }
 
   .about-portrait-frame {
@@ -2082,6 +2101,10 @@ html[data-theme="dark"] .about-empty-board::before {
 
 html[data-theme="dark"] .about-empty-board::after {
   background: none;
+}
+
+html[data-theme="dark"] .about-dachshund {
+  filter: drop-shadow(0 11px 12px rgba(0, 0, 0, 0.38));
 }
 
 html[data-theme="dark"] .about-portrait-frame,

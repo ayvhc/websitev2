@@ -27,6 +27,11 @@ export default function AboutPage() {
           <div className="about-wide-frame">
             <MovieTicketFlip />
           </div>
+          <img
+            className="about-dachshund"
+            src="/images/dachshund-baguette.png"
+            alt="A hand-drawn dachshund wearing a beret and holding a baguette"
+          />
           <IceWineReveal />
           <div className="about-portrait-frame">
             <img src="/images/yihung-chen-portrait.jpg" alt="Yihung Chen portrait" />
