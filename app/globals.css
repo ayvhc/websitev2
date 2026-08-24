@@ -838,9 +838,9 @@ button {
 .about-dachshund {
   position: absolute;
   z-index: 4;
-  top: -14.1rem;
+  top: -10.45rem;
   right: 7.5%;
-  width: min(25rem, 33vw);
+  width: min(18.5rem, 25vw);
   height: auto;
   display: block;
   filter: drop-shadow(0 10px 10px rgba(17, 17, 17, 0.11));
@@ -1174,9 +1174,9 @@ button {
   }
 
   .about-dachshund {
-    top: -8.55rem;
+    top: -6.35rem;
     right: 4%;
-    width: min(15.5rem, 58vw);
+    width: min(11.5rem, 43vw);
   }
 
   .about-portrait-frame {
