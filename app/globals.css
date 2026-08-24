@@ -850,9 +850,6 @@ button {
   filter: drop-shadow(0 10px 10px rgba(17, 17, 17, 0.11));
   cursor: pointer;
   user-select: none;
-  perspective: 38rem;
-  transform-origin: 50% 82%;
-  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .about-dachshund img {
@@ -863,38 +860,29 @@ button {
   display: block;
   object-fit: contain;
   pointer-events: none;
-  backface-visibility: hidden;
-  transition:
-    opacity 260ms ease,
-    transform 390ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .about-dachshund-resting {
   opacity: 1;
-  transform: rotateY(0deg) translateY(0);
 }
 
 .about-dachshund-surprised {
   opacity: 0;
-  transform: rotateY(-72deg) translateY(-0.12rem);
 }
 
 .about-dachshund:hover,
 .about-dachshund:focus-visible {
   outline: none;
-  transform: translateY(-0.24rem) rotate(-1.8deg) scale(1.018);
 }
 
 .about-dachshund:hover .about-dachshund-resting,
 .about-dachshund:focus-visible .about-dachshund-resting {
   opacity: 0;
-  transform: rotateY(72deg) translateY(-0.18rem);
 }
 
 .about-dachshund:hover .about-dachshund-surprised,
 .about-dachshund:focus-visible .about-dachshund-surprised {
   opacity: 1;
-  transform: rotateY(0deg) translateY(0.14rem);
 }
 
 .about-portrait-frame,
@@ -1300,9 +1288,7 @@ button {
   }
 
   .about-ice-wine-button,
-  .about-ice-wine-note,
-  .about-dachshund,
-  .about-dachshund img {
+  .about-ice-wine-note {
     transition-duration: 160ms;
   }
 
