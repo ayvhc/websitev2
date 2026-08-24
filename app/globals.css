@@ -1818,6 +1818,18 @@ button {
   text-transform: uppercase;
 }
 
+.investment-copy h1,
+.experience-eyebrow,
+.contact-eyebrow {
+  color: rgba(17, 17, 17, 0.48);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(0.72rem, 0.88vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
 .contact-stage h1 {
   max-width: 32rem;
   margin: 0;
@@ -2021,8 +2033,10 @@ html[data-theme="dark"] .contact-intro {
   color: var(--dark-muted);
 }
 
-html[data-theme="dark"] .investment-copy h1 {
-  color: var(--dark-dim);
+html[data-theme="dark"] .investment-copy h1,
+html[data-theme="dark"] .experience-eyebrow,
+html[data-theme="dark"] .contact-eyebrow {
+  color: rgba(243, 244, 246, 0.44);
 }
 
 html[data-theme="dark"] .investment-copy > p {
@@ -2033,10 +2047,8 @@ html[data-theme="dark"] .investment-list p {
   color: var(--dark-muted);
 }
 
-html[data-theme="dark"] .experience-eyebrow,
 html[data-theme="dark"] .experience-meta,
 html[data-theme="dark"] .experience-skill-group h3,
-html[data-theme="dark"] .contact-eyebrow,
 html[data-theme="dark"] .contact-link-copy > span {
   color: var(--dark-dim);
 }
