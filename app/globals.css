@@ -848,7 +848,7 @@ button {
   border: 0;
   background: transparent;
   filter: drop-shadow(0 10px 10px rgba(17, 17, 17, 0.11));
-  cursor: pointer;
+  pointer-events: none;
   user-select: none;
 }
 
@@ -870,18 +870,34 @@ button {
   opacity: 0;
 }
 
-.about-dachshund:hover,
-.about-dachshund:focus-visible {
+.about-dachshund-hitbox {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  clip-path: polygon(
+    18% 10%, 37% 10%, 44% 23%, 45% 39%, 74% 40%, 88% 46%,
+    97% 68%, 89% 66%, 86% 87%, 82% 94%, 76% 92%, 72% 72%,
+    43% 78%, 40% 95%, 28% 95%, 26% 78%, 21% 68%, 17% 58%,
+    10% 47%, 12% 25%
+  );
+}
+
+.about-dachshund-hitbox:focus-visible {
   outline: none;
 }
 
-.about-dachshund:hover .about-dachshund-resting,
-.about-dachshund:focus-visible .about-dachshund-resting {
+.about-dachshund:has(.about-dachshund-hitbox:hover) .about-dachshund-resting,
+.about-dachshund:has(.about-dachshund-hitbox:focus-visible) .about-dachshund-resting {
   opacity: 0;
 }
 
-.about-dachshund:hover .about-dachshund-surprised,
-.about-dachshund:focus-visible .about-dachshund-surprised {
+.about-dachshund:has(.about-dachshund-hitbox:hover) .about-dachshund-surprised,
+.about-dachshund:has(.about-dachshund-hitbox:focus-visible) .about-dachshund-surprised {
   opacity: 1;
 }
 
