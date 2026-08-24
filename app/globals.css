@@ -869,7 +869,7 @@ button {
 }
 
 .about-portrait-frame {
-  top: 42%;
+  top: 45%;
   right: -1.1rem;
   width: min(13rem, 17.4vw);
   height: min(23.3rem, 41.5svh);
@@ -1182,7 +1182,7 @@ button {
   }
 
   .about-portrait-frame {
-    top: 43%;
+    top: 46%;
     right: -0.4rem;
     width: min(9.4rem, 34.5vw);
     height: min(16.5rem, 37.5svh);
