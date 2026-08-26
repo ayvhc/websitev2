@@ -904,10 +904,10 @@ button {
 .about-travel-map {
   position: absolute;
   z-index: 1;
-  top: 27%;
-  left: 25%;
-  width: 49%;
-  height: 51%;
+  top: 36%;
+  left: 21%;
+  width: 54%;
+  height: 50%;
   margin: 0;
   color: #171717;
   transform: rotate(-1deg);
@@ -916,7 +916,7 @@ button {
 .about-travel-map-visual {
   position: relative;
   width: 100%;
-  height: calc(100% - 3.25rem);
+  height: 100%;
   cursor: crosshair;
   outline: none;
 }
@@ -948,29 +948,53 @@ button {
 
 .about-travel-map figcaption {
   position: absolute;
-  left: 50%;
-  bottom: 0;
+  z-index: 2;
+  left: 53%;
+  top: 61%;
   width: max-content;
   max-width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: #666b73;
-  text-align: center;
-  transform: translateX(-50%);
+  color: #4d5662;
+  font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: clamp(0.78rem, 1.02vw, 0.96rem);
+  font-style: italic;
+  line-height: 1.22;
+  text-align: left;
+  transform: rotate(-4deg);
+  pointer-events: none;
 }
 
-.about-travel-map figcaption strong {
-  color: #22252a;
-  font-size: clamp(0.76rem, 1vw, 0.9rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+.about-travel-map figcaption::before {
+  position: absolute;
+  top: 0.34rem;
+  left: -0.9rem;
+  width: 0.3rem;
+  height: 0.3rem;
+  content: "";
+  border-radius: 50%;
+  background: #003f8f;
 }
 
 .about-travel-map figcaption span {
-  margin-top: 0.22rem;
-  font-size: clamp(0.58rem, 0.72vw, 0.7rem);
-  line-height: 1.35;
+  display: block;
+}
+
+.about-travel-map figcaption em {
+  display: block;
+  margin-left: 1.1rem;
+  color: #27394f;
+  font-style: inherit;
+}
+
+.about-travel-map figcaption::after {
+  position: absolute;
+  right: -1.55rem;
+  bottom: -0.55rem;
+  content: "↗";
+  color: #003f8f;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: 1.05rem;
+  font-style: normal;
+  transform: rotate(7deg);
 }
 
 .sr-only {
@@ -1320,22 +1344,20 @@ button {
   }
 
   .about-travel-map {
-    top: 35%;
+    top: 34%;
     left: 3.5%;
-    width: 58%;
-    height: 38%;
+    width: 62%;
+    height: 42%;
   }
 
   .about-travel-map-visual {
-    height: calc(100% - 2.8rem);
+    height: 100%;
   }
 
-  .about-travel-map figcaption strong {
-    font-size: 0.68rem;
-  }
-
-  .about-travel-map figcaption span {
-    display: none;
+  .about-travel-map figcaption {
+    left: 9%;
+    top: 72%;
+    font-size: 0.56rem;
   }
 
   .about-portrait-frame {
@@ -2271,11 +2293,19 @@ html[data-theme="dark"] .about-travel-map-visual::after {
 }
 
 html[data-theme="dark"] .about-travel-map figcaption {
-  color: rgba(224, 229, 237, 0.58);
+  color: rgba(224, 229, 237, 0.7);
 }
 
-html[data-theme="dark"] .about-travel-map figcaption strong {
-  color: rgba(248, 249, 251, 0.88);
+html[data-theme="dark"] .about-travel-map figcaption em {
+  color: rgba(240, 244, 250, 0.86);
+}
+
+html[data-theme="dark"] .about-travel-map figcaption::before {
+  background: #76a9ff;
+}
+
+html[data-theme="dark"] .about-travel-map figcaption::after {
+  color: #76a9ff;
 }
 
 html[data-theme="dark"] .about-portrait-frame,

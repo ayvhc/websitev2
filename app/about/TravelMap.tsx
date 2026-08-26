@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { geoInterpolate, geoNaturalEarth1, geoPath, type GeoPermissibleObjects } from "d3-geo";
+import { geoNaturalEarth1, geoPath, type GeoPermissibleObjects } from "d3-geo";
 import { feature } from "topojson-client";
 import landTopology from "world-atlas/land-110m.json";
 
@@ -12,33 +12,23 @@ type Place = {
 };
 
 const PLACES: Place[] = [
-  { name: "Taiwan", coordinates: [121, 23.7], labelOffset: [22, 8] },
-  { name: "Shanghai", coordinates: [121.47, 31.23], labelOffset: [24, -21] },
-  { name: "Shenzhen", coordinates: [114.06, 22.54], labelOffset: [-30, 16] },
-  { name: "Beijing", coordinates: [116.4, 39.9], labelOffset: [-36, -29] },
-  { name: "Hong Kong", coordinates: [114.17, 22.32], labelOffset: [34, 30] },
-  { name: "Ho Chi Minh City", coordinates: [106.63, 10.82], labelOffset: [-34, 36] },
-  { name: "Jakarta", coordinates: [106.82, -6.2], labelOffset: [23, 38] },
+  { name: "Taiwan", coordinates: [121, 23.7], labelOffset: [24, 2] },
+  { name: "Shanghai", coordinates: [121.47, 31.23], labelOffset: [35, -13] },
+  { name: "Shenzhen", coordinates: [114.06, 22.54], labelOffset: [-5, 50] },
+  { name: "Beijing", coordinates: [116.4, 39.9], labelOffset: [30, 27] },
+  { name: "Hong Kong", coordinates: [114.17, 22.32], labelOffset: [30, 30] },
+  { name: "Ho Chi Minh City", coordinates: [106.63, 10.82], labelOffset: [40, 45] },
+  { name: "Jakarta", coordinates: [106.82, -6.2], labelOffset: [25, 25] },
   { name: "Champaign", coordinates: [-88.24, 40.12], labelOffset: [-17, -23] },
-  { name: "New York", coordinates: [-74.01, 40.71], labelOffset: [20, 20] },
-];
-
-const ROUTES: Array<[number, number]> = [
-  [0, 1],
-  [1, 3],
-  [3, 0],
-  [0, 4],
-  [4, 2],
-  [2, 5],
-  [5, 6],
-  [6, 0],
-  [0, 7],
-  [7, 8],
-  [8, 0],
+  { name: "New York", coordinates: [-74.01, 40.71], labelOffset: [-18, 22] },
 ];
 
 const atlas = landTopology as unknown as { objects: { land: unknown } };
 const LAND = feature(landTopology as never, atlas.objects.land as never) as unknown as GeoPermissibleObjects;
+const FOCUS_AREA = {
+  type: "MultiPoint",
+  coordinates: PLACES.map((place) => place.coordinates),
+} as unknown as GeoPermissibleObjects;
 
 export function TravelMap() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -55,10 +45,10 @@ export function TravelMap() {
       .rotate([-160, 0])
       .fitExtent(
         [
-          [12, 12],
-          [Math.max(24, size.width - 12), Math.max(24, size.height - 14)],
+          [34, 25],
+          [Math.max(68, size.width - 34), Math.max(50, size.height - 28)],
         ],
-        { type: "Sphere" },
+        FOCUS_AREA,
       );
   }, [size]);
 
@@ -95,7 +85,7 @@ export function TravelMap() {
     }
 
     const start = performance.now();
-    const duration = 1450;
+    const duration = 440;
     const tick = (now: number) => {
       const elapsed = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - elapsed, 3);
@@ -126,37 +116,10 @@ export function TravelMap() {
     context.fillStyle = dark ? "rgba(255,255,255,0.018)" : "rgba(0,31,84,0.018)";
     context.fill();
     context.strokeStyle = dark
-      ? `rgba(229,233,239,${active ? 0.34 : 0.2})`
-      : `rgba(17,17,17,${active ? 0.29 : 0.16})`;
-    context.lineWidth = active ? 0.9 : 0.72;
+      ? `rgba(229,233,239,${active ? 0.4 : 0.27})`
+      : `rgba(17,17,17,${active ? 0.35 : 0.22})`;
+    context.lineWidth = active ? 0.95 : 0.82;
     context.stroke();
-
-    ROUTES.forEach(([fromIndex, toIndex], routeIndex) => {
-      const localProgress = Math.max(0, Math.min(1, progress * ROUTES.length - routeIndex));
-      if (localProgress <= 0) return;
-      const interpolate = geoInterpolate(
-        PLACES[fromIndex].coordinates,
-        PLACES[toIndex].coordinates,
-      );
-      const steps = Math.max(2, Math.ceil(localProgress * 44));
-      context.beginPath();
-      let lastPoint: [number, number] | null = null;
-      for (let step = 0; step <= steps; step += 1) {
-        const point = projection(interpolate((step / steps) * localProgress));
-        if (!point) continue;
-        if (!lastPoint || Math.abs(point[0] - lastPoint[0]) > size.width * 0.44) {
-          context.moveTo(point[0], point[1]);
-        } else {
-          context.lineTo(point[0], point[1]);
-        }
-        lastPoint = point;
-      }
-      context.strokeStyle = dark ? "rgba(122,174,255,0.82)" : "rgba(0,67,155,0.72)";
-      context.lineWidth = 1.2;
-      context.setLineDash([3.5, 3.1]);
-      context.stroke();
-      context.setLineDash([]);
-    });
 
     PLACES.forEach((place, index) => {
       const point = projection(place.coordinates);
@@ -167,7 +130,7 @@ export function TravelMap() {
       context.fillStyle = dark ? "#76a9ff" : "#003f8f";
       context.fill();
 
-      const labelAlpha = isHovered ? 1 : Math.max(0, Math.min(1, (progress - 0.76) / 0.24));
+      const labelAlpha = isHovered ? 1 : progress;
       if ((!active && !isHovered) || labelAlpha <= 0) return;
       const [dx, dy] = place.labelOffset;
       const labelX = point[0] + dx;
@@ -231,8 +194,10 @@ export function TravelMap() {
         <canvas ref={canvasRef} aria-hidden="true" />
       </div>
       <figcaption>
-        <strong>Always in Transit</strong>
-        <span>You can usually find me somewhere around here.</span>
+        <span>
+          You can usually find me
+          <em>somewhere around here.</em>
+        </span>
       </figcaption>
       <ul className="sr-only">
         {PLACES.map((place) => (
