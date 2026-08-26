@@ -1,19 +1,16 @@
 import { ArrowUpRight, Mail } from "lucide-react";
-import { BlurIn } from "../components/BlurIn";
 import { DockNav } from "../components/DockNav";
 
 export default function ContactPage() {
   return (
     <main className="contact-shell">
       <section className="contact-stage" aria-labelledby="contact-title">
-        <BlurIn>
-          <p className="contact-eyebrow">Contact</p>
-          <h1 id="contact-title">Get in Touch</h1>
-          <p className="contact-intro">
-            If you’re building something ambitious, early, or overlooked, I’d love
-            to hear about it.
-          </p>
-        </BlurIn>
+        <p className="contact-eyebrow">Contact</p>
+        <h1 id="contact-title">Get in Touch</h1>
+        <p className="contact-intro">
+          If you’re building something ambitious, early, or overlooked, I’d love
+          to hear about it.
+        </p>
 
         <div className="contact-links">
           <a className="contact-link-row" href="mailto:adamchen1023@outlook.com">

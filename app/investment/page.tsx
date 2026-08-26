@@ -1,7 +1,6 @@
 "use client";
 
 import { type CSSProperties, useEffect, useRef, useState } from "react";
-import { BlurIn } from "../components/BlurIn";
 import { DockNav } from "../components/DockNav";
 
 const investmentSections = [
@@ -124,17 +123,10 @@ export default function InvestmentPage() {
             aria-hidden={index !== activeSection}
             key={section.title ?? "N1AC"}
           >
-            {index === 0 ? (
-              <BlurIn className="investment-copy">
-                {section.title ? <h1>{section.title}</h1> : null}
-                {section.content}
-              </BlurIn>
-            ) : (
-              <div className="investment-copy">
-                {section.title ? <h1>{section.title}</h1> : null}
-                {section.content}
-              </div>
-            )}
+            <div className="investment-copy">
+              {section.title ? <h1>{section.title}</h1> : null}
+              {section.content}
+            </div>
           </section>
         ))}
       </div>
