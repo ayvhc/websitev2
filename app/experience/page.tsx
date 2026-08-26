@@ -1,4 +1,5 @@
 import { DockNav } from "../components/DockNav";
+import { BlurIn } from "../components/BlurIn";
 
 type ExperienceItem = {
   mark: string;
@@ -198,12 +199,14 @@ export default function ExperiencePage() {
       <div className="experience-scroll">
         <div className="experience-page">
           <header className="experience-intro">
-            <p className="experience-eyebrow">Experience</p>
-            <h1>From early-stage investing to hands-on engineering.</h1>
-            <p className="experience-intro-copy">
-              I’ve evaluated founders, built businesses, shaped market strategies,
-              and worked on technical systems in research labs and industry.
-            </p>
+            <BlurIn>
+              <p className="experience-eyebrow">Experience</p>
+              <h1>From early-stage investing to hands-on engineering.</h1>
+              <p className="experience-intro-copy">
+                I’ve evaluated founders, built businesses, shaped market strategies,
+                and worked on technical systems in research labs and industry.
+              </p>
+            </BlurIn>
             <button
               type="button"
               className="experience-download"

@@ -1,4 +1,5 @@
 import { DockNav } from "../components/DockNav";
+import { BlurIn } from "../components/BlurIn";
 import { IceWineReveal } from "./IceWineReveal";
 import { MovieTicketFlip } from "./MovieTicketFlip";
 import { TravelMap } from "./TravelMap";
@@ -7,7 +8,7 @@ export default function AboutPage() {
   return (
     <main className="about-shell">
       <section className="about-hero" aria-labelledby="about-hero-title">
-        <div className="about-hero-copy">
+        <BlurIn className="about-hero-copy">
           <h1 id="about-hero-title">About Me.</h1>
           <p className="about-hero-intro">
             <span>Everyone calls me Adam.</span>
@@ -19,7 +20,7 @@ export default function AboutPage() {
               robots that help people do things they never thought possible.
             </span>
           </p>
-        </div>
+        </BlurIn>
 
       </section>
 

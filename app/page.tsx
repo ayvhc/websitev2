@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { UserRound } from "lucide-react";
+import { BlurIn } from "./components/BlurIn";
 import { DockNav } from "./components/DockNav";
 
 type Scene = {
@@ -163,13 +164,13 @@ export default function HomePage() {
               aria-hidden={index !== activeScene}
             >
               {scene.intro ? (
-                <div className="intro-copy">
+                <BlurIn className="intro-copy">
                   {scene.intro.map((line, lineIndex) => (
                     <p className={lineIndex === 0 ? "intro-name" : "intro-line"} key={line}>
                       {line}
                     </p>
                   ))}
-                </div>
+                </BlurIn>
               ) : (
                 <div className="principle-copy">
                   <h1>{scene.title}</h1>
