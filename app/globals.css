@@ -1492,7 +1492,7 @@ button {
 .experience-page {
   width: min(58rem, calc(100% - 3rem));
   margin: 0 auto;
-  padding: clamp(6rem, 12vh, 9rem) 0 9rem;
+  padding: clamp(7.5rem, 15vh, 11rem) 0 9rem;
 }
 
 .experience-intro {
@@ -1945,7 +1945,7 @@ button {
 
   .experience-page {
     width: calc(100% - 3rem);
-    padding-top: 5rem;
+    padding-top: 6.25rem;
   }
 
   .experience-intro {
