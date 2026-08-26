@@ -16,9 +16,9 @@ const PLACES: Place[] = [
   { id: "shenzhen", name: "Shenzhen", location: [22.54, 114.06], labelOffset: [-58, 24] },
   { id: "beijing", name: "Beijing", location: [39.9, 116.4], labelOffset: [-53, -17] },
   { id: "hong-kong", name: "Hong Kong", location: [22.32, 114.17], labelOffset: [17, 37] },
-  { id: "ho-chi-minh", name: "Ho Chi Minh City", location: [10.82, 106.63], labelOffset: [-92, 28] },
+  { id: "ho-chi-minh", name: "Ho Chi Minh City", location: [10.82, 106.63], labelOffset: [-58, 20] },
   { id: "jakarta", name: "Jakarta", location: [-6.2, 106.82], labelOffset: [16, 16] },
-  { id: "champaign", name: "Champaign", location: [40.12, -88.24], labelOffset: [-73, -14] },
+  { id: "champaign", name: "Champaign", location: [40.12, -88.24], labelOffset: [-45, -10] },
   { id: "new-york", name: "New York", location: [40.71, -74.01], labelOffset: [17, 13] },
 ];
 
@@ -34,12 +34,28 @@ type LabelStyle = CSSProperties & {
   "--label-y": string;
 };
 
+function labelVisibility(location: [number, number], phi: number, theta: number) {
+  const latitude = (location[0] * Math.PI) / 180;
+  const longitude = (location[1] * Math.PI) / 180 - Math.PI;
+  const latitudeCosine = Math.cos(latitude);
+  const x = -latitudeCosine * Math.cos(longitude);
+  const y = Math.sin(latitude);
+  const z = latitudeCosine * Math.sin(longitude);
+  const depth =
+    -Math.sin(phi) * Math.cos(theta) * x +
+    Math.sin(theta) * y +
+    Math.cos(phi) * Math.cos(theta) * z;
+  const progress = Math.max(0, Math.min(1, (depth - 0.08) / 0.22));
+  return progress * progress * (3 - 2 * progress);
+}
+
 export function TravelMap() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerRef = useRef<number | null>(null);
   const dragRef = useRef(0);
   const rotationRef = useRef(4.45);
+  const labelRefs = useRef(new Map<string, HTMLSpanElement>());
   const [dragging, setDragging] = useState(false);
 
   useEffect(() => {
@@ -89,10 +105,11 @@ export function TravelMap() {
       if (pointerRef.current === null && !prefersReducedMotion.matches) {
         rotationRef.current += 0.0022;
       }
+      const phi = rotationRef.current + dragRef.current;
       globe.update({
         width,
         height: width,
-        phi: rotationRef.current + dragRef.current,
+        phi,
         dark: dark ? 1 : 0,
         diffuse: dark ? 1.35 : 1.8,
         mapBrightness: dark ? 2.1 : 4.8,
@@ -100,6 +117,13 @@ export function TravelMap() {
         baseColor: dark ? [0.72, 0.76, 0.82] : [1, 1, 1],
         markerColor: dark ? [0.46, 0.67, 1] : [0, 0.25, 0.56],
         glowColor: dark ? [0.055, 0.065, 0.085] : [0.98, 0.985, 1],
+      });
+      PLACES.forEach((place) => {
+        const label = labelRefs.current.get(place.id);
+        if (!label) return;
+        const visibility = labelVisibility(place.location, phi, 0.19);
+        label.style.opacity = visibility.toFixed(3);
+        label.style.visibility = visibility < 0.015 ? "hidden" : "visible";
       });
       frame = requestAnimationFrame(render);
     };
@@ -151,11 +175,14 @@ export function TravelMap() {
         {PLACES.map((place) => (
           <span
             key={place.id}
+            ref={(element) => {
+              if (element) labelRefs.current.set(place.id, element);
+              else labelRefs.current.delete(place.id);
+            }}
             className="about-globe-label"
             style={
               {
                 positionAnchor: `--cobe-adam-${place.id}`,
-                opacity: `var(--cobe-visible-adam-${place.id}, 0)`,
                 "--label-x": `${place.labelOffset[0]}px`,
                 "--label-y": `${place.labelOffset[1]}px`,
               } as LabelStyle
@@ -165,13 +192,6 @@ export function TravelMap() {
           </span>
         ))}
       </div>
-      <figcaption>
-        <span>
-          You can usually find me
-          <em>somewhere around here.</em>
-        </span>
-      </figcaption>
-      <span className="about-globe-hint" aria-hidden="true">drag to explore</span>
       <ul className="sr-only">
         {PLACES.map((place) => (
           <li key={place.id}>{place.name}</li>

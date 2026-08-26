@@ -904,9 +904,9 @@ button {
 .about-travel-map {
   position: absolute;
   z-index: 1;
-  top: 18%;
-  left: 35%;
-  width: min(21rem, 34%);
+  top: 24%;
+  left: 38%;
+  width: min(24rem, 38%);
   aspect-ratio: 1;
   margin: 0;
   color: #171717;
@@ -966,76 +966,6 @@ button {
   white-space: nowrap;
   translate: calc(-50% + var(--label-x)) calc(50% + var(--label-y));
   pointer-events: none;
-  transition: opacity 240ms ease;
-}
-
-.about-travel-map figcaption {
-  position: absolute;
-  z-index: 2;
-  right: -27%;
-  bottom: 14%;
-  width: max-content;
-  max-width: 100%;
-  color: #4d5662;
-  font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  font-size: clamp(0.78rem, 1.02vw, 0.96rem);
-  font-style: italic;
-  line-height: 1.22;
-  text-align: left;
-  transform: rotate(-4deg);
-  pointer-events: none;
-}
-
-.about-travel-map figcaption::before {
-  position: absolute;
-  top: 0.34rem;
-  left: -0.9rem;
-  width: 0.3rem;
-  height: 0.3rem;
-  content: "";
-  border-radius: 50%;
-  background: #003f8f;
-}
-
-.about-travel-map figcaption span {
-  display: block;
-}
-
-.about-travel-map figcaption em {
-  display: block;
-  margin-left: 1.1rem;
-  color: #27394f;
-  font-style: inherit;
-}
-
-.about-travel-map figcaption::after {
-  position: absolute;
-  right: -1.55rem;
-  bottom: -0.55rem;
-  content: "↗";
-  color: #003f8f;
-  font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: 1.05rem;
-  font-style: normal;
-  transform: rotate(7deg);
-}
-
-.about-globe-hint {
-  position: absolute;
-  left: 50%;
-  bottom: 4%;
-  color: rgba(17, 17, 17, 0.34);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
-  font-size: 0.48rem;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  transform: translateX(-50%);
-  pointer-events: none;
-  transition: opacity 180ms ease;
-}
-
-.about-travel-map.is-dragging .about-globe-hint {
-  opacity: 0;
 }
 
 .sr-only {
@@ -1385,29 +1315,18 @@ button {
   }
 
   .about-travel-map {
-    top: 30%;
-    left: 11%;
-    width: min(15.5rem, 55%);
+    top: 33%;
+    left: 14%;
+    width: min(17rem, 58%);
   }
 
   .about-travel-map-visual {
     height: 100%;
   }
 
-  .about-travel-map figcaption {
-    right: -31%;
-    bottom: 11%;
-    font-size: 0.56rem;
-  }
-
   .about-globe-label {
     padding: 0.13rem 0.27rem;
     font-size: 0.43rem;
-  }
-
-  .about-globe-hint {
-    bottom: 2%;
-    font-size: 0.4rem;
   }
 
   .about-portrait-frame {
@@ -2347,26 +2266,6 @@ html[data-theme="dark"] .about-globe-label {
   background: rgba(16, 19, 24, 0.82);
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
   color: rgba(244, 247, 251, 0.86);
-}
-
-html[data-theme="dark"] .about-globe-hint {
-  color: rgba(232, 237, 244, 0.34);
-}
-
-html[data-theme="dark"] .about-travel-map figcaption {
-  color: rgba(224, 229, 237, 0.7);
-}
-
-html[data-theme="dark"] .about-travel-map figcaption em {
-  color: rgba(240, 244, 250, 0.86);
-}
-
-html[data-theme="dark"] .about-travel-map figcaption::before {
-  background: #76a9ff;
-}
-
-html[data-theme="dark"] .about-travel-map figcaption::after {
-  color: #76a9ff;
 }
 
 html[data-theme="dark"] .about-portrait-frame,
