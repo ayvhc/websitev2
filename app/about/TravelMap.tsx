@@ -193,12 +193,21 @@ export function TravelMap() {
           </span>
         ))}
       </div>
-      <figcaption className="about-globe-note">
-        <span>
-          You can usually find me
-          <em>somewhere around here.</em>
-        </span>
-      </figcaption>
+      <svg
+        className="about-globe-note"
+        viewBox="0 0 400 400"
+        role="img"
+        aria-label="I’m usually somewhere here"
+      >
+        <defs>
+          <path id="about-globe-note-path" d="M 38 205 C 38 305, 108 374, 214 382" />
+        </defs>
+        <text>
+          <textPath href="#about-globe-note-path" startOffset="7%">
+            I’m usually somewhere here
+          </textPath>
+        </text>
+      </svg>
       <ul className="sr-only">
         {PLACES.map((place) => (
           <li key={place.id}>{place.name}</li>
