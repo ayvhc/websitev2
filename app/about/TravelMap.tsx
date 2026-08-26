@@ -12,14 +12,14 @@ type Place = {
 
 const PLACES: Place[] = [
   { id: "taiwan", name: "Taiwan", location: [23.7, 121], labelOffset: [14, 11] },
-  { id: "shanghai", name: "Shanghai", location: [31.23, 121.47], labelOffset: [18, -12] },
+  { id: "shanghai", name: "Shanghai", location: [31.23, 121.47], labelOffset: [34, -12] },
   { id: "shenzhen", name: "Shenzhen", location: [22.54, 114.06], labelOffset: [-58, 24] },
-  { id: "beijing", name: "Beijing", location: [39.9, 116.4], labelOffset: [-53, -17] },
+  { id: "beijing", name: "Beijing", location: [39.9, 116.4], labelOffset: [-31, -17] },
   { id: "hong-kong", name: "Hong Kong", location: [22.32, 114.17], labelOffset: [17, 37] },
-  { id: "ho-chi-minh", name: "Ho Chi Minh City", location: [10.82, 106.63], labelOffset: [-58, 20] },
+  { id: "ho-chi-minh", name: "Ho Chi Minh", location: [10.82, 106.63], labelOffset: [-58, 30] },
   { id: "jakarta", name: "Jakarta", location: [-6.2, 106.82], labelOffset: [16, 16] },
   { id: "champaign", name: "Champaign", location: [40.12, -88.24], labelOffset: [-45, -10] },
-  { id: "new-york", name: "New York", location: [40.71, -74.01], labelOffset: [17, 13] },
+  { id: "new-york", name: "New York", location: [40.71, -74.01], labelOffset: [28, 23] },
 ];
 
 const MARKERS: Marker[] = PLACES.map(({ id, location }) => ({
@@ -45,7 +45,7 @@ function labelVisibility(location: [number, number], phi: number, theta: number)
     -Math.sin(phi) * Math.cos(theta) * x +
     Math.sin(theta) * y +
     Math.cos(phi) * Math.cos(theta) * z;
-  const progress = Math.max(0, Math.min(1, (depth - 0.08) / 0.22));
+  const progress = Math.max(0, Math.min(1, (depth - 0.16) / 0.2));
   return progress * progress * (3 - 2 * progress);
 }
 
