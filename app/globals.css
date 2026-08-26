@@ -1988,6 +1988,11 @@ button {
   .investment-list p {
     font-size: 0.98rem;
   }
+
+  .contact-stage {
+    left: 1.5rem;
+    width: calc(100% - 3rem);
+  }
 }
 
 .contact-shell {
@@ -2002,9 +2007,9 @@ button {
 .contact-stage {
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: min(40rem, calc(100% - 3rem));
-  transform: translate(-50%, -52%);
+  left: clamp(1.5rem, 10vw, 9rem);
+  width: min(42rem, 48vw);
+  transform: translateY(-50%);
 }
 
 .contact-eyebrow {
@@ -2148,7 +2153,9 @@ button {
 
 @media (max-width: 640px) {
   .contact-stage {
-    transform: translate(-50%, -54%);
+    left: 1.5rem;
+    width: calc(100% - 3rem);
+    transform: translateY(-54%);
   }
 
   .contact-stage h1 {
