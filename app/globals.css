@@ -904,7 +904,7 @@ button {
 .about-travel-map {
   position: absolute;
   z-index: 1;
-  top: 13.5%;
+  top: 5%;
   left: 33.5%;
   width: min(29rem, 46%);
   aspect-ratio: 1;
@@ -1337,7 +1337,7 @@ button {
   }
 
   .about-travel-map {
-    top: 23%;
+    top: 14%;
     left: 9%;
     width: min(20rem, 68%);
   }
