@@ -1,6 +1,7 @@
 import { DockNav } from "../components/DockNav";
 import { IceWineReveal } from "./IceWineReveal";
 import { MovieTicketFlip } from "./MovieTicketFlip";
+import { TravelMap } from "./TravelMap";
 
 export default function AboutPage() {
   return (
@@ -44,6 +45,7 @@ export default function AboutPage() {
               aria-label="Hover to surprise the dachshund"
             />
           </div>
+          <TravelMap />
           <IceWineReveal />
           <div className="about-portrait-frame">
             <img src="/images/yihung-chen-portrait.jpg" alt="Yihung Chen portrait" />

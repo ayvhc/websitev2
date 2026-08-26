@@ -901,6 +901,90 @@ button {
   opacity: 1;
 }
 
+.about-travel-map {
+  position: absolute;
+  z-index: 1;
+  top: 27%;
+  left: 25%;
+  width: 49%;
+  height: 51%;
+  margin: 0;
+  color: #171717;
+  transform: rotate(-1deg);
+}
+
+.about-travel-map-visual {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 3.25rem);
+  cursor: crosshair;
+  outline: none;
+}
+
+.about-travel-map-visual::after {
+  position: absolute;
+  inset: 5% 7%;
+  content: "";
+  border-radius: 50%;
+  background: rgba(0, 31, 84, 0.035);
+  opacity: 0;
+  filter: blur(1.6rem);
+  pointer-events: none;
+  transition: opacity 320ms ease;
+}
+
+.about-travel-map.is-active .about-travel-map-visual::after,
+.about-travel-map-visual:focus-visible::after {
+  opacity: 1;
+}
+
+.about-travel-map canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.about-travel-map figcaption {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: max-content;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #666b73;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.about-travel-map figcaption strong {
+  color: #22252a;
+  font-size: clamp(0.76rem, 1vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.about-travel-map figcaption span {
+  margin-top: 0.22rem;
+  font-size: clamp(0.58rem, 0.72vw, 0.7rem);
+  line-height: 1.35;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 .about-portrait-frame,
 .about-wide-frame {
   position: absolute;
@@ -1086,6 +1170,7 @@ button {
   bottom: -1.2rem;
   width: min(29rem, 42vw);
   height: min(19rem, 34svh);
+  pointer-events: none;
 }
 
 .about-ice-wine-button {
@@ -1100,6 +1185,7 @@ button {
   appearance: none;
   background: transparent;
   cursor: pointer;
+  pointer-events: auto;
   transform: rotate(4deg);
   transform-origin: 50% 82%;
   transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -1231,6 +1317,25 @@ button {
     top: -6.35rem;
     right: 4%;
     width: min(11.5rem, 43vw);
+  }
+
+  .about-travel-map {
+    top: 35%;
+    left: 3.5%;
+    width: 58%;
+    height: 38%;
+  }
+
+  .about-travel-map-visual {
+    height: calc(100% - 2.8rem);
+  }
+
+  .about-travel-map figcaption strong {
+    font-size: 0.68rem;
+  }
+
+  .about-travel-map figcaption span {
+    display: none;
   }
 
   .about-portrait-frame {
@@ -2159,6 +2264,18 @@ html[data-theme="dark"] .about-empty-board::after {
 
 html[data-theme="dark"] .about-dachshund {
   filter: drop-shadow(0 11px 12px rgba(0, 0, 0, 0.38));
+}
+
+html[data-theme="dark"] .about-travel-map-visual::after {
+  background: rgba(74, 131, 226, 0.08);
+}
+
+html[data-theme="dark"] .about-travel-map figcaption {
+  color: rgba(224, 229, 237, 0.58);
+}
+
+html[data-theme="dark"] .about-travel-map figcaption strong {
+  color: rgba(248, 249, 251, 0.88);
 }
 
 html[data-theme="dark"] .about-portrait-frame,
