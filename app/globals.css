@@ -904,9 +904,9 @@ button {
 .about-travel-map {
   position: absolute;
   z-index: 1;
-  top: 18.5%;
+  top: 13.5%;
   left: 33.5%;
-  width: min(26rem, 41%);
+  width: min(29rem, 46%);
   aspect-ratio: 1;
   margin: 0;
   color: #171717;
@@ -985,7 +985,7 @@ button {
 .about-globe-note text {
   fill: #4d5662;
   font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  font-size: 13px;
+  font-size: 14px;
   font-style: italic;
   letter-spacing: 0.035em;
 }
@@ -1337,9 +1337,9 @@ button {
   }
 
   .about-travel-map {
-    top: 28.5%;
+    top: 23%;
     left: 9%;
-    width: min(18rem, 61%);
+    width: min(20rem, 68%);
   }
 
   .about-travel-map-visual {
