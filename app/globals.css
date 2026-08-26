@@ -904,9 +904,9 @@ button {
 .about-travel-map {
   position: absolute;
   z-index: 1;
-  top: 24%;
+  top: 20%;
   left: 38%;
-  width: min(24rem, 38%);
+  width: min(26rem, 41%);
   aspect-ratio: 1;
   margin: 0;
   color: #171717;
@@ -1315,9 +1315,9 @@ button {
   }
 
   .about-travel-map {
-    top: 33%;
+    top: 30%;
     left: 14%;
-    width: min(17rem, 58%);
+    width: min(18rem, 61%);
   }
 
   .about-travel-map-visual {
