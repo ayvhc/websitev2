@@ -200,7 +200,7 @@ export function TravelMap() {
         aria-label="I’m usually somewhere here"
       >
         <defs>
-          <path id="about-globe-note-path" d="M 38 205 C 38 305, 108 374, 214 382" />
+          <path id="about-globe-note-path" d="M 34 220 C 34 322, 110 389, 222 394" />
         </defs>
         <text>
           <textPath href="#about-globe-note-path" startOffset="7%">
