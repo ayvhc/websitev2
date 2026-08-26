@@ -193,6 +193,12 @@ export function TravelMap() {
           </span>
         ))}
       </div>
+      <figcaption className="about-globe-note">
+        <span>
+          You can usually find me
+          <em>somewhere around here.</em>
+        </span>
+      </figcaption>
       <ul className="sr-only">
         {PLACES.map((place) => (
           <li key={place.id}>{place.name}</li>
