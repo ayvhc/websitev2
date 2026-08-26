@@ -17,7 +17,7 @@ const PLACES: Place[] = [
   { id: "beijing", name: "Beijing", location: [39.9, 116.4], labelOffset: [-31, -17] },
   { id: "hong-kong", name: "Hong Kong", location: [22.32, 114.17], labelOffset: [17, 37] },
   { id: "ho-chi-minh", name: "Ho Chi Minh", location: [10.82, 106.63], labelOffset: [-58, 30] },
-  { id: "singapore", name: "Singapore", location: [1.35, 103.82], labelOffset: [24, 36] },
+  { id: "singapore", name: "Singapore", location: [1.35, 103.82], labelOffset: [-42, 48] },
   { id: "jakarta", name: "Jakarta", location: [-6.2, 106.82], labelOffset: [16, 16] },
   { id: "champaign", name: "Champaign", location: [40.12, -88.24], labelOffset: [-45, -10] },
   { id: "new-york", name: "New York", location: [40.71, -74.01], labelOffset: [28, 23] },
@@ -26,7 +26,7 @@ const PLACES: Place[] = [
 const MARKERS: Marker[] = PLACES.map(({ id, location }) => ({
   id: `adam-${id}`,
   location,
-  size: id === "shenzhen" ? 0 : 0.045,
+  size: id === "shenzhen" || id === "hong-kong" ? 0 : 0.045,
 }));
 
 type LabelStyle = CSSProperties & {

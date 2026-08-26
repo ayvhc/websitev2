@@ -905,7 +905,7 @@ button {
   position: absolute;
   z-index: 1;
   top: 20%;
-  left: 38%;
+  left: 35.5%;
   width: min(26rem, 41%);
   aspect-ratio: 1;
   margin: 0;
@@ -1021,7 +1021,7 @@ button {
 
 .about-wide-frame {
   top: -2.45rem;
-  left: 1.7rem;
+  left: 0.4rem;
   width: min(24rem, 34vw);
   height: auto;
   aspect-ratio: 1717 / 916;
@@ -1161,7 +1161,7 @@ button {
 .about-ice-wine {
   position: absolute;
   z-index: 3;
-  left: 8.5%;
+  left: 6.5%;
   bottom: -1.2rem;
   width: min(29rem, 42vw);
   height: min(19rem, 34svh);
@@ -1316,7 +1316,7 @@ button {
 
   .about-travel-map {
     top: 30%;
-    left: 14%;
+    left: 11%;
     width: min(18rem, 61%);
   }
 
@@ -1344,7 +1344,7 @@ button {
 
   .about-wide-frame {
     top: -1.25rem;
-    left: 0.35rem;
+    left: -0.2rem;
     width: min(17rem, 66vw);
     height: auto;
     transform: rotate(-10deg);
@@ -1355,7 +1355,7 @@ button {
   }
 
   .about-ice-wine {
-    left: 3.5%;
+    left: 1.5%;
     bottom: -0.7rem;
     width: min(22rem, 88vw);
     height: min(15rem, 29svh);
