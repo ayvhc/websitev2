@@ -2724,6 +2724,11 @@ html[data-theme="dark"] .contact-link-row:focus-visible .contact-link-arrow {
     left: 1.2rem;
   }
 
+  .experience-timeline {
+    width: calc(100% - 0.55rem);
+    margin-left: 0.55rem;
+  }
+
   .experience-heading h2 {
     overflow-wrap: anywhere;
   }
