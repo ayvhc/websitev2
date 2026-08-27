@@ -184,8 +184,8 @@ export function TravelMap() {
             style={
               {
                 positionAnchor: `--cobe-adam-${place.id}`,
-                "--label-x": `${place.labelOffset[0]}px`,
-                "--label-y": `${place.labelOffset[1]}px`,
+                "--label-x": `calc(${place.labelOffset[0]}px * var(--globe-label-scale, 1))`,
+                "--label-y": `calc(${place.labelOffset[1]}px * var(--globe-label-scale, 1))`,
               } as LabelStyle
             }
           >
