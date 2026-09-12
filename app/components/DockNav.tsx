@@ -11,7 +11,6 @@ import {
 } from "react";
 import {
   BriefcaseBusiness,
-  Compass,
   Home,
   Lightbulb,
   Mail,
@@ -38,7 +37,6 @@ const navItems: NavItem[] = [
   { label: "Home", icon: Home, href: "/" },
   { label: "Investment", icon: Lightbulb, href: "/investment" },
   { label: "Experience", icon: BriefcaseBusiness, href: "/experience" },
-  { label: "Journey", icon: Compass, href: "/journey" },
   { label: "About", icon: UserRound, href: "/about" },
   { label: "Contact", icon: Mail, href: "/contact" },
 ];
@@ -177,14 +175,14 @@ function DockThemeToggle() {
   );
 }
 
-export function DockNav({ current }: { current: "Home" | "About" | "Investment" | "Experience" | "Journey" | "Contact" }) {
+export function DockNav({ current }: { current: "Home" | "About" | "Investment" | "Experience" | "Contact" }) {
   return (
     <div className="dock-wrap">
       <Dock>
         {navItems.map((item) => (
           <DockItem item={item} current={item.label === current} key={item.label} />
         ))}
-        {current !== "Journey" ? <DockThemeToggle /> : null}
+        <DockThemeToggle />
       </Dock>
     </div>
   );
