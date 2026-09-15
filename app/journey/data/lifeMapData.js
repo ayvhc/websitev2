@@ -828,7 +828,7 @@ export const lifeNodes = [
   },
   {
     id: 'learning-mianxiang',
-    title: '学习面相学',
+    title: 'Learn 面相学',
     time: 'Junior Year',
     type: 'Personal Exploration / Experience',
     status: 'actual',
@@ -971,7 +971,7 @@ export const lifeEdges = [
   { id: 'e-n1ac-semi-valley', source: 'n1ac', target: 'semi-valley', type: 'actual', label: '' },
   { id: 'e-ivy-opera', source: 'ivy-capital', target: 'joined-opera', type: 'actual', label: '' },
   { id: 'e-ivy-boring-illini', source: 'ivy-capital', target: 'joined-boring-illini', type: 'actual', label: '' },
-  { id: 'e-pwc-mianxiang', source: 'pwc', target: 'learning-mianxiang', type: 'actual', label: '' },
+  { id: 'e-ivy-mianxiang', source: 'ivy-capital', target: 'learning-mianxiang', type: 'actual', label: '' },
 
   {
     id: 'a-move-taiwan',
