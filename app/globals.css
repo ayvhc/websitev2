@@ -298,6 +298,138 @@ button {
   opacity: 1;
 }
 
+.journey-locked-page {
+  min-height: 100svh;
+  background: var(--white);
+}
+
+.journey-access-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.journey-access-dialog {
+  width: min(100%, 22rem);
+  padding: 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 70px rgba(17, 17, 17, 0.12);
+  color: var(--black);
+}
+
+.journey-access-eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.journey-access-dialog h2 {
+  margin: 0 0 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.journey-access-dialog form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.55rem;
+}
+
+.journey-access-dialog input,
+.journey-access-dialog button {
+  min-height: 2.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.72rem;
+  font: inherit;
+}
+
+.journey-access-dialog input {
+  min-width: 0;
+  padding: 0 0.9rem;
+  outline: none;
+  background: #ffffff;
+  color: var(--black);
+}
+
+.journey-access-dialog input:focus {
+  border-color: rgba(17, 17, 17, 0.42);
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.06);
+}
+
+.journey-access-dialog button {
+  padding: 0 1rem;
+  background: var(--black);
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.journey-access-dialog button:hover {
+  transform: translateY(-1px);
+  opacity: 0.88;
+}
+
+.journey-access-error {
+  min-height: 1rem;
+  margin: 0.55rem 0 0;
+  color: #b42318;
+  font-size: 0.75rem;
+  opacity: 0;
+}
+
+.journey-access-error.is-visible {
+  opacity: 1;
+}
+
+html[data-theme="dark"] .journey-access-backdrop {
+  background: rgba(8, 10, 13, 0.64);
+}
+
+html[data-theme="dark"] .journey-access-dialog {
+  border-color: var(--dark-border);
+  background: rgba(20, 23, 29, 0.97);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+  color: var(--dark-text);
+}
+
+html[data-theme="dark"] .journey-access-eyebrow {
+  color: var(--dark-muted);
+}
+
+html[data-theme="dark"] .journey-access-dialog input {
+  border-color: var(--dark-border);
+  background: #111318;
+  color: var(--dark-text);
+}
+
+html[data-theme="dark"] .journey-access-dialog button {
+  border-color: #f5f5f5;
+  background: #f5f5f5;
+  color: #111111;
+}
+
+@media (max-width: 520px) {
+  .journey-access-dialog {
+    padding: 1.35rem;
+  }
+
+  .journey-access-dialog form {
+    grid-template-columns: 1fr;
+  }
+}
+
 .visual-stage {
   position: fixed;
   top: 50%;
