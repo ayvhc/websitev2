@@ -12,7 +12,6 @@ import {
 } from "react";
 import {
   BriefcaseBusiness,
-  Compass,
   Home,
   Lightbulb,
   Mail,
@@ -37,14 +36,12 @@ type NavItem = {
   label: string;
   icon: LucideIcon;
   href?: string;
-  protected?: boolean;
 };
 
 const navItems: NavItem[] = [
   { label: "Home", icon: Home, href: "/" },
   { label: "Investment", icon: Lightbulb, href: "/investment" },
   { label: "Experience", icon: BriefcaseBusiness, href: "/experience" },
-  { label: "Journey", icon: Compass, href: "/journey", protected: true },
   { label: "About", icon: UserRound, href: "/about" },
   { label: "Contact", icon: Mail, href: "/contact" },
 ];
@@ -70,15 +67,7 @@ function Dock({ children }: { children: ReactNode }) {
   );
 }
 
-function DockItem({
-  item,
-  current,
-  onProtectedClick,
-}: {
-  item: NavItem;
-  current: boolean;
-  onProtectedClick?: () => void;
-}) {
+function DockItem({ item, current }: { item: NavItem; current: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const context = useContext(DockContext);
 
@@ -118,12 +107,6 @@ function DockItem({
           href={item.href}
           aria-label={item.label}
           aria-current={current ? "page" : undefined}
-          onClick={(event) => {
-            if (item.protected && !current) {
-              event.preventDefault();
-              onProtectedClick?.();
-            }
-          }}
         >
           {content}
         </Link>
@@ -200,27 +183,47 @@ function DockThemeToggle() {
 export function DockNav({ current }: { current: "Home" | "About" | "Investment" | "Experience" | "Journey" | "Contact" }) {
   const router = useRouter();
   const [journeyDialogOpen, setJourneyDialogOpen] = useState(false);
+  const journeySequenceIndex = useRef(0);
 
-  function requestJourneyAccess() {
-    if (window.sessionStorage.getItem(journeyAccessKey) === "true") {
-      router.push("/journey");
-      return;
+  useEffect(() => {
+    const sequence = ["1", "2", "3"];
+
+    function handleKeyDown(event: KeyboardEvent) {
+      const target = event.target as HTMLElement | null;
+      const isTyping =
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.isContentEditable;
+
+      if (isTyping || event.metaKey || event.ctrlKey || event.altKey) return;
+
+      const expectedKey = sequence[journeySequenceIndex.current];
+      if (event.key === expectedKey) {
+        journeySequenceIndex.current += 1;
+      } else {
+        journeySequenceIndex.current = event.key === sequence[0] ? 1 : 0;
+      }
+
+      if (journeySequenceIndex.current !== sequence.length) return;
+
+      journeySequenceIndex.current = 0;
+      if (window.sessionStorage.getItem(journeyAccessKey) === "true") {
+        router.push("/journey");
+      } else {
+        setJourneyDialogOpen(true);
+      }
     }
 
-    setJourneyDialogOpen(true);
-  }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [router]);
 
   return (
     <>
       <div className="dock-wrap">
         <Dock>
           {navItems.map((item) => (
-            <DockItem
-              item={item}
-              current={item.label === current}
-              key={item.label}
-              onProtectedClick={requestJourneyAccess}
-            />
+            <DockItem item={item} current={item.label === current} key={item.label} />
           ))}
           {current !== "Journey" ? <DockThemeToggle /> : null}
         </Dock>
