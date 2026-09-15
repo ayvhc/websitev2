@@ -320,6 +320,28 @@
     0 0 34px rgba(141, 160, 240, 0.26);
 }
 
+.life-node.is-compact {
+  width: 190px;
+  min-height: 102px;
+  padding: 12px 13px 13px;
+}
+
+.life-node.is-compact h2 {
+  margin: 7px 0 6px;
+}
+
+.node-type-investment-startup {
+  --node-accent: #8e6c28;
+  --node-bg: rgba(252, 249, 241, 0.94);
+  --node-border-color: rgba(182, 138, 45, 0.28);
+}
+
+.node-type-personal-exploration-experience {
+  --node-accent: #74746c;
+  --node-bg: rgba(249, 249, 246, 0.92);
+  --node-border-color: rgba(126, 126, 116, 0.22);
+}
+
 .node-shine {
   position: absolute;
   inset: 0;
@@ -952,5 +974,4 @@
     font-size: 0.96rem;
   }
 }
-
 

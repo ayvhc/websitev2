@@ -61,6 +61,9 @@ const typeIcons = {
   'Key Person': Handshake,
   'Hidden Unlock': Sparkles,
   'Future Node': Telescope,
+  'Experience / Personal Decision': GitBranch,
+  'Personal Exploration / Experience': Compass,
+  'Investment / Startup': Sparkles,
 };
 
 const edgeStyles = {
@@ -86,6 +89,11 @@ const storySections = [
   ['What it secretly unlocked', 'secretUnlock'],
   ['Alternate path', 'alternatePath'],
   ['How I see it now', 'reflection'],
+  ['What I want from it', 'whatIWant'],
+  ['Why I care', 'whyICare'],
+  ['What it may unlock', 'whatItMayUnlock'],
+  ['How I see it', 'howISeeIt'],
+  ['Founder', 'founder'],
 ];
 
 const timePeriodBands = [
@@ -123,6 +131,13 @@ const timePeriodBands = [
     y: 3220,
     height: 330,
     tone: 'green',
+  },
+  {
+    id: 'junior-year',
+    label: 'Junior Year',
+    y: 3550,
+    height: 620,
+    tone: 'gold',
   },
 ];
 
@@ -681,6 +696,7 @@ function CustomNode({ data, selected }) {
     data.isDimmed ? 'is-dimmed' : '',
     data.isConvergence ? 'is-convergence' : '',
     data.overlay === 'right' ? 'is-right-overlay' : '',
+    data.compact ? 'is-compact' : '',
   ]
     .filter(Boolean)
     .join(' ');
@@ -849,4 +865,3 @@ function IntroModal({ isOpen, onClose }) {
 function slugify(value) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
-

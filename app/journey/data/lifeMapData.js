@@ -769,6 +769,78 @@ export const lifeNodes = [
     alternatePath: '',
     reflection: 'I have learned that some side paths only reveal their meaning after time passes.',
   },
+  {
+    id: 'tenda',
+    title: 'Tenda',
+    time: 'Through N1AC',
+    type: 'Investment / Startup',
+    status: 'actual',
+    position: { x: 720, y: 3370 },
+    compact: true,
+    summary: 'AI for Construction',
+    whatHappened: 'Tenda is a startup applying AI to the construction industry.',
+    founder: 'Hlawn',
+  },
+  {
+    id: 'semi-valley',
+    title: 'Semi Valley',
+    time: 'Through N1AC',
+    type: 'Investment / Startup',
+    status: 'actual',
+    position: { x: 970, y: 3370 },
+    compact: true,
+    summary: 'GPU Chip Cooling',
+    whatHappened:
+      'Semi Valley is developing advanced cooling technology for high-performance chips and GPUs, using direct liquid or jet-based cooling approaches.',
+    founder: 'Boya & Ruihan',
+  },
+  {
+    id: 'joined-opera',
+    title: 'Joined OPERA',
+    time: 'Fall 2026',
+    type: 'Experience / Personal Decision',
+    status: 'actual',
+    position: { x: -260, y: 3740 },
+    summary: 'A new environment for turning engineering ideas into physical objects.',
+    whatHappened:
+      'Joined OPERA, a 3D printing and design-focused student organization. The club works on hands-on engineering projects involving CAD, fabrication, prototyping, and 3D printing.',
+    whyItMattered:
+      'This gives me another environment where I can actually build physical things instead of only learning engineering through classes.',
+    whatIWant:
+      'I am especially interested in joining the prosthetic hand team, where I could help design, prototype, and potentially build parts of an actual prosthetic hand.',
+    whyICare:
+      'Prosthetics and robotics are areas I have been interested in for a long time, so this could become a much more direct step toward understanding what it actually takes to build these systems.',
+  },
+  {
+    id: 'joined-boring-illini',
+    title: 'Joined Boring Illini',
+    time: 'Fall 2026',
+    type: 'Experience / Personal Decision',
+    status: 'actual',
+    position: { x: 60, y: 3740 },
+    summary: 'Hands-on engineering at the scale of a large mechanical system.',
+    whatHappened:
+      'Joined Boring Illini, a student engineering competition team focused on tunnel-boring technology and related mechanical systems. I am on the mechanical team.',
+    whyItMattered:
+      'This gives me another form of hands-on engineering experience, but at a much larger mechanical-system scale than the projects I have worked on before.',
+    whatItMayUnlock:
+      'More experience with mechanical design, real hardware, team engineering, manufacturing, and working on a large technical system where many subsystems have to work together.',
+  },
+  {
+    id: 'learning-mianxiang',
+    title: '学习面相学',
+    time: 'Junior Year',
+    type: 'Personal Exploration / Experience',
+    status: 'actual',
+    position: { x: 380, y: 3740 },
+    summary: 'A deliberate side exploration beyond my academic and professional path.',
+    whatHappened:
+      'I started studying 面相学, a traditional Chinese system of interpreting facial features and using them to make observations about personality, tendencies, fortune, and life trajectory.',
+    whyItMattered:
+      'This is not directly related to engineering, investing, or my career. It is something I am exploring out of personal curiosity and as a way to understand a traditional Chinese framework for interpreting people.',
+    howISeeIt:
+      'Part of junior year is also about deliberately exploring subjects outside of my normal academic and professional path.',
+  },
 ];
 
 export const lifeEdges = [
@@ -895,6 +967,11 @@ export const lifeEdges = [
   },
   { id: 'e-n1ac-ivy', source: 'n1ac', target: 'ivy-capital', type: 'actual', label: '' },
   { id: 'e-n1ac-pwc', source: 'n1ac', target: 'pwc', type: 'actual', label: '' },
+  { id: 'e-n1ac-tenda', source: 'n1ac', target: 'tenda', type: 'actual', label: '' },
+  { id: 'e-n1ac-semi-valley', source: 'n1ac', target: 'semi-valley', type: 'actual', label: '' },
+  { id: 'e-ivy-opera', source: 'ivy-capital', target: 'joined-opera', type: 'actual', label: '' },
+  { id: 'e-ivy-boring-illini', source: 'ivy-capital', target: 'joined-boring-illini', type: 'actual', label: '' },
+  { id: 'e-pwc-mianxiang', source: 'pwc', target: 'learning-mianxiang', type: 'actual', label: '' },
 
   {
     id: 'a-move-taiwan',
@@ -1091,5 +1168,4 @@ export const viewModes = [
     description: 'Everything visible at once.',
   },
 ];
-
 
