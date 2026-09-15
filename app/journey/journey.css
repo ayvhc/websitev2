@@ -330,7 +330,7 @@
   margin: 7px 0 6px;
 }
 
-.node-type-investment-startup {
+.node-type-startup-investment {
   --node-accent: #8e6c28;
   --node-bg: rgba(252, 249, 241, 0.94);
   --node-border-color: rgba(182, 138, 45, 0.28);
@@ -974,4 +974,3 @@
     font-size: 0.96rem;
   }
 }
-

@@ -63,7 +63,7 @@ const typeIcons = {
   'Future Node': Telescope,
   'Experience / Personal Decision': GitBranch,
   'Personal Exploration / Experience': Compass,
-  'Investment / Startup': Sparkles,
+  'Startup Investment': Sparkles,
 };
 
 const edgeStyles = {
