@@ -112,16 +112,15 @@ const researchExperience: ExperienceItem[] = [
   },
   {
     mark: "BU",
-    organization:
-      "Polyurethane Foam Recycling with Environmentally Friendly Carbon Nanoparticles · Brown University",
-    role: "Pre-College Researcher · Collaborated with Professor Thomas Webster",
+    organization: "Nanotechnology · Brown University (Pre-College)",
+    role: "Researcher · Collaborated with Professor Thomas Webster",
     location: "Rhode Island, U.S.",
     dates: "Jul 2023 — Oct 2023",
     logo: "/experience-logos/brown.png",
-    logoSize: "96%",
+    logoSize: "78%",
     website: "https://www.brown.edu/",
     description:
-      "Investigated carbon nanoparticles as a method for improving polyurethane foam recyclability and performance. Synthesized and analyzed nanoparticles using heating, filtration, and dynamic light scattering, increasing recyclability by 273%, reducing curing time by 15%, and doubling foam expansion.",
+      "Investigated and characterized carbon nanoparticles for polyurethane foam recycling, increasing recyclability by 273%, reducing curing time by 15%, and doubling foam expansion.",
   },
 ];
 
