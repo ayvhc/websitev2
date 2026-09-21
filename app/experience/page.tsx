@@ -76,15 +76,16 @@ const professionalExperience: ExperienceItem[] = [
 
 const researchExperience: ExperienceItem[] = [
   {
-    mark: "AI",
-    organization: "AI Data for Autism Spectrum Disorder Research · UIUC",
-    role: "Paid Data Analyst",
+    mark: "GL",
+    organization: "Gazzola Lab · UIUC",
+    role: "Researcher · Advanced Molds for Soft Robotic Structures",
     location: "Illinois, U.S.",
-    dates: "Oct 2024 — May 2025",
+    dates: "Sep 2024 — May 2025",
     logo: "/experience-logos/uiuc.png",
     logoSize: "104%",
+    website: "https://mattia-lab.com/",
     description:
-      "Analyzed 10,000+ video frames of children’s gaze patterns, processed datasets in CVAT, and supported AI model training for autism-severity classification and early-detection research.",
+      "Designed and fabricated molds for air-pressure-driven soft robotic actuators, improving the functionality and control of robotic fingers while exploring more flexible, dexterous actuator geometries.",
   },
   {
     mark: "CAS",
@@ -99,16 +100,15 @@ const researchExperience: ExperienceItem[] = [
       "Built a relational SQL database linking professors, papers, and institutions. Automated annual reporting for 107 institutes and developed a Python PDF comparison tool for contract auditing.",
   },
   {
-    mark: "GL",
-    organization: "Gazzola Lab · UIUC",
-    role: "Researcher · Advanced Molds for Soft Robotic Structures",
+    mark: "AI",
+    organization: "AI Data for Autism Spectrum Disorder Research · UIUC",
+    role: "Paid Data Analyst",
     location: "Illinois, U.S.",
-    dates: "Sep 2024 — May 2025",
+    dates: "Oct 2024 — May 2025",
     logo: "/experience-logos/uiuc.png",
     logoSize: "104%",
-    website: "https://mattia-lab.com/",
     description:
-      "Designed and fabricated molds for air-pressure-driven soft robotic actuators, improving the functionality and control of robotic fingers while exploring more flexible, dexterous actuator geometries.",
+      "Analyzed 10,000+ video frames of children’s gaze patterns, processed datasets in CVAT, and supported AI model training for autism-severity classification and early-detection research.",
   },
   {
     mark: "BU",
