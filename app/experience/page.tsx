@@ -216,14 +216,14 @@ export default function ExperiencePage() {
               I’ve evaluated founders, built businesses, shaped market strategies,
               and worked on technical systems in research labs and industry.
             </p>
-            <button
-              type="button"
+            <a
               className="experience-download"
-              aria-label="Full CV download coming soon"
+              href="/Adam_CV.pdf"
+              download="Adam_CV.pdf"
             >
               Download full CV
               <span aria-hidden="true">↓</span>
-            </button>
+            </a>
           </header>
 
           <section className="experience-section">
