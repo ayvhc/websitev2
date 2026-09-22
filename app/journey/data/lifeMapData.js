@@ -833,13 +833,13 @@ export const lifeNodes = [
     type: 'Personal Exploration / Experience',
     status: 'actual',
     position: { x: 380, y: 3740 },
-    summary: 'A deliberate side exploration beyond my academic and professional path.',
+    summary: 'A month-long side quest into reading faces—and another lens for understanding people.',
     whatHappened:
-      'I started studying 面相学, a traditional Chinese system of interpreting facial features and using them to make observations about personality, tendencies, fortune, and life trajectory.',
+      'I spent the month of September learning the foundations of 面相学, including how face shape, eyes, eyebrows, nose, mouth, and other features are traditionally interpreted.',
     whyItMattered:
-      'This is not directly related to engineering, investing, or my career. It is something I am exploring out of personal curiosity and as a way to understand a traditional Chinese framework for interpreting people.',
+      'I see it as both a side quest and another tool for evaluating people, whether I am meeting new friends or assessing startup founders. I know it may seem unrealistic to place much faith in it, but my own experiences have shown me recurring patterns between facial structure and personality. Sometimes a face creates an immediate sense of unease; other times, someone’s appearance and facial structure make them instantly likable.',
     howISeeIt:
-      'Part of junior year is also about deliberately exploring subjects outside of my normal academic and professional path.',
+      'After analyzing my own face through this framework, I found its reading roughly 85% accurate. I do not treat 面相学 as definitive, but as one additional lens for understanding people alongside judgment, experience, and real interaction.',
   },
 ];
 
