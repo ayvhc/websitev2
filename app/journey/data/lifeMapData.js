@@ -833,13 +833,13 @@ export const lifeNodes = [
     type: 'Personal Exploration / Experience',
     status: 'actual',
     position: { x: 380, y: 3740 },
-    summary: 'A month-long side quest into reading faces—and another lens for understanding people.',
+    summary: 'A month-long side quest into reading faces.',
     whatHappened:
-      'I spent the month of September learning the foundations of 面相学, including how face shape, eyes, eyebrows, nose, mouth, and other features are traditionally interpreted.',
+      'I spent September learning the foundations of 面相学: how face shape, eyes, eyebrows, nose, mouth, and other features are traditionally interpreted.',
     whyItMattered:
-      'I see it as both a side quest and another tool for evaluating people, whether I am meeting new friends or assessing startup founders. I know it may seem unrealistic to place much faith in it, but my own experiences have shown me recurring patterns between facial structure and personality. Sometimes a face creates an immediate sense of unease; other times, someone’s appearance and facial structure make them instantly likable.',
+      'I see it as another lens for understanding people, from new friends to startup founders. People today are skilled at packaging themselves, hiding emotions, and performing habits that are not genuine. I hope face reading can offer clues that help me see past that presentation. Though I remain skeptical, I have repeatedly noticed patterns between personality and facial structure—why some faces feel unsettling while others feel instantly likable.',
     howISeeIt:
-      'After analyzing my own face through this framework, I found its reading roughly 85% accurate. I do not treat 面相学 as definitive, but as one additional lens for understanding people alongside judgment, experience, and real interaction.',
+      'Reading my own face felt roughly 85% accurate. I do not treat 面相学 as definitive—only as one signal alongside judgment, experience, and real interaction.',
   },
 ];
 
