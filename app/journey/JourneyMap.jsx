@@ -263,9 +263,11 @@ function VersionsMap() {
         type: 'custom',
         position: node.position,
         zIndex:
-          node.id === 'brizan-internship' || node.overlay === 'right'
+          node.id === 'brizan-internship' ||
+          node.id === 'joined-boring-illini' ||
+          node.overlay === 'right'
             ? 0
-            : node.id === 'ivy-capital'
+            : node.id === 'ivy-capital' || node.id === 'joined-opera'
               ? 2
               : 1,
         data: {

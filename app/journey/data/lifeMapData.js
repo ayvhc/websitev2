@@ -817,7 +817,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -580, y: 3740 },
+    position: { x: -460, y: 3740 },
     summary: 'A hands-on engineering path I chose not to pursue this semester.',
     whatHappened:
       'Boring Illini is a student engineering team competing in The Boring Company’s Not-a-Boring Competition, created by Elon Musk, where teams develop tunnel-boring technology and related mechanical systems.',
