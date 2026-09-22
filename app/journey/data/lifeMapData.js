@@ -814,17 +814,19 @@ export const lifeNodes = [
   {
     id: 'joined-boring-illini',
     title: 'Joined Boring Illini',
-    time: 'Fall 2026',
-    type: 'Experience / Personal Decision',
-    status: 'actual',
-    position: { x: 60, y: 3740 },
-    summary: 'Hands-on engineering at the scale of a large mechanical system.',
+    time: 'Alternate path',
+    type: 'Outcome',
+    status: 'alternate',
+    position: { x: -580, y: 3740 },
+    summary: 'A hands-on engineering path I chose not to pursue this semester.',
     whatHappened:
-      'Joined Boring Illini, a student engineering competition team focused on tunnel-boring technology and related mechanical systems. I am on the mechanical team.',
+      'Boring Illini is a student engineering team competing in The Boring Company’s Not-a-Boring Competition, created by Elon Musk, where teams develop tunnel-boring technology and related mechanical systems.',
     whyItMattered:
-      'This gives me another form of hands-on engineering experience, but at a much larger mechanical-system scale than the projects I have worked on before.',
-    whatItMayUnlock:
-      'More experience with mechanical design, real hardware, team engineering, manufacturing, and working on a large technical system where many subsystems have to work together.',
+      'It would have added large-scale, hands-on mechanical design and team engineering experience to my résumé.',
+    alternatePath:
+      'I gave it up because my schedule was already too full this semester. With more time, it could have been a valuable addition to my engineering path.',
+    reflection:
+      'It was a good opportunity—just not the right semester to take on another major commitment.',
   },
   {
     id: 'learning-mianxiang',
@@ -970,7 +972,14 @@ export const lifeEdges = [
   { id: 'e-n1ac-tenda', source: 'n1ac', target: 'tenda', type: 'actual', label: '' },
   { id: 'e-n1ac-semi-valley', source: 'n1ac', target: 'semi-valley', type: 'actual', label: '' },
   { id: 'e-ivy-opera', source: 'ivy-capital', target: 'joined-opera', type: 'actual', label: '' },
-  { id: 'e-ivy-boring-illini', source: 'ivy-capital', target: 'joined-boring-illini', type: 'actual', label: '' },
+  {
+    id: 'a-ivy-boring-illini',
+    source: 'ivy-capital',
+    target: 'joined-boring-illini',
+    type: 'alternate',
+    route: 'left-drop',
+    label: '',
+  },
   { id: 'e-ivy-mianxiang', source: 'ivy-capital', target: 'learning-mianxiang', type: 'actual', label: '' },
 
   {
