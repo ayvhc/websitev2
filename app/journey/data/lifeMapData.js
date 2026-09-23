@@ -282,7 +282,7 @@ export const lifeNodes = [
     whyItMattered:
       'During an interview, I got to know researcher Pranav Krishnan, who was developing a 3D-printing system that uses laser beams to trigger a polymerization chain reaction.',
     reflection:
-      'I did not get the position, but the process introduced me to a researcher and technical idea I might not have encountered otherwise.',
+      'I did not get the position, which was disappointing in the moment. Looking back, I am glad I tried my best and kept a good relationship with the interviewer and research mentor—that connection is what led to an invitation to work together later.',
   },
   {
     id: 'buildillinois',
@@ -625,7 +625,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -1040, y: 2680 },
+    position: { x: -700, y: 2710 },
     summary: 'A path where Azura\'s operations experience led to a more industrial internship.',
     whatHappened:
       'A possible version of Adam used the real operational knowledge from Azura de Maison to apply for a SHEIN summer internship and got accepted.',
@@ -1107,7 +1107,6 @@ export const lifeEdges = [
     source: 'azura-operations',
     target: 'shein-internship',
     type: 'alternate',
-    route: 'left-drop',
     label: '',
   },
   { id: 'a-kehan-skipped', source: 'kehan-event', target: 'skipped-kehan', type: 'alternate', label: '' },
