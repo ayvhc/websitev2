@@ -270,6 +270,21 @@ export const lifeNodes = [
       'At the time, part of me wanted to prove that I was more capable than those rejection decisions suggested. Looking back, I am glad I learned to build evidence through action instead of depending on an organization to tell me whether I belonged in business.',
   },
   {
+    id: 'research-program-rejections',
+    title: 'Rejected by URSA & UROP',
+    time: 'Sophomore Year',
+    type: 'Outcome',
+    status: 'actual',
+    position: { x: -500, y: 2220 },
+    summary: 'The applications ended in rejection, but one interview still created a meaningful connection.',
+    whatHappened:
+      'URSA and UROP are semester research programs at UIUC that allow undergraduates to join engineering projects. I applied but was not accepted to either.',
+    whyItMattered:
+      'During an interview, I got to know researcher Pranav Krishnan, who was developing a 3D-printing system that uses laser beams to trigger a polymerization chain reaction.',
+    reflection:
+      'I did not get the position, but the process introduced me to a researcher and technical idea I might not have encountered otherwise.',
+  },
+  {
     id: 'buildillinois',
     title: 'Joined BuildIllinois',
     time: 'Freshman Year',
@@ -865,6 +880,15 @@ export const lifeEdges = [
     id: 'e-freshman-business-org-rejections',
     source: 'freshman-year',
     target: 'business-org-rejections',
+    type: 'actual',
+    route: 'lower-uiuc-branch',
+    branchX: -500,
+    label: '',
+  },
+  {
+    id: 'e-freshman-research-program-rejections',
+    source: 'freshman-year',
+    target: 'research-program-rejections',
     type: 'actual',
     route: 'lower-uiuc-branch',
     branchX: -500,
