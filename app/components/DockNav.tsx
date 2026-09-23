@@ -206,6 +206,7 @@ export function DockNav({ current }: { current: "Home" | "About" | "Investment" 
 
       if (journeySequenceIndex.current !== sequence.length) return;
 
+      event.preventDefault();
       journeySequenceIndex.current = 0;
       if (window.sessionStorage.getItem(journeyAccessKey) === "true") {
         router.push("/journey");
