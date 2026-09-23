@@ -76,6 +76,16 @@ const professionalExperience: ExperienceItem[] = [
 
 const researchExperience: ExperienceItem[] = [
   {
+    mark: "AMS",
+    organization: "AMS Lab · UIUC",
+    role: "Researcher · Frontal Polymerization DIW 3D Printing Systems",
+    location: "Illinois, U.S.",
+    dates: "Aug 2026 — Present",
+    logo: "/experience-logos/uiuc.png",
+    logoSize: "104%",
+    description: "Research in progress.",
+  },
+  {
     mark: "GL",
     organization: "Gazzola Lab · UIUC",
     role: "Researcher · Advanced Molds for Soft Robotic Structures",
