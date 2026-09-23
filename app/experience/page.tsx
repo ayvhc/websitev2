@@ -83,6 +83,7 @@ const researchExperience: ExperienceItem[] = [
     dates: "Aug 2026 — Present",
     logo: "/experience-logos/uiuc.png",
     logoSize: "104%",
+    website: "https://sottosgroup.matse.illinois.edu/",
     description: "Research in progress.",
   },
   {
