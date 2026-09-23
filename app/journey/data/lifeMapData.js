@@ -617,7 +617,7 @@ export const lifeNodes = [
       'It turned entrepreneurship from an idea into a messy real-world operating problem.',
     secretUnlock: '',
     alternatePath: '',
-    reflection: 'The business was small, but it gave me real experience managing its operations.',
+    reflection: 'The business was small, but it gave me real experience managing real operations and people.',
   },
   {
     id: 'shein-internship',
@@ -625,7 +625,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -700, y: 2710 },
+    position: { x: -700, y: 2670 },
     summary: 'A path where Azura\'s operations experience led to a more industrial internship.',
     whatHappened:
       'A possible version of Adam used the real operational knowledge from Azura de Maison to apply for a SHEIN summer internship and got accepted.',
@@ -675,7 +675,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -730, y: 2850 },
+    position: { x: -700, y: 2850 },
     summary: 'Ambition without the same direct bridge into the network.',
     whatHappened: 'A possible version of Adam does not attend the event.',
     whyItMattered:
