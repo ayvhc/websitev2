@@ -46,7 +46,7 @@ const investmentSections = [
           >
             <h2>SemiValley</h2>
           </a>
-          <p>AI infrastructure cooling</p>
+          <p>Advanced liquid-cooling for AI data centers</p>
         </div>
         <div>
           <a
@@ -57,7 +57,7 @@ const investmentSections = [
           >
             <h2>Tenda</h2>
           </a>
-          <p>AI for construction</p>
+          <p>AI platform for construction/AEC coordination</p>
         </div>
       </div>
     ),
