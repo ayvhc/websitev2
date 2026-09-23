@@ -161,7 +161,7 @@ const education = [
 const skillGroups = [
   {
     label: "Programming & Data",
-    skills: ["Python", "SQL", "Java", "C++", "Data automation", "Relational databases"],
+    skills: ["Python", "Java", "C", "C++", "SQL", "PID Tuning", "Data Automation"],
   },
   {
     label: "Engineering",
