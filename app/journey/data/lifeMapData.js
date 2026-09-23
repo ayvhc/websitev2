@@ -810,6 +810,21 @@ export const lifeNodes = [
     founder: 'Boya & Ruihan',
   },
   {
+    id: 'joined-ams-lab',
+    title: 'Joined AMS Lab',
+    time: 'August 2026',
+    type: 'Experience',
+    status: 'actual',
+    position: { x: -760, y: 3740 },
+    summary: 'A rejected research application returned as a direct invitation.',
+    whatHappened:
+      'Pranav Krishnan, whom I met while interviewing for URSA/UROP, reached out during the summer and invited me to join AMS Lab to work on a frontal-polymerization DIW 3D-printing system.',
+    whyItMattered:
+      'I mainly work on PID tuning, while also contributing to the mechanical and electrical systems and helping prepare the chemical material.',
+    reflection:
+      'The project is teaching me across controls, mechanics, electronics, materials science, and additive manufacturing.',
+  },
+  {
     id: 'joined-opera',
     title: 'Joined OPERA',
     time: 'Fall 2026',
@@ -995,6 +1010,7 @@ export const lifeEdges = [
   { id: 'e-n1ac-pwc', source: 'n1ac', target: 'pwc', type: 'actual', label: '' },
   { id: 'e-n1ac-tenda', source: 'n1ac', target: 'tenda', type: 'actual', label: '' },
   { id: 'e-n1ac-semi-valley', source: 'n1ac', target: 'semi-valley', type: 'actual', label: '' },
+  { id: 'e-ivy-ams-lab', source: 'ivy-capital', target: 'joined-ams-lab', type: 'actual', label: '' },
   { id: 'e-ivy-opera', source: 'ivy-capital', target: 'joined-opera', type: 'actual', label: '' },
   {
     id: 'a-ivy-boring-illini',
@@ -1165,6 +1181,14 @@ export const lifeEdges = [
     targetHandle: 'target-left',
     type: 'hidden',
     label: '',
+  },
+  {
+    id: 'h-research-rejections-ams-lab',
+    source: 'research-program-rejections',
+    target: 'joined-ams-lab',
+    type: 'hidden',
+    label: 'Pranav reached out',
+    labelT: 0.72,
   },
   { id: 'h-azura-wanting', source: 'start-azura', target: 'wanting', type: 'hidden', label: 'key person' },
   { id: 'h-wanting-kehan', source: 'wanting', target: 'kehan-event', type: 'hidden', label: 'introduced' },
