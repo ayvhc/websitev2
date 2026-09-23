@@ -275,7 +275,7 @@ export const lifeNodes = [
     time: 'Sophomore Year',
     type: 'Outcome',
     status: 'actual',
-    position: { x: -500, y: 2220 },
+    position: { x: -1100, y: 2220 },
     summary: 'The applications ended in rejection, but one interview still created a meaningful connection.',
     whatHappened:
       'URSA and UROP are semester research programs at UIUC that allow undergraduates to join engineering projects. I applied but was not accepted to either.',
