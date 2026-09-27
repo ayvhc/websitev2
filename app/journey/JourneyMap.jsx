@@ -36,7 +36,6 @@ const edgeTypes = {
 };
 const nodeOrigin = [0.5, 0];
 const layoutGrid = [300, 95];
-const actualArrowLaneOffset = 31;
 const canvasExtent = [
   [-2100, -700],
   [2200, 4700],
@@ -428,9 +427,7 @@ function ActualGridEdge({
   markerEnd,
   interactionWidth,
 }) {
-  const availableGap = targetY - sourceY;
-  const laneOffset = Math.max(0, Math.min(actualArrowLaneOffset, availableGap / 2));
-  const branchY = sourceY + laneOffset;
+  const branchY = (sourceY + targetY) / 2;
   const path =
     sourceX === targetX
       ? `M ${sourceX},${sourceY} L ${targetX},${targetY}`
