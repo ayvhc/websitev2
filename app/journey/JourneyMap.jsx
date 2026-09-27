@@ -431,7 +431,7 @@ function VersionsMap() {
             nodesDraggable={false}
             nodesConnectable={false}
             elementsSelectable
-            panOnScroll={false}
+            panOnScroll
             preventScrolling
             selectionOnDrag={false}
             proOptions={{ hideAttribution: true }}
