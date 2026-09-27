@@ -38,15 +38,14 @@ const edgeTypes = {
   uiucAzura: UiucAzuraEdge,
 };
 const nodeOrigin = [0.5, 0];
-const sourceColumnWidth = 250;
-const layoutGrid = [500, 95];
+const layoutGrid = [300, 95];
 const canvasExtent = [
-  [-4200, -700],
-  [4400, 4700],
+  [-2100, -700],
+  [2200, 4700],
 ];
 
 function snapToLayoutColumn(x) {
-  return Math.round(x / sourceColumnWidth) * layoutGrid[0];
+  return Math.round(x / layoutGrid[0]) * layoutGrid[0];
 }
 
 function snapToLayoutGrid(position) {
