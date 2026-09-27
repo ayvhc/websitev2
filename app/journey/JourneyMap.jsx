@@ -10,7 +10,6 @@ import ReactFlow, {
   MarkerType,
   Position,
   ReactFlowProvider,
-  useStoreApi,
 } from 'reactflow';
 import {
   CircleDot,
@@ -34,7 +33,6 @@ import { lifeEdges, lifeNodes, viewModes } from './data/lifeMapData';
 const nodeTypes = { custom: CustomNode };
 const edgeTypes = {
   actualGrid: ActualGridEdge,
-  editableHiddenCurve: EditableHiddenCurveEdge,
   hiddenLowerLabel: HiddenLowerLabelEdge,
   hiddenSideToTop: HiddenSideToTopEdge,
   leftDrop: LeftDropEdge,
@@ -44,12 +42,6 @@ const layoutGrid = [300, 95];
 const standardNodeWidth = 246;
 const standardNodeHeight = 128;
 const layoutStorageKey = 'journey-layout-draft';
-const edgeDirectionVectors = {
-  [Position.Top]: { x: 0, y: -1 },
-  [Position.Right]: { x: 1, y: 0 },
-  [Position.Bottom]: { x: 0, y: 1 },
-  [Position.Left]: { x: -1, y: 0 },
-};
 const canvasExtent = [
   [-2100, -700],
   [2200, 4700],
@@ -351,8 +343,6 @@ function VersionsMap() {
         type:
           edge.type === 'actual'
             ? 'actualGrid'
-            : edge.type === 'hidden'
-              ? 'editableHiddenCurve'
             : edge.route === 'side-to-top'
               ? 'hiddenSideToTop'
             : Number.isFinite(edge.labelT)
@@ -396,8 +386,7 @@ function VersionsMap() {
           Number.isFinite(edge.labelT) ||
           Number.isFinite(edge.branchX) ||
           Number.isFinite(alignedBranchY) ||
-          Number.isFinite(edge.curveOffset) ||
-          edge.type === 'hidden'
+          Number.isFinite(edge.curveOffset)
             ? {
                 labelT: edge.labelT,
                 branchX: Number.isFinite(edge.branchX)
@@ -405,7 +394,6 @@ function VersionsMap() {
                   : edge.branchX,
                 branchY: alignedBranchY,
                 curveOffset: edge.curveOffset,
-                defaultControlOffset: edge.defaultControlOffset,
               }
             : undefined,
       };
@@ -798,158 +786,6 @@ function HiddenSideToTopEdge({
         labelBgStyle={labelBgStyle}
         labelBgPadding={labelBgPadding}
         labelBgBorderRadius={labelBgBorderRadius}
-      />
-    </>
-  );
-}
-
-function EditableHiddenCurveEdge({
-  id,
-  sourceX,
-  sourceY,
-  sourcePosition,
-  targetX,
-  targetY,
-  targetPosition,
-  style,
-  markerEnd,
-  interactionWidth,
-  label,
-  labelStyle,
-  labelBgStyle,
-  labelBgPadding,
-  labelBgBorderRadius,
-  data,
-}) {
-  const flowStore = useStoreApi();
-  const storageKey = `journey-edge-control-${id}`;
-  const [savedControlPoint, setSavedControlPoint] = useState(null);
-  const defaultControlPoint = useMemo(
-    () => ({
-      x: (sourceX + targetX) / 2 + (data?.defaultControlOffset?.x ?? 0),
-      y: (sourceY + targetY) / 2 + (data?.defaultControlOffset?.y ?? 0),
-    }),
-    [data?.defaultControlOffset?.x, data?.defaultControlOffset?.y, sourceX, sourceY, targetX, targetY],
-  );
-  const controlPoint = savedControlPoint ?? defaultControlPoint;
-
-  useEffect(() => {
-    try {
-      const savedPoint = JSON.parse(window.localStorage.getItem(storageKey));
-      if (Number.isFinite(savedPoint?.x) && Number.isFinite(savedPoint?.y)) {
-        setSavedControlPoint(savedPoint);
-      }
-    } catch {
-      window.localStorage.removeItem(storageKey);
-    }
-  }, [storageKey]);
-
-  const sourceDirection = edgeDirectionVectors[sourcePosition] ?? edgeDirectionVectors[Position.Bottom];
-  const targetDirection = edgeDirectionVectors[targetPosition] ?? edgeDirectionVectors[Position.Top];
-  const sourceControlPoint = {
-    x: sourceX + sourceDirection.x * 90,
-    y: sourceY + sourceDirection.y * 90,
-  };
-  const chordX = targetX - sourceX;
-  const chordY = targetY - sourceY;
-  const chordLength = Math.hypot(chordX, chordY) || 1;
-  const tangentLength = Math.min(140, Math.max(70, chordLength * 0.2));
-  const tangentX = (chordX / chordLength) * tangentLength;
-  const tangentY = (chordY / chordLength) * tangentLength;
-  const controlPointIn = {
-    x: controlPoint.x - tangentX,
-    y: controlPoint.y - tangentY,
-  };
-  const controlPointOut = {
-    x: controlPoint.x + tangentX,
-    y: controlPoint.y + tangentY,
-  };
-  const targetControlPoint = {
-    x: targetX + targetDirection.x * 90,
-    y: targetY + targetDirection.y * 90,
-  };
-  const path = [
-    `M ${sourceX},${sourceY}`,
-    `C ${sourceControlPoint.x},${sourceControlPoint.y} ${controlPointIn.x},${controlPointIn.y} ${controlPoint.x},${controlPoint.y}`,
-    `C ${controlPointOut.x},${controlPointOut.y} ${targetControlPoint.x},${targetControlPoint.y} ${targetX},${targetY}`,
-  ].join(' ');
-  const labelPoint = getCubicBezierPoint(
-    controlPoint,
-    controlPointOut,
-    targetControlPoint,
-    { x: targetX, y: targetY },
-    data?.labelT ?? 0.58,
-  );
-
-  const startDragging = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    document.body.style.cursor = 'grabbing';
-    document.body.style.userSelect = 'none';
-
-    const moveControlPoint = (moveEvent) => {
-      const { domNode, transform } = flowStore.getState();
-      const bounds = domNode?.getBoundingClientRect();
-      if (!bounds) return;
-
-      const nextPoint = {
-        x: (moveEvent.clientX - bounds.left - transform[0]) / transform[2],
-        y: (moveEvent.clientY - bounds.top - transform[1]) / transform[2],
-      };
-      setSavedControlPoint(nextPoint);
-      window.localStorage.setItem(storageKey, JSON.stringify(nextPoint));
-    };
-
-    const stopDragging = () => {
-      document.body.style.cursor = '';
-      document.body.style.userSelect = '';
-      window.removeEventListener('pointermove', moveControlPoint);
-      window.removeEventListener('pointerup', stopDragging);
-      window.removeEventListener('pointercancel', stopDragging);
-    };
-
-    window.addEventListener('pointermove', moveControlPoint);
-    window.addEventListener('pointerup', stopDragging);
-    window.addEventListener('pointercancel', stopDragging);
-  };
-
-  const resetControlPoint = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    setSavedControlPoint(null);
-    window.localStorage.removeItem(storageKey);
-  };
-
-  return (
-    <>
-      <BaseEdge
-        path={path}
-        markerEnd={markerEnd}
-        style={style}
-        interactionWidth={interactionWidth}
-      />
-      <EdgeText
-        x={labelPoint.x}
-        y={labelPoint.y - 12}
-        label={label}
-        labelStyle={labelStyle}
-        labelBgStyle={labelBgStyle}
-        labelBgPadding={labelBgPadding}
-        labelBgBorderRadius={labelBgBorderRadius}
-      />
-      <circle
-        className="editable-edge-control-hitbox"
-        cx={controlPoint.x}
-        cy={controlPoint.y}
-        r="20"
-        onDoubleClick={resetControlPoint}
-        onPointerDown={startDragging}
-      />
-      <circle
-        className="editable-edge-control-dot"
-        cx={controlPoint.x}
-        cy={controlPoint.y}
-        r="7"
       />
     </>
   );
