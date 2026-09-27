@@ -15,12 +15,14 @@ import {
   CircleDot,
   Clock3,
   Compass,
+  Copy,
   Diamond,
   ExternalLink,
   Flag,
   GitBranch,
   Handshake,
   Map,
+  Move,
   Route,
   Sparkles,
   Telescope,
@@ -36,6 +38,7 @@ const edgeTypes = {
 };
 const nodeOrigin = [0.5, 0];
 const layoutGrid = [300, 95];
+const layoutStorageKey = 'journey-layout-draft';
 const canvasExtent = [
   [-2100, -700],
   [2200, 4700],
@@ -166,6 +169,9 @@ function VersionsMap() {
   const [mode, setMode] = useState('actual');
   const [selectedNodeId, setSelectedNodeId] = useState(null);
   const [isIntroOpen, setIsIntroOpen] = useState(false);
+  const [isArrangeMode, setIsArrangeMode] = useState(true);
+  const [positionOverrides, setPositionOverrides] = useState({});
+  const [copyStatus, setCopyStatus] = useState('Copy Layout');
 
   useEffect(() => {
     document.documentElement.dataset.theme = 'light';
@@ -179,6 +185,20 @@ function VersionsMap() {
       document.documentElement.style.colorScheme = nextTheme;
     };
   }, []);
+
+  useEffect(() => {
+    try {
+      const savedLayout = window.localStorage.getItem(layoutStorageKey);
+      if (savedLayout) setPositionOverrides(JSON.parse(savedLayout));
+    } catch {
+      window.localStorage.removeItem(layoutStorageKey);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (Object.keys(positionOverrides).length === 0) return;
+    window.localStorage.setItem(layoutStorageKey, JSON.stringify(positionOverrides));
+  }, [positionOverrides]);
 
   const selectedNode = useMemo(
     () => lifeNodes.find((node) => node.id === selectedNodeId),
@@ -223,7 +243,7 @@ function VersionsMap() {
       .map((node) => ({
         id: node.id,
         type: 'custom',
-        position: snapToLayoutGrid(node.position),
+        position: positionOverrides[node.id] ?? snapToLayoutGrid(node.position),
         zIndex:
           node.id === 'brizan-internship' ||
           node.id === 'joined-boring-illini' ||
@@ -238,7 +258,7 @@ function VersionsMap() {
           isConvergence: node.id === 'n1ac',
         },
       }));
-  }, [connectedNodeIds, selectedNodeId, visibleNodeIds]);
+  }, [connectedNodeIds, positionOverrides, selectedNodeId, visibleNodeIds]);
 
   const flowEdges = useMemo(() => {
     return filteredEdges.map((edge) => {
@@ -315,6 +335,44 @@ function VersionsMap() {
     setSelectedNodeId(node.id);
   }, []);
 
+  const onNodesChange = useCallback(
+    (changes) => {
+      if (!isArrangeMode) return;
+
+      setPositionOverrides((currentPositions) => {
+        let didMove = false;
+        const nextPositions = { ...currentPositions };
+
+        changes.forEach((change) => {
+          if (change.type === 'position' && change.position) {
+            nextPositions[change.id] = snapToLayoutGrid(change.position);
+            didMove = true;
+          }
+        });
+
+        return didMove ? nextPositions : currentPositions;
+      });
+    },
+    [isArrangeMode],
+  );
+
+  const copyLayout = useCallback(async () => {
+    const completeLayout = Object.fromEntries(
+      lifeNodes.map((node) => [
+        node.id,
+        positionOverrides[node.id] ?? snapToLayoutGrid(node.position),
+      ]),
+    );
+
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(completeLayout, null, 2));
+      setCopyStatus('Copied');
+      window.setTimeout(() => setCopyStatus('Copy Layout'), 1800);
+    } catch {
+      setCopyStatus('Copy Failed');
+    }
+  }, [positionOverrides]);
+
   const openIntro = useCallback(() => {
     setIsIntroOpen(true);
   }, []);
@@ -375,22 +433,46 @@ function VersionsMap() {
 
           </div>
 
+          <div className="layout-editor-controls" aria-label="Layout editor controls">
+            <span className="layout-editor-status">
+              {isArrangeMode ? 'Layout editing: drag blocks to grid slots' : 'Arrow preview'}
+            </span>
+            {isArrangeMode ? (
+              <button className="layout-editor-button" onClick={copyLayout} type="button">
+                <Copy size={15} aria-hidden="true" />
+                <span>{copyStatus}</span>
+              </button>
+            ) : null}
+            <button
+              className={`layout-editor-button${isArrangeMode ? ' is-active' : ''}`}
+              onClick={() => {
+                setSelectedNodeId(null);
+                setIsArrangeMode((currentMode) => !currentMode);
+              }}
+              type="button"
+            >
+              <Move size={15} aria-hidden="true" />
+              <span>{isArrangeMode ? 'Preview Arrows' : 'Arrange Blocks'}</span>
+            </button>
+          </div>
+
           <ReactFlow
             nodes={flowNodes}
-            edges={flowEdges}
+            edges={isArrangeMode ? [] : flowEdges}
             nodeTypes={nodeTypes}
             edgeTypes={edgeTypes}
             nodeOrigin={nodeOrigin}
             snapToGrid
             snapGrid={layoutGrid}
-            onNodeClick={onNodeClick}
+            onNodesChange={onNodesChange}
+            onNodeClick={isArrangeMode ? undefined : onNodeClick}
             onPaneClick={() => setSelectedNodeId(null)}
             fitView
             fitViewOptions={{ padding: 0.22 }}
             translateExtent={canvasExtent}
             minZoom={0.16}
             maxZoom={1.35}
-            nodesDraggable={false}
+            nodesDraggable={isArrangeMode}
             nodesConnectable={false}
             elementsSelectable
             panOnScroll
@@ -399,7 +481,7 @@ function VersionsMap() {
             proOptions={{ hideAttribution: true }}
           />
 
-          <Legend />
+          {isArrangeMode ? null : <Legend />}
         </section>
 
         <AnimatePresence>

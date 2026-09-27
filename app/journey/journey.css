@@ -29,6 +29,54 @@
   pointer-events: none;
 }
 
+.layout-editor-controls {
+  position: absolute;
+  top: 82px;
+  left: 50%;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 7px 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 8px 24px rgba(31, 42, 36, 0.08);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.layout-editor-status {
+  color: #53604f;
+  font-size: 0.73rem;
+  font-weight: 720;
+}
+
+.layout-editor-button {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid rgba(111, 143, 95, 0.16);
+  border-radius: 999px;
+  color: #455141;
+  background: rgba(255, 255, 255, 0.64);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 760;
+}
+
+.layout-editor-button:hover,
+.layout-editor-button.is-active {
+  border-color: rgba(176, 139, 51, 0.34);
+  color: #26312a;
+  background: rgba(255, 250, 235, 0.92);
+}
+
 .floating-header {
   display: grid;
   grid-template-columns: auto auto;
@@ -808,6 +856,11 @@
     border-radius: 28px;
   }
 
+  .layout-editor-controls {
+    top: 132px;
+    max-width: calc(100% - 28px);
+  }
+
   .hero-copy {
     justify-self: center;
     text-align: center;
@@ -858,6 +911,10 @@
 }
 
 @media (max-width: 520px) {
+  .layout-editor-status {
+    display: none;
+  }
+
   .mode-buttons {
     grid-template-columns: 1fr;
     width: min(100%, 340px);
