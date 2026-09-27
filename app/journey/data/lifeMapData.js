@@ -1088,8 +1088,8 @@ export const lifeEdges = [
   {
     id: 'h-webull-cas',
     source: 'webull',
-    sourceHandle: 'source-left',
     target: 'cas',
+    targetHandle: 'target-right',
     type: 'hidden',
     label: 'unlock',
   },
