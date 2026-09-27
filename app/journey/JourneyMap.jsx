@@ -44,6 +44,12 @@ const layoutGrid = [300, 95];
 const standardNodeWidth = 246;
 const standardNodeHeight = 128;
 const layoutStorageKey = 'journey-layout-draft';
+const edgeDirectionVectors = {
+  [Position.Top]: { x: 0, y: -1 },
+  [Position.Right]: { x: 1, y: 0 },
+  [Position.Bottom]: { x: 0, y: 1 },
+  [Position.Left]: { x: -1, y: 0 },
+};
 const canvasExtent = [
   [-2100, -700],
   [2200, 4700],
@@ -345,7 +351,7 @@ function VersionsMap() {
         type:
           edge.type === 'actual'
             ? 'actualGrid'
-            : edge.editableCurve
+            : edge.type === 'hidden'
               ? 'editableHiddenCurve'
             : edge.route === 'side-to-top'
               ? 'hiddenSideToTop'
@@ -391,7 +397,7 @@ function VersionsMap() {
           Number.isFinite(edge.branchX) ||
           Number.isFinite(alignedBranchY) ||
           Number.isFinite(edge.curveOffset) ||
-          edge.editableCurve
+          edge.type === 'hidden'
             ? {
                 labelT: edge.labelT,
                 branchX: Number.isFinite(edge.branchX)
@@ -399,7 +405,7 @@ function VersionsMap() {
                   : edge.branchX,
                 branchY: alignedBranchY,
                 curveOffset: edge.curveOffset,
-                editableCurve: edge.editableCurve,
+                defaultControlOffset: edge.defaultControlOffset,
               }
             : undefined,
       };
@@ -801,8 +807,10 @@ function EditableHiddenCurveEdge({
   id,
   sourceX,
   sourceY,
+  sourcePosition,
   targetX,
   targetY,
+  targetPosition,
   style,
   markerEnd,
   interactionWidth,
@@ -818,10 +826,10 @@ function EditableHiddenCurveEdge({
   const [savedControlPoint, setSavedControlPoint] = useState(null);
   const defaultControlPoint = useMemo(
     () => ({
-      x: targetX + 80,
-      y: Math.min(sourceY, targetY) - 80,
+      x: (sourceX + targetX) / 2 + (data?.defaultControlOffset?.x ?? 0),
+      y: (sourceY + targetY) / 2 + (data?.defaultControlOffset?.y ?? 0),
     }),
-    [sourceY, targetX, targetY],
+    [data?.defaultControlOffset?.x, data?.defaultControlOffset?.y, sourceX, sourceY, targetX, targetY],
   );
   const controlPoint = savedControlPoint ?? defaultControlPoint;
 
@@ -836,7 +844,12 @@ function EditableHiddenCurveEdge({
     }
   }, [storageKey]);
 
-  const sourceControlPoint = { x: sourceX + 90, y: sourceY };
+  const sourceDirection = edgeDirectionVectors[sourcePosition] ?? edgeDirectionVectors[Position.Bottom];
+  const targetDirection = edgeDirectionVectors[targetPosition] ?? edgeDirectionVectors[Position.Top];
+  const sourceControlPoint = {
+    x: sourceX + sourceDirection.x * 90,
+    y: sourceY + sourceDirection.y * 90,
+  };
   const chordX = targetX - sourceX;
   const chordY = targetY - sourceY;
   const chordLength = Math.hypot(chordX, chordY) || 1;
@@ -851,7 +864,10 @@ function EditableHiddenCurveEdge({
     x: controlPoint.x + tangentX,
     y: controlPoint.y + tangentY,
   };
-  const targetControlPoint = { x: targetX, y: targetY - 90 };
+  const targetControlPoint = {
+    x: targetX + targetDirection.x * 90,
+    y: targetY + targetDirection.y * 90,
+  };
   const path = [
     `M ${sourceX},${sourceY}`,
     `C ${sourceControlPoint.x},${sourceControlPoint.y} ${controlPointIn.x},${controlPointIn.y} ${controlPoint.x},${controlPoint.y}`,
