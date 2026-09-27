@@ -268,9 +268,7 @@ function VersionsMap() {
         draggable: !node.attachedTo,
         position: resolveNodePosition(node, positionOverrides),
         zIndex:
-          node.id === 'brizan-internship' ||
-          node.id === 'joined-boring-illini' ||
-          node.overlay === 'right'
+          node.attachedTo || node.overlay === 'right'
             ? 0
             : node.id === 'ivy-capital' || node.id === 'joined-opera'
               ? 2
@@ -707,6 +705,7 @@ function CustomNode({ data, selected }) {
     data.isDimmed ? 'is-dimmed' : '',
     data.isConvergence ? 'is-convergence' : '',
     data.attachedTo ? 'is-attached-self' : '',
+    data.attachedTo && data.attachedSide === 'right' ? 'is-attached-right' : '',
     data.overlay === 'right' ? 'is-right-overlay' : '',
     data.compact ? 'is-compact' : '',
   ]

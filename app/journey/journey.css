@@ -545,6 +545,18 @@
   font-size: 0.7rem;
 }
 
+.life-node.is-attached-right .node-type-row,
+.life-node.is-attached-right h2,
+.life-node.is-attached-right .node-time {
+  margin-left: auto;
+  text-align: right;
+}
+
+.life-node.is-attached-right .node-type-row,
+.life-node.is-attached-right .node-time {
+  justify-content: flex-end;
+}
+
 @keyframes futurePulse {
   0%,
   100% {
