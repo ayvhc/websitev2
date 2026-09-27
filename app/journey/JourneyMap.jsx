@@ -38,10 +38,18 @@ const edgeTypes = {
   uiucAzura: UiucAzuraEdge,
 };
 const nodeOrigin = [0.5, 0];
+const layoutGrid = [125, 95];
 const canvasExtent = [
   [-2100, -700],
   [2200, 4700],
 ];
+
+function snapToLayoutGrid(position) {
+  return {
+    x: Math.round(position.x / layoutGrid[0]) * layoutGrid[0],
+    y: Math.round(position.y / layoutGrid[1]) * layoutGrid[1],
+  };
+}
 
 const modeIcons = {
   actual: Route,
@@ -214,7 +222,7 @@ function VersionsMap() {
       .map((node) => ({
         id: node.id,
         type: 'custom',
-        position: node.position,
+        position: snapToLayoutGrid(node.position),
         zIndex:
           node.id === 'brizan-internship' ||
           node.id === 'joined-boring-illini' ||
@@ -373,6 +381,8 @@ function VersionsMap() {
             nodeTypes={nodeTypes}
             edgeTypes={edgeTypes}
             nodeOrigin={nodeOrigin}
+            snapToGrid
+            snapGrid={layoutGrid}
             onNodeClick={onNodeClick}
             onPaneClick={() => setSelectedNodeId(null)}
             fitView
