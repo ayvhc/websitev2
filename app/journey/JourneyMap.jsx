@@ -169,7 +169,7 @@ function VersionsMap() {
   const [mode, setMode] = useState('actual');
   const [selectedNodeId, setSelectedNodeId] = useState(null);
   const [isIntroOpen, setIsIntroOpen] = useState(false);
-  const [isArrangeMode, setIsArrangeMode] = useState(true);
+  const [isArrangeMode, setIsArrangeMode] = useState(false);
   const [positionOverrides, setPositionOverrides] = useState({});
   const [copyStatus, setCopyStatus] = useState('Copy Layout');
 

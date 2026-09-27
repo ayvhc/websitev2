@@ -38,7 +38,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -430, y: 360 },
+    position: { x: -300, y: 380 },
     summary: 'A possible Adam with stronger local roots and less early international exposure.',
     whatHappened: 'A possible version of Adam stays in Taiwan and continues through the same private school system.',
     whyItMattered: 'This version likely has stronger local roots, but less early international exposure.',
@@ -86,7 +86,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -430, y: 730 },
+    position: { x: -300, y: 760 },
     summary: 'A slower, lonelier version of the same adaptation.',
     whatHappened: 'A possible version of Adam does not talk to Nathan and spends more time alone.',
     whyItMattered: 'He probably still adapts eventually, but more slowly.',
@@ -100,7 +100,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -780, y: 900 },
+    position: { x: -900, y: 855 },
     summary: 'The version where isolation became too heavy.',
     whatHappened:
       'A possible version of Adam does not talk to Nathan, stays isolated longer, struggles more with English, and eventually gives up on adapting to Singapore.',
@@ -136,7 +136,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -430, y: 950 },
+    position: { x: -300, y: 950 },
     summary: 'A stronger academic record, possibly a different college door.',
     whatHappened:
       'A possible version of Adam understands the importance of GPA early and builds a stronger academic record from the start.',
@@ -152,7 +152,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -780, y: 1130 },
+    position: { x: -900, y: 1140 },
     summary: 'The dream-school version that may have cost me freedom.',
     whatHappened:
       'A possible version of Adam takes GPA seriously earlier, builds a much stronger academic record, and gets into CMU, the school he had hoped for most.',
@@ -204,7 +204,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -400, y: 1280 },
+    position: { x: -300, y: 1235 },
     summary: 'A slower trigger into ambition.',
     whatHappened:
       'A possible version of Adam does not attend UBS LEADS and enters college without the same urgency.',
@@ -237,7 +237,7 @@ export const lifeNodes = [
     time: 'Freshman Year',
     type: 'Experience',
     status: 'actual',
-    position: { x: 890, y: 1530 },
+    position: { x: 600, y: 1520 },
     summary: 'The social side of college, experienced intensely and early.',
     whatHappened:
       'Adam spent many weekends partying, drinking, playing games, and having fun with friends.',
@@ -255,7 +255,7 @@ export const lifeNodes = [
     time: 'Sophomore Year',
     type: 'Outcome',
     status: 'actual',
-    position: { x: -800, y: 2220 },
+    position: { x: -900, y: 2280 },
     summary: 'Rejection became fuel for action.',
     whatHappened:
       'Coming from an engineering-heavy background, Adam sought exposure to business on campus. He applied to several business, consulting, and entrepreneurship organizations, including Ascend, IBC, AKPsi, CUBE, and Enactus, but was rejected by all of them.',
@@ -275,7 +275,7 @@ export const lifeNodes = [
     time: 'Sophomore Year',
     type: 'Personal Exploration / Experience',
     status: 'actual',
-    position: { x: -1400, y: 2220 },
+    position: { x: -1500, y: 2280 },
     summary: 'An automation experiment that became an early lesson in ethics and unit economics.',
     whatHappened:
       'I built an end-to-end pipeline for AI content generation, content planning, and customer service while exploring other generative-AI business models.',
@@ -290,7 +290,7 @@ export const lifeNodes = [
     time: 'Sophomore Year',
     type: 'Outcome',
     status: 'actual',
-    position: { x: -1100, y: 2220 },
+    position: { x: -1200, y: 2280 },
     summary: 'The applications ended in rejection, but one interview still created a meaningful connection.',
     whatHappened:
       'URSA and UROP are semester research programs at UIUC that allow undergraduates to join engineering projects. I applied but was not accepted to either.',
@@ -305,7 +305,7 @@ export const lifeNodes = [
     time: 'Freshman Year',
     type: 'Experience',
     status: 'actual',
-    position: { x: 1180, y: 1530 },
+    position: { x: 1200, y: 1520 },
     summary: 'Startup interest appeared before startup discipline did.',
     whatHappened:
       'Adam joined BuildIllinois, an entrepreneurial club where students think of startup ideas and try to build them. He had an idea for an OCR and AI note-taking app for college students, but did not fully commit to it.',
@@ -322,7 +322,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: 1180, y: 1720 },
+    position: { x: 1200, y: 1710 },
     summary: 'A version that learns by building sooner.',
     whatHappened:
       'A possible version of Adam commits to the AI note-taking idea and tries to build a real MVP.',
@@ -338,7 +338,7 @@ export const lifeNodes = [
     time: 'Freshman Year',
     type: 'Experience',
     status: 'actual',
-    position: { x: 250, y: 1530 },
+    position: { x: 300, y: 1520 },
     summary: 'Engineering became physical instead of abstract.',
     whatHappened: 'Adam joined a robotics research lab and got to experience what engineering research is like.',
     whyItMattered: 'Seeing something he made work in real life confirmed his interest in engineering.',
@@ -353,7 +353,7 @@ export const lifeNodes = [
     time: 'Freshman Year',
     type: 'Experience',
     status: 'actual',
-    position: { x: 570, y: 1530 },
+    position: { x: 900, y: 1520 },
     summary: 'A job whose hidden consequence mattered more than the job title.',
     whatHappened: 'Adam got a job as an AI video data analyst at UIUC\'s CSL.',
     whyItMattered:
@@ -369,7 +369,7 @@ export const lifeNodes = [
     time: 'October 2024',
     type: 'Hidden Unlock',
     status: 'hidden',
-    position: { x: 570, y: 1720 },
+    position: { x: 900, y: 1710 },
     summary: 'A small administrative outcome that opened the financial path.',
     whatHappened: 'Through the CSL job, Adam was able to get a US Social Security Number.',
     whyItMattered: 'This unlocked access to US financial platforms.',
@@ -384,7 +384,7 @@ export const lifeNodes = [
     time: 'June 2025',
     type: 'Mandatory Experience',
     status: 'actual',
-    position: { x: -300, y: 2100 },
+    position: { x: -300, y: 2090 },
     summary: 'A family-driven exposure to the investing world before the Beijing internship.',
     whatHappened:
       'Adam attended the UBS Asian Investment Conference in June 2025. This was not fully self-initiated, so it should be treated as a mandatory / family-driven experience.',
@@ -402,7 +402,7 @@ export const lifeNodes = [
     time: 'June 2025',
     type: 'Experience',
     status: 'actual',
-    position: { x: 300, y: 2100 },
+    position: { x: 0, y: 2090 },
     summary: 'A serious institution, a dense city, and an early view of China.',
     whatHappened:
       'Adam interned at the Chinese Academy of Sciences in Beijing. It was his first real experience working inside a serious institution.',
@@ -420,7 +420,7 @@ export const lifeNodes = [
     time: 'July 2025',
     type: 'Mandatory Experience',
     status: 'actual',
-    position: { x: 0, y: 2100 },
+    position: { x: 300, y: 2090 },
     summary: 'Manufacturing made engineering feel operational and cultural.',
     whatHappened:
       'Adam interned at Hennecke GmbH in Germany. This was planned by his father and gave him exposure to European manufacturing, factory operations, and German lifestyle.',
@@ -439,7 +439,7 @@ export const lifeNodes = [
     time: '2025',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: 1500, y: 2100 },
+    position: { x: 1500, y: 2090 },
     summary:
       'A distribution opportunity that became a hands-on lesson in building a cross-border business.',
     whatHappened:
@@ -458,7 +458,7 @@ export const lifeNodes = [
     time: '2025 to present',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: 1500, y: 2290 },
+    position: { x: 1500, y: 2280 },
     summary:
       'A paused distribution venture became a more personal mission: helping his mother build a brand and community of her own.',
     whatHappened:
@@ -482,7 +482,7 @@ export const lifeNodes = [
     time: 'November 2024',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: 570, y: 1910 },
+    position: { x: 900, y: 1900 },
     summary: 'The first serious experience with financial risk.',
     whatHappened: 'After getting his SSN, Adam opened a Webull account and started trading stocks.',
     whyItMattered: 'Trading became his first serious experience with financial risk.',
@@ -496,7 +496,7 @@ export const lifeNodes = [
     time: 'October 2025',
     type: 'Outcome',
     status: 'actual',
-    position: { x: 360, y: 2290 },
+    position: { x: 900, y: 2280 },
     summary: 'A fast win that created both capital and overconfidence.',
     whatHappened:
       'Adam made around $100K through Webull trading by closely observing and following his father\'s trading moves.',
@@ -512,7 +512,7 @@ export const lifeNodes = [
     time: 'October 2025',
     type: 'Experience',
     status: 'actual',
-    position: { x: 80, y: 2490 },
+    position: { x: 600, y: 2470 },
     summary: 'A self-driven move deeper into the startup and tech world.',
     whatHappened: 'In October 2025, Adam attended TechCrunch in San Francisco by his own decision.',
     whyItMattered:
@@ -529,7 +529,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: 555, y: 2490 },
+    position: { x: 600, y: 2470 },
     overlay: 'right',
     summary: 'A safer version with less access to investor identity.',
     whatHappened: 'A possible version of Adam does not make the $100K through trading.',
@@ -545,7 +545,7 @@ export const lifeNodes = [
     time: '2025 to 2026',
     type: 'Outcome',
     status: 'actual',
-    position: { x: 360, y: 2490 },
+    position: { x: 900, y: 2660 },
     summary: 'The loss that made risk emotional instead of theoretical.',
     whatHappened:
       'Adam tried swing trading, options, and trades based on uncertain information. He became greedy and lost a large part of the earlier profit, leaving around $50K.',
@@ -561,7 +561,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: 555, y: 2670 },
+    position: { x: 600, y: 2660 },
     overlay: 'right',
     summary: 'One of the versions that needed to be avoided.',
     whatHappened: 'A possible version of Adam keeps chasing options and risky trades.',
@@ -576,7 +576,7 @@ export const lifeNodes = [
     time: '2026',
     type: 'Hidden Unlock',
     status: 'hidden',
-    position: { x: 360, y: 2670 },
+    position: { x: 900, y: 2850 },
     summary: 'What remained became the entry ticket into startup investing.',
     whatHappened: 'After the trading losses, Adam still had around $50K left.',
     whyItMattered: 'This became the capital base that could later be used for angel investing.',
@@ -591,7 +591,7 @@ export const lifeNodes = [
     time: 'September 2025',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: -500, y: 2220 },
+    position: { x: -600, y: 2280 },
     summary: 'A small business whose biggest outcome was a person.',
     whatHappened:
       'Adam teamed up with Kayden to start an online luxury flower shop on campus. Adam wanted to make money from wealthy Chinese students on campus, and Kayden wanted to sell flowers.',
@@ -609,7 +609,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -900, y: 2480 },
+    position: { x: -900, y: 2470 },
     summary: 'Startup interest stays more abstract, and a key bridge is missed.',
     whatHappened: 'A possible version of Adam does not start the flower shop.',
     whyItMattered:
@@ -624,7 +624,7 @@ export const lifeNodes = [
     time: 'February 2026',
     type: 'Outcome',
     status: 'actual',
-    position: { x: -700, y: 2480 },
+    position: { x: -600, y: 2470 },
     summary: 'Entrepreneurship became a real operating problem.',
     whatHappened:
       'Through Azura, Adam learned about production planning, optimization, customer service, pricing, scheduling, and managing real orders.',
@@ -640,7 +640,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -700, y: 2670 },
+    position: { x: -600, y: 2660 },
     summary: 'A path where Azura\'s operations experience led to a more industrial internship.',
     whatHappened:
       'A possible version of Adam used the real operational knowledge from Azura de Maison to apply for a SHEIN summer internship and got accepted.',
@@ -658,7 +658,7 @@ export const lifeNodes = [
     time: 'October 2025',
     type: 'Key Person',
     status: 'actual',
-    position: { x: -330, y: 2452 },
+    position: { x: -300, y: 2470 },
     summary: 'A friend who became a bridge into a different world.',
     whatHappened: 'Wanting became Azura\'s florist and later became a good friend of Adam.',
     whyItMattered: 'She became one of the most important key people in Adam\'s life.',
@@ -673,7 +673,7 @@ export const lifeNodes = [
     time: 'November 2025',
     type: 'Experience',
     status: 'actual',
-    position: { x: -330, y: 2670 },
+    position: { x: -300, y: 2660 },
     summary: 'Inspiration and intimidation arrived together.',
     whatHappened:
       'Wanting introduced Adam to an event where Kehan Dong, ex-YC China founder, gave a speech to founders and investors.',
@@ -690,7 +690,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -700, y: 2850 },
+    position: { x: -600, y: 2850 },
     summary: 'Ambition without the same direct bridge into the network.',
     whatHappened: 'A possible version of Adam does not attend the event.',
     whyItMattered:
@@ -705,7 +705,7 @@ export const lifeNodes = [
     time: 'January 2026',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: -180, y: 2860 },
+    position: { x: -300, y: 2850 },
     summary: 'A decision to step into an identity that once felt far away.',
     whatHappened:
       'A few months after Kehan\'s speech, Adam got an invitation to apply as an investor in N1AC, a group of young angel investors in the US.',
@@ -722,7 +722,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -580, y: 3050 },
+    position: { x: -600, y: 3040 },
     summary: 'Safer financially, but much less transformed.',
     whatHappened: 'A possible version of Adam does not apply to N1AC.',
     whyItMattered:
@@ -737,7 +737,7 @@ export const lifeNodes = [
     time: 'February 2026',
     type: 'Outcome',
     status: 'actual',
-    position: { x: 190, y: 3080 },
+    position: { x: 300, y: 3040 },
     summary: 'The point where capital, access, and ambition merged into real startup investing.',
     whatHappened:
       'Adam officially joined N1AC, a young angel investor group led by Kehan Dong. He began attending live pitches, analyzing startups, speaking with founders, and learning how early-stage investing actually works.',
@@ -755,7 +755,7 @@ export const lifeNodes = [
     time: 'Summer 2026',
     type: 'Experience',
     status: 'actual',
-    position: { x: 0, y: 3370 },
+    position: { x: 0, y: 3325 },
     summary: 'A future opportunity produced by a messy chain of earlier choices.',
     whatHappened:
       'Because of his N1AC angel investing experience and his knowledge of AI agents, Adam secured an internship at IVY Capital in Shanghai.',
@@ -773,7 +773,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -200, y: 3370 },
+    position: { x: -300, y: 3325 },
     summary: 'A VC internship path that came close but did not happen.',
     whatHappened:
       'Adam made it to the final interview for a Brizan internship in Shenzhen, but eventually got rejected.',
@@ -791,7 +791,7 @@ export const lifeNodes = [
     time: 'Summer 2026',
     type: 'Experience',
     status: 'actual',
-    position: { x: 380, y: 3370 },
+    position: { x: 300, y: 3325 },
     summary: 'A side path whose meaning is still forming.',
     whatHappened: 'Adam also received a PwC online internship opportunity.',
     whyItMattered: 'It may give him corporate, finance, or professional-service exposure.',
@@ -805,7 +805,7 @@ export const lifeNodes = [
     time: 'Through N1AC',
     type: 'Startup Investment',
     status: 'actual',
-    position: { x: 720, y: 3370 },
+    position: { x: 600, y: 3230 },
     compact: true,
     summary: 'AI for Construction',
     whatHappened: 'Tenda is a startup applying AI to the construction industry.',
@@ -817,7 +817,7 @@ export const lifeNodes = [
     time: 'Through N1AC',
     type: 'Startup Investment',
     status: 'actual',
-    position: { x: 970, y: 3370 },
+    position: { x: 900, y: 3230 },
     compact: true,
     summary: 'GPU Chip Cooling',
     whatHappened:
@@ -830,7 +830,7 @@ export const lifeNodes = [
     time: 'August 2026',
     type: 'Experience',
     status: 'actual',
-    position: { x: -760, y: 3740 },
+    position: { x: -300, y: 3610 },
     summary: 'A rejected research application returned as a direct invitation.',
     whatHappened:
       'Pranav Krishnan, whom I met while interviewing for URSA/UROP, reached out during the summer and invited me to join AMS Lab to work on a frontal-polymerization DIW 3D-printing system.',
@@ -845,7 +845,7 @@ export const lifeNodes = [
     time: 'Fall 2026',
     type: 'Experience / Personal Decision',
     status: 'actual',
-    position: { x: -260, y: 3740 },
+    position: { x: 0, y: 3610 },
     summary: 'A new environment for turning engineering ideas into physical objects.',
     whatHappened:
       'Joined OPERA, a 3D printing and design-focused student organization. The club works on hands-on engineering projects involving CAD, fabrication, prototyping, and 3D printing.',
@@ -862,7 +862,7 @@ export const lifeNodes = [
     time: 'Alternate path',
     type: 'Outcome',
     status: 'alternate',
-    position: { x: -460, y: 3740 },
+    position: { x: -600, y: 3705 },
     summary: 'A hands-on engineering path I chose not to pursue this semester.',
     whatHappened:
       'Boring Illini is a student engineering team competing in The Boring Company’s Not-a-Boring Competition, created by Elon Musk, where teams develop tunnel-boring technology and related mechanical systems.',
@@ -879,7 +879,7 @@ export const lifeNodes = [
     time: 'Junior Year',
     type: 'Personal Exploration / Experience',
     status: 'actual',
-    position: { x: 380, y: 3740 },
+    position: { x: 300, y: 3610 },
     summary: 'A month-long side quest into reading faces.',
     whatHappened:
       'I spent September learning the foundations of 面相学: how face shape, eyes, eyebrows, nose, mouth, and other features are traditionally interpreted.',
