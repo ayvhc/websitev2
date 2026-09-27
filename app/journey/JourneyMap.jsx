@@ -10,7 +10,7 @@ import ReactFlow, {
   MarkerType,
   Position,
   ReactFlowProvider,
-  useReactFlow,
+  useStoreApi,
 } from 'reactflow';
 import {
   CircleDot,
@@ -813,7 +813,7 @@ function EditableHiddenCurveEdge({
   labelBgBorderRadius,
   data,
 }) {
-  const { screenToFlowPosition } = useReactFlow();
+  const flowStore = useStoreApi();
   const storageKey = `journey-edge-control-${id}`;
   const [savedControlPoint, setSavedControlPoint] = useState(null);
   const defaultControlPoint = useMemo(
@@ -860,10 +860,14 @@ function EditableHiddenCurveEdge({
     document.body.style.userSelect = 'none';
 
     const moveControlPoint = (moveEvent) => {
-      const nextPoint = screenToFlowPosition({
-        x: moveEvent.clientX,
-        y: moveEvent.clientY,
-      });
+      const { domNode, transform } = flowStore.getState();
+      const bounds = domNode?.getBoundingClientRect();
+      if (!bounds) return;
+
+      const nextPoint = {
+        x: (moveEvent.clientX - bounds.left - transform[0]) / transform[2],
+        y: (moveEvent.clientY - bounds.top - transform[1]) / transform[2],
+      };
       setSavedControlPoint(nextPoint);
       window.localStorage.setItem(storageKey, JSON.stringify(nextPoint));
     };
