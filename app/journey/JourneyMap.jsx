@@ -34,6 +34,7 @@ const nodeTypes = { custom: CustomNode };
 const edgeTypes = {
   actualGrid: ActualGridEdge,
   hiddenLowerLabel: HiddenLowerLabelEdge,
+  hiddenSideToTop: HiddenSideToTopEdge,
   leftDrop: LeftDropEdge,
 };
 const nodeOrigin = [0.5, 0];
@@ -342,6 +343,8 @@ function VersionsMap() {
         type:
           edge.type === 'actual'
             ? 'actualGrid'
+            : edge.route === 'side-to-top'
+              ? 'hiddenSideToTop'
             : Number.isFinite(edge.labelT)
             ? 'hiddenLowerLabel'
             : edge.type === 'hidden'
@@ -700,6 +703,60 @@ function HiddenLowerLabelEdge({
       <EdgeText
         x={labelPoint.x}
         y={labelPoint.y}
+        label={label}
+        labelStyle={labelStyle}
+        labelBgStyle={labelBgStyle}
+        labelBgPadding={labelBgPadding}
+        labelBgBorderRadius={labelBgBorderRadius}
+      />
+    </>
+  );
+}
+
+function HiddenSideToTopEdge({
+  sourceX,
+  sourceY,
+  targetX,
+  targetY,
+  style,
+  markerEnd,
+  interactionWidth,
+  label,
+  labelStyle,
+  labelBgStyle,
+  labelBgPadding,
+  labelBgBorderRadius,
+  data,
+}) {
+  const path = `M ${sourceX},${sourceY} L ${targetX},${sourceY} L ${targetX},${targetY}`;
+  const horizontalLength = Math.abs(targetX - sourceX);
+  const verticalLength = Math.abs(targetY - sourceY);
+  const totalLength = horizontalLength + verticalLength;
+  const labelDistance = totalLength * (data?.labelT ?? 0.5);
+  const labelPoint =
+    labelDistance <= horizontalLength
+      ? {
+          x: sourceX + Math.sign(targetX - sourceX) * labelDistance,
+          y: sourceY,
+        }
+      : {
+          x: targetX,
+          y:
+            sourceY +
+            Math.sign(targetY - sourceY) * (labelDistance - horizontalLength),
+        };
+
+  return (
+    <>
+      <BaseEdge
+        path={path}
+        markerEnd={markerEnd}
+        style={style}
+        interactionWidth={interactionWidth}
+      />
+      <EdgeText
+        x={labelPoint.x}
+        y={labelPoint.y - 12}
         label={label}
         labelStyle={labelStyle}
         labelBgStyle={labelBgStyle}
