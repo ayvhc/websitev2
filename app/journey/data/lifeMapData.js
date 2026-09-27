@@ -270,6 +270,21 @@ export const lifeNodes = [
       'At the time, part of me wanted to prove that I was more capable than those rejection decisions suggested. Looking back, I am glad I learned to build evidence through action instead of depending on an organization to tell me whether I belonged in business.',
   },
   {
+    id: 'ai-content-business',
+    title: 'Launched an AI Content Business',
+    time: 'Sophomore Year',
+    type: 'Personal Exploration / Experience',
+    status: 'actual',
+    position: { x: -1400, y: 2220 },
+    summary: 'An automation experiment that became an early lesson in ethics and unit economics.',
+    whatHappened:
+      'I built an end-to-end pipeline for AI content generation, content planning, and customer service while exploring other generative-AI business models.',
+    whyItMattered:
+      'The business earned about $80 but cost more than $100 to run, teaching me how quickly automation costs and operational complexity can outweigh early revenue.',
+    reflection:
+      'As I explored the space more deeply, I encountered ethical concerns I could not ignore, so I chose to stop.',
+  },
+  {
     id: 'research-program-rejections',
     title: 'Rejected by URSA & UROP',
     time: 'Sophomore Year',
@@ -895,6 +910,15 @@ export const lifeEdges = [
     id: 'e-freshman-business-org-rejections',
     source: 'freshman-year',
     target: 'business-org-rejections',
+    type: 'actual',
+    route: 'lower-uiuc-branch',
+    branchX: -500,
+    label: '',
+  },
+  {
+    id: 'e-freshman-ai-content-business',
+    source: 'freshman-year',
+    target: 'ai-content-business',
     type: 'actual',
     route: 'lower-uiuc-branch',
     branchX: -500,

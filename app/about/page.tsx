@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DockNav } from "../components/DockNav";
 import { IceWineReveal } from "./IceWineReveal";
 import { MovieTicketFlip } from "./MovieTicketFlip";
@@ -29,15 +30,19 @@ export default function AboutPage() {
             <MovieTicketFlip />
           </div>
           <div className="about-dachshund">
-            <img
+            <Image
               className="about-dachshund-resting"
               src="/images/dachshund-baguette.png"
               alt="A hand-drawn dachshund wearing a beret and holding a baguette"
+              width={1536}
+              height={1024}
             />
-            <img
+            <Image
               className="about-dachshund-surprised"
               src="/images/dachshund-surprised.png"
               alt="The surprised dachshund dropping its baguette"
+              width={1536}
+              height={1024}
             />
             <button
               type="button"
@@ -48,7 +53,12 @@ export default function AboutPage() {
           <TravelMap />
           <IceWineReveal />
           <div className="about-portrait-frame">
-            <img src="/images/yihung-chen-portrait.jpg" alt="Yihung Chen portrait" />
+            <Image
+              src="/images/yihung-chen-portrait.jpg"
+              alt="Yihung Chen portrait"
+              width={2287}
+              height={4360}
+            />
           </div>
         </div>
       </section>

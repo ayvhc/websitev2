@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export function IceWineReveal() {
@@ -15,9 +16,11 @@ export function IceWineReveal() {
         aria-label={isOpen ? "Hide ice wine details" : "Show ice wine details"}
         onClick={() => setIsOpen((open) => !open)}
       >
-        <img
+        <Image
           src="/images/ice-wine-minimal.png"
           alt="A minimal drawing of golden Canadian ice wine"
+          width={1042}
+          height={1509}
         />
       </button>
 

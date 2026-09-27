@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Yihung Chen",
   description:
     "The portfolio and investment philosophy of Yihung Chen, engineer, early-stage investor, and entrepreneur.",
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "Yihung Chen",
     description:

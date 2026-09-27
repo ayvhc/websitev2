@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DockNav } from "../components/DockNav";
 
 type ExperienceItem = {
@@ -178,9 +179,11 @@ function ExperienceRow({ item }: { item: ExperienceItem }) {
     <article className="experience-row">
       <div className="experience-mark" aria-hidden="true">
         {item.logo ? (
-          <img
+          <Image
             src={item.logo}
             alt=""
+            width={128}
+            height={128}
             style={{ width: item.logoSize, height: item.logoSize }}
           />
         ) : item.mark}
@@ -261,9 +264,11 @@ export default function ExperiencePage() {
               {education.map((item) => (
                 <article className="experience-row education-row" key={item.school}>
                   <div className="experience-mark" aria-hidden="true">
-                    <img
+                    <Image
                       src={item.logo}
                       alt=""
+                      width={128}
+                      height={128}
                       style={{ width: item.logoSize, height: item.logoSize }}
                     />
                   </div>

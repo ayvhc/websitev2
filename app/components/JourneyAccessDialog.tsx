@@ -16,28 +16,32 @@ export function JourneyAccessDialog({ open, onClose, onSuccess }: JourneyAccessD
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (!open) {
-      setPassword("");
-      setError(false);
-    }
-  }, [open]);
-
-  useEffect(() => {
     if (!open || !onClose) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape") {
+        setPassword("");
+        setError(false);
+        onClose();
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [open, onClose]);
 
+  function closeDialog() {
+    setPassword("");
+    setError(false);
+    onClose?.();
+  }
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (password === "123") {
       window.sessionStorage.setItem(journeyAccessKey, "true");
+      setPassword("");
       setError(false);
       onSuccess();
       return;
@@ -57,7 +61,7 @@ export function JourneyAccessDialog({ open, onClose, onSuccess }: JourneyAccessD
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18 }}
           onMouseDown={(event) => {
-            if (event.target === event.currentTarget) onClose?.();
+            if (event.target === event.currentTarget) closeDialog();
           }}
         >
           <motion.div
@@ -79,7 +83,6 @@ export function JourneyAccessDialog({ open, onClose, onSuccess }: JourneyAccessD
                 type="password"
                 inputMode="numeric"
                 autoComplete="off"
-                autoFocus
                 value={password}
                 aria-invalid={error}
                 aria-describedby={error ? "journey-password-error" : undefined}

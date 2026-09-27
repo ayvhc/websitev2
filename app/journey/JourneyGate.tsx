@@ -12,7 +12,11 @@ export default function JourneyGate() {
   const [unlocked, setUnlocked] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setUnlocked(window.sessionStorage.getItem(journeyAccessKey) === "true");
+    const frame = window.requestAnimationFrame(() => {
+      setUnlocked(window.sessionStorage.getItem(journeyAccessKey) === "true");
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   if (unlocked) {

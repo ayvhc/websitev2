@@ -131,9 +131,11 @@ function DockThemeToggle() {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const nextTheme = savedTheme === "dark" || (!savedTheme && prefersDark) ? "dark" : "light";
 
-    setTheme(nextTheme);
     document.documentElement.dataset.theme = nextTheme;
     document.documentElement.style.colorScheme = nextTheme;
+    const frame = window.requestAnimationFrame(() => setTheme(nextTheme));
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   const distance = useTransform(context.mouseX, (value) => {
