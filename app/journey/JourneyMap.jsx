@@ -38,7 +38,7 @@ const edgeTypes = {
   uiucAzura: UiucAzuraEdge,
 };
 const nodeOrigin = [0.5, 0];
-const layoutGrid = [125, 95];
+const layoutGrid = [250, 95];
 const canvasExtent = [
   [-2100, -700],
   [2200, 4700],
