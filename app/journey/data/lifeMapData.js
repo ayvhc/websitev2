@@ -713,6 +713,9 @@ export const lifeNodes = [
     type: 'Outcome',
     status: 'alternate',
     position: { x: -300, y: 3325 },
+    attachedTo: 'ivy-capital',
+    attachedSide: 'left',
+    overlapRatio: 0.3,
     summary: 'A VC internship path that came close but did not happen.',
     whatHappened:
       'Adam made it to the final interview for a Brizan internship in Shenzhen, but eventually got rejected.',
@@ -1060,14 +1063,6 @@ export const lifeEdges = [
     source: 'azura-operations',
     target: 'shein-internship',
     type: 'alternate',
-    label: '',
-  },
-  {
-    id: 'a-n1ac-brizan',
-    source: 'n1ac',
-    target: 'brizan-internship',
-    type: 'alternate',
-    route: 'left-drop',
     label: '',
   },
 

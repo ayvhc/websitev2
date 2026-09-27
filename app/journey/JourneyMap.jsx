@@ -38,6 +38,7 @@ const edgeTypes = {
 };
 const nodeOrigin = [0.5, 0];
 const layoutGrid = [300, 95];
+const standardNodeWidth = 246;
 const standardNodeHeight = 128;
 const layoutStorageKey = 'journey-layout-draft';
 const canvasExtent = [
@@ -57,6 +58,22 @@ function snapToLayoutGrid(position) {
 }
 
 function resolveNodePosition(node, positionOverrides) {
+  if (node.attachedTo) {
+    const parentNode = lifeNodes.find((candidate) => candidate.id === node.attachedTo);
+
+    if (parentNode) {
+      const parentPosition =
+        positionOverrides[parentNode.id] ?? snapToLayoutGrid(parentNode.position);
+      const visibleRatio = 1 - (node.overlapRatio ?? 0.3);
+      const direction = node.attachedSide === 'right' ? 1 : -1;
+
+      return {
+        x: parentPosition.x + direction * standardNodeWidth * visibleRatio,
+        y: parentPosition.y,
+      };
+    }
+  }
+
   return positionOverrides[node.id] ?? snapToLayoutGrid(node.position);
 }
 
@@ -248,6 +265,7 @@ function VersionsMap() {
       .map((node) => ({
         id: node.id,
         type: 'custom',
+        draggable: !node.attachedTo,
         position: resolveNodePosition(node, positionOverrides),
         zIndex:
           node.id === 'brizan-internship' ||
@@ -399,7 +417,7 @@ function VersionsMap() {
     const completeLayout = Object.fromEntries(
       lifeNodes.map((node) => [
         node.id,
-        positionOverrides[node.id] ?? snapToLayoutGrid(node.position),
+        resolveNodePosition(node, positionOverrides),
       ]),
     );
 
@@ -688,6 +706,7 @@ function CustomNode({ data, selected }) {
     selected ? 'is-selected' : '',
     data.isDimmed ? 'is-dimmed' : '',
     data.isConvergence ? 'is-convergence' : '',
+    data.attachedTo ? 'is-attached-self' : '',
     data.overlay === 'right' ? 'is-right-overlay' : '',
     data.compact ? 'is-compact' : '',
   ]

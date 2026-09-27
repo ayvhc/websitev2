@@ -479,8 +479,8 @@
   text-align: right;
 }
 
-/* Keep actual events and hidden unlocks visually consistent. Alternate-path
-   cards retain their distinct shapes so possible selves remain easy to scan. */
+/* Keep every map card on the same footprint while status styling carries the
+   distinction between actual, hidden, and alternate paths. */
 .life-node:is(.node-status-actual, .node-status-hidden) {
   display: block;
   width: 246px;
@@ -500,6 +500,49 @@
 .life-node:is(.node-status-actual, .node-status-hidden) h2 {
   margin: 9px 0 8px;
   text-align: left;
+}
+
+.life-node.node-status-alternate {
+  display: block;
+  width: 246px;
+  height: 128px;
+  min-height: 128px;
+  padding: 14px 15px 15px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.life-node.node-status-alternate .node-type-row,
+.life-node.node-status-alternate .node-time {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.life-node.node-status-alternate h2 {
+  margin: 9px 0 8px;
+  text-align: left;
+}
+
+.life-node.is-attached-self .node-type-row,
+.life-node.is-attached-self h2,
+.life-node.is-attached-self .node-time {
+  width: 70%;
+  max-width: 70%;
+}
+
+.life-node.is-attached-self h2 {
+  margin: 7px 0 6px;
+  font-size: 0.86rem;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+.life-node.is-attached-self .node-type-row {
+  font-size: 0.62rem;
+}
+
+.life-node.is-attached-self .node-time {
+  font-size: 0.7rem;
 }
 
 @keyframes futurePulse {
