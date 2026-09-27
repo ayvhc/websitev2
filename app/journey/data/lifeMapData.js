@@ -384,7 +384,7 @@ export const lifeNodes = [
     time: 'June 2025',
     type: 'Mandatory Experience',
     status: 'actual',
-    position: { x: -300, y: 1910 },
+    position: { x: -300, y: 2100 },
     summary: 'A family-driven exposure to the investing world before the Beijing internship.',
     whatHappened:
       'Adam attended the UBS Asian Investment Conference in June 2025. This was not fully self-initiated, so it should be treated as a mandatory / family-driven experience.',
@@ -402,7 +402,7 @@ export const lifeNodes = [
     time: 'June 2025',
     type: 'Experience',
     status: 'actual',
-    position: { x: 300, y: 1910 },
+    position: { x: 300, y: 2100 },
     summary: 'A serious institution, a dense city, and an early view of China.',
     whatHappened:
       'Adam interned at the Chinese Academy of Sciences in Beijing. It was his first real experience working inside a serious institution.',
@@ -420,7 +420,7 @@ export const lifeNodes = [
     time: 'July 2025',
     type: 'Mandatory Experience',
     status: 'actual',
-    position: { x: 0, y: 1910 },
+    position: { x: 0, y: 2100 },
     summary: 'Manufacturing made engineering feel operational and cultural.',
     whatHappened:
       'Adam interned at Hennecke GmbH in Germany. This was planned by his father and gave him exposure to European manufacturing, factory operations, and German lifestyle.',
@@ -439,7 +439,7 @@ export const lifeNodes = [
     time: '2025',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: 1500, y: 1910 },
+    position: { x: 1500, y: 2100 },
     summary:
       'A distribution opportunity that became a hands-on lesson in building a cross-border business.',
     whatHappened:
@@ -458,7 +458,7 @@ export const lifeNodes = [
     time: '2025 to present',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: 1500, y: 2100 },
+    position: { x: 1500, y: 2290 },
     summary:
       'A paused distribution venture became a more personal mission: helping his mother build a brand and community of her own.',
     whatHappened:
