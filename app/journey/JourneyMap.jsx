@@ -30,15 +30,13 @@ import { lifeEdges, lifeNodes, viewModes } from './data/lifeMapData';
 
 const nodeTypes = { custom: CustomNode };
 const edgeTypes = {
-  azuraChild: AzuraChildEdge,
+  actualGrid: ActualGridEdge,
   hiddenLowerLabel: HiddenLowerLabelEdge,
   leftDrop: LeftDropEdge,
-  lowerUiucBranch: LowerUiucBranchEdge,
-  n1acMerge: N1acMergeEdge,
-  uiucAzura: UiucAzuraEdge,
 };
 const nodeOrigin = [0.5, 0];
 const layoutGrid = [300, 95];
+const actualArrowLaneOffset = 31;
 const canvasExtent = [
   [-2100, -700],
   [2200, 4700],
@@ -259,19 +257,13 @@ function VersionsMap() {
         sourceHandle: edge.sourceHandle,
         targetHandle: edge.targetHandle,
         type:
-          Number.isFinite(edge.labelT)
+          edge.type === 'actual'
+            ? 'actualGrid'
+            : Number.isFinite(edge.labelT)
             ? 'hiddenLowerLabel'
             : edge.type === 'hidden'
             ? 'bezier'
-            : edge.route === 'lower-uiuc-branch'
-              ? 'lowerUiucBranch'
-            : edge.route === 'azura-child'
-            ? 'azuraChild'
-            : edge.route === 'uiuc-azura' || edge.route === 'uiuc-split'
-              ? 'uiucAzura'
-              : edge.route === 'n1ac-merge'
-                ? 'n1acMerge'
-              : edge.route === 'left-drop'
+            : edge.route === 'left-drop'
                 ? 'leftDrop'
                 : 'smoothstep',
         label: showLabel ? edge.label : undefined,
@@ -427,7 +419,7 @@ function VersionsMap() {
   );
 }
 
-function UiucAzuraEdge({
+function ActualGridEdge({
   sourceX,
   sourceY,
   targetX,
@@ -436,55 +428,13 @@ function UiucAzuraEdge({
   markerEnd,
   interactionWidth,
 }) {
-  const branchY = Math.min(sourceY + 48, targetY - 42);
-  const path = `M ${sourceX},${sourceY} L ${sourceX},${branchY} L ${targetX},${branchY} L ${targetX},${targetY}`;
-
-  return (
-    <BaseEdge
-      path={path}
-      markerEnd={markerEnd}
-      style={style}
-      interactionWidth={interactionWidth}
-    />
-  );
-}
-
-function AzuraChildEdge({
-  sourceX,
-  sourceY,
-  targetX,
-  targetY,
-  style,
-  markerEnd,
-  interactionWidth,
-}) {
-  const branchY = sourceY + 54;
-  const path = `M ${sourceX},${sourceY} L ${sourceX},${branchY} L ${targetX},${branchY} L ${targetX},${targetY}`;
-
-  return (
-    <BaseEdge
-      path={path}
-      markerEnd={markerEnd}
-      style={style}
-      interactionWidth={interactionWidth}
-    />
-  );
-}
-
-function LowerUiucBranchEdge({
-  sourceX,
-  sourceY,
-  targetX,
-  targetY,
-  style,
-  markerEnd,
-  interactionWidth,
-  data,
-}) {
-  const sharedBranchY = sourceY + 48;
-  const branchX = data?.branchX ?? targetX;
-  const splitY = sharedBranchY + (targetY - sharedBranchY) * (2 / 3);
-  const path = `M ${sourceX},${sourceY} L ${sourceX},${sharedBranchY} L ${branchX},${sharedBranchY} L ${branchX},${splitY} L ${targetX},${splitY} L ${targetX},${targetY}`;
+  const availableGap = targetY - sourceY;
+  const laneOffset = Math.max(0, Math.min(actualArrowLaneOffset, availableGap / 2));
+  const branchY = sourceY + laneOffset;
+  const path =
+    sourceX === targetX
+      ? `M ${sourceX},${sourceY} L ${targetX},${targetY}`
+      : `M ${sourceX},${sourceY} L ${sourceX},${branchY} L ${targetX},${branchY} L ${targetX},${targetY}`;
 
   return (
     <BaseEdge
@@ -534,28 +484,6 @@ function LeftDropEdge({
         labelBgBorderRadius={labelBgBorderRadius}
       />
     </>
-  );
-}
-
-function N1acMergeEdge({
-  sourceX,
-  sourceY,
-  targetX,
-  targetY,
-  style,
-  markerEnd,
-  interactionWidth,
-}) {
-  const mergeY = targetY - 52;
-  const path = `M ${sourceX},${sourceY} L ${sourceX},${mergeY} L ${targetX},${mergeY} L ${targetX},${targetY}`;
-
-  return (
-    <BaseEdge
-      path={path}
-      markerEnd={markerEnd}
-      style={style}
-      interactionWidth={interactionWidth}
-    />
   );
 }
 
