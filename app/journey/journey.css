@@ -494,25 +494,25 @@
   text-align: right;
 }
 
-/* Keep every event on the actual path visually consistent. Alternate-path
+/* Keep actual events and hidden unlocks visually consistent. Alternate-path
    cards retain their distinct shapes so possible selves remain easy to scan. */
-.life-node.node-status-actual {
+.life-node:is(.node-status-actual, .node-status-hidden) {
   display: block;
   width: 246px;
   height: 128px;
   min-height: 128px;
   padding: 14px 15px 15px;
-  border-radius: 24px;
+  border-radius: 16px;
   text-align: left;
 }
 
-.life-node.node-status-actual .node-type-row,
-.life-node.node-status-actual .node-time {
+.life-node:is(.node-status-actual, .node-status-hidden) .node-type-row,
+.life-node:is(.node-status-actual, .node-status-hidden) .node-time {
   justify-content: flex-start;
   text-align: left;
 }
 
-.life-node.node-status-actual h2 {
+.life-node:is(.node-status-actual, .node-status-hidden) h2 {
   margin: 9px 0 8px;
   text-align: left;
 }
