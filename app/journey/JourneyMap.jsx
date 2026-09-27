@@ -837,8 +837,20 @@ function EditableHiddenCurveEdge({
   }, [storageKey]);
 
   const sourceControlPoint = { x: sourceX + 90, y: sourceY };
-  const controlPointIn = { x: controlPoint.x, y: controlPoint.y - 70 };
-  const controlPointOut = { x: controlPoint.x, y: controlPoint.y + 70 };
+  const chordX = targetX - sourceX;
+  const chordY = targetY - sourceY;
+  const chordLength = Math.hypot(chordX, chordY) || 1;
+  const tangentLength = Math.min(140, Math.max(70, chordLength * 0.2));
+  const tangentX = (chordX / chordLength) * tangentLength;
+  const tangentY = (chordY / chordLength) * tangentLength;
+  const controlPointIn = {
+    x: controlPoint.x - tangentX,
+    y: controlPoint.y - tangentY,
+  };
+  const controlPointOut = {
+    x: controlPoint.x + tangentX,
+    y: controlPoint.y + tangentY,
+  };
   const targetControlPoint = { x: targetX, y: targetY - 90 };
   const path = [
     `M ${sourceX},${sourceY}`,
