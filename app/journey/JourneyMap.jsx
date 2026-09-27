@@ -460,7 +460,6 @@ function VersionsMap() {
                 onClick={openIntro}
                 onKeyDown={onTitleKeyDown}
               >
-                <p className="eyebrow">Adam's decision map</p>
                 <h1>The Path</h1>
               </div>
 

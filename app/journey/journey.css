@@ -86,7 +86,7 @@
   padding: 7px 12px 7px 18px;
   border: 1px solid rgba(255, 255, 255, 0.68);
   border-radius: 36px;
-  background: rgba(255, 255, 255, 0.56);
+  background: rgba(255, 255, 255, 0.72);
   box-shadow:
     0 10px 30px rgba(31, 42, 36, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.76);
@@ -96,17 +96,12 @@
 }
 
 .hero-copy {
+  display: flex;
   min-width: 148px;
   max-width: 250px;
-}
-
-.eyebrow {
-  margin: 0 0 3px;
-  color: #b08b33;
-  font-size: 0.66rem;
-  font-weight: 820;
-  line-height: 1.1;
-  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-copy h1 {
@@ -805,7 +800,7 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background: rgba(251, 250, 246, 0.32);
+  background: rgba(251, 250, 246, 0.4);
   backdrop-filter: blur(14px) saturate(120%);
   -webkit-backdrop-filter: blur(14px) saturate(120%);
 }
@@ -819,7 +814,7 @@
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 32px;
   color: #26312a;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow:
     0 24px 70px rgba(31, 42, 36, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.78);
