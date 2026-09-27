@@ -278,7 +278,15 @@ function VersionsMap() {
       const targetNodePosition = targetNode
         ? resolveNodePosition(targetNode, positionOverrides)
         : null;
-      const needsSideExit =
+      const isSameRowConnection =
+        edge.type === 'actual' &&
+        !edge.sourceHandle &&
+        !edge.targetHandle &&
+        sourceNodePosition &&
+        targetNodePosition &&
+        sourceNodePosition.x !== targetNodePosition.x &&
+        sourceNodePosition.y === targetNodePosition.y;
+      const needsTightSideExit =
         edge.type === 'actual' &&
         !edge.sourceHandle &&
         sourceNodePosition &&
@@ -286,6 +294,7 @@ function VersionsMap() {
         sourceNodePosition.x !== targetNodePosition.x &&
         targetNodePosition.y > sourceNodePosition.y &&
         targetNodePosition.y - sourceNodePosition.y < standardNodeHeight;
+      const needsSideExit = isSameRowConnection || needsTightSideExit;
       const showLabel =
         (edge.type === 'hidden' && (mode === 'hidden' || mode === 'full')) ||
         (edge.type === 'alternate' && (mode === 'possible' || mode === 'full'));
@@ -299,7 +308,11 @@ function VersionsMap() {
             ? 'source-right'
             : 'source-left'
           : edge.sourceHandle,
-        targetHandle: edge.targetHandle,
+        targetHandle: isSameRowConnection
+          ? sourceNodePosition.x < targetNodePosition.x
+            ? 'target-left'
+            : 'target-right'
+          : edge.targetHandle,
         type:
           edge.type === 'actual'
             ? 'actualGrid'

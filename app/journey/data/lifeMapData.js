@@ -917,7 +917,7 @@ export const lifeEdges = [
   },
   {
     id: 'e-freshman-ai-content-business',
-    source: 'freshman-year',
+    source: 'business-org-rejections',
     target: 'ai-content-business',
     type: 'actual',
     route: 'lower-uiuc-branch',
@@ -996,7 +996,7 @@ export const lifeEdges = [
   { id: 'e-losses-remaining', source: 'trading-losses', target: 'remaining-50k', type: 'actual', label: '' },
   {
     id: 'e-freshman-azura',
-    source: 'freshman-year',
+    source: 'business-org-rejections',
     target: 'start-azura',
     type: 'actual',
     route: 'uiuc-azura',
@@ -1201,15 +1201,6 @@ export const lifeEdges = [
     targetHandle: 'target-right',
     type: 'hidden',
     label: 'unlock',
-  },
-  {
-    id: 'h-business-rejections-azura',
-    source: 'business-org-rejections',
-    sourceHandle: 'source-right',
-    target: 'start-azura',
-    targetHandle: 'target-left',
-    type: 'hidden',
-    label: '',
   },
   {
     id: 'h-research-rejections-ams-lab',
