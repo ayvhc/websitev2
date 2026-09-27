@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import ReactFlow, {
   BaseEdge,
   Background,
-  Controls,
   EdgeText,
   getBezierPath,
   Handle,
@@ -438,7 +437,6 @@ function VersionsMap() {
           >
             <TimePeriodLayer />
             <Background color="#d8d2c4" gap={28} size={1.2} />
-            <Controls showInteractive={false} />
           </ReactFlow>
 
           <Legend />
