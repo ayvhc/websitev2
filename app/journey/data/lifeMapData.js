@@ -439,7 +439,7 @@ export const lifeNodes = [
     time: '2025',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: 1500, y: 2100 },
+    position: { x: 1500, y: 1910 },
     summary:
       'A distribution opportunity that became a hands-on lesson in building a cross-border business.',
     whatHappened:
@@ -458,7 +458,7 @@ export const lifeNodes = [
     time: '2025 to present',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: 1500, y: 2290 },
+    position: { x: 1500, y: 2100 },
     summary:
       'A paused distribution venture became a more personal mission: helping his mother build a brand and community of her own.',
     whatHappened:
