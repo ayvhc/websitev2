@@ -402,7 +402,7 @@ export const lifeNodes = [
     time: 'June 2025',
     type: 'Experience',
     status: 'actual',
-    position: { x: 0, y: 2090 },
+    position: { x: 300, y: 2090 },
     summary: 'A serious institution, a dense city, and an early view of China.',
     whatHappened:
       'Adam interned at the Chinese Academy of Sciences in Beijing. It was his first real experience working inside a serious institution.',
@@ -420,7 +420,7 @@ export const lifeNodes = [
     time: 'July 2025',
     type: 'Mandatory Experience',
     status: 'actual',
-    position: { x: 300, y: 2090 },
+    position: { x: 0, y: 2090 },
     summary: 'Manufacturing made engineering feel operational and cultural.',
     whatHappened:
       'Adam interned at Hennecke GmbH in Germany. This was planned by his father and gave him exposure to European manufacturing, factory operations, and German lifestyle.',
@@ -512,7 +512,7 @@ export const lifeNodes = [
     time: 'October 2025',
     type: 'Experience',
     status: 'actual',
-    position: { x: 600, y: 2470 },
+    position: { x: 900, y: 2565 },
     summary: 'A self-driven move deeper into the startup and tech world.',
     whatHappened: 'In October 2025, Adam attended TechCrunch in San Francisco by his own decision.',
     whyItMattered:
@@ -545,7 +545,7 @@ export const lifeNodes = [
     time: '2025 to 2026',
     type: 'Outcome',
     status: 'actual',
-    position: { x: 900, y: 2660 },
+    position: { x: 600, y: 2565 },
     summary: 'The loss that made risk emotional instead of theoretical.',
     whatHappened:
       'Adam tried swing trading, options, and trades based on uncertain information. He became greedy and lost a large part of the earlier profit, leaving around $50K.',
@@ -576,7 +576,7 @@ export const lifeNodes = [
     time: '2026',
     type: 'Hidden Unlock',
     status: 'hidden',
-    position: { x: 900, y: 2850 },
+    position: { x: 600, y: 2755 },
     summary: 'What remained became the entry ticket into startup investing.',
     whatHappened: 'After the trading losses, Adam still had around $50K left.',
     whyItMattered: 'This became the capital base that could later be used for angel investing.',
@@ -624,7 +624,7 @@ export const lifeNodes = [
     time: 'February 2026',
     type: 'Outcome',
     status: 'actual',
-    position: { x: -600, y: 2470 },
+    position: { x: -600, y: 2755 },
     summary: 'Entrepreneurship became a real operating problem.',
     whatHappened:
       'Through Azura, Adam learned about production planning, optimization, customer service, pricing, scheduling, and managing real orders.',
@@ -705,7 +705,7 @@ export const lifeNodes = [
     time: 'January 2026',
     type: 'Personal Decision',
     status: 'actual',
-    position: { x: -300, y: 2850 },
+    position: { x: 0, y: 2755 },
     summary: 'A decision to step into an identity that once felt far away.',
     whatHappened:
       'A few months after Kehan\'s speech, Adam got an invitation to apply as an investor in N1AC, a group of young angel investors in the US.',

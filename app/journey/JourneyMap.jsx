@@ -38,6 +38,9 @@ const edgeTypes = {
 };
 const nodeOrigin = [0.5, 0];
 const layoutGrid = [300, 95];
+const standardNodeWidth = 246;
+const standardNodeHeight = 128;
+const sideExitOffset = (layoutGrid[0] - standardNodeWidth) / 2;
 const layoutStorageKey = 'journey-layout-draft';
 const canvasExtent = [
   [-2100, -700],
@@ -53,6 +56,10 @@ function snapToLayoutGrid(position) {
     x: snapToLayoutColumn(position.x),
     y: Math.round(position.y / layoutGrid[1]) * layoutGrid[1],
   };
+}
+
+function resolveNodePosition(node, positionOverrides) {
+  return positionOverrides[node.id] ?? snapToLayoutGrid(node.position);
 }
 
 const modeIcons = {
@@ -243,7 +250,7 @@ function VersionsMap() {
       .map((node) => ({
         id: node.id,
         type: 'custom',
-        position: positionOverrides[node.id] ?? snapToLayoutGrid(node.position),
+        position: resolveNodePosition(node, positionOverrides),
         zIndex:
           node.id === 'brizan-internship' ||
           node.id === 'joined-boring-illini' ||
@@ -265,6 +272,22 @@ function VersionsMap() {
       const isConnected = selectedConnections.has(edge.id);
       const isMuted = selectedNodeId && !isConnected;
       const baseStyle = edgeStyles[edge.type];
+      const sourceNode = lifeNodes.find((node) => node.id === edge.source);
+      const targetNode = lifeNodes.find((node) => node.id === edge.target);
+      const sourceNodePosition = sourceNode
+        ? resolveNodePosition(sourceNode, positionOverrides)
+        : null;
+      const targetNodePosition = targetNode
+        ? resolveNodePosition(targetNode, positionOverrides)
+        : null;
+      const needsSideExit =
+        edge.type === 'actual' &&
+        !edge.sourceHandle &&
+        sourceNodePosition &&
+        targetNodePosition &&
+        sourceNodePosition.x !== targetNodePosition.x &&
+        targetNodePosition.y > sourceNodePosition.y &&
+        targetNodePosition.y - sourceNodePosition.y < standardNodeHeight;
       const showLabel =
         (edge.type === 'hidden' && (mode === 'hidden' || mode === 'full')) ||
         (edge.type === 'alternate' && (mode === 'possible' || mode === 'full'));
@@ -273,7 +296,11 @@ function VersionsMap() {
         id: edge.id,
         source: edge.source,
         target: edge.target,
-        sourceHandle: edge.sourceHandle,
+        sourceHandle: needsSideExit
+          ? targetNodePosition.x > sourceNodePosition.x
+            ? 'source-right'
+            : 'source-left'
+          : edge.sourceHandle,
         targetHandle: edge.targetHandle,
         type:
           edge.type === 'actual'
@@ -327,6 +354,7 @@ function VersionsMap() {
   }, [
     filteredEdges,
     mode,
+    positionOverrides,
     selectedConnections,
     selectedNodeId,
   ]);
@@ -503,6 +531,7 @@ function VersionsMap() {
 function ActualGridEdge({
   sourceX,
   sourceY,
+  sourcePosition,
   targetX,
   targetY,
   style,
@@ -510,8 +539,13 @@ function ActualGridEdge({
   interactionWidth,
 }) {
   const branchY = (sourceY + targetY) / 2;
-  const path =
-    sourceX === targetX
+  const exitsFromSide =
+    sourcePosition === Position.Left || sourcePosition === Position.Right;
+  const sideDirection = sourcePosition === Position.Right ? 1 : -1;
+  const exitX = sourceX + sideDirection * sideExitOffset;
+  const path = exitsFromSide
+    ? `M ${sourceX},${sourceY} L ${exitX},${sourceY} L ${exitX},${branchY} L ${targetX},${branchY} L ${targetX},${targetY}`
+    : sourceX === targetX
       ? `M ${sourceX},${sourceY} L ${targetX},${targetY}`
       : `M ${sourceX},${sourceY} L ${sourceX},${branchY} L ${targetX},${branchY} L ${targetX},${targetY}`;
 
