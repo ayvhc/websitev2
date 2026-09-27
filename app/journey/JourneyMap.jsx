@@ -41,6 +41,10 @@ const edgeTypes = {
   uiucAzura: UiucAzuraEdge,
 };
 const nodeOrigin = [0.5, 0];
+const canvasExtent = [
+  [-2100, -700],
+  [2200, 4700],
+];
 
 const modeIcons = {
   actual: Route,
@@ -421,12 +425,14 @@ function VersionsMap() {
             onPaneClick={() => setSelectedNodeId(null)}
             fitView
             fitViewOptions={{ padding: 0.22 }}
+            translateExtent={canvasExtent}
             minZoom={0.16}
             maxZoom={1.35}
             nodesDraggable={false}
             nodesConnectable={false}
             elementsSelectable
-            panOnScroll
+            panOnScroll={false}
+            preventScrolling
             selectionOnDrag={false}
             proOptions={{ hideAttribution: true }}
           >
