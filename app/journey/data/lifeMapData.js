@@ -1119,7 +1119,7 @@ export const lifeEdges = [
     target: 'n1ac',
     type: 'hidden',
     route: 'side-to-top',
-    curveOffset: -78,
+    editableCurve: true,
     label: 'unlock',
     labelT: 0.74,
   },

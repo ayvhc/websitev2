@@ -10,6 +10,7 @@ import ReactFlow, {
   MarkerType,
   Position,
   ReactFlowProvider,
+  useReactFlow,
 } from 'reactflow';
 import {
   CircleDot,
@@ -33,6 +34,7 @@ import { lifeEdges, lifeNodes, viewModes } from './data/lifeMapData';
 const nodeTypes = { custom: CustomNode };
 const edgeTypes = {
   actualGrid: ActualGridEdge,
+  editableHiddenCurve: EditableHiddenCurveEdge,
   hiddenLowerLabel: HiddenLowerLabelEdge,
   hiddenSideToTop: HiddenSideToTopEdge,
   leftDrop: LeftDropEdge,
@@ -343,6 +345,8 @@ function VersionsMap() {
         type:
           edge.type === 'actual'
             ? 'actualGrid'
+            : edge.editableCurve
+              ? 'editableHiddenCurve'
             : edge.route === 'side-to-top'
               ? 'hiddenSideToTop'
             : Number.isFinite(edge.labelT)
@@ -386,7 +390,8 @@ function VersionsMap() {
           Number.isFinite(edge.labelT) ||
           Number.isFinite(edge.branchX) ||
           Number.isFinite(alignedBranchY) ||
-          Number.isFinite(edge.curveOffset)
+          Number.isFinite(edge.curveOffset) ||
+          edge.editableCurve
             ? {
                 labelT: edge.labelT,
                 branchX: Number.isFinite(edge.branchX)
@@ -394,6 +399,7 @@ function VersionsMap() {
                   : edge.branchX,
                 branchY: alignedBranchY,
                 curveOffset: edge.curveOffset,
+                editableCurve: edge.editableCurve,
               }
             : undefined,
       };
@@ -786,6 +792,132 @@ function HiddenSideToTopEdge({
         labelBgStyle={labelBgStyle}
         labelBgPadding={labelBgPadding}
         labelBgBorderRadius={labelBgBorderRadius}
+      />
+    </>
+  );
+}
+
+function EditableHiddenCurveEdge({
+  id,
+  sourceX,
+  sourceY,
+  targetX,
+  targetY,
+  style,
+  markerEnd,
+  interactionWidth,
+  label,
+  labelStyle,
+  labelBgStyle,
+  labelBgPadding,
+  labelBgBorderRadius,
+  data,
+}) {
+  const { screenToFlowPosition } = useReactFlow();
+  const storageKey = `journey-edge-control-${id}`;
+  const [savedControlPoint, setSavedControlPoint] = useState(null);
+  const defaultControlPoint = useMemo(
+    () => ({
+      x: targetX + 80,
+      y: Math.min(sourceY, targetY) - 80,
+    }),
+    [sourceY, targetX, targetY],
+  );
+  const controlPoint = savedControlPoint ?? defaultControlPoint;
+
+  useEffect(() => {
+    try {
+      const savedPoint = JSON.parse(window.localStorage.getItem(storageKey));
+      if (Number.isFinite(savedPoint?.x) && Number.isFinite(savedPoint?.y)) {
+        setSavedControlPoint(savedPoint);
+      }
+    } catch {
+      window.localStorage.removeItem(storageKey);
+    }
+  }, [storageKey]);
+
+  const sourceControlPoint = { x: sourceX + 90, y: sourceY };
+  const controlPointIn = { x: controlPoint.x, y: controlPoint.y - 70 };
+  const controlPointOut = { x: controlPoint.x, y: controlPoint.y + 70 };
+  const targetControlPoint = { x: targetX, y: targetY - 90 };
+  const path = [
+    `M ${sourceX},${sourceY}`,
+    `C ${sourceControlPoint.x},${sourceControlPoint.y} ${controlPointIn.x},${controlPointIn.y} ${controlPoint.x},${controlPoint.y}`,
+    `C ${controlPointOut.x},${controlPointOut.y} ${targetControlPoint.x},${targetControlPoint.y} ${targetX},${targetY}`,
+  ].join(' ');
+  const labelPoint = getCubicBezierPoint(
+    controlPoint,
+    controlPointOut,
+    targetControlPoint,
+    { x: targetX, y: targetY },
+    data?.labelT ?? 0.58,
+  );
+
+  const startDragging = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    document.body.style.cursor = 'grabbing';
+    document.body.style.userSelect = 'none';
+
+    const moveControlPoint = (moveEvent) => {
+      const nextPoint = screenToFlowPosition({
+        x: moveEvent.clientX,
+        y: moveEvent.clientY,
+      });
+      setSavedControlPoint(nextPoint);
+      window.localStorage.setItem(storageKey, JSON.stringify(nextPoint));
+    };
+
+    const stopDragging = () => {
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+      window.removeEventListener('pointermove', moveControlPoint);
+      window.removeEventListener('pointerup', stopDragging);
+      window.removeEventListener('pointercancel', stopDragging);
+    };
+
+    window.addEventListener('pointermove', moveControlPoint);
+    window.addEventListener('pointerup', stopDragging);
+    window.addEventListener('pointercancel', stopDragging);
+  };
+
+  const resetControlPoint = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setSavedControlPoint(null);
+    window.localStorage.removeItem(storageKey);
+  };
+
+  return (
+    <>
+      <BaseEdge
+        path={path}
+        markerEnd={markerEnd}
+        style={style}
+        interactionWidth={interactionWidth}
+      />
+      <EdgeText
+        x={labelPoint.x}
+        y={labelPoint.y - 12}
+        label={label}
+        labelStyle={labelStyle}
+        labelBgStyle={labelBgStyle}
+        labelBgPadding={labelBgPadding}
+        labelBgBorderRadius={labelBgBorderRadius}
+      />
+      <circle
+        className="editable-edge-control-hitbox"
+        cx={controlPoint.x}
+        cy={controlPoint.y}
+        r="20"
+        onDoubleClick={resetControlPoint}
+        onPointerDown={startDragging}
+      />
+      <circle
+        className="editable-edge-control-dot"
+        cx={controlPoint.x}
+        cy={controlPoint.y}
+        r="7"
       />
     </>
   );

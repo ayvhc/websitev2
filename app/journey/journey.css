@@ -578,6 +578,24 @@
   filter: drop-shadow(0 0 8px rgba(130, 126, 226, 0.62));
 }
 
+.editable-edge-control-hitbox {
+  fill: transparent;
+  cursor: grab;
+  pointer-events: all;
+}
+
+.editable-edge-control-hitbox:active {
+  cursor: grabbing;
+}
+
+.editable-edge-control-dot {
+  fill: #fff;
+  stroke: #858df3;
+  stroke-width: 3;
+  filter: drop-shadow(0 2px 7px rgba(102, 97, 179, 0.34));
+  pointer-events: none;
+}
+
 .edge-alternate .react-flow__edge-path {
   stroke-linecap: round;
 }
