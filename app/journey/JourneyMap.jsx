@@ -436,7 +436,7 @@ function UiucAzuraEdge({
   markerEnd,
   interactionWidth,
 }) {
-  const branchY = sourceY + 48;
+  const branchY = Math.min(sourceY + 48, targetY - 42);
   const path = `M ${sourceX},${sourceY} L ${sourceX},${branchY} L ${targetX},${branchY} L ${targetX},${targetY}`;
 
   return (
