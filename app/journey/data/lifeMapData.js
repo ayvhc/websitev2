@@ -436,7 +436,7 @@ export const lifeNodes = [
   {
     id: 'ad-naturam',
     title: 'Started Ad Naturam with Ian & Michelle',
-    time: '2025',
+    time: 'July 2025',
     type: 'Personal Decision',
     status: 'actual',
     position: { x: 1500, y: 2090 },
@@ -741,7 +741,7 @@ export const lifeNodes = [
   {
     id: 'tenda',
     title: 'Tenda',
-    time: 'Through N1AC',
+    time: 'April 2026',
     type: 'Startup Investment',
     status: 'actual',
     position: { x: 1200, y: 3135 },
@@ -753,7 +753,7 @@ export const lifeNodes = [
   {
     id: 'semi-valley',
     title: 'Semi Valley',
-    time: 'Through N1AC',
+    time: 'March 2026',
     type: 'Startup Investment',
     status: 'actual',
     position: { x: 900, y: 3135 },
@@ -766,7 +766,7 @@ export const lifeNodes = [
   {
     id: 'joined-ams-lab',
     title: 'Joined AMS Lab',
-    time: 'August 2026',
+    time: 'Junior Year',
     type: 'Experience',
     status: 'actual',
     position: { x: -300, y: 3610 },
@@ -781,7 +781,7 @@ export const lifeNodes = [
   {
     id: 'joined-opera',
     title: 'Joined OPERA',
-    time: 'Fall 2026',
+    time: 'Junior Year',
     type: 'Experience / Personal Decision',
     status: 'actual',
     position: { x: 0, y: 3610 },
