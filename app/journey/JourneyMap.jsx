@@ -12,7 +12,6 @@ import ReactFlow, {
   MarkerType,
   Position,
   ReactFlowProvider,
-  useReactFlow,
   useViewport,
 } from 'reactflow';
 import {
@@ -25,7 +24,6 @@ import {
   GitBranch,
   Handshake,
   Map,
-  RotateCcw,
   Route,
   Sparkles,
   Telescope,
@@ -203,7 +201,6 @@ function VersionsMap() {
   const [mode, setMode] = useState('actual');
   const [selectedNodeId, setSelectedNodeId] = useState(null);
   const [isIntroOpen, setIsIntroOpen] = useState(false);
-  const { fitView } = useReactFlow();
 
   useEffect(() => {
     document.documentElement.dataset.theme = 'light';
@@ -354,10 +351,6 @@ function VersionsMap() {
     setSelectedNodeId(node.id);
   }, []);
 
-  const resetView = useCallback(() => {
-    fitView({ padding: 0.22, duration: 700 });
-  }, [fitView]);
-
   const openIntro = useCallback(() => {
     setIsIntroOpen(true);
   }, []);
@@ -416,10 +409,6 @@ function VersionsMap() {
               </div>
             </div>
 
-            <button className="reset-button" type="button" onClick={resetView} title="Reset View">
-              <RotateCcw size={17} aria-hidden="true" />
-              <span>Reset View</span>
-            </button>
           </div>
 
           <ReactFlow

@@ -111,8 +111,7 @@
   box-shadow: none;
 }
 
-.mode-button,
-.reset-button {
+.mode-button {
   display: inline-flex;
   min-height: 32px;
   align-items: center;
@@ -139,8 +138,7 @@
   padding: 0 10px;
 }
 
-.mode-button:hover,
-.reset-button:hover {
+.mode-button:hover {
   transform: translateY(-1px);
   color: #26312a;
   border-color: rgba(255, 255, 255, 0.55);
@@ -161,18 +159,6 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
-}
-
-.reset-button {
-  padding: 0 12px;
-  border-color: rgba(255, 255, 255, 0.68);
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow:
-    0 10px 30px rgba(31, 42, 36, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  pointer-events: auto;
 }
 
 .map-stage {
@@ -503,6 +489,29 @@
 .life-node.is-right-overlay h2 {
   max-width: none;
   text-align: right;
+}
+
+/* Keep every event on the actual path visually consistent. Alternate-path
+   cards retain their distinct shapes so possible selves remain easy to scan. */
+.life-node.node-status-actual {
+  display: block;
+  width: 246px;
+  height: 128px;
+  min-height: 128px;
+  padding: 14px 15px 15px;
+  border-radius: 24px;
+  text-align: left;
+}
+
+.life-node.node-status-actual .node-type-row,
+.life-node.node-status-actual .node-time {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.life-node.node-status-actual h2 {
+  margin: 9px 0 8px;
+  text-align: left;
 }
 
 @keyframes futurePulse {
@@ -884,15 +893,9 @@
     min-width: 0;
   }
 
-  .mode-button span,
-  .reset-button span {
+  .mode-button span {
     overflow-wrap: anywhere;
     text-align: left;
-  }
-
-  .reset-button {
-    width: auto;
-    justify-content: flex-start;
   }
 
   .map-stage {
