@@ -12,16 +12,7 @@
   width: 100%;
   height: 100svh;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255, 253, 248, 0.95), rgba(248, 244, 235, 0.88)),
-    repeating-linear-gradient(
-      90deg,
-      rgba(83, 102, 78, 0.045) 0,
-      rgba(83, 102, 78, 0.045) 1px,
-      transparent 1px,
-      transparent 68px
-    ),
-    #f8f4eb;
+  background: #f8f4eb;
 }
 
 .top-overlay {
@@ -177,27 +168,8 @@
   overflow: hidden;
   border: 0;
   border-radius: 0;
-  background:
-    linear-gradient(180deg, rgba(255, 253, 248, 0.82), rgba(246, 242, 232, 0.92)),
-    repeating-linear-gradient(
-      0deg,
-      rgba(153, 140, 106, 0.045) 0,
-      rgba(153, 140, 106, 0.045) 1px,
-      transparent 1px,
-      transparent 44px
-    );
+  background: #f8f4eb;
   box-shadow: none;
-}
-
-.map-shell::before {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  content: "";
-  background:
-    linear-gradient(120deg, rgba(214, 169, 71, 0.08), transparent 30%),
-    linear-gradient(300deg, rgba(141, 180, 214, 0.08), transparent 34%);
 }
 
 .react-flow {
@@ -205,41 +177,6 @@
   z-index: 1;
 }
 
-.time-period-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.time-period-band {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  min-height: 26px;
-  padding: 13px 0 0 16px;
-  pointer-events: none;
-}
-
-.time-period-green {
-  background: linear-gradient(90deg, rgba(111, 143, 106, 0.035), rgba(111, 143, 106, 0.014) 66%, transparent);
-}
-
-.time-period-gold {
-  background: linear-gradient(90deg, rgba(182, 138, 45, 0.025), rgba(182, 138, 45, 0.011) 66%, transparent);
-}
-
-.time-period-label {
-  display: inline-flex;
-  max-width: calc(100% - 32px);
-  overflow-wrap: anywhere;
-  color: rgba(83, 96, 79, 0.42);
-  font-size: 0.62rem;
-  font-weight: 820;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
 
 .react-flow__pane {
   cursor: grab;

@@ -4,14 +4,12 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import ReactFlow, {
   BaseEdge,
-  Background,
   EdgeText,
   getBezierPath,
   Handle,
   MarkerType,
   Position,
   ReactFlowProvider,
-  useViewport,
 } from 'reactflow';
 import {
   CircleDot,
@@ -95,51 +93,6 @@ const storySections = [
   ['What it may unlock', 'whatItMayUnlock'],
   ['How I see it', 'howISeeIt'],
   ['Founder', 'founder'],
-];
-
-const timePeriodBands = [
-  {
-    id: 'pre-uiuc',
-    label: 'Highschool and prior',
-    y: -80,
-    height: 1370,
-    tone: 'green',
-  },
-  {
-    id: 'freshman-year',
-    label: 'Freshman Year',
-    y: 1300,
-    height: 730,
-    tone: 'gold',
-  },
-  {
-    id: 'freshman-summer',
-    label: 'Freshman Summer',
-    y: 1690,
-    height: 500,
-    tone: 'green',
-  },
-  {
-    id: 'sophomore-year',
-    label: 'Sophomore Year',
-    y: 2030,
-    height: 1210,
-    tone: 'gold',
-  },
-  {
-    id: 'sophomore-summer',
-    label: 'Sophomore Summer / Upcoming',
-    y: 3220,
-    height: 330,
-    tone: 'green',
-  },
-  {
-    id: 'junior-year',
-    label: 'Junior Year',
-    y: 3550,
-    height: 620,
-    tone: 'gold',
-  },
 ];
 
 function isNodeVisible(node, mode) {
@@ -434,10 +387,7 @@ function VersionsMap() {
             preventScrolling
             selectionOnDrag={false}
             proOptions={{ hideAttribution: true }}
-          >
-            <TimePeriodLayer />
-            <Background color="#d8d2c4" gap={28} size={1.2} />
-          </ReactFlow>
+          />
 
           <Legend />
         </section>
@@ -454,27 +404,6 @@ function VersionsMap() {
 
         <IntroModal isOpen={isIntroOpen} onClose={closeIntro} />
       </main>
-    </div>
-  );
-}
-
-function TimePeriodLayer() {
-  const viewport = useViewport();
-
-  return (
-    <div className="time-period-layer" aria-hidden="true">
-      {timePeriodBands.map((period) => (
-        <div
-          className={`time-period-band time-period-${period.tone}`}
-          key={period.id}
-          style={{
-            top: viewport.y + period.y * viewport.zoom,
-            height: period.height * viewport.zoom,
-          }}
-        >
-          <span className="time-period-label">{period.label}</span>
-        </div>
-      ))}
     </div>
   );
 }
