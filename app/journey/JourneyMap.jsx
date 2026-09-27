@@ -336,6 +336,8 @@ function VersionsMap() {
             ? 'hiddenLowerLabel'
             : edge.type === 'hidden'
             ? 'bezier'
+            : edge.route === 'side-to-side'
+              ? 'straight'
             : edge.route === 'left-drop'
                 ? 'leftDrop'
                 : 'smoothstep',

@@ -1009,9 +1009,11 @@ export const lifeEdges = [
   {
     id: 'a-quiet-gave-up',
     source: 'stayed-quiet',
+    sourceHandle: 'source-left',
     target: 'gave-up-english',
+    targetHandle: 'target-right',
     type: 'alternate',
-    route: 'left-drop',
+    route: 'side-to-side',
     label: 'gave up',
   },
   {
