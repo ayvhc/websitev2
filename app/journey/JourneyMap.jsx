@@ -730,26 +730,45 @@ function HiddenSideToTopEdge({
   labelBgBorderRadius,
   data,
 }) {
-  const targetIsRight = targetX > sourceX;
-  const approachY = sourceY + (data?.curveOffset ?? -18);
-  const curveStartX = sourceX + 64;
-  const cornerStartX = targetX + (targetIsRight ? -38 : 38);
-  const path = [
-    `M ${sourceX},${sourceY}`,
-    `C ${sourceX + 24},${sourceY} ${sourceX + 38},${approachY} ${curveStartX},${approachY}`,
-    `L ${cornerStartX},${approachY}`,
-    `Q ${targetX},${approachY} ${targetX},${approachY + 38}`,
-    `L ${targetX},${targetY}`,
-  ].join(' ');
-  const labelPoint = Number.isFinite(data?.labelT)
-    ? {
-        x: targetX,
-        y: approachY + (targetY - approachY) * data.labelT,
-      }
-    : {
-        x: (curveStartX + cornerStartX) / 2,
-        y: approachY,
-      };
+  const usesAvoidanceCurve = Number.isFinite(data?.curveOffset);
+  let path;
+  let labelPoint;
+
+  if (usesAvoidanceCurve) {
+    const horizontalDistance = Math.abs(targetX - sourceX);
+    const verticalDistance = Math.abs(targetY - sourceY);
+    const sourcePoint = { x: sourceX, y: sourceY };
+    const sourceControlPoint = {
+      x: sourceX + Math.max(120, horizontalDistance * 0.32),
+      y: sourceY + data.curveOffset,
+    };
+    const targetControlPoint = {
+      x: targetX,
+      y: targetY - Math.max(130, verticalDistance * 0.62),
+    };
+    const targetPoint = { x: targetX, y: targetY };
+
+    path = `M ${sourceX},${sourceY} C ${sourceControlPoint.x},${sourceControlPoint.y} ${targetControlPoint.x},${targetControlPoint.y} ${targetX},${targetY}`;
+    labelPoint = getCubicBezierPoint(
+      sourcePoint,
+      sourceControlPoint,
+      targetControlPoint,
+      targetPoint,
+      data.labelT ?? 0.68,
+    );
+  } else {
+    const [bezierPath, labelX, labelY] = getBezierPath({
+      sourceX,
+      sourceY,
+      sourcePosition: Position.Right,
+      targetX,
+      targetY,
+      targetPosition: Position.Top,
+    });
+
+    path = bezierPath;
+    labelPoint = { x: labelX, y: labelY };
+  }
 
   return (
     <>
