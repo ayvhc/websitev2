@@ -345,6 +345,8 @@ function VersionsMap() {
             ? 'actualGrid'
             : edge.route === 'side-to-top'
               ? 'hiddenSideToTop'
+            : edge.route === 'straight'
+              ? 'straight'
             : Number.isFinite(edge.labelT)
             ? 'hiddenLowerLabel'
             : edge.type === 'hidden'

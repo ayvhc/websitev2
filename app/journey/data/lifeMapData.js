@@ -1078,12 +1078,12 @@ export const lifeEdges = [
     label: 'exposure',
   },
   {
-    id: 'h-webull-pwc',
-    source: 'webull',
+    id: 'h-remaining-pwc',
+    source: 'remaining-50k',
     target: 'pwc',
     type: 'hidden',
+    route: 'straight',
     label: 'unlock',
-    labelT: 0.68,
   },
   {
     id: 'h-webull-cas',
