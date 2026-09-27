@@ -1082,7 +1082,6 @@ export const lifeEdges = [
     source: 'webull',
     sourceHandle: 'source-left',
     target: 'cas',
-    targetHandle: 'target-right',
     type: 'hidden',
     label: 'unlock',
   },
@@ -1106,10 +1105,9 @@ export const lifeEdges = [
   {
     id: 'h-wanting-kehan',
     source: 'wanting',
-    sourceHandle: 'source-right',
     target: 'kehan-event',
+    targetHandle: 'target-left',
     type: 'hidden',
-    route: 'side-to-top',
     label: 'introduced',
   },
   {
@@ -1119,7 +1117,7 @@ export const lifeEdges = [
     target: 'n1ac',
     type: 'hidden',
     route: 'side-to-top',
-    curveOffset: -78,
+    curveOffset: 0,
     label: 'unlock',
     labelT: 0.74,
   },
