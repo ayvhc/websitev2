@@ -38,9 +38,7 @@ const edgeTypes = {
 };
 const nodeOrigin = [0.5, 0];
 const layoutGrid = [300, 95];
-const standardNodeWidth = 246;
 const standardNodeHeight = 128;
-const sideExitOffset = (layoutGrid[0] - standardNodeWidth) / 2;
 const layoutStorageKey = 'journey-layout-draft';
 const canvasExtent = [
   [-2100, -700],
@@ -541,10 +539,8 @@ function ActualGridEdge({
   const branchY = (sourceY + targetY) / 2;
   const exitsFromSide =
     sourcePosition === Position.Left || sourcePosition === Position.Right;
-  const sideDirection = sourcePosition === Position.Right ? 1 : -1;
-  const exitX = sourceX + sideDirection * sideExitOffset;
   const path = exitsFromSide
-    ? `M ${sourceX},${sourceY} L ${exitX},${sourceY} L ${exitX},${branchY} L ${targetX},${branchY} L ${targetX},${targetY}`
+    ? `M ${sourceX},${sourceY} L ${targetX},${sourceY} L ${targetX},${targetY}`
     : sourceX === targetX
       ? `M ${sourceX},${sourceY} L ${targetX},${targetY}`
       : `M ${sourceX},${sourceY} L ${sourceX},${branchY} L ${targetX},${branchY} L ${targetX},${targetY}`;
