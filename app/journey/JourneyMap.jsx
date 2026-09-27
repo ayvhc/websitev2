@@ -38,15 +38,20 @@ const edgeTypes = {
   uiucAzura: UiucAzuraEdge,
 };
 const nodeOrigin = [0.5, 0];
-const layoutGrid = [250, 95];
+const sourceColumnWidth = 250;
+const layoutGrid = [500, 95];
 const canvasExtent = [
-  [-2100, -700],
-  [2200, 4700],
+  [-4200, -700],
+  [4400, 4700],
 ];
+
+function snapToLayoutColumn(x) {
+  return Math.round(x / sourceColumnWidth) * layoutGrid[0];
+}
 
 function snapToLayoutGrid(position) {
   return {
-    x: Math.round(position.x / layoutGrid[0]) * layoutGrid[0],
+    x: snapToLayoutColumn(position.x),
     y: Math.round(position.y / layoutGrid[1]) * layoutGrid[1],
   };
 }
@@ -300,7 +305,12 @@ function VersionsMap() {
         },
         data:
           Number.isFinite(edge.labelT) || Number.isFinite(edge.branchX)
-            ? { labelT: edge.labelT, branchX: edge.branchX }
+            ? {
+                labelT: edge.labelT,
+                branchX: Number.isFinite(edge.branchX)
+                  ? snapToLayoutColumn(edge.branchX)
+                  : edge.branchX,
+              }
             : undefined,
       };
     });
