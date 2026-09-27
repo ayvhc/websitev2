@@ -294,6 +294,16 @@ function VersionsMap() {
       const targetNodePosition = targetNode
         ? resolveNodePosition(targetNode, positionOverrides)
         : null;
+      const branchAlignmentNode = edge.alignBranchWith
+        ? lifeNodes.find((node) => node.id === edge.alignBranchWith)
+        : null;
+      const branchAlignmentPosition = branchAlignmentNode
+        ? resolveNodePosition(branchAlignmentNode, positionOverrides)
+        : null;
+      const alignedBranchY =
+        sourceNodePosition && branchAlignmentPosition
+          ? (sourceNodePosition.y + standardNodeHeight + branchAlignmentPosition.y) / 2
+          : undefined;
       const isSameRowConnection =
         edge.type === 'actual' &&
         !edge.sourceHandle &&
@@ -370,12 +380,15 @@ function VersionsMap() {
           opacity: isMuted ? 0.2 : 1,
         },
         data:
-          Number.isFinite(edge.labelT) || Number.isFinite(edge.branchX)
+          Number.isFinite(edge.labelT) ||
+          Number.isFinite(edge.branchX) ||
+          Number.isFinite(alignedBranchY)
             ? {
                 labelT: edge.labelT,
                 branchX: Number.isFinite(edge.branchX)
                   ? snapToLayoutColumn(edge.branchX)
                   : edge.branchX,
+                branchY: alignedBranchY,
               }
             : undefined,
       };
@@ -565,8 +578,9 @@ function ActualGridEdge({
   style,
   markerEnd,
   interactionWidth,
+  data,
 }) {
-  const branchY = (sourceY + targetY) / 2;
+  const branchY = Number.isFinite(data?.branchY) ? data.branchY : (sourceY + targetY) / 2;
   const exitsFromSide =
     sourcePosition === Position.Left || sourcePosition === Position.Right;
   const path = exitsFromSide
