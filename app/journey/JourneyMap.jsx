@@ -385,13 +385,15 @@ function VersionsMap() {
         data:
           Number.isFinite(edge.labelT) ||
           Number.isFinite(edge.branchX) ||
-          Number.isFinite(alignedBranchY)
+          Number.isFinite(alignedBranchY) ||
+          Number.isFinite(edge.curveOffset)
             ? {
                 labelT: edge.labelT,
                 branchX: Number.isFinite(edge.branchX)
                   ? snapToLayoutColumn(edge.branchX)
                   : edge.branchX,
                 branchY: alignedBranchY,
+                curveOffset: edge.curveOffset,
               }
             : undefined,
       };
@@ -728,23 +730,26 @@ function HiddenSideToTopEdge({
   labelBgBorderRadius,
   data,
 }) {
-  const path = `M ${sourceX},${sourceY} L ${targetX},${sourceY} L ${targetX},${targetY}`;
-  const horizontalLength = Math.abs(targetX - sourceX);
-  const verticalLength = Math.abs(targetY - sourceY);
-  const totalLength = horizontalLength + verticalLength;
-  const labelDistance = totalLength * (data?.labelT ?? 0.5);
-  const labelPoint =
-    labelDistance <= horizontalLength
-      ? {
-          x: sourceX + Math.sign(targetX - sourceX) * labelDistance,
-          y: sourceY,
-        }
-      : {
-          x: targetX,
-          y:
-            sourceY +
-            Math.sign(targetY - sourceY) * (labelDistance - horizontalLength),
-        };
+  const targetIsRight = targetX > sourceX;
+  const approachY = sourceY + (data?.curveOffset ?? -18);
+  const curveStartX = sourceX + 64;
+  const cornerStartX = targetX + (targetIsRight ? -38 : 38);
+  const path = [
+    `M ${sourceX},${sourceY}`,
+    `C ${sourceX + 24},${sourceY} ${sourceX + 38},${approachY} ${curveStartX},${approachY}`,
+    `L ${cornerStartX},${approachY}`,
+    `Q ${targetX},${approachY} ${targetX},${approachY + 38}`,
+    `L ${targetX},${targetY}`,
+  ].join(' ');
+  const labelPoint = Number.isFinite(data?.labelT)
+    ? {
+        x: targetX,
+        y: approachY + (targetY - approachY) * data.labelT,
+      }
+    : {
+        x: (curveStartX + cornerStartX) / 2,
+        y: approachY,
+      };
 
   return (
     <>

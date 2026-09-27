@@ -1101,6 +1101,7 @@ export const lifeEdges = [
     target: 'wanting',
     type: 'hidden',
     route: 'side-to-top',
+    curveOffset: -18,
     label: 'key person',
   },
   {
@@ -1110,6 +1111,7 @@ export const lifeEdges = [
     target: 'kehan-event',
     type: 'hidden',
     route: 'side-to-top',
+    curveOffset: -18,
     label: 'introduced',
   },
   {
@@ -1119,6 +1121,7 @@ export const lifeEdges = [
     target: 'n1ac',
     type: 'hidden',
     route: 'side-to-top',
+    curveOffset: -78,
     label: 'unlock',
     labelT: 0.74,
   },
