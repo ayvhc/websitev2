@@ -9,6 +9,7 @@ type ExperienceItem = {
   dates: string;
   logo?: string;
   logoSize?: string;
+  roundLogo?: boolean;
   website?: string;
   description?: string;
 };
@@ -51,7 +52,8 @@ const professionalExperience: ExperienceItem[] = [
     location: "Illinois, U.S.",
     dates: "Sep 2025 — Present",
     logo: "/experience-logos/azura.png",
-    logoSize: "72%",
+    logoSize: "62%",
+    roundLogo: true,
   },
   {
     mark: "H",
@@ -180,6 +182,7 @@ function ExperienceRow({ item }: { item: ExperienceItem }) {
       <div className="experience-mark" aria-hidden="true">
         {item.logo ? (
           <Image
+            className={item.roundLogo ? "experience-logo--round" : undefined}
             src={item.logo}
             alt=""
             width={128}

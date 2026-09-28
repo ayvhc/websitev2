@@ -1755,7 +1755,7 @@ html[data-theme="dark"] .journey-access-dialog button {
   object-fit: contain;
 }
 
-.experience-mark img[src$="azura.png"] {
+.experience-mark .experience-logo--round {
   border-radius: 50%;
 }
 
