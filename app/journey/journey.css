@@ -12,7 +12,7 @@
   width: 100%;
   height: 100svh;
   overflow: hidden;
-  background: #f8f4eb;
+  background: #eef2f5;
 }
 
 .top-overlay {
@@ -211,7 +211,7 @@
   overflow: hidden;
   border: 0;
   border-radius: 0;
-  background: #f8f4eb;
+  background: #eef2f5;
   box-shadow: none;
 }
 
@@ -241,10 +241,15 @@
 }
 
 .life-node {
-  --node-accent: #6f8f6a;
-  --node-bg: rgba(255, 253, 248, 0.86);
-  --node-border-color: rgba(126, 117, 93, 0.22);
-  --node-shadow: 0 18px 42px rgba(45, 61, 45, 0.13);
+  --node-accent: #557b75;
+  --node-bg: #f7faf8;
+  --node-border-color: rgba(85, 123, 117, 0.24);
+  --node-shadow-tint: rgba(58, 83, 88, 0.12);
+  --node-ring: rgba(85, 123, 117, 0.2);
+  --node-shadow:
+    0 2px 6px rgba(31, 49, 52, 0.08),
+    0 18px 42px var(--node-shadow-tint),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
   position: relative;
   width: 246px;
   min-height: 118px;
@@ -252,7 +257,7 @@
   overflow: hidden;
   border: 1px solid var(--node-border-color);
   border-radius: 8px;
-  color: #26312a;
+  color: #24312f;
   background: var(--node-bg);
   box-shadow: var(--node-shadow);
   transition:
@@ -263,14 +268,32 @@
     background 180ms ease;
 }
 
-.life-node:hover {
+.life-node:not(.node-status-alternate):hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 3px 8px rgba(31, 49, 52, 0.09),
+    0 24px 48px var(--node-shadow-tint),
+    0 0 0 3px var(--node-ring),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96);
+}
+
+.life-node.node-status-alternate:hover {
   transform: translateY(-2px);
   box-shadow:
     0 22px 48px rgba(45, 61, 45, 0.16),
     0 0 0 4px rgba(214, 169, 71, 0.1);
 }
 
-.life-node.is-selected {
+.life-node:not(.node-status-alternate).is-selected {
+  border-color: var(--node-accent);
+  box-shadow:
+    0 4px 10px rgba(31, 49, 52, 0.1),
+    0 28px 58px var(--node-shadow-tint),
+    0 0 0 4px var(--node-ring),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96);
+}
+
+.life-node.node-status-alternate.is-selected {
   border-color: rgba(214, 169, 71, 0.72);
   box-shadow:
     0 26px 62px rgba(45, 61, 45, 0.22),
@@ -279,14 +302,6 @@
 
 .life-node.is-dimmed {
   opacity: 0.28;
-}
-
-.life-node.is-convergence {
-  border-color: rgba(111, 143, 95, 0.68);
-  box-shadow:
-    0 24px 58px rgba(45, 61, 45, 0.2),
-    0 0 0 5px rgba(141, 180, 214, 0.13),
-    0 0 34px rgba(141, 160, 240, 0.26);
 }
 
 .life-node.is-compact {
@@ -302,7 +317,18 @@
 .node-shine {
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   pointer-events: none;
+}
+
+.life-node:not(.node-status-alternate) .node-shine {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    inset 1px 0 0 rgba(255, 255, 255, 0.38),
+    inset -1px 0 0 rgba(255, 255, 255, 0.18);
+}
+
+.life-node.node-status-alternate .node-shine {
   background: linear-gradient(125deg, rgba(255, 255, 255, 0.72), transparent 45%);
 }
 
@@ -334,7 +360,7 @@
   position: relative;
   z-index: 1;
   margin: 9px 0 8px;
-  color: #26312a;
+  color: #24312f;
   font-size: 1rem;
   font-weight: 790;
   line-height: 1.22;
@@ -342,37 +368,42 @@
 }
 
 .node-time {
-  color: #6a7168;
+  color: #6c7776;
   font-size: 0.76rem;
   font-weight: 650;
   line-height: 1.3;
 }
 
 .node-type-milestone {
-  --node-accent: #9a7628;
-  --node-bg: #fffaf0;
-  --node-border-color: rgba(176, 139, 51, 0.28);
+  --node-accent: #a4771d;
+  --node-bg: #fff8e8;
+  --node-border-color: #e7cb82;
+  --node-shadow-tint: rgba(164, 119, 29, 0.11);
+  --node-ring: rgba(164, 119, 29, 0.2);
 }
 
 .node-type-decision {
-  --node-accent: #66825f;
-  --node-bg: #f2f7f0;
-  --node-border-color: rgba(102, 130, 95, 0.32);
+  --node-accent: #4e739d;
+  --node-bg: #eef5ff;
+  --node-border-color: #afc9e8;
+  --node-shadow-tint: rgba(78, 115, 157, 0.12);
+  --node-ring: rgba(78, 115, 157, 0.2);
 }
 
 .node-type-experience {
-  --node-accent: #557b75;
-  --node-bg: #f7faf8;
-  --node-border-color: rgba(85, 123, 117, 0.24);
+  --node-accent: #4e7e70;
+  --node-bg: #edf8f4;
+  --node-border-color: #add3c5;
+  --node-shadow-tint: rgba(78, 126, 112, 0.12);
+  --node-ring: rgba(78, 126, 112, 0.2);
 }
 
 .node-type-unlock {
-  --node-accent: #6f79df;
-  --node-bg: #f1f2ff;
-  --node-border-color: rgba(126, 137, 235, 0.38);
-  --node-shadow:
-    0 18px 42px rgba(45, 61, 45, 0.11),
-    0 0 26px rgba(126, 137, 235, 0.2);
+  --node-accent: #705bc2;
+  --node-bg: #f4f0ff;
+  --node-border-color: #c8b9f2;
+  --node-shadow-tint: rgba(112, 91, 194, 0.12);
+  --node-ring: rgba(112, 91, 194, 0.2);
 }
 
 .node-status-alternate {
@@ -458,7 +489,12 @@
 
 .life-node.node-status-alternate h2 {
   margin: 9px 0 8px;
+  color: #26312a;
   text-align: left;
+}
+
+.life-node.node-status-alternate .node-time {
+  color: #6a7168;
 }
 
 .life-node.is-attached-self .node-type-row,
@@ -530,7 +566,7 @@
 }
 
 .life-edge.is-connected .react-flow__edge-path {
-  filter: drop-shadow(0 0 9px rgba(214, 169, 71, 0.34));
+  filter: drop-shadow(0 0 9px rgba(82, 113, 138, 0.38));
 }
 
 .react-flow__controls {
@@ -578,7 +614,7 @@
   display: inline-block;
   width: 28px;
   height: 0;
-  border-top: 3px solid #b08b33;
+  border-top: 3px solid #52718a;
 }
 
 .legend-alternate {

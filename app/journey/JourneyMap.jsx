@@ -91,7 +91,7 @@ const typeIcons = {
 
 const edgeStyles = {
   actual: {
-    stroke: '#b08b33',
+    stroke: '#52718a',
     strokeWidth: 3,
   },
   alternate: {
@@ -266,7 +266,6 @@ function VersionsMap() {
         data: {
           ...node,
           isDimmed: Boolean(selectedNodeId) && !connectedNodeIds.has(node.id),
-          isConvergence: node.id === 'n1ac',
         },
       }));
   }, [connectedNodeIds, positionOverrides, selectedNodeId, visibleNodeIds]);
@@ -790,7 +789,6 @@ function CustomNode({ data, selected }) {
     `node-type-${slugify(data.type)}`,
     selected ? 'is-selected' : '',
     data.isDimmed ? 'is-dimmed' : '',
-    data.isConvergence ? 'is-convergence' : '',
     data.attachedTo ? 'is-attached-self' : '',
     data.attachedTo && data.attachedSide === 'right' ? 'is-attached-right' : '',
     data.overlay === 'right' ? 'is-right-overlay' : '',
