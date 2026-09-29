@@ -545,7 +545,6 @@ function VersionsMap() {
             proOptions={{ hideAttribution: true }}
           />
 
-          {isArrangeMode ? null : <Legend />}
         </section>
 
         <AnimatePresence>
@@ -865,26 +864,6 @@ function StoryPanel({ node, onClose }) {
     </motion.aside>
   );
 }
-
-function Legend() {
-  return (
-    <aside className="legend" aria-label="Map legend">
-      <div className="legend-item">
-        <span className="legend-line legend-actual" />
-        <span>Actual path</span>
-      </div>
-      <div className="legend-item">
-        <span className="legend-line legend-alternate" />
-        <span>Alternate path</span>
-      </div>
-      <div className="legend-item">
-        <span className="legend-line legend-hidden" />
-        <span>Hidden unlock</span>
-      </div>
-    </aside>
-  );
-}
-
 
 function IntroModal({ isOpen, onClose }) {
   useEffect(() => {
