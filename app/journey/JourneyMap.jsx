@@ -91,7 +91,7 @@ const typeIcons = {
 
 const edgeStyles = {
   actual: {
-    stroke: '#626860',
+    stroke: '#a1844599',
     strokeWidth: 3,
   },
   alternate: {
@@ -352,8 +352,8 @@ function VersionsMap() {
         markerEnd: {
           type: MarkerType.ArrowClosed,
           color: baseStyle.stroke,
-          width: edge.type === 'hidden' ? 18 : 14,
-          height: edge.type === 'hidden' ? 18 : edge.type === 'actual' ? 10 : 14,
+          width: edge.type === 'hidden' ? 18 : edge.type === 'actual' ? 11 : 14,
+          height: edge.type === 'hidden' ? 18 : edge.type === 'actual' ? 11 : 14,
         },
         style: {
           ...baseStyle,
