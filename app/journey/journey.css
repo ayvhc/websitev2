@@ -357,7 +357,7 @@
 .node-type-experience {
   --node-accent: #737970;
   --node-bg: #fbfbf9;
-  --node-border-color: rgba(115, 121, 112, 0.2);
+  --node-border-color: transparent;
 }
 
 .node-type-unlock {
