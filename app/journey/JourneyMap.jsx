@@ -242,12 +242,25 @@ function VersionsMap() {
   const connectedNodeIds = useMemo(() => {
     if (!selectedNodeId) return new Set();
     const ids = new Set([selectedNodeId]);
+
     filteredEdges.forEach((edge) => {
       if (edge.source === selectedNodeId) ids.add(edge.target);
       if (edge.target === selectedNodeId) ids.add(edge.source);
     });
+
+    const selectedLifeNode = lifeNodes.find((node) => node.id === selectedNodeId);
+    if (selectedLifeNode?.attachedTo && visibleNodeIds.has(selectedLifeNode.attachedTo)) {
+      ids.add(selectedLifeNode.attachedTo);
+    }
+
+    lifeNodes.forEach((node) => {
+      if (node.attachedTo === selectedNodeId && visibleNodeIds.has(node.id)) {
+        ids.add(node.id);
+      }
+    });
+
     return ids;
-  }, [filteredEdges, selectedNodeId]);
+  }, [filteredEdges, selectedNodeId, visibleNodeIds]);
 
   const flowNodes = useMemo(() => {
     return lifeNodes
