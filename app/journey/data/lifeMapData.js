@@ -18,7 +18,7 @@ export const lifeNodes = [
     id: 'move-singapore',
     title: 'Move to Singapore?',
     time: 'Age 13-ish',
-    type: 'Decision',
+    type: 'Experience',
     status: 'actual',
     position: { x: 0, y: 190 },
     summary: 'A family decision that became one of the first major environment shifts.',
