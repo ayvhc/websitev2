@@ -196,7 +196,7 @@ export const lifeNodes = [
   {
     id: 'ubs-leads',
     title: 'Attended UBS LEADS',
-    time: 'Summer 2024 after high school graduation',
+    time: 'Summer 2024',
     type: 'Experience',
     status: 'actual',
     position: { x: 0, y: 1140 },
