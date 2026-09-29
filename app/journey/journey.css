@@ -107,8 +107,10 @@
 .hero-copy h1 {
   margin: 0;
   color: #26312a;
+  font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   font-size: 1.55rem;
-  font-weight: 780;
+  font-weight: 600;
+  letter-spacing: -0.025em;
   line-height: 1.02;
 }
 
@@ -343,13 +345,13 @@
 .node-type-milestone {
   --node-accent: #397047;
   --node-bg: #e3f1e5;
-  --node-border-color: rgba(68, 124, 79, 0.48);
+  --node-border-color: transparent;
 }
 
 .node-type-decision {
   --node-accent: #684189;
   --node-bg: #eee6f6;
-  --node-border-color: rgba(112, 72, 148, 0.48);
+  --node-border-color: transparent;
 }
 
 .node-type-experience {
