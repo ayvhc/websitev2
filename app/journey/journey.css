@@ -12,7 +12,7 @@
   width: 100%;
   height: 100svh;
   overflow: hidden;
-  background: #eeefea;
+  background: #262b29;
 }
 
 .top-overlay {
@@ -213,7 +213,7 @@
   overflow: hidden;
   border: 0;
   border-radius: 0;
-  background: #eeefea;
+  background: #262b29;
   box-shadow: none;
 }
 
@@ -243,14 +243,16 @@
 }
 
 .life-node {
-  --node-accent: #557b75;
-  --node-bg: #edf2ec;
-  --node-border-color: #b4c4b8;
-  --node-shadow-tint: rgba(34, 40, 36, 0.13);
-  --node-ring: rgba(85, 123, 117, 0.2);
+  --node-accent: #5c6660;
+  --node-bg: #e4e7e4;
+  --node-border-color: #c1c9c4;
+  --node-shadow-tint: rgba(0, 0, 0, 0.28);
+  --node-ring: rgba(203, 209, 204, 0.22);
+  --node-glow: 0 0 0 rgba(0, 0, 0, 0);
   --node-shadow:
     0 2px 6px rgba(34, 40, 36, 0.08),
     0 18px 42px var(--node-shadow-tint),
+    var(--node-glow),
     inset 0 1px 0 rgba(255, 255, 255, 0.92);
   position: relative;
   width: 246px;
@@ -275,6 +277,7 @@
   box-shadow:
     0 3px 8px rgba(34, 40, 36, 0.1),
     0 24px 48px var(--node-shadow-tint),
+    var(--node-glow),
     inset 0 1px 0 rgba(255, 255, 255, 0.96);
 }
 
@@ -290,6 +293,7 @@
   box-shadow:
     0 4px 10px rgba(34, 40, 36, 0.11),
     0 28px 58px var(--node-shadow-tint),
+    var(--node-glow),
     0 0 0 2px var(--node-ring),
     inset 0 1px 0 rgba(255, 255, 255, 0.96);
 }
@@ -376,31 +380,32 @@
 }
 
 .node-type-milestone {
-  --node-accent: #98783e;
-  --node-bg: #f7f3e8;
-  --node-border-color: #cdbd91;
-  --node-ring: rgba(152, 120, 62, 0.2);
+  --node-accent: #3d734d;
+  --node-bg: #dcebdd;
+  --node-border-color: #8db695;
+  --node-ring: rgba(83, 143, 99, 0.24);
 }
 
 .node-type-decision {
-  --node-accent: #536878;
-  --node-bg: #eef1f3;
-  --node-border-color: #aebbc3;
-  --node-ring: rgba(83, 104, 120, 0.2);
+  --node-accent: #71548f;
+  --node-bg: #eee7f6;
+  --node-border-color: #b99fd0;
+  --node-ring: rgba(113, 84, 143, 0.24);
 }
 
 .node-type-experience {
-  --node-accent: #577565;
-  --node-bg: #edf2ec;
-  --node-border-color: #b4c4b8;
-  --node-ring: rgba(87, 117, 101, 0.2);
+  --node-accent: #5c6660;
+  --node-bg: #e4e7e4;
+  --node-border-color: #c1c9c4;
+  --node-ring: rgba(92, 102, 96, 0.22);
 }
 
 .node-type-unlock {
-  --node-accent: #75627c;
-  --node-bg: #f1edf3;
-  --node-border-color: #c2b6c6;
-  --node-ring: rgba(117, 98, 124, 0.2);
+  --node-accent: #747de8;
+  --node-bg: #f1f2ff;
+  --node-border-color: rgba(141, 150, 255, 0.72);
+  --node-ring: rgba(116, 125, 232, 0.3);
+  --node-glow: 0 0 30px rgba(116, 125, 232, 0.34);
 }
 
 .node-status-alternate {
@@ -563,7 +568,7 @@
 }
 
 .life-edge.is-connected .react-flow__edge-path {
-  filter: drop-shadow(0 0 9px rgba(63, 91, 76, 0.38));
+  filter: drop-shadow(0 0 9px rgba(203, 209, 204, 0.42));
 }
 
 .react-flow__controls {
@@ -611,7 +616,7 @@
   display: inline-block;
   width: 28px;
   height: 0;
-  border-top: 3px solid #3f5b4c;
+  border-top: 3px solid #cbd1cc;
 }
 
 .legend-alternate {

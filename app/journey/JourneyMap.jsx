@@ -91,7 +91,7 @@ const typeIcons = {
 
 const edgeStyles = {
   actual: {
-    stroke: '#3f5b4c',
+    stroke: '#cbd1cc',
     strokeWidth: 3,
   },
   alternate: {
