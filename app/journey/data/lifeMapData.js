@@ -772,7 +772,7 @@ export const lifeNodes = [
   },
   {
     id: 'semi-valley',
-    title: 'Semi Valley',
+    title: 'Semivalley',
     time: 'March 2026',
     type: 'Milestone',
     status: 'actual',
@@ -780,7 +780,7 @@ export const lifeNodes = [
     compact: true,
     summary: 'GPU Chip Cooling',
     whatHappened:
-      'Semi Valley is developing advanced cooling technology for high-performance chips and GPUs, using direct liquid or jet-based cooling approaches.',
+      'Semivalley is developing advanced cooling technology for high-performance chips and GPUs, using direct liquid or jet-based cooling approaches.',
     founder: 'Boya & Ruihan',
   },
   {
