@@ -369,6 +369,11 @@
     0 0 30px rgba(89, 108, 255, 0.34);
 }
 
+.node-type-unlock:hover {
+  transform: rotate(6deg);
+  box-shadow: var(--node-shadow);
+}
+
 .node-status-alternate {
   --node-accent: #8e948c;
   --node-bg: #f7f7f4;
