@@ -16,16 +16,13 @@ import {
   Clock3,
   Compass,
   Copy,
-  Diamond,
   ExternalLink,
   Flag,
   GitBranch,
-  Handshake,
   Map,
   Move,
   Route,
   Sparkles,
-  Telescope,
   X,
 } from 'lucide-react';
 import { lifeEdges, lifeNodes, viewModes } from './data/lifeMapData';
@@ -86,18 +83,10 @@ const modeIcons = {
 };
 
 const typeIcons = {
-  'Life Stage': CircleDot,
-  'Mandatory Decision': Diamond,
-  'Mandatory Experience': Diamond,
-  'Personal Decision': GitBranch,
+  Milestone: Flag,
+  Decision: GitBranch,
   Experience: Compass,
-  Outcome: Flag,
-  'Key Person': Handshake,
-  'Hidden Unlock': Sparkles,
-  'Future Node': Telescope,
-  'Experience / Personal Decision': GitBranch,
-  'Personal Exploration / Experience': Compass,
-  'Startup Investment': Sparkles,
+  Unlock: Sparkles,
 };
 
 const edgeStyles = {
@@ -132,7 +121,7 @@ const storySections = [
 
 function isNodeVisible(node, mode) {
   if (mode === 'full') return true;
-  if (mode === 'possible') return node.status !== 'hidden' || node.type === 'Hidden Unlock';
+  if (mode === 'possible') return node.status !== 'hidden' || node.type === 'Unlock';
   return node.status !== 'alternate';
 }
 
