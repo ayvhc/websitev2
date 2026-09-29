@@ -784,6 +784,7 @@ function CustomNode({ data, selected }) {
   const Icon = typeIcons[data.type] || CircleDot;
   const classes = [
     'life-node',
+    'nopan',
     `node-status-${data.status}`,
     `node-type-${slugify(data.type)}`,
     selected ? 'is-selected' : '',
