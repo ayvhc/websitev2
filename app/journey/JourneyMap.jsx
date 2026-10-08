@@ -106,11 +106,11 @@ const edgeStyles = {
 };
 
 const storySections = [
-  ['What happened', 'whatHappened'],
-  ['Why it mattered at the time', 'whyItMattered'],
-  ['Outcome', 'outcome'],
+  ['What Happened', 'whatHappened'],
+  ['Behind the Decision', 'whyItMattered'],
+  ['What Changed', 'outcome'],
   ['What it secretly unlocked', 'secretUnlock'],
-  ['Alternate path', 'alternatePath'],
+  ['What Could Have Been', 'alternatePath'],
   ['How I see it now', 'reflection'],
   ['What I want from it', 'whatIWant'],
   ['Why I care', 'whyICare'],

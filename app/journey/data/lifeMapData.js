@@ -1,18 +1,14 @@
 export const lifeNodes = [
   {
     id: 'fuxing',
-    title: 'Graduated from Fuxing Elementary',
+    title: 'Graduated from Fuhsing Elementary',
     time: 'Age 13-ish',
     type: 'Milestone',
     status: 'actual',
     position: { x: 0, y: 0 },
-    summary: 'The familiar starting point before the first major branch.',
-    whatHappened: 'Adam graduated from Fuxing private elementary school in Taiwan.',
-    whyItMattered: 'This was the starting point before the first major branch in his life.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection:
-      'This was the last chapter before my life moved from a familiar Taiwan school system into a much more international environment.',
+    summary: 'The end of a very local and familiar childhood in Taiwan.',
+    whatHappened: 'I grew up in Taiwan until I was around 13 and spent my entire elementary education at Fuhsing, a private local school in Taipei where English was barely taught.\n\nSchool was strict and study-heavy, but I was happy there. I made close friends that I still talk to today, and I lived with my mom and grandparents. Taiwan was basically my whole world.',
+    outcome: 'Graduating from Fuhsing ended the most familiar part of my childhood. Everything I knew was in Taiwan, and that was about to change completely.',
   },
   {
     id: 'move-singapore',
@@ -21,16 +17,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 0, y: 190 },
-    summary: 'A family decision that became one of the first major environment shifts.',
-    whatHappened: 'Adam\'s family decided that he would move to Singapore instead of staying in Taiwan.',
-    whyItMattered:
-      'This was not fully his choice, but it became one of the first major environment shifts of his life.',
-    secretUnlock:
-      'It forced him into an English-speaking international environment early, which later shaped his English ability, international identity, and comfort with unfamiliar places.',
-    alternatePath:
-      'If he had stayed in Taiwan, he probably would have remained in the same school system through high school and applied to the US later with weaker English and less international exposure.',
-    reflection:
-      'Some of the biggest paths in my life were not chosen by me, but they still shaped who I became.',
+    summary: 'My dad decided that I should leave Taiwan and move to Singapore.',
+    whatHappened: 'After graduating from Fuhsing, my dad decided that I should move to Singapore and live with my aunt\'s family.\n\nI really did not want to go. I had a simple but happy life in Taiwan, my English was terrible, and I did not want to leave my friends or start over somewhere new.\n\nAt that age, I was not thinking much about the future. I just wanted to stay where I was comfortable.',
+    outcome: 'This became the first major environmental shift of my life. I left a stable life I loved for a place where the language, school, people, culture, and even the family I lived with were different.',
   },
   {
     id: 'stayed-taiwan',
@@ -42,12 +31,8 @@ export const lifeNodes = [
     attachedTo: 'moved-singapore',
     attachedSide: 'left',
     overlapRatio: 0.3,
-    summary: 'A possible Adam with stronger local roots and less early international exposure.',
-    whatHappened: 'A possible version of Adam stays in Taiwan and continues through the same private school system.',
-    whyItMattered: 'This version likely has stronger local roots, but less early international exposure.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection: 'This is one of the first possible versions of me that almost existed.',
+    summary: 'The version of my life where everything stayed familiar.',
+    alternatePath: 'I probably would have stayed in the Taiwanese school system with much stronger local roots, but far less international exposure. Most of the life I have now would probably look completely different.',
   },
   {
     id: 'moved-singapore',
@@ -56,32 +41,21 @@ export const lifeNodes = [
     type: 'Milestone',
     status: 'actual',
     position: { x: 0, y: 380 },
-    summary: 'The first version of Adam who had to survive in a new environment.',
-    whatHappened: 'Adam moved to Singapore and entered an English-speaking international school environment.',
-    whyItMattered:
-      'At first, it was extremely difficult. He struggled with English, vocabulary, social life, and adapting to a new environment.',
-    secretUnlock:
-      'This became the foundation for his international worldview and later ability to move between Taiwan, Singapore, the US, China, and Europe.',
-    alternatePath: '',
-    reflection:
-      'The move was difficult, but it created the first version of me who could survive in unfamiliar environments.',
+    summary: 'I went from a local Taiwanese childhood into an international environment almost overnight.',
+    whatHappened: 'I moved to Singapore and entered Stamford American International School in 7th grade.\n\nIt was rough. My English was bad, making both school and socializing difficult. I was also suddenly surrounded by people from completely different countries and cultures.\n\nAt the same time, I went from living with my mom and grandparents to living with my aunt\'s family. I had to adjust to a new language, school, social life, culture, and home all at once.',
+    outcome: 'Singapore became the foundation for the international life I have now. Learning to adapt that young made it much easier for me later to enter unfamiliar places, move between countries, and connect with people from very different backgrounds.',
   },
   {
     id: 'talk-nathan',
-    title: 'Talk to Nathan',
+    title: 'Talked to Nathan',
     time: 'Grade 7, around age 14',
     type: 'Decision',
     status: 'actual',
     position: { x: 0, y: 570 },
-    summary: 'A small social risk that made belonging begin sooner.',
-    whatHappened:
-      'At Stamford American International School, Adam often sat alone in the hallway watching people play four square. One day, he decided to talk to Nathan, another student sitting near him.',
-    whyItMattered:
-      'This was a small decision, but it helped him make his first friend and gave him courage to talk to more people.',
-    secretUnlock: 'It sped up his social confidence and English improvement.',
-    alternatePath:
-      'If he had stayed quiet longer, he probably still would have learned English eventually, but the process would have been lonelier and slower.',
-    reflection: 'I learned that a small social risk can change how quickly I begin to belong.',
+    summary: 'One small conversation was the first real break in my isolation.',
+    whatHappened: 'During my first year at SAIS, I spent a lot of time alone. I would sit in the hallway watching other students play four square because I did not really have anyone to talk to.\n\nOne day, my aunt and younger cousin walked past me carrying cupcakes for his birthday celebration. They saw me sitting there alone, barely said anything, and kept walking.\n\nThat moment hit me hard. I knew that something had to change.\n\nSoon after, I decided to talk to Nathan, a Korean kid always sitting nearby. Neither of us spoke much English, so at first we were almost communicating through gestures.\n\nBut soon we became friends.',
+    whyItMattered: 'Seeing my aunt and cousin walk past me while I sat there alone was what pushed me. The shame and embarrassment I felt motivated me to change things around me.',
+    outcome: 'After making one friend, everything slowly became easier. I started talking to more people, became more confident speaking English, and built friendships that I stayed close to for years.\n\nIt also helped break a simple cycle: I was scared to speak because my English was bad, but my English would never improve if I never spoke.',
   },
   {
     id: 'stayed-quiet',
@@ -93,12 +67,8 @@ export const lifeNodes = [
     attachedTo: 'talk-nathan',
     attachedSide: 'left',
     overlapRatio: 0.3,
-    summary: 'A slower, lonelier version of the same adaptation.',
-    whatHappened: 'A possible version of Adam does not talk to Nathan and spends more time alone.',
-    whyItMattered: 'He probably still adapts eventually, but more slowly.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection: 'This version of me learns the same lessons later, but through more loneliness.',
+    summary: 'The version of me who waited longer to make the first move.',
+    alternatePath: 'I probably still would have adapted, just much more slowly. Fewer friends would have meant less English practice, less confidence, and a much lonelier transition.',
   },
   {
     id: 'gave-up-english',
@@ -107,16 +77,8 @@ export const lifeNodes = [
     type: 'Decision',
     status: 'alternate',
     position: { x: -900, y: 950 },
-    summary: 'The version where isolation became too heavy.',
-    whatHappened:
-      'A possible version of Adam does not talk to Nathan, stays isolated longer, struggles more with English, and eventually gives up on adapting to Singapore.',
-    whyItMattered:
-      'This would have been one of the most damaging paths. Instead of slowly building confidence, English ability, and international identity, Adam may have retreated back into the environment he already knew.',
-    secretUnlock: '',
-    alternatePath:
-      'If this happened, he may have returned to Taiwan, avoided the pain of adapting, and stayed closer to his original school and social environment. But he likely would have lost the early international exposure that later shaped so much of his life.',
-    reflection:
-      'This is one of the darker possible versions of me. It shows that talking to Nathan was not just a small social moment. It may have been the difference between continuing forward and giving up early.',
+    summary: 'The version of me who decided adapting was not worth it.',
+    alternatePath: 'My dad eventually gave me the option to return to Taiwan. I could have gone back to the life I already knew, but I would have walked away from the English, confidence, friendships, and international exposure I was starting to build.',
   },
   {
     id: 'sas-gpa',
@@ -125,16 +87,9 @@ export const lifeNodes = [
     type: 'Decision',
     status: 'actual',
     position: { x: 0, y: 760 },
-    summary: 'Incomplete information turned into later academic urgency.',
-    whatHappened:
-      'At Singapore American School, Adam did not fully understand that GPA mattered from the beginning. He was told it did not matter until later, so he did not take the first two years as seriously.',
-    whyItMattered:
-      'His early GPA became mediocre, and junior and senior year became about trying to recover from the low base.',
-    secretUnlock: 'This created a later sense of academic urgency and shaped his path toward UIUC.',
-    alternatePath:
-      'If he had known earlier, his GPA might have been much stronger and he may have gotten into a more selective university.',
-    reflection:
-      'I no longer see this as simply a bad decision. I see it as a path shaped by incomplete information.',
+    summary: 'A misunderstanding that hurt my high school GPA more than I realized.',
+    whatHappened: 'My dad told me that GPA did not really matter until junior year, so during freshman and sophomore year I barely tried and never even bothered checking my GPA.\n\nBy the time I understood how much those grades mattered, I already had a pretty large hole to climb out of.',
+    outcome: 'It made junior and senior year much more about recovering from my earlier grades. Looking back, I definitely could\'ve gotten into a better school if I knew it mattered so much.',
   },
   {
     id: 'took-gpa-seriously',
@@ -146,14 +101,8 @@ export const lifeNodes = [
     attachedTo: 'sas-gpa',
     attachedSide: 'left',
     overlapRatio: 0.3,
-    summary: 'A stronger academic record, possibly a different college door.',
-    whatHappened:
-      'A possible version of Adam understands the importance of GPA early and builds a stronger academic record from the start.',
-    whyItMattered: 'This could have changed his college options.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection:
-      'In this version, I may have had more external validation earlier, but perhaps less urgency later.',
+    summary: 'The version of me who understood GPA mattered from the beginning.',
+    alternatePath: 'If I had taken freshman and sophomore year seriously, I am pretty confident I could have built a much stronger academic record and gotten into a more selective university.',
   },
   {
     id: 'got-into-cmu',
@@ -165,16 +114,8 @@ export const lifeNodes = [
     attachedTo: 'uiuc',
     attachedSide: 'left',
     overlapRatio: 0.3,
-    summary: 'The dream-school version that may have cost me freedom.',
-    whatHappened:
-      'A possible version of Adam takes GPA seriously earlier, builds a much stronger academic record, and gets into CMU, the school he had hoped for most.',
-    whyItMattered:
-      'On paper, this would have looked like the better outcome. But the academic pressure may have been intense enough to consume most of his time and attention.',
-    secretUnlock: '',
-    alternatePath:
-      'At CMU, Adam may have ended up with very little social life, spending most of his time studying like many of his friends who went there. That could have left much less freedom to explore trading, business, startups, research, or the random experiments that later shaped his actual path.',
-    reflection:
-      'This version of me may have had a stronger school name, but possibly less room to wander. It makes me wonder whether the "better" path on paper would actually have made me narrower.',
+    summary: 'The version of me who got into the school I wanted most.',
+    alternatePath: 'CMU was one of the schools I really wanted. With a stronger GPA, I might have had a real chance of getting in.\n\nOn paper, it probably would have looked like the better outcome. But from seeing how intense the workload was for friends who went there, I may also have had much less time to explore business, trading, startups, research, and everything else I ended up trying at UIUC.',
   },
   {
     id: 'uiuc',
@@ -183,15 +124,9 @@ export const lifeNodes = [
     type: 'Milestone',
     status: 'actual',
     position: { x: 0, y: 950 },
-    summary: 'The college outcome that became a platform for everything else.',
-    whatHappened: 'Adam was accepted into the University of Illinois Urbana-Champaign.',
-    whyItMattered:
-      'UIUC became the place where many different tracks started happening at once: engineering, startups, trading, social life, research, and investing.',
-    secretUnlock:
-      'UIUC became the place where unrelated experiments later started connecting and compounding.',
-    alternatePath: '',
-    reflection:
-      'At first, I may have seen UIUC as an outcome shaped by earlier limitations. Looking back, it became the platform where everything started to branch out.',
+    summary: 'The random college that ended up becoming my next four years.',
+    whatHappened: 'UIUC was basically the only school I got into that I felt good about. My other options were Penn State and Stevens Institute of Technology.\n\nI honestly barely knew UIUC existed before applying, but after looking at the rankings and programs, it seemed like the better option. So I decided this was where I would spend the next four years.',
+    outcome: 'What initially felt like simply the best option I had ended up becoming the setting for a huge part of my life.',
   },
   {
     id: 'ubs-leads',
@@ -200,15 +135,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 0, y: 1140 },
-    summary: 'A comparison-heavy summer that gave Adam urgency.',
-    whatHappened:
-      'Adam attended the UBS LEADS program and met people around his age or slightly older from similar backgrounds who seemed much more mature, accomplished, and eventful.',
-    whyItMattered: 'It was the first time he strongly felt that he was behind.',
-    secretUnlock:
-      'This event gave him urgency. Without it, he may not have pushed himself to try as many things at UIUC.',
-    alternatePath:
-      'If he had not gone to UBS LEADS, he likely would have entered UIUC with a more laid-back mindset and spent more time simply enjoying college.',
-    reflection: 'Comparison hurt, but it also woke me up.',
+    summary: 'The first time I really felt how much more I could be doing.',
+    whatHappened: 'During the summer before college, I attended UBS LEADS and met people around my age and slightly older who had already done things I found genuinely impressive.\n\nI genuinely learned a lot, made valuable connections, and was honestly extremely inspired by the people around me.',
+    outcome: 'It gave me a huge sense of urgency going into college. Seeing what other people my age were already doing made me want to explore more, work harder, and make much more out of my time at UIUC.',
   },
   {
     id: 'laidback-uiuc',
@@ -217,13 +146,8 @@ export const lifeNodes = [
     type: 'Decision',
     status: 'alternate',
     position: { x: -300, y: 1235 },
-    summary: 'A slower trigger into ambition.',
-    whatHappened:
-      'A possible version of Adam does not attend UBS LEADS and enters college without the same urgency.',
-    whyItMattered: 'This version probably parties more, explores less, and realizes later that he wants more.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection: 'This is a version of me who may still grow, but with a slower trigger.',
+    summary: 'The version of me who entered college with much less urgency.',
+    alternatePath: 'Without UBS LEADS, I probably would have entered UIUC much more casually. I still might have explored eventually, but I doubt I would have felt the same pressure to start doing things immediately.',
   },
   {
     id: 'freshman-year',
@@ -232,16 +156,9 @@ export const lifeNodes = [
     type: 'Decision',
     status: 'actual',
     position: { x: 0, y: 1330 },
-    summary: 'The place where unrelated experiments started compounding.',
-    whatHappened:
-      'Adam began attending the University of Illinois Urbana-Champaign. UIUC became the environment where many different parts of his life started happening at the same time: engineering, research, startups, trading, social life, and investing.',
-    whyItMattered:
-      'Unlike earlier chapters, UIUC was not one single path. It became a platform where multiple experiments ran in parallel, and some of them later connected in unexpected ways.',
-    secretUnlock:
-      'UIUC created the conditions for several important paths to begin: Gazzola Lab, BuildIllinois, the CSL job, Webull trading access, Azura de Maison, and eventually the bridge toward N1AC.',
-    alternatePath: '',
-    reflection:
-      'At first, I may have seen UIUC as just a college outcome. Looking back, it became the place where my unrelated experiments started compounding.',
+    summary: 'My third major transition: Taiwan to Singapore, and now to the US.',
+    whatHappened: 'I moved to the US for college and, for the first time, was really on my own.\n\nThis was something I had wanted since sophomore year of high school. I always dreamed about living independently and finally having the freedom to choose what I wanted to do with my own time.\n\nIt did not disappoint.',
+    outcome: 'UIUC became the place where I experimented with completely different interests, met many of the people who now matter to me, and stumbled into opportunities I never could have planned for.\n\nFor the first time, I really had the freedom to decide what direction I wanted my life to go.',
   },
   {
     id: 'partying',
@@ -250,16 +167,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 600, y: 1520 },
-    summary: 'The social side of college, experienced intensely and early.',
-    whatHappened:
-      'Adam spent many weekends partying, drinking, playing games, and having fun with friends.',
-    whyItMattered: 'He built a fun friend group and experienced the social side of college intensely.',
-    secretUnlock:
-      'Because he experienced it so much early, he became tired of partying and alcohol by sophomore year.',
-    alternatePath:
-      'If he had not partied much freshman year, he may have had more time for career building, but he may also have felt like he missed out socially.',
-    reflection:
-      'This was not only wasted time. It helped me get the party phase out of my system early.',
+    summary: 'The phase where I fully experienced the college party lifestyle.',
+    whatHappened: 'During freshman year, I partied almost every weekend, drank, played games, and spent a lot of time just having fun with friends.\n\nWaking up naked on the floor, throwing up right outside Joe\'s, puking in the dorm hallway—just the normal college party stuff.',
+    outcome: 'By sophomore year, I had pretty much gotten partying and drinking out of my system. I still enjoyed going out, but it stopped feeling like something I needed to experience all the time.',
   },
   {
     id: 'business-org-rejections',
@@ -268,18 +178,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: -600, y: 2185 },
-    summary: 'Rejection became fuel for action.',
-    whatHappened:
-      'Coming from an engineering-heavy background, Adam sought exposure to business on campus. He applied to several business, consulting, and entrepreneurship organizations, including Ascend, IBC, AKPsi, CUBE, and Enactus, but was rejected by all of them.',
-    whyItMattered:
-      'The rejections made Adam feel underestimated, but also pushed him to build real business experience instead of relying on club affiliation for validation.',
-    outcome:
-      'Instead of gaining access through established organizations, Adam began building his business identity independently through projects, entrepreneurship, operations, and investing.',
-    secretUnlock:
-      'This was not the main reason Adam started Azura de Maison, but it became one of the forces pushing him to take his business ideas more seriously and prove his ability through execution.',
-    alternatePath: '',
-    reflection:
-      'At the time, part of me wanted to prove that I was more capable than those rejection decisions suggested. Looking back, I am glad I learned to build evidence through action instead of depending on an organization to tell me whether I belonged in business.',
+    summary: 'My first attempt to get closer to the business side of campus ended in full rejection.',
+    whatHappened: 'I applied to several business, consulting, and entrepreneurship organizations because I wanted more exposure to business and wanted to meet people who were more driven.\n\nA lot of my friends were joining these organizations, and part of me also wanted to prove that I could do it too. I came from engineering and honestly did not think business majors were doing anything that special.\n\nI got pretty far in a few applications, but eventually got rejected by all of them.',
+    outcome: 'At first, the rejections made me want to prove myself even more.\n\nOver time, I also started seeing these organizations differently. I realized that getting in was not always about achievement or ability. A lot of it came down to fit, personality, and whether the existing members simply liked you.\n\nThat made me care a lot less about needing their validation.',
   },
   {
     id: 'ai-content-business',
@@ -288,13 +189,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: -900, y: 2375 },
-    summary: 'An automation experiment that became an early lesson in ethics and unit economics.',
-    whatHappened:
-      'I built an end-to-end pipeline for AI content generation, content planning, and customer service while exploring other generative-AI business models.',
-    whyItMattered:
-      'The business earned about $80 but cost more than $100 to run, teaching me how quickly automation costs and operational complexity can outweigh early revenue.',
-    reflection:
-      'As I explored the space more deeply, I encountered ethical concerns I could not ignore, so I chose to stop.',
+    summary: 'A small experiment with an unethical AI content business.',
+    whatHappened: 'I tried to build an end-to-end system for AI content generation, content planning, and customer service while experimenting with different generative AI business models.\n\nThe business made around $80 but cost more than $100 to operate.',
+    outcome: 'As I explored the space more, I ran into ethical concerns I was not comfortable with, so I decided to stop.',
   },
   {
     id: 'research-program-rejections',
@@ -303,13 +200,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: -1200, y: 2185 },
-    summary: 'The applications ended in rejection, but one interview still created a meaningful connection.',
-    whatHappened:
-      'URSA and UROP are semester research programs at UIUC that allow undergraduates to join engineering projects. I applied but was not accepted to either.',
-    whyItMattered:
-      'During an interview, I got to know researcher Pranav Krishnan, who was developing a 3D-printing system that uses laser beams to trigger a polymerization chain reaction.',
-    reflection:
-      'I did not get the position, which was disappointing in the moment. Looking back, I am glad I tried my best and kept a good relationship with the interviewer and research mentor—that connection is what led to an invitation to work together later.',
+    summary: 'I got rejected from both research programs, but one interview ended up mattering much more later.',
+    whatHappened: 'I applied to URSA and UROP, two undergraduate research programs at UIUC, but was rejected by both.\n\nDuring one of the interviews, I met Pranav Krishnan, who was working on a 3D-printing system using frontal polymerization.',
+    outcome: 'I did not get the position, but I stayed in contact with Pranav.\n\nThat connection ended up mattering much more than the rejection itself because he later reached out and invited me to work with him.',
   },
   {
     id: 'buildillinois',
@@ -318,15 +211,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 1200, y: 1520 },
-    summary: 'Startup interest appeared before startup discipline did.',
-    whatHappened:
-      'Adam joined BuildIllinois, an entrepreneurial club where students think of startup ideas and try to build them. He had an idea for an OCR and AI note-taking app for college students, but did not fully commit to it.',
-    whyItMattered:
-      'It showed that he was interested in startups, but not yet disciplined enough to execute consistently.',
-    secretUnlock: '',
-    alternatePath:
-      'If he had committed harder, he might have built an MVP, made more founder-type friends, and learned startup execution earlier, even if the product failed.',
-    reflection: 'I learned that my interest alone was not enough. I was still missing execution.',
+    summary: 'My first real attempt to put myself inside a startup-focused environment.',
+    whatHappened: 'I joined BuildIllinois because I was already really interested in startups and wanted to be around people who were building things.\n\nThe club basically tries to mimic an accelerator. Students work on semester-long projects, meet other founders, and are pushed to turn ideas into something real.\n\nI explored an OCR and AI note-taking idea for college students, but I never fully committed because I could not find an idea that felt worth pursuing seriously.',
+    outcome: 'The project itself did not go very far, but the club gave me my first real founder-focused community on campus.\n\nIt also made me realize that being interested in startups was not enough. I still needed an idea I genuinely believed in and the discipline to keep building it.',
   },
   {
     id: 'build-startup-early',
@@ -338,14 +225,8 @@ export const lifeNodes = [
     attachedTo: 'buildillinois',
     attachedSide: 'right',
     overlapRatio: 0.3,
-    summary: 'A version that learns by building sooner.',
-    whatHappened:
-      'A possible version of Adam commits to the AI note-taking idea and tries to build a real MVP.',
-    whyItMattered:
-      'The product may not have become huge, but the process could have taught him startup execution earlier.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection: 'In this version, I probably learn by building sooner.',
+    summary: 'The version of me who committed much harder to BuildIllinois.',
+    alternatePath: 'I could have pushed the AI note-taking idea into a real MVP and learned startup execution much earlier, even if the product eventually failed.',
   },
   {
     id: 'gazzola',
@@ -354,13 +235,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 300, y: 1520 },
-    summary: 'Engineering became physical instead of abstract.',
-    whatHappened: 'Adam joined a robotics research lab and got to experience what engineering research is like.',
-    whyItMattered: 'Seeing something he made work in real life confirmed his interest in engineering.',
-    secretUnlock: 'It gave him technical confidence and made engineering feel real rather than just academic.',
-    alternatePath: '',
-    reflection:
-      'When something I build works in the physical world, engineering stops being abstract to me.',
+    summary: 'My first real experience doing research in college.',
+    whatHappened: 'I joined Gazzola Lab, a soft robotics research lab, because I wanted to start doing something meaningful outside of class and was really excited to get involved in research.\n\nThe lab was heavily focused on data collection and mathematical simulation, but my role was more hands-on. I worked on developing a new way to manufacture soft robotic limbs using silicone materials like Ecoflex.\n\nA lot of my work involved CAD, mold design, silicone casting, and the full molding process.',
+    outcome: 'It was the first time I got to use engineering to physically build something for research.\n\nIt also showed me that I was much more drawn to the hands-on side of engineering than pure simulation or data work.',
   },
   {
     id: 'csl-job',
@@ -369,14 +246,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 900, y: 1520 },
-    summary: 'A job whose hidden consequence mattered more than the job title.',
-    whatHappened: 'Adam got a job as an AI video data analyst at UIUC\'s CSL.',
-    whyItMattered:
-      'The job itself was useful, but the most important result was that it allowed him to get a US Social Security Number.',
-    secretUnlock: 'The SSN allowed him to open a Webull account and start trading stocks.',
-    alternatePath: '',
-    reflection:
-      'I learned that the official purpose of an opportunity is not always the reason it changes my life.',
+    summary: 'A repetitive annotation job that unexpectedly unlocked something much more useful.',
+    whatHappened: 'I saw an email about a job with a PhD student at CSL and applied because I was basically looking for things to do and thought it might be real research.\n\nThe actual work was much simpler. I sat and annotated videos of autistic children, mainly labeling things like gaze shifts to help train an AI classification system.\n\nIt was repetitive, easy work, and something I could quit whenever I wanted. I also made some quick money from it.',
+    outcome: 'The biggest outcome had almost nothing to do with the work itself.\n\nBecause I was officially employed, I was able to get a US Social Security Number. That later allowed me to open a Webull account and eventually became the starting point of my investing path.',
   },
   {
     id: 'ssn',
@@ -385,13 +257,9 @@ export const lifeNodes = [
     type: 'Unlock',
     status: 'hidden',
     position: { x: 900, y: 1710 },
-    summary: 'A small administrative outcome that opened the financial path.',
-    whatHappened: 'Through the CSL job, Adam was able to get a US Social Security Number.',
-    whyItMattered: 'This unlocked access to US financial platforms.',
-    secretUnlock: 'It made Webull trading possible, which later created the capital used for angel investing.',
-    alternatePath: '',
-    reflection:
-      'This was a small administrative outcome that later became one of the biggest hidden unlocks in my life.',
+    summary: 'A small administrative outcome that quietly opened a much bigger path.',
+    whatHappened: 'Because of my CSL job, I was able to get a US Social Security Number.',
+    outcome: 'It let me open a Webull account, which later became the starting point for trading and eventually angel investing.',
   },
   {
     id: 'ubs-aic',
@@ -400,16 +268,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 300, y: 2090 },
-    summary: 'A family-driven exposure to the investing world before the Beijing internship.',
-    whatHappened:
-      'Adam attended the UBS Asian Investment Conference in June 2025. This was not fully self-initiated, so it should be treated as a mandatory / family-driven experience.',
-    whyItMattered:
-      'It gave him early exposure to the world of investment, business, and professional finance environments.',
-    secretUnlock:
-      'It helped build familiarity with the kind of people, conversations, and environment that would later matter more in his investing path.',
-    alternatePath: '',
-    reflection:
-      'At the time it may have just felt like another event I went to, but looking back it fits into the broader finance and investing thread in my life.',
+    summary: 'My first real exposure to the investor side of the world.',
+    whatHappened: 'My aunt invited my dad and me to attend the UBS Asian Investment Conference, an annual investment outlook event for UBS clients and higher-level investors.\n\nIt was one of my first times being around that kind of crowd and hearing how investors talked about markets, companies, and the economy.',
+    outcome: 'It gave me my first real interaction with the investing world and helped make that environment feel much more familiar later on.',
   },
   {
     id: 'cas',
@@ -418,16 +279,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 600, y: 2090 },
-    summary: 'A serious institution, a dense city, and an early view of China.',
-    whatHappened:
-      'Adam interned at the Chinese Academy of Sciences in Beijing. It was his first real experience working inside a serious institution.',
-    whyItMattered:
-      'He experienced Beijing as a city and saw how strict China can be around privacy, information, meetings, and government-facing communication.',
-    secretUnlock: 'It gave him an early view into how large Chinese institutions operate.',
-    alternatePath:
-      'If he had not gone, his first professional experience might have been Germany instead, giving him less exposure to China\'s institutional culture.',
-    reflection:
-      'Beijing showed me a serious, fast, dense, and highly structured version of professional life.',
+    summary: 'My first real work experience, and my first time actually living in China.',
+    whatHappened: 'I worked at the Chinese Academy of Sciences in Beijing as more of a research assistant than a traditional intern.\n\nI got the opportunity myself through connections and financial support, and spent about a month working inside the institution.',
+    outcome: 'The biggest takeaway was honestly Beijing itself. It was my first time living in China for more than just a short trip, and I got to experience the lifestyle, work culture, and everyday environment much more closely.',
   },
   {
     id: 'hennecke',
@@ -436,17 +290,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 0, y: 2090 },
-    summary: 'Manufacturing made engineering feel operational and cultural.',
-    whatHappened:
-      'Adam interned at Hennecke GmbH in Germany. This was planned by his father and gave him exposure to European manufacturing, factory operations, and German lifestyle.',
-    whyItMattered:
-      'He saw CNC machines, factory workflow, quality control, a five-story automated storage system, and operational planning. He also experienced a slower European lifestyle, made a good friend named Tobias, and saw how people in Germany work and socialize.',
-    secretUnlock:
-      'It connected engineering to real manufacturing and operations, showing that engineering is not only research or classroom theory, but also machines, workflow, planning, and culture.',
-    alternatePath:
-      'If he had not gone, he might have had less understanding of manufacturing, operations, and European working culture.',
-    reflection:
-      'At the time, it was not fully my own choice. But looking back, it became one of the first times I saw how real industrial systems work.',
+    summary: 'A month of work, travel, and my first real taste of European life.',
+    whatHappened: 'I spent a month at Hennecke in Sankt Augustin, Germany through my dad, since our family is a major client of the company.\n\nI rotated through different parts of the company, followed people around, learned what they did, and got exposure to how the business and factory operated.\n\nOutside of work was honestly just as memorable. I traveled around Germany with Ian, made local friends, and got a real taste of the lifestyle there—getting off work at 2 PM and drinking beer until night, going over 220 km/h on the Autobahn, and watching football games while cheering with a packed bar.',
+    outcome: 'It was my first time going to Germany alone and actually experiencing European life instead of just visiting.\n\nThe contrast with Beijing was huge, and it showed me how completely different work, social life, and everyday living could feel in different parts of the world.',
   },
   {
     id: 'ad-naturam',
@@ -455,17 +301,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 1500, y: 2090 },
-    summary:
-      'A distribution opportunity that became a hands-on lesson in building a cross-border business.',
-    whatHappened:
-      'Through a personal connection, Adam’s mother was offered the chance to introduce Ad Naturam, a French essential-oil brand, to Taiwan as a potential exclusive seller. Unsure how to proceed, Adam took the lead and invited Ian and Michelle to join the project.',
-    whyItMattered:
-      'The project gave Adam hands-on experience building a cross-border business, from team management and sales to legal coordination, logistics, and business execution.',
-    outcome:
-      'The team invested hundreds of hours developing logistics, marketing plans, and brand strategy; building websites; coordinating the contract process with the Japan team; and registering the products with the relevant Taiwanese authorities. After signing the agreement, Adam realized that the team had not received exclusive distribution rights for Taiwan. The arrangement functioned more like a reseller relationship, with access to lower wholesale pricing but no sole ownership of the market. Because this differed from the original opportunity, Adam decided to pause the project.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection: '',
+    summary: 'My first serious attempt at building a cross-border business.',
+    whatHappened: 'My mom was offered the chance to introduce Ad Naturam, a French essential-oil brand, to Taiwan.\n\nI took the lead and brought Ian and Michelle into the project. We spent hundreds of hours working on logistics, marketing, websites, contracts, product registration, and planning the Taiwan launch.\n\nAfter signing the agreement, I realized we had not actually received exclusive distribution rights. It was closer to a reseller relationship than what we originally expected.',
+    outcome: 'Because the deal was different from what we thought we were building toward, I decided to pause the project.\n\nEven though it stopped there, it gave me a lot of hands-on experience dealing with a real business across different countries.',
   },
   {
     id: 'aromafonda',
@@ -474,22 +312,13 @@ export const lifeNodes = [
     type: 'Decision',
     status: 'actual',
     position: { x: 1500, y: 2280 },
-    summary:
-      'A paused distribution venture became a more personal mission: helping his mother build a brand and community of her own.',
-    whatHappened:
-      'Adam realized that the purpose of the project was never to prove that he could launch an essential-oil business. What mattered was helping his mother build a personal brand and a community that could support and accompany her while he was often away from Taiwan. After talking deeply with her about what she wanted to create, he shifted his focus from distributing Ad Naturam to building AromaFonda around her knowledge of aromatherapy.',
-    whyItMattered:
-      'The project became less about selling a product and more about creating something meaningful for his mother. Adam wanted to help her share her expertise, meet people with similar interests, and gradually build a community she could feel connected to while he pursued his own work abroad.',
-    outcome:
-      'Adam built a fully customized website for AromaFonda, found a classroom where his mother could teach essential-oil and aromatherapy lessons, and hired professional photographers to document her teaching. He also interviewed small influencers and video editors, then negotiated a favorable agreement with a popular short-form video studio to help manage and produce content for her Instagram channel.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection:
-      'I hope these efforts will help my mother steadily grow a community, develop something that feels truly her own, and feel supported even while I am away building my own path.',
     link: {
       label: 'Visit AromaFonda',
       href: 'https://aromafonda.com',
     },
+    summary: 'The business shifted from selling a brand to helping my mom build something of her own.',
+    whatHappened: 'After Ad Naturam paused, I realized the real point of the project was never just selling essential oils.\n\nI wanted to help my mom build her own brand and community around aromatherapy, especially while I was spending more and more time away from Taiwan.\n\nI built the AromaFonda website, found a classroom for her lessons, arranged professional photography, and started looking for people to help with content and social media.',
+    outcome: 'AromaFonda became much more personal than Ad Naturam.\n\nInstead of building around someone else\'s product, I was helping my mom create something that was actually hers.',
   },
   {
     id: 'webull',
@@ -498,12 +327,9 @@ export const lifeNodes = [
     type: 'Decision',
     status: 'actual',
     position: { x: 900, y: 1900 },
-    summary: 'The first serious experience with financial risk.',
-    whatHappened: 'After getting his SSN, Adam opened a Webull account and started trading stocks.',
-    whyItMattered: 'Trading became his first serious experience with financial risk.',
-    secretUnlock: 'It eventually created the capital that made angel investing possible.',
-    alternatePath: '',
-    reflection: 'Trading started as an experiment for me, but later became my bridge into investing.',
+    summary: 'The start of my trading path.',
+    whatHappened: 'After getting my SSN, I opened a Webull account and deposited money from my college allowance.\n\nThen I started trading.',
+    outcome: 'It became my first real experience managing my own money and taking financial risk.',
   },
   {
     id: 'made-100k',
@@ -512,14 +338,9 @@ export const lifeNodes = [
     type: 'Milestone',
     status: 'actual',
     position: { x: 900, y: 2280 },
-    summary: 'A fast win that created both capital and overconfidence.',
-    whatHappened:
-      'Adam made around $100K through Webull trading by closely observing and following his father\'s trading moves.',
-    whyItMattered: 'This was the first time he saw money grow quickly through financial decisions.',
-    secretUnlock: 'It gave him capital and confidence, but also created overconfidence and risk appetite.',
-    alternatePath:
-      'If he had not made this money, he probably would have entered sophomore year with a more normal student mindset around money and less ability to invest later.',
-    reflection: 'The win gave me capital, but it also made risk feel easier than it really was.',
+    summary: 'My first big financial win.',
+    whatHappened: 'By closely following and learning from my dad\'s trades, I made around $100K through Webull.\n\nIt was the first time I had ever seen money grow that quickly.',
+    outcome: 'It gave me a lot more capital and confidence, but also made taking financial risk feel much easier than it actually was.',
   },
   {
     id: 'techcrunch-sf',
@@ -528,15 +349,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 600, y: 2565 },
-    summary: 'A self-driven move deeper into the startup and tech world.',
-    whatHappened: 'In October 2025, Adam attended TechCrunch in San Francisco by his own decision.',
-    whyItMattered:
-      'This reflected his own growing curiosity toward startups, technology, and the broader innovation world.',
-    secretUnlock:
-      'It added more exposure to the startup ecosystem and helped reinforce the path that later led toward N1AC.',
-    alternatePath: '',
-    reflection:
-      'This was one of the moments where I was no longer just observing from far away. I was actively stepping into the world I was curious about.',
+    summary: 'The trip that really started my investor journey.',
+    whatHappened: 'After making money from trading, I started thinking about how I actually wanted to use it. I had always dreamed about building a startup, so I decided I wanted to travel to major robotics and startup events around the world.\n\nAbout a week later, I flew to San Francisco for TechCrunch Disrupt 2025.\n\nI listened to people like Vinod Khosla, Netflix CTO Elizabeth Stone, and Waymo co-CEO Tekedra Mawakana talk about the future, the markets they cared about, and how they thought about technology and startups.\n\nI also met a UIUC alum building a teleoperation startup that was later valued around $2M through YC, and had a few follow-up meetings with him afterward.',
+    outcome: 'This was my first real exposure to the US startup world that I had always heard people talk about.\n\nBeing surrounded by founders and investors made it feel much more real, and it was probably the first time I started seriously thinking like an investor instead of just someone trading stocks.',
   },
   {
     id: 'trading-losses',
@@ -545,14 +360,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 1200, y: 2565 },
-    summary: 'The loss that made risk emotional instead of theoretical.',
-    whatHappened:
-      'Adam tried swing trading, options, and trades based on uncertain information. He became greedy and lost a large part of the earlier profit, leaving around $50K.',
-    whyItMattered: 'The loss forced him to become more sober about risk.',
-    secretUnlock:
-      'The remaining $50K later became angel investing capital, while the loss itself taught him risk awareness.',
-    alternatePath: 'If he had kept trading aggressively, he could have lost most or all of the profit.',
-    reflection: 'The loss was painful for me, but it made risk emotional instead of theoretical.',
+    summary: 'The part where trading stopped feeling easy.',
+    whatHappened: 'After making a lot of money, I became overconfident and started taking riskier trades, including options and trades based on uncertain information.\n\nI got greedy and eventually lost a large part of my earlier profit, leaving me with around $50K.',
+    outcome: 'Losing money made risk feel real instead of theoretical.\n\nIt also pushed me away from constantly chasing short-term trades and eventually toward using the money for something more meaningful.',
   },
   {
     id: 'reckless-trader',
@@ -564,12 +374,8 @@ export const lifeNodes = [
     attachedTo: 'trading-losses',
     attachedSide: 'right',
     overlapRatio: 0.3,
-    summary: 'One of the versions that needed to be avoided.',
-    whatHappened: 'A possible version of Adam keeps chasing options and risky trades.',
-    whyItMattered: 'This version could lose most of the profit and develop worse financial habits.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection: 'This is one of the versions of me that I needed to avoid becoming.',
+    summary: 'The version of me who kept chasing bigger wins.',
+    alternatePath: 'I could have kept trading options and taking bigger risks until most of the money was gone.',
   },
   {
     id: 'remaining-50k',
@@ -578,13 +384,9 @@ export const lifeNodes = [
     type: 'Unlock',
     status: 'hidden',
     position: { x: 900, y: 2755 },
-    summary: 'What remained became the entry ticket into startup investing.',
-    whatHappened: 'After the trading losses, Adam still had around $50K left.',
-    whyItMattered: 'This became the capital base that could later be used for angel investing.',
-    secretUnlock:
-      'The money was no longer just trading profit. It became the entry ticket into startup investing.',
-    alternatePath: '',
-    reflection: 'What remained after my loss became more important to me than the original win.',
+    summary: 'What was left after the trading losses became more important than the original win.',
+    whatHappened: 'After losing a large part of my trading profits, I still had around $50K left.',
+    outcome: 'Instead of continuing to gamble it away, that money later became the capital I used for angel investing.',
   },
   {
     id: 'start-azura',
@@ -593,16 +395,9 @@ export const lifeNodes = [
     type: 'Decision',
     status: 'actual',
     position: { x: -600, y: 2375 },
-    summary: 'A small business whose biggest outcome was a person.',
-    whatHappened:
-      'Adam teamed up with Kayden to start an online luxury flower shop on campus. Adam wanted to make money from wealthy Chinese students on campus, and Kayden wanted to sell flowers.',
-    whyItMattered:
-      'The project took months of trial and error and eventually launched on Valentine\'s Day 2026 with meaningful revenue.',
-    secretUnlock: 'The most important outcome was not revenue. It was meeting Wanting, the florist.',
-    alternatePath:
-      'If Adam had not teamed up with Kayden, he probably would not have built Azura and may not have met Wanting.',
-    reflection:
-      'Sometimes the most important outcome of my project is not the project itself. It is the person it brings into my life.',
+    summary: 'If the business clubs would not let me in, I\'m just gonna build something myself.',
+    whatHappened: 'After getting rejected by all the business organizations, part of me wanted to prove that I could learn business without them.\n\nI also saw a lot of wealthy Chinese students on campus and thought there was probably money to be made there.\n\nKayden was learning how to make bouquets, so we teamed up and started Azura de Maison, an online luxury flower business.\n\nAfter months of trial and error, we launched properly for Valentine\'s Day 2026. We worked around 36 hours together and made about $2.7K in revenue in a single day.\n\nWe also collaborated with BLNKD on a fashion modeling photoshoot.',
+    outcome: 'Azura was the first time I had to actually sell something, lead a team, work closely with other people, and make a small business run under pressure.\n\nIt taught me a lot about leadership, teamwork, and managing people by actually doing it.',
   },
   {
     id: 'azura-operations',
@@ -611,14 +406,9 @@ export const lifeNodes = [
     type: 'Milestone',
     status: 'actual',
     position: { x: -600, y: 2850 },
-    summary: 'Entrepreneurship became a real operating problem.',
-    whatHappened:
-      'Through Azura, Adam learned about production planning, optimization, customer service, pricing, scheduling, and managing real orders.',
-    whyItMattered:
-      'It turned entrepreneurship from an idea into a messy real-world operating problem.',
-    secretUnlock: '',
-    alternatePath: '',
-    reflection: 'The business was small, but it gave me real experience managing real operations and people.',
+    summary: 'Azura turned business into an actual operating problem.',
+    whatHappened: 'Running Azura meant dealing with production planning, pricing, scheduling, customer service, supplies, deliveries, and real orders all at once.\n\nValentine\'s Day especially forced us to figure out how to produce and deliver everything under a very tight deadline.',
+    outcome: 'It gave me my first real experience with operations.\n\nEven though the business was small, the problems were real, and I learned much more from actually running it than I would have from just studying business.',
   },
   {
     id: 'shein-internship',
@@ -627,16 +417,8 @@ export const lifeNodes = [
     type: 'Milestone',
     status: 'alternate',
     position: { x: -600, y: 3040 },
-    summary: 'A path where Azura\'s operations experience led to a more industrial internship.',
-    whatHappened:
-      'A possible version of Adam used the real operational knowledge from Azura de Maison to apply for a SHEIN summer internship and got accepted.',
-    whyItMattered:
-      'This path could have given him a full summer of industrial optimization and hands-on operational experience at a much larger scale.',
-    secretUnlock: '',
-    alternatePath:
-      'In reality, he applied and did not get it. But if it had worked out, it may have become one of the first more formal bridges from a student-run business into large-scale operational work.',
-    reflection:
-      'This possible path shows me that even a small business like Azura was already teaching me skills that could transfer to something much larger.',
+    summary: 'The operations path that almost happened.',
+    alternatePath: 'I applied to SHEIN using the experience I built through Azura but did not get in. If I had, I probably would have spent the summer learning large-scale operations and optimization.',
   },
   {
     id: 'wanting',
@@ -645,13 +427,9 @@ export const lifeNodes = [
     type: 'Unlock',
     status: 'actual',
     position: { x: -300, y: 2565 },
-    summary: 'A friend who became a bridge into a different world.',
-    whatHappened: 'Wanting became Azura\'s florist and later became a good friend of Adam.',
-    whyItMattered: 'She became one of the most important key people in Adam\'s life.',
-    secretUnlock: 'Wanting introduced Adam to Kehan Dong\'s event, which later opened the path to N1AC.',
-    alternatePath: '',
-    reflection:
-      'Some people do not just become my friends. They become bridges into completely different worlds for me.',
+    summary: 'Our florist at Azura who later became a good friend.',
+    whatHappened: 'Wanting joined Azura as our main florist and helped us produce the bouquets for the business.\n\nOver time, we became friends outside of Azura as well.',
+    outcome: 'Through Wanting, I later heard about an event where Kehan Dong was speaking.\n\nThat small connection ended up opening a completely different path for me.',
   },
   {
     id: 'kehan-event',
@@ -660,15 +438,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: -300, y: 2755 },
-    summary: 'Inspiration and intimidation arrived together.',
-    whatHappened:
-      'Wanting introduced Adam to an event where Kehan Dong, ex-YC China founder, gave a speech to founders and investors.',
-    whyItMattered:
-      'Adam was fired up because he already wanted to become a founder, but he also felt intimidated and unsure because he had little industry expertise or experience.',
-    secretUnlock: 'The event put Adam near the path that later became N1AC.',
-    alternatePath:
-      'If he had skipped the event, he might have stayed interested in startups but remained outside the real founder/investor network.',
-    reflection: 'I left inspired, but still scared. That tension made the event feel real to me.',
+    summary: 'The event that made the founder and investor world feel both exciting and intimidating.',
+    whatHappened: 'Kehan Dong was touring colleges around the US, giving talks to encourage students to build startups or become investors. UIUC was one of his stops, and Wanting introduced me to the event.\n\nI was already interested in startups, so hearing him speak made me extremely excited about that world.\n\nI wanted to talk to him afterward, but I felt so inexperienced and small compared with everyone around me that I barely had the confidence to speak to him properly.',
+    outcome: 'The event made me want to enter that world even more, while also showing me how far away I still felt from it.\n\nA few months later, I would get the chance to apply to N1AC.',
   },
   {
     id: 'apply-n1ac',
@@ -677,15 +449,9 @@ export const lifeNodes = [
     type: 'Decision',
     status: 'actual',
     position: { x: 0, y: 2850 },
-    summary: 'A decision to step into an identity that once felt far away.',
-    whatHappened:
-      'A few months after Kehan\'s speech, Adam got an invitation to apply as an investor in N1AC, a group of young angel investors in the US.',
-    whyItMattered: 'He applied, interviewed, and got accepted.',
-    secretUnlock: 'N1AC turned his remaining Webull money into real startup investing experience.',
-    alternatePath:
-      'If he had not applied, he may have kept the $50K safer in stocks, but missed real founder exposure, investor training, and mentorship.',
-    reflection:
-      'This was one of the first times I stepped into an identity that previously felt far away.',
+    summary: 'My first real attempt to step into startup investing.',
+    whatHappened: 'A few months after Kehan\'s speech, I received an invitation to apply to N1AC, a group of young angel investors in the US.\n\nI applied, went through the interview process, and got accepted.',
+    outcome: 'Instead of just watching founders and investors from the outside, I finally had a way to participate directly.',
   },
   {
     id: 'n1ac',
@@ -694,16 +460,10 @@ export const lifeNodes = [
     type: 'Milestone',
     status: 'actual',
     position: { x: 300, y: 3040 },
-    summary: 'The point where capital, access, and ambition merged into real startup investing.',
-    whatHappened:
-      'Adam officially joined N1AC, a young angel investor group led by Kehan Dong. He began attending live pitches, analyzing startups, speaking with founders, and learning how early-stage investing actually works.',
-    whyItMattered:
-      'This gave him direct exposure to founders, startup decision-making, frontier technologies, and investment judgment. It was no longer just reading about startups or joining entrepreneurship clubs. He was now participating in real deals.',
-    secretUnlock:
-      'Through N1AC, Adam made his first startup investments, including Semivalley and Tenda. The group also gave him credibility and experience that later helped lead to the IVY Capital internship.',
-    alternatePath: '',
-    reflection:
-      'N1AC became one of the biggest convergence points in my life. Azura gave me the access through Wanting and Kehan. Trading gave me the capital. UBS LEADS gave me the urgency. All of those separate paths met here.',
+    summary: 'The point where I actually became an angel investor.',
+    whatHappened: 'I officially joined N1AC, a young angel-investor collective with an average age of around 25.\n\nI started attending founder pitches, analyzing startups, talking with founders, and learning how early-stage investors actually judge companies and people.',
+    whyItMattered: 'I knew I wanted to build a startup one day, but I also realized I did not have an idea worth building or a problem worth solving yet.\n\nSo before becoming a founder, I wanted to look at startups from the other side: how investors judge founders, what kinds of founders actually succeed, and what traits keep showing up in the best ones.\n\nThe fastest way to learn is often to copy and borrow from people who are already good at something. I wanted to use these founders as references and slowly train myself to become more like them.',
+    outcome: 'N1AC gave me a front-row seat to early-stage startups.\n\nInstead of only dreaming about becoming a founder, I could study successful founders up close, understand how investors think, and build my own judgment before eventually trying to build something myself.',
   },
   {
     id: 'ivy-capital',
@@ -712,16 +472,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 0, y: 3325 },
-    summary: 'A future opportunity produced by a messy chain of earlier choices.',
-    whatHappened:
-      'Because of his N1AC angel investing experience and his knowledge of AI agents, Adam secured an internship at IVY Capital in Shanghai.',
-    whyItMattered:
-      'This is the first major career opportunity directly produced by the messy chain of trading, Azura, Wanting, Kehan, and N1AC.',
-    secretUnlock:
-      'It may become his first serious finance, VC, or investment-related professional experience.',
-    alternatePath: 'Without N1AC, this internship may not have happened in the same way.',
-    reflection:
-      'This is where my random-looking experiences started becoming legible to the outside world.',
+    summary: 'The first internship I got entirely on my own.',
+    whatHappened: 'I sent out more than 400 internship applications, got only two interviews, and IVY Capital was the only one that accepted me.\n\nOnce I got there, I gave it 120%.\n\nI was originally assigned to one investment manager and worked on things like a two-month space data center investment study, but I kept taking on work from different people across the firm. I researched startups, sourced companies, helped with networking, worked with HR, and eventually presented my research to the whole company.\n\nI also went to networking events every week, followed my boss to Beijing to meet startups, and traveled to Hong Kong for a hackathon he was judging, where I also helped make content for the company.\n\nOutside of work, I built close relationships with the other interns and people at IVY, made a lot of connections across Shanghai, and genuinely enjoyed living there.',
+    outcome: 'This was probably the first internship where I felt like I truly earned everything myself.\n\nIt also showed me what happens when I really overcommit to an opportunity. I came in as one intern with one assignment and ended up touching almost every part of the firm, meeting founders and investors constantly, and building relationships with people I genuinely looked up to.\n\nShanghai also became my second real experience living in China, but it felt completely different from Beijing: much more international, social, and open.',
   },
   {
     id: 'brizan-internship',
@@ -733,16 +486,8 @@ export const lifeNodes = [
     attachedTo: 'ivy-capital',
     attachedSide: 'left',
     overlapRatio: 0.3,
-    summary: 'A VC internship path that came close but did not happen.',
-    whatHappened:
-      'Adam made it to the final interview for a Brizan internship in Shenzhen, but eventually got rejected.',
-    whyItMattered:
-      'The role was very close to what he was already doing at N1AC: analyzing early-stage companies, thinking about pre-seed, seed, and Series A investments, and working around smart founders.',
-    secretUnlock: '',
-    alternatePath:
-      'If he had gotten it, he may have spent part of the summer in Shenzhen meeting ambitious Chinese founders and part of it in the Hong Kong office analyzing startups and helping around Brizan\'s hackathon ecosystem.',
-    reflection:
-      'This opportunity felt almost perfectly aligned with the investor path I was building. Missing it hurt, but it also showed me how close my N1AC experience had brought me to real VC work.',
+    summary: 'The VC path that came very close.',
+    alternatePath: 'I made it to the final interview for Brizan but was rejected. If I had gotten it, I would have spent time in Shenzhen and Hong Kong working around early-stage startups, founders, and their hackathon ecosystem.',
   },
   {
     id: 'pwc',
@@ -751,12 +496,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 600, y: 3325 },
-    summary: 'A side path whose meaning is still forming.',
-    whatHappened: 'Adam also received a PwC online internship opportunity.',
-    whyItMattered: 'It may give him corporate, finance, or professional-service exposure.',
-    secretUnlock: 'This is still unknown, but it may lead somewhere later.',
-    alternatePath: '',
-    reflection: 'I have learned that some side paths only reveal their meaning after time passes.',
+    summary: 'Mostly a résumé internship.',
+    whatHappened: 'I got an online PwC internship through connections and financial support.\n\nThe work was mainly business consulting for a pharmaceutical company selling topical medicine, where I helped think through market expansion and business planning.',
+    outcome: 'Honestly, I did not learn that much from it.\n\nIt was mostly something I did for the résumé and to get some exposure to consulting.',
   },
   {
     id: 'tenda',
@@ -766,9 +508,8 @@ export const lifeNodes = [
     status: 'actual',
     position: { x: 1200, y: 3135 },
     compact: true,
-    summary: 'AI for Construction',
-    whatHappened: 'Tenda is a startup applying AI to the construction industry.',
-    founder: 'Hlawn',
+    summary: 'AI for construction.',
+    whatHappened: 'I invested in Tenda, a startup using AI in the construction industry.',
   },
   {
     id: 'semi-valley',
@@ -778,10 +519,8 @@ export const lifeNodes = [
     status: 'actual',
     position: { x: 900, y: 3135 },
     compact: true,
-    summary: 'GPU Chip Cooling',
-    whatHappened:
-      'Semivalley is developing advanced cooling technology for high-performance chips and GPUs, using direct liquid or jet-based cooling approaches.',
-    founder: 'Boya & Ruihan',
+    summary: 'Advanced cooling for high-performance chips.',
+    whatHappened: 'I invested in Semivalley, a startup developing liquid and jet-based cooling technology for GPUs and other high-performance chips.',
   },
   {
     id: 'joined-ams-lab',
@@ -790,13 +529,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: -300, y: 3610 },
-    summary: 'A rejected research application returned as a direct invitation.',
-    whatHappened:
-      'Pranav Krishnan, whom I met while interviewing for URSA/UROP, reached out during the summer and invited me to join AMS Lab to work on a frontal-polymerization DIW 3D-printing system.',
-    whyItMattered:
-      'I mainly work on PID tuning, while also contributing to the mechanical and electrical systems and helping prepare the chemical material.',
-    reflection:
-      'The project is teaching me across controls, mechanics, electronics, materials science, and additive manufacturing.',
+    summary: 'A research rejection that came back around as a real opportunity.',
+    whatHappened: 'Pranav Krishnan, whom I originally met through my URSA/UROP interview, reached out again during the summer and invited me to join AMS Lab as an assistant and mechanical engineer.\n\nWe are working on a frontal-polymerization 3D-printing system. One of the main problems is that the high-viscosity materials do not mix consistently, so the system needs a lot of manual adjustment.\n\nMy main job is building a control system that can automatically stabilize the mixing and printing process.',
+    outcome: 'The project pulled me into controls, mechanics, electronics, materials, and additive manufacturing all at once.\n\nIt is also the first research project where I have had a much more independent engineering problem to solve rather than just helping with a small task.',
   },
   {
     id: 'joined-opera',
@@ -805,15 +540,9 @@ export const lifeNodes = [
     type: 'Experience',
     status: 'actual',
     position: { x: 0, y: 3610 },
-    summary: 'A new environment for turning engineering ideas into physical objects.',
-    whatHappened:
-      'Joined OPERA, a 3D printing and design-focused student organization. The club works on hands-on engineering projects involving CAD, fabrication, prototyping, and 3D printing.',
-    whyItMattered:
-      'This gives me another environment where I can actually build physical things instead of only learning engineering through classes.',
-    whatIWant:
-      'I am especially interested in joining the prosthetic hand team, where I could help design, prototype, and potentially build parts of an actual prosthetic hand.',
-    whyICare:
-      'Prosthetics and robotics are areas I have been interested in for a long time, so this could become a much more direct step toward understanding what it actually takes to build these systems.',
+    summary: 'A hands-on product design club that also became my first real exec role.',
+    whatHappened: 'My friend Junu invited me to join OPERA, a product design and 3D-printing club focused on CAD, prototyping, and building physical projects.\n\nI joined the ASL mechanical hand project, where we are building a robotic hand that can demonstrate sign language and help teach ASL.\n\nI was also elected to the executive board in a Corporate Relations role.',
+    outcome: 'OPERA gave me another place to build physical products and work on something directly related to robotics and mechanical hands.\n\nThe exec role also gave me a real leadership position within a student organization.',
   },
   {
     id: 'joined-boring-illini',
@@ -825,30 +554,19 @@ export const lifeNodes = [
     attachedTo: 'joined-opera',
     attachedSide: 'right',
     overlapRatio: 0.3,
-    summary: 'A hands-on engineering path I chose not to pursue this semester.',
-    whatHappened:
-      'Boring Illini is a student engineering team competing in The Boring Company’s Not-a-Boring Competition, created by Elon Musk, where teams develop tunnel-boring technology and related mechanical systems.',
-    whyItMattered:
-      'It would have added large-scale, hands-on mechanical design and team engineering experience to my résumé.',
-    alternatePath:
-      'I gave it up because my schedule was already too full this semester. With more time, it could have been a valuable addition to my engineering path.',
-    reflection:
-      'It was a good opportunity—just not the right semester to take on another major commitment.',
+    summary: 'A hands-on engineering path I chose not to take.',
+    alternatePath: 'I could have joined Boring Illini and worked on large-scale mechanical design and tunnel-boring systems, but my schedule was already too full that semester.',
   },
   {
     id: 'learning-mianxiang',
-    title: 'Learn 面相学',
+    title: 'Learned 面相学',
     time: 'Junior Year',
     type: 'Experience',
     status: 'actual',
     position: { x: 300, y: 3610 },
-    summary: 'A month-long side quest into reading faces.',
-    whatHappened:
-      'I spent September learning the foundations of 面相学: how face shape, eyes, eyebrows, nose, mouth, and other features are traditionally interpreted.',
-    whyItMattered:
-      'I see it as another lens for understanding people, from new friends to startup founders. People today are skilled at packaging themselves, hiding emotions, and performing habits that are not genuine. I hope face reading can offer clues that help me see past that presentation. Though I remain skeptical, I have repeatedly noticed patterns between personality and facial structure—why some faces feel unsettling while others feel instantly likable.',
-    howISeeIt:
-      'Reading my own face felt roughly 85% accurate. I do not treat 面相学 as definitive—only as one signal alongside judgment, experience, and real interaction.',
+    summary: 'A side project into reading people beyond what they choose to show.',
+    whatHappened: 'During my time at IVY, I became more curious about the gut feeling I sometimes get when I first meet someone.\n\nPeople are very good at hiding emotions and presenting a polished version of their lifestyle, especially founders. But they cannot really change their facial features.\n\nSo I started learning 面相学, the traditional Chinese practice of reading facial features and connecting them with personality and character.',
+    outcome: 'I do think there is some truth to it.\n\nI do not treat it as a final judgment, but I use it as another signal to look past the persona someone is trying to present and pick up on traits that might otherwise take much longer to notice.',
   },
 ];
 
