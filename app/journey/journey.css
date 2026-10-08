@@ -548,11 +548,11 @@
 
 .story-panel {
   position: fixed;
-  top: 190px;
+  top: 160px;
   right: 24px;
   bottom: 22px;
   z-index: 40;
-  width: min(400px, calc(100vw - 48px));
+  width: min(455px, calc(100vw - 48px));
   overflow: auto;
   border: 1px solid rgba(122, 111, 86, 0.24);
   border-radius: 8px;
